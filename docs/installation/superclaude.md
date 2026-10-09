@@ -45,3 +45,7 @@ If the CLI isn't found after installing with pipx, reopen PowerShell and check `
 For removal, use the upstream framework's uninstall instructions, review generated changes, and retain user-authored files.
 
 [Installation guides](./README.md) · [Reference agent list](../components/coverage.md)
+
+## Exact source pin for repeatable definitions
+
+The [pinned SuperClaude installer](./pinned-superclaude.md) can reproduce 20 upstream agent definitions and 19 identical command definitions without installing SuperClaude's Python CLI. Another 11 command definitions are available as explicitly opted-in publisher originals, not exact matches for the author's locally changed files. Use this mode in a disposable config and test runtime behavior separately.

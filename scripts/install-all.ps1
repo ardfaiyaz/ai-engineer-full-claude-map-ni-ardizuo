@@ -6,6 +6,8 @@ param(
     [switch]$Plugins,
     [switch]$Mcps,
     [switch]$SuperClaude,
+    [switch]$PinnedSuperClaude,
+    [switch]$UpstreamVariants,
     [switch]$Hooks,
     [switch]$Vault,
     [switch]$Dashboard,
@@ -22,6 +24,8 @@ if ($External) { $arguments += '--external' }
 if ($Plugins) { $arguments += '--plugins' }
 if ($Mcps) { $arguments += '--mcps' }
 if ($SuperClaude) { $arguments += '--superclaude' }
+if ($PinnedSuperClaude) { $arguments += '--pinned-superclaude' }
+if ($UpstreamVariants) { $arguments += '--upstream-variants' }
 if ($Hooks) { $arguments += '--hooks' }
 if ($Vault) { $arguments += '--vault' }
 if ($Dashboard) { $arguments += '--dashboard' }

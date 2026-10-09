@@ -80,3 +80,11 @@ claude mcp list
 Inside Claude Code: check `/skills`, `/mcp` and `/hooks`; run a small **real** specialist delegation, a test run, and an explicitly approved sample vault note. Recorded hook/script status should distinguish configured from executed. Avoid passing tokens into logs or screenshots.
 
 [All components](./README.md) · [Full installer](../installation/full-setup.md) · [Verification checklist](../installation/verification-checklist.md)
+
+## Sprint 2: published source provenance lock
+
+`setup/source-provenance-lock.json` is generated from a **local read-only comparison** of the 80-file private review export. It discloses only public filenames, source file paths, pinned publisher commits and classification; no private file contents, tokens or local modified-file SHA256 hashes are published.
+
+At the pinned commits: **42 exact byte matches, 6 text matches after newline normalization, 13 different files and 19 unmapped skills**. Of the exact matches, the SuperClaude command README is documentation. See the [pinned SuperClaude installer](../installation/pinned-superclaude.md) for a create-only installation route for 20 agents and 19 command definitions, with 11 publisher-original command variants available through explicit opt-in.
+
+These counts are reference-machine file comparisons, *not* a claim that every skill dependency, slash command or agent can run on a newly installed machine.

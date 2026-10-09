@@ -124,3 +124,7 @@ The installer skips identical assets and fails on conflicting files; it never fo
 ## Visual 30-step walkthrough
 
 [Follow the full verification checklist](./verification-checklist.md) after installation.
+
+## Optional reproducibility: pinned SuperClaude file definitions
+
+If you need exactly audited upstream agent/command definitions without running the SuperClaude CLI, use the separate [hash-verified, pinned SuperClaude installer](./pinned-superclaude.md). It installs into an isolated `-ConfigDir` first and refuses conflicts. This is an alternative to the `-All` mode's upstream CLI, **not** an additional automatic overwrite step.

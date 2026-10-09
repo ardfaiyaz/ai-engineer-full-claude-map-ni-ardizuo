@@ -1,0 +1,646 @@
+{
+  "schemaVersion": 1,
+  "source": "Ardizuo 80-file private source hash comparison (2026-10-09); ONLY public filenames/status; no private content or personal hashes",
+  "important": "A match to upstream does not prove any particular local modification is redistributable. Pin source, preserve notices. Third-party code is downloaded from its owner at user opt-in, not bundled.",
+  "upstream": {
+    "repository": "SuperClaude-Org/SuperClaude_Framework",
+    "revision": "fe68862c8ed9e2afb8120c2d9e27d0c3a7ce73a2",
+    "license": "MIT",
+    "licenseURL": "https://github.com/SuperClaude-Org/SuperClaude_Framework/blob/fe68862c8ed9e2afb8120c2d9e27d0c3a7ce73a2/LICENSE"
+  },
+  "entries": [
+    {
+      "target": "agents/backend-architect.md",
+      "comparison": "EXACT_BYTE_MATCH",
+      "installPolicy": "automatic-reviewed-upstream",
+      "upstreamRepository": "SuperClaude-Org/SuperClaude_Framework",
+      "revision": "fe68862c8ed9e2afb8120c2d9e27d0c3a7ce73a2",
+      "sourceFilePath": "src/superclaude/agents/backend-architect.md",
+      "gitBlobSHA1": "31a02411cb5962575876fdea7d27c9ff68774a7f"
+    },
+    {
+      "target": "agents/business-panel-experts.md",
+      "comparison": "EXACT_BYTE_MATCH",
+      "installPolicy": "automatic-reviewed-upstream",
+      "upstreamRepository": "SuperClaude-Org/SuperClaude_Framework",
+      "revision": "fe68862c8ed9e2afb8120c2d9e27d0c3a7ce73a2",
+      "sourceFilePath": "src/superclaude/agents/business-panel-experts.md",
+      "gitBlobSHA1": "b5a1f2d2ac3c296017ad57614b7f6770a066bb0a"
+    },
+    {
+      "target": "agents/deep-research.md",
+      "comparison": "EXACT_BYTE_MATCH",
+      "installPolicy": "automatic-reviewed-upstream",
+      "upstreamRepository": "SuperClaude-Org/SuperClaude_Framework",
+      "revision": "fe68862c8ed9e2afb8120c2d9e27d0c3a7ce73a2",
+      "sourceFilePath": "src/superclaude/agents/deep-research.md",
+      "gitBlobSHA1": "58578099c61a726830f358c232ce35b78bd15eab"
+    },
+    {
+      "target": "agents/deep-research-agent.md",
+      "comparison": "EXACT_BYTE_MATCH",
+      "installPolicy": "automatic-reviewed-upstream",
+      "upstreamRepository": "SuperClaude-Org/SuperClaude_Framework",
+      "revision": "fe68862c8ed9e2afb8120c2d9e27d0c3a7ce73a2",
+      "sourceFilePath": "src/superclaude/agents/deep-research-agent.md",
+      "gitBlobSHA1": "23449838e3924a3aaff82a4ed2892ae527615f59"
+    },
+    {
+      "target": "agents/devops-architect.md",
+      "comparison": "EXACT_BYTE_MATCH",
+      "installPolicy": "automatic-reviewed-upstream",
+      "upstreamRepository": "SuperClaude-Org/SuperClaude_Framework",
+      "revision": "fe68862c8ed9e2afb8120c2d9e27d0c3a7ce73a2",
+      "sourceFilePath": "src/superclaude/agents/devops-architect.md",
+      "gitBlobSHA1": "d2b2315e854af42adb357a25fd585b5a69874d11"
+    },
+    {
+      "target": "agents/frontend-architect.md",
+      "comparison": "EXACT_BYTE_MATCH",
+      "installPolicy": "automatic-reviewed-upstream",
+      "upstreamRepository": "SuperClaude-Org/SuperClaude_Framework",
+      "revision": "fe68862c8ed9e2afb8120c2d9e27d0c3a7ce73a2",
+      "sourceFilePath": "src/superclaude/agents/frontend-architect.md",
+      "gitBlobSHA1": "5c7d676e1c8e2cd5359a20c66c4ade17ce53d6e9"
+    },
+    {
+      "target": "agents/learning-guide.md",
+      "comparison": "EXACT_BYTE_MATCH",
+      "installPolicy": "automatic-reviewed-upstream",
+      "upstreamRepository": "SuperClaude-Org/SuperClaude_Framework",
+      "revision": "fe68862c8ed9e2afb8120c2d9e27d0c3a7ce73a2",
+      "sourceFilePath": "src/superclaude/agents/learning-guide.md",
+      "gitBlobSHA1": "45891a631631317218f5f90a48de50f9e202070b"
+    },
+    {
+      "target": "agents/performance-engineer.md",
+      "comparison": "EXACT_BYTE_MATCH",
+      "installPolicy": "automatic-reviewed-upstream",
+      "upstreamRepository": "SuperClaude-Org/SuperClaude_Framework",
+      "revision": "fe68862c8ed9e2afb8120c2d9e27d0c3a7ce73a2",
+      "sourceFilePath": "src/superclaude/agents/performance-engineer.md",
+      "gitBlobSHA1": "667f4361f0fb27dddd128231b05cb60a7e2db753"
+    },
+    {
+      "target": "agents/pm-agent.md",
+      "comparison": "EXACT_BYTE_MATCH",
+      "installPolicy": "automatic-reviewed-upstream",
+      "upstreamRepository": "SuperClaude-Org/SuperClaude_Framework",
+      "revision": "fe68862c8ed9e2afb8120c2d9e27d0c3a7ce73a2",
+      "sourceFilePath": "src/superclaude/agents/pm-agent.md",
+      "gitBlobSHA1": "61821a9066bc4884b0e58ebb67df9e7eab0ced73"
+    },
+    {
+      "target": "agents/python-expert.md",
+      "comparison": "EXACT_BYTE_MATCH",
+      "installPolicy": "automatic-reviewed-upstream",
+      "upstreamRepository": "SuperClaude-Org/SuperClaude_Framework",
+      "revision": "fe68862c8ed9e2afb8120c2d9e27d0c3a7ce73a2",
+      "sourceFilePath": "src/superclaude/agents/python-expert.md",
+      "gitBlobSHA1": "c2c2e9922aeaf695d2705d697e7001b29f353536"
+    },
+    {
+      "target": "agents/quality-engineer.md",
+      "comparison": "EXACT_BYTE_MATCH",
+      "installPolicy": "automatic-reviewed-upstream",
+      "upstreamRepository": "SuperClaude-Org/SuperClaude_Framework",
+      "revision": "fe68862c8ed9e2afb8120c2d9e27d0c3a7ce73a2",
+      "sourceFilePath": "src/superclaude/agents/quality-engineer.md",
+      "gitBlobSHA1": "d6dc15ca9b1f14ddac1eb820241327afc41a6a49"
+    },
+    {
+      "target": "agents/refactoring-expert.md",
+      "comparison": "EXACT_BYTE_MATCH",
+      "installPolicy": "automatic-reviewed-upstream",
+      "upstreamRepository": "SuperClaude-Org/SuperClaude_Framework",
+      "revision": "fe68862c8ed9e2afb8120c2d9e27d0c3a7ce73a2",
+      "sourceFilePath": "src/superclaude/agents/refactoring-expert.md",
+      "gitBlobSHA1": "0061b8935db25a66361e529546da81e3b240b5df"
+    },
+    {
+      "target": "agents/repo-index.md",
+      "comparison": "EXACT_BYTE_MATCH",
+      "installPolicy": "automatic-reviewed-upstream",
+      "upstreamRepository": "SuperClaude-Org/SuperClaude_Framework",
+      "revision": "fe68862c8ed9e2afb8120c2d9e27d0c3a7ce73a2",
+      "sourceFilePath": "src/superclaude/agents/repo-index.md",
+      "gitBlobSHA1": "c1aca087434d7727b7f69904487edd6831a599b0"
+    },
+    {
+      "target": "agents/requirements-analyst.md",
+      "comparison": "EXACT_BYTE_MATCH",
+      "installPolicy": "automatic-reviewed-upstream",
+      "upstreamRepository": "SuperClaude-Org/SuperClaude_Framework",
+      "revision": "fe68862c8ed9e2afb8120c2d9e27d0c3a7ce73a2",
+      "sourceFilePath": "src/superclaude/agents/requirements-analyst.md",
+      "gitBlobSHA1": "529bddf8d083e0298808a22b5f6a7d6249b8ee2f"
+    },
+    {
+      "target": "agents/root-cause-analyst.md",
+      "comparison": "EXACT_BYTE_MATCH",
+      "installPolicy": "automatic-reviewed-upstream",
+      "upstreamRepository": "SuperClaude-Org/SuperClaude_Framework",
+      "revision": "fe68862c8ed9e2afb8120c2d9e27d0c3a7ce73a2",
+      "sourceFilePath": "src/superclaude/agents/root-cause-analyst.md",
+      "gitBlobSHA1": "7c35a0a70819c4760e829870d5584d99fd839b03"
+    },
+    {
+      "target": "agents/security-engineer.md",
+      "comparison": "EXACT_BYTE_MATCH",
+      "installPolicy": "automatic-reviewed-upstream",
+      "upstreamRepository": "SuperClaude-Org/SuperClaude_Framework",
+      "revision": "fe68862c8ed9e2afb8120c2d9e27d0c3a7ce73a2",
+      "sourceFilePath": "src/superclaude/agents/security-engineer.md",
+      "gitBlobSHA1": "d3685f28c1e6e346f4c89478a0bd695cdf0b47ac"
+    },
+    {
+      "target": "agents/self-review.md",
+      "comparison": "EXACT_BYTE_MATCH",
+      "installPolicy": "automatic-reviewed-upstream",
+      "upstreamRepository": "SuperClaude-Org/SuperClaude_Framework",
+      "revision": "fe68862c8ed9e2afb8120c2d9e27d0c3a7ce73a2",
+      "sourceFilePath": "src/superclaude/agents/self-review.md",
+      "gitBlobSHA1": "a269efdf40bd529104ce9557815cf3fbb108f332"
+    },
+    {
+      "target": "agents/socratic-mentor.md",
+      "comparison": "EXACT_BYTE_MATCH",
+      "installPolicy": "automatic-reviewed-upstream",
+      "upstreamRepository": "SuperClaude-Org/SuperClaude_Framework",
+      "revision": "fe68862c8ed9e2afb8120c2d9e27d0c3a7ce73a2",
+      "sourceFilePath": "src/superclaude/agents/socratic-mentor.md",
+      "gitBlobSHA1": "aa0795bf65af148cc145afae86a3a269ed66c58c"
+    },
+    {
+      "target": "agents/system-architect.md",
+      "comparison": "EXACT_BYTE_MATCH",
+      "installPolicy": "automatic-reviewed-upstream",
+      "upstreamRepository": "SuperClaude-Org/SuperClaude_Framework",
+      "revision": "fe68862c8ed9e2afb8120c2d9e27d0c3a7ce73a2",
+      "sourceFilePath": "src/superclaude/agents/system-architect.md",
+      "gitBlobSHA1": "35f5246162a61138712b4a07a8900317e406cd08"
+    },
+    {
+      "target": "agents/technical-writer.md",
+      "comparison": "EXACT_BYTE_MATCH",
+      "installPolicy": "automatic-reviewed-upstream",
+      "upstreamRepository": "SuperClaude-Org/SuperClaude_Framework",
+      "revision": "fe68862c8ed9e2afb8120c2d9e27d0c3a7ce73a2",
+      "sourceFilePath": "src/superclaude/agents/technical-writer.md",
+      "gitBlobSHA1": "f7c00525842c404379fde6c6d801987ae8dea9d0"
+    },
+    {
+      "target": "commands/sc/agent.md",
+      "comparison": "EXACT_BYTE_MATCH",
+      "installPolicy": "automatic-reviewed-upstream",
+      "upstreamRepository": "SuperClaude-Org/SuperClaude_Framework",
+      "revision": "fe68862c8ed9e2afb8120c2d9e27d0c3a7ce73a2",
+      "sourceFilePath": "src/superclaude/commands/agent.md",
+      "gitBlobSHA1": "18d990f60b103c5f2ac5508196b5f654e177a6e2"
+    },
+    {
+      "target": "commands/sc/analyze.md",
+      "comparison": "EXACT_BYTE_MATCH",
+      "installPolicy": "automatic-reviewed-upstream",
+      "upstreamRepository": "SuperClaude-Org/SuperClaude_Framework",
+      "revision": "fe68862c8ed9e2afb8120c2d9e27d0c3a7ce73a2",
+      "sourceFilePath": "src/superclaude/commands/analyze.md",
+      "gitBlobSHA1": "6f7eefb33eac4d86ee94c884523453072a9208ae"
+    },
+    {
+      "target": "commands/sc/brainstorm.md",
+      "comparison": "DIFFERENT_CONTENT",
+      "installPolicy": "opt-in-upstream-variant",
+      "upstreamRepository": "SuperClaude-Org/SuperClaude_Framework",
+      "revision": "fe68862c8ed9e2afb8120c2d9e27d0c3a7ce73a2",
+      "sourceFilePath": "src/superclaude/commands/brainstorm.md",
+      "gitBlobSHA1": "8edff7287b14a236447f0abb1a01b4c283fd959e"
+    },
+    {
+      "target": "commands/sc/build.md",
+      "comparison": "EXACT_BYTE_MATCH",
+      "installPolicy": "automatic-reviewed-upstream",
+      "upstreamRepository": "SuperClaude-Org/SuperClaude_Framework",
+      "revision": "fe68862c8ed9e2afb8120c2d9e27d0c3a7ce73a2",
+      "sourceFilePath": "src/superclaude/commands/build.md",
+      "gitBlobSHA1": "02d6475af4bf512415e0018ffeed29d8cd6f7481"
+    },
+    {
+      "target": "commands/sc/business-panel.md",
+      "comparison": "EXACT_BYTE_MATCH",
+      "installPolicy": "automatic-reviewed-upstream",
+      "upstreamRepository": "SuperClaude-Org/SuperClaude_Framework",
+      "revision": "fe68862c8ed9e2afb8120c2d9e27d0c3a7ce73a2",
+      "sourceFilePath": "src/superclaude/commands/business-panel.md",
+      "gitBlobSHA1": "15f3633e3013013bfcf371fd6f490a825519cc87"
+    },
+    {
+      "target": "commands/sc/cleanup.md",
+      "comparison": "DIFFERENT_CONTENT",
+      "installPolicy": "opt-in-upstream-variant",
+      "upstreamRepository": "SuperClaude-Org/SuperClaude_Framework",
+      "revision": "fe68862c8ed9e2afb8120c2d9e27d0c3a7ce73a2",
+      "sourceFilePath": "src/superclaude/commands/cleanup.md",
+      "gitBlobSHA1": "e552f75f0b1d73d1d5776bcbf0f897e984bae848"
+    },
+    {
+      "target": "commands/sc/design.md",
+      "comparison": "EXACT_BYTE_MATCH",
+      "installPolicy": "automatic-reviewed-upstream",
+      "upstreamRepository": "SuperClaude-Org/SuperClaude_Framework",
+      "revision": "fe68862c8ed9e2afb8120c2d9e27d0c3a7ce73a2",
+      "sourceFilePath": "src/superclaude/commands/design.md",
+      "gitBlobSHA1": "5ef3fac60158d86a3037a2d0c36b76e38a983b8e"
+    },
+    {
+      "target": "commands/sc/document.md",
+      "comparison": "EXACT_BYTE_MATCH",
+      "installPolicy": "automatic-reviewed-upstream",
+      "upstreamRepository": "SuperClaude-Org/SuperClaude_Framework",
+      "revision": "fe68862c8ed9e2afb8120c2d9e27d0c3a7ce73a2",
+      "sourceFilePath": "src/superclaude/commands/document.md",
+      "gitBlobSHA1": "7620cb3cd3ad6ec99642bda44837ddbdbed89ffb"
+    },
+    {
+      "target": "commands/sc/estimate.md",
+      "comparison": "DIFFERENT_CONTENT",
+      "installPolicy": "opt-in-upstream-variant",
+      "upstreamRepository": "SuperClaude-Org/SuperClaude_Framework",
+      "revision": "fe68862c8ed9e2afb8120c2d9e27d0c3a7ce73a2",
+      "sourceFilePath": "src/superclaude/commands/estimate.md",
+      "gitBlobSHA1": "5946d1920454e2413a546bd51eb512e59413d569"
+    },
+    {
+      "target": "commands/sc/explain.md",
+      "comparison": "DIFFERENT_CONTENT",
+      "installPolicy": "opt-in-upstream-variant",
+      "upstreamRepository": "SuperClaude-Org/SuperClaude_Framework",
+      "revision": "fe68862c8ed9e2afb8120c2d9e27d0c3a7ce73a2",
+      "sourceFilePath": "src/superclaude/commands/explain.md",
+      "gitBlobSHA1": "17639e366f1d62f79fb545d575b2665568949060"
+    },
+    {
+      "target": "commands/sc/git.md",
+      "comparison": "EXACT_BYTE_MATCH",
+      "installPolicy": "automatic-reviewed-upstream",
+      "upstreamRepository": "SuperClaude-Org/SuperClaude_Framework",
+      "revision": "fe68862c8ed9e2afb8120c2d9e27d0c3a7ce73a2",
+      "sourceFilePath": "src/superclaude/commands/git.md",
+      "gitBlobSHA1": "b8f633e443c34f7434456e1dcc85a70016a2413c"
+    },
+    {
+      "target": "commands/sc/help.md",
+      "comparison": "EXACT_BYTE_MATCH",
+      "installPolicy": "automatic-reviewed-upstream",
+      "upstreamRepository": "SuperClaude-Org/SuperClaude_Framework",
+      "revision": "fe68862c8ed9e2afb8120c2d9e27d0c3a7ce73a2",
+      "sourceFilePath": "src/superclaude/commands/help.md",
+      "gitBlobSHA1": "cd8b31e9311c750d4158ff0f910a6cda3a424630"
+    },
+    {
+      "target": "commands/sc/implement.md",
+      "comparison": "DIFFERENT_CONTENT",
+      "installPolicy": "opt-in-upstream-variant",
+      "upstreamRepository": "SuperClaude-Org/SuperClaude_Framework",
+      "revision": "fe68862c8ed9e2afb8120c2d9e27d0c3a7ce73a2",
+      "sourceFilePath": "src/superclaude/commands/implement.md",
+      "gitBlobSHA1": "8c2feab5bf89d8091f38b5fca512b1b614e0bcf3"
+    },
+    {
+      "target": "commands/sc/improve.md",
+      "comparison": "DIFFERENT_CONTENT",
+      "installPolicy": "opt-in-upstream-variant",
+      "upstreamRepository": "SuperClaude-Org/SuperClaude_Framework",
+      "revision": "fe68862c8ed9e2afb8120c2d9e27d0c3a7ce73a2",
+      "sourceFilePath": "src/superclaude/commands/improve.md",
+      "gitBlobSHA1": "cd54d0bd7d50afd73875aa696fe2553590480fab"
+    },
+    {
+      "target": "commands/sc/index.md",
+      "comparison": "DIFFERENT_CONTENT",
+      "installPolicy": "opt-in-upstream-variant",
+      "upstreamRepository": "SuperClaude-Org/SuperClaude_Framework",
+      "revision": "fe68862c8ed9e2afb8120c2d9e27d0c3a7ce73a2",
+      "sourceFilePath": "src/superclaude/commands/index.md",
+      "gitBlobSHA1": "da077a2f9ca6f8c9e276c9b8315ba5e23b40373f"
+    },
+    {
+      "target": "commands/sc/index-repo.md",
+      "comparison": "EXACT_BYTE_MATCH",
+      "installPolicy": "automatic-reviewed-upstream",
+      "upstreamRepository": "SuperClaude-Org/SuperClaude_Framework",
+      "revision": "fe68862c8ed9e2afb8120c2d9e27d0c3a7ce73a2",
+      "sourceFilePath": "src/superclaude/commands/index-repo.md",
+      "gitBlobSHA1": "e7b1429e6f2a0d41f7d0b31a0fd69563398c043f"
+    },
+    {
+      "target": "commands/sc/load.md",
+      "comparison": "EXACT_BYTE_MATCH",
+      "installPolicy": "automatic-reviewed-upstream",
+      "upstreamRepository": "SuperClaude-Org/SuperClaude_Framework",
+      "revision": "fe68862c8ed9e2afb8120c2d9e27d0c3a7ce73a2",
+      "sourceFilePath": "src/superclaude/commands/load.md",
+      "gitBlobSHA1": "5440123e25943e542e39cd8271a2981f939ef1d5"
+    },
+    {
+      "target": "commands/sc/pm.md",
+      "comparison": "EXACT_BYTE_MATCH",
+      "installPolicy": "automatic-reviewed-upstream",
+      "upstreamRepository": "SuperClaude-Org/SuperClaude_Framework",
+      "revision": "fe68862c8ed9e2afb8120c2d9e27d0c3a7ce73a2",
+      "sourceFilePath": "src/superclaude/commands/pm.md",
+      "gitBlobSHA1": "a87783781a18999d47a9303a3454eb820b8cb37f"
+    },
+    {
+      "target": "commands/sc/README.md",
+      "comparison": "EXACT_BYTE_MATCH",
+      "installPolicy": "docs-only",
+      "upstreamRepository": "SuperClaude-Org/SuperClaude_Framework",
+      "revision": "fe68862c8ed9e2afb8120c2d9e27d0c3a7ce73a2",
+      "sourceFilePath": "src/superclaude/commands/README.md"
+    },
+    {
+      "target": "commands/sc/recommend.md",
+      "comparison": "DIFFERENT_CONTENT",
+      "installPolicy": "opt-in-upstream-variant",
+      "upstreamRepository": "SuperClaude-Org/SuperClaude_Framework",
+      "revision": "fe68862c8ed9e2afb8120c2d9e27d0c3a7ce73a2",
+      "sourceFilePath": "src/superclaude/commands/recommend.md",
+      "gitBlobSHA1": "a53c0c7f00921bfb96b9b011e52ffbaf846a1473"
+    },
+    {
+      "target": "commands/sc/reflect.md",
+      "comparison": "EXACT_BYTE_MATCH",
+      "installPolicy": "automatic-reviewed-upstream",
+      "upstreamRepository": "SuperClaude-Org/SuperClaude_Framework",
+      "revision": "fe68862c8ed9e2afb8120c2d9e27d0c3a7ce73a2",
+      "sourceFilePath": "src/superclaude/commands/reflect.md",
+      "gitBlobSHA1": "1203f4d976f73ef049e85ae445356357af5f2ca6"
+    },
+    {
+      "target": "commands/sc/research.md",
+      "comparison": "EXACT_BYTE_MATCH",
+      "installPolicy": "automatic-reviewed-upstream",
+      "upstreamRepository": "SuperClaude-Org/SuperClaude_Framework",
+      "revision": "fe68862c8ed9e2afb8120c2d9e27d0c3a7ce73a2",
+      "sourceFilePath": "src/superclaude/commands/research.md",
+      "gitBlobSHA1": "a9415c52432fdc22972e69bc79fcf496f6f00f96"
+    },
+    {
+      "target": "commands/sc/save.md",
+      "comparison": "EXACT_BYTE_MATCH",
+      "installPolicy": "automatic-reviewed-upstream",
+      "upstreamRepository": "SuperClaude-Org/SuperClaude_Framework",
+      "revision": "fe68862c8ed9e2afb8120c2d9e27d0c3a7ce73a2",
+      "sourceFilePath": "src/superclaude/commands/save.md",
+      "gitBlobSHA1": "48bad9ef5fad38a2e3c204ae5eb03788c0f4ae1b"
+    },
+    {
+      "target": "commands/sc/sc.md",
+      "comparison": "EXACT_BYTE_MATCH",
+      "installPolicy": "automatic-reviewed-upstream",
+      "upstreamRepository": "SuperClaude-Org/SuperClaude_Framework",
+      "revision": "fe68862c8ed9e2afb8120c2d9e27d0c3a7ce73a2",
+      "sourceFilePath": "src/superclaude/commands/sc.md",
+      "gitBlobSHA1": "fb7bb73e454a269497e7ee4566c20ada05b2a216"
+    },
+    {
+      "target": "commands/sc/select-tool.md",
+      "comparison": "EXACT_BYTE_MATCH",
+      "installPolicy": "automatic-reviewed-upstream",
+      "upstreamRepository": "SuperClaude-Org/SuperClaude_Framework",
+      "revision": "fe68862c8ed9e2afb8120c2d9e27d0c3a7ce73a2",
+      "sourceFilePath": "src/superclaude/commands/select-tool.md",
+      "gitBlobSHA1": "a4bc6c170f010224a4341694ef267198f2738a5c"
+    },
+    {
+      "target": "commands/sc/spawn.md",
+      "comparison": "EXACT_BYTE_MATCH",
+      "installPolicy": "automatic-reviewed-upstream",
+      "upstreamRepository": "SuperClaude-Org/SuperClaude_Framework",
+      "revision": "fe68862c8ed9e2afb8120c2d9e27d0c3a7ce73a2",
+      "sourceFilePath": "src/superclaude/commands/spawn.md",
+      "gitBlobSHA1": "0bd297d9a220f31e5c841fd87dbc29ca23815fd8"
+    },
+    {
+      "target": "commands/sc/spec-panel.md",
+      "comparison": "DIFFERENT_CONTENT",
+      "installPolicy": "opt-in-upstream-variant",
+      "upstreamRepository": "SuperClaude-Org/SuperClaude_Framework",
+      "revision": "fe68862c8ed9e2afb8120c2d9e27d0c3a7ce73a2",
+      "sourceFilePath": "src/superclaude/commands/spec-panel.md",
+      "gitBlobSHA1": "86490fbcbc9fe833c67803a101367e36eef8b2b7"
+    },
+    {
+      "target": "commands/sc/task.md",
+      "comparison": "DIFFERENT_CONTENT",
+      "installPolicy": "opt-in-upstream-variant",
+      "upstreamRepository": "SuperClaude-Org/SuperClaude_Framework",
+      "revision": "fe68862c8ed9e2afb8120c2d9e27d0c3a7ce73a2",
+      "sourceFilePath": "src/superclaude/commands/task.md",
+      "gitBlobSHA1": "2c27cb1af1a22dd18ff4ee0cfbf049e0a78823c9"
+    },
+    {
+      "target": "commands/sc/test.md",
+      "comparison": "EXACT_BYTE_MATCH",
+      "installPolicy": "automatic-reviewed-upstream",
+      "upstreamRepository": "SuperClaude-Org/SuperClaude_Framework",
+      "revision": "fe68862c8ed9e2afb8120c2d9e27d0c3a7ce73a2",
+      "sourceFilePath": "src/superclaude/commands/test.md",
+      "gitBlobSHA1": "d39f2c72ee9c9c88872236b2b27e972a3427e2df"
+    },
+    {
+      "target": "commands/sc/troubleshoot.md",
+      "comparison": "EXACT_BYTE_MATCH",
+      "installPolicy": "automatic-reviewed-upstream",
+      "upstreamRepository": "SuperClaude-Org/SuperClaude_Framework",
+      "revision": "fe68862c8ed9e2afb8120c2d9e27d0c3a7ce73a2",
+      "sourceFilePath": "src/superclaude/commands/troubleshoot.md",
+      "gitBlobSHA1": "e496fc8afaf410541f2433ade6e6c4e8e3cf1e95"
+    },
+    {
+      "target": "commands/sc/workflow.md",
+      "comparison": "DIFFERENT_CONTENT",
+      "installPolicy": "opt-in-upstream-variant",
+      "upstreamRepository": "SuperClaude-Org/SuperClaude_Framework",
+      "revision": "fe68862c8ed9e2afb8120c2d9e27d0c3a7ce73a2",
+      "sourceFilePath": "src/superclaude/commands/workflow.md",
+      "gitBlobSHA1": "7c7ee9e9c00f86d9beb303f5ca93ecb7aa2cb727"
+    },
+    {
+      "target": "skills/accessibility-audit/SKILL.md",
+      "comparison": "UNMAPPED",
+      "installPolicy": "manual-source-review"
+    },
+    {
+      "target": "skills/accessibility-diff/SKILL.md",
+      "comparison": "UNMAPPED",
+      "installPolicy": "manual-source-review"
+    },
+    {
+      "target": "skills/accessibility-fix/SKILL.md",
+      "comparison": "UNMAPPED",
+      "installPolicy": "manual-source-review"
+    },
+    {
+      "target": "skills/accessibility-inspect/SKILL.md",
+      "comparison": "UNMAPPED",
+      "installPolicy": "manual-source-review"
+    },
+    {
+      "target": "skills/accessibility-scan/SKILL.md",
+      "comparison": "UNMAPPED",
+      "installPolicy": "manual-source-review"
+    },
+    {
+      "target": "skills/animate/SKILL.md",
+      "comparison": "UNMAPPED",
+      "installPolicy": "manual-source-review"
+    },
+    {
+      "target": "skills/animation-vocabulary/SKILL.md",
+      "comparison": "UNMAPPED",
+      "installPolicy": "manual-source-review"
+    },
+    {
+      "target": "skills/apple-design/SKILL.md",
+      "comparison": "UNMAPPED",
+      "installPolicy": "manual-source-review"
+    },
+    {
+      "target": "skills/bencium-innovative-ux-designer/SKILL.md",
+      "comparison": "TEXT_MATCH_LINE_ENDINGS_ONLY",
+      "installPolicy": "manual-source-review",
+      "upstreamRepository": "bencium/bencium-marketplace",
+      "revision": "5de46a39b4640fa419560cd0b67e4c4b50dac802",
+      "sourceFilePath": "bencium-innovative-ux-designer/skills/bencium-innovative-ux-designer/SKILL.md"
+    },
+    {
+      "target": "skills/ci-cd-and-automation/SKILL.md",
+      "comparison": "UNMAPPED",
+      "installPolicy": "manual-source-review"
+    },
+    {
+      "target": "skills/design/SKILL.md",
+      "comparison": "TEXT_MATCH_LINE_ENDINGS_ONLY",
+      "installPolicy": "manual-source-review",
+      "upstreamRepository": "nextlevelbuilder/ui-ux-pro-max-skill",
+      "revision": "50d8a7de0900119855614541f15a1a616691eb33",
+      "sourceFilePath": ".claude/skills/design/SKILL.md"
+    },
+    {
+      "target": "skills/design-system/SKILL.md",
+      "comparison": "TEXT_MATCH_LINE_ENDINGS_ONLY",
+      "installPolicy": "manual-source-review",
+      "upstreamRepository": "nextlevelbuilder/ui-ux-pro-max-skill",
+      "revision": "50d8a7de0900119855614541f15a1a616691eb33",
+      "sourceFilePath": ".claude/skills/design-system/SKILL.md"
+    },
+    {
+      "target": "skills/emil-design-eng/SKILL.md",
+      "comparison": "UNMAPPED",
+      "installPolicy": "manual-source-review"
+    },
+    {
+      "target": "skills/find-animation-opportunities/SKILL.md",
+      "comparison": "UNMAPPED",
+      "installPolicy": "manual-source-review"
+    },
+    {
+      "target": "skills/find-skills/SKILL.md",
+      "comparison": "EXACT_BYTE_MATCH",
+      "installPolicy": "manual-source-review",
+      "upstreamRepository": "vercel-labs/skills",
+      "revision": "13e4063a1cf913f5606d57d42ab83a86f5001e04",
+      "sourceFilePath": "skills/find-skills/SKILL.md"
+    },
+    {
+      "target": "skills/impeccable/SKILL.md",
+      "comparison": "DIFFERENT_CONTENT",
+      "installPolicy": "manual-source-review",
+      "upstreamRepository": "pbakaus/impeccable",
+      "revision": "d631a8827f99414d2b6daba4ef08b7f8701751d7",
+      "sourceFilePath": ".claude/skills/impeccable/SKILL.md"
+    },
+    {
+      "target": "skills/improve-animations/SKILL.md",
+      "comparison": "UNMAPPED",
+      "installPolicy": "manual-source-review"
+    },
+    {
+      "target": "skills/owasp-security/SKILL.md",
+      "comparison": "UNMAPPED",
+      "installPolicy": "manual-source-review"
+    },
+    {
+      "target": "skills/pick-ui-library/SKILL.md",
+      "comparison": "UNMAPPED",
+      "installPolicy": "manual-source-review"
+    },
+    {
+      "target": "skills/playwright-best-practices/SKILL.md",
+      "comparison": "UNMAPPED",
+      "installPolicy": "manual-source-review"
+    },
+    {
+      "target": "skills/prototype/SKILL.md",
+      "comparison": "UNMAPPED",
+      "installPolicy": "manual-source-review"
+    },
+    {
+      "target": "skills/review-animations/SKILL.md",
+      "comparison": "UNMAPPED",
+      "installPolicy": "manual-source-review"
+    },
+    {
+      "target": "skills/supabase/SKILL.md",
+      "comparison": "DIFFERENT_CONTENT",
+      "installPolicy": "manual-source-review",
+      "upstreamRepository": "supabase/agent-skills",
+      "revision": "c9be0e931b7930f7d02126d04774d904c381e7d7",
+      "sourceFilePath": "skills/supabase/SKILL.md"
+    },
+    {
+      "target": "skills/supabase-postgres-best-practices/SKILL.md",
+      "comparison": "TEXT_MATCH_LINE_ENDINGS_ONLY",
+      "installPolicy": "manual-source-review",
+      "upstreamRepository": "supabase/agent-skills",
+      "revision": "c9be0e931b7930f7d02126d04774d904c381e7d7",
+      "sourceFilePath": "skills/supabase-postgres-best-practices/SKILL.md"
+    },
+    {
+      "target": "skills/ui-styling/SKILL.md",
+      "comparison": "TEXT_MATCH_LINE_ENDINGS_ONLY",
+      "installPolicy": "manual-source-review",
+      "upstreamRepository": "nextlevelbuilder/ui-ux-pro-max-skill",
+      "revision": "50d8a7de0900119855614541f15a1a616691eb33",
+      "sourceFilePath": ".claude/skills/ui-styling/SKILL.md"
+    },
+    {
+      "target": "skills/ui-ux-pro-max/SKILL.md",
+      "comparison": "TEXT_MATCH_LINE_ENDINGS_ONLY",
+      "installPolicy": "manual-source-review",
+      "upstreamRepository": "nextlevelbuilder/ui-ux-pro-max-skill",
+      "revision": "50d8a7de0900119855614541f15a1a616691eb33",
+      "sourceFilePath": ".claude/skills/ui-ux-pro-max/SKILL.md"
+    },
+    {
+      "target": "skills/vercel-composition-patterns/SKILL.md",
+      "comparison": "UNMAPPED",
+      "installPolicy": "manual-source-review"
+    },
+    {
+      "target": "skills/vercel-react-best-practices/SKILL.md",
+      "comparison": "UNMAPPED",
+      "installPolicy": "manual-source-review"
+    },
+    {
+      "target": "skills/web-design-guidelines/SKILL.md",
+      "comparison": "EXACT_BYTE_MATCH",
+      "installPolicy": "manual-source-review",
+      "upstreamRepository": "vercel-labs/agent-skills",
+      "revision": "063bee94c3f4df8453406c830b0a7df0f2860278",
+      "sourceFilePath": "skills/web-design-guidelines/SKILL.md"
+    }
+  ]
+}

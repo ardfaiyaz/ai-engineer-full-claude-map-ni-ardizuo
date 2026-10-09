@@ -157,11 +157,17 @@ def main():
     ap.add_argument('--vault-path',type=Path,help='Alternative vault destination')
     ap.add_argument('--dashboard',action='store_true',help='Opt-in to npm install -g claude-map; dashboard patch is separate')
     ap.add_argument('--superclaude',action='store_true',help='Allow upstream SuperClaude pipx install and install command')
+    ap.add_argument('--pinned-superclaude',action='store_true',help='Install commit-pinned, hash-verified SuperClaude files (optional network with --apply)')
+    ap.add_argument('--upstream-variants',action='store_true',help='Opt in to 11 upstream commands different from author references')
     ap.add_argument('--plugins',action='store_true',help='Allow third-party plugin install commands')
     ap.add_argument('--mcps',action='store_true',help='Allow supported third-party MCP registration commands')
     ap.add_argument('--config-dir',type=Path,help='Use isolated Claude config for local files (test first)')
     args=ap.parse_args()
     mf=json.loads(MANIFEST.read_text(encoding='utf8'))
+    if args.superclaude and args.pinned_superclaude:
+        raise ValueError('Choose --superclaude (upstream CLI) OR --pinned-superclaude (static pinned definitions), not both.')
+    if args.upstream_variants and not args.pinned_superclaude:
+        raise ValueError('--upstream-variants requires --pinned-superclaude.')
     if args.config_dir and args.vault and not args.vault_path and args.apply:
         raise ValueError('Isolated --config-dir with --vault requires an explicit --vault-path. No real default vault changed.')
     if args.config_dir and args.external and args.apply:
@@ -185,6 +191,14 @@ def main():
     external_enabled=args.external
     if any([args.plugins,args.mcps,args.dashboard,args.superclaude]) and not external_enabled:
         print('\nNote: --external is required before any provider installation.')
+    if args.pinned_superclaude:
+        print('\nPINNED SUPERCLAUDE SOURCE DEFINITIONS (SAFE, NON-OVERWRITING)')
+        command=[sys.executable,str(ROOT/'scripts/install-pinned-superclaude.py'),'--config-dir',str(config)]
+        if args.upstream_variants:command.append('--upstream-variants')
+        if args.apply:command.append('--apply')
+        actions['pinned-superclaude']=run_external(command,'pinned 20 agents + 19 matching commands (11 variants opt-in)',False)
+        if actions['pinned-superclaude']!='cli-success':
+            raise RuntimeError('Pinned SuperClaude installation failed; review output and retry in a fresh test config.')
     if args.superclaude:
         print('\nSUPERCLAUDE — upstream installer (20 agent definitions and sc commands)')
         if not external_enabled: print('  SKIPPED; external installs not authorized')

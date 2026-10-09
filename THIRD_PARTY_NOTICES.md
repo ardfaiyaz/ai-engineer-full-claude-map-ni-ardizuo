@@ -20,3 +20,7 @@ This repository includes original Ardizuo files and references tools maintained 
 Only reviewed original local skills, agent, hooks and rules are included as sources. Third-party packages are installed using their own official installers, with each provider's licenses and terms. Ardizuo-owned source is offered under the project MIT license. Preserve every upstream license and notice in any derived work.
 
 [Security guidance](./SECURITY.md) · [Release checklist](./docs/release-checklist.md)
+
+## Pinned SuperClaude source definitions
+
+The optional `scripts/install-pinned-superclaude.py` fetches public source files from [SuperClaude Framework](https://github.com/SuperClaude-Org/SuperClaude_Framework), commit `fe68862c8ed9e2afb8120c2d9e27d0c3a7ce73a2`. Copyright **SuperClaude Framework Contributors**. **MIT License**: [upstream license text](https://github.com/SuperClaude-Org/SuperClaude_Framework/blob/fe68862c8ed9e2afb8120c2d9e27d0c3a7ce73a2/LICENSE). Installations must retain any upstream attribution and license obligations. Ardizuo publishes **a manifest and installer**, not copies of these third-party source files.
