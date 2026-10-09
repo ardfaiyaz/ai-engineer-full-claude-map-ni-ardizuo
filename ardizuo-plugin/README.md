@@ -1,4 +1,4 @@
-# <img src="assets/lucide/package.svg" width="18" height="18" alt="" /> Ardizuo development assets (Phase 1)
+# 📦 Ardizuo development assets (Phase 1)
 
 This folder contains **reviewed, portable, development-only local assets**:
 

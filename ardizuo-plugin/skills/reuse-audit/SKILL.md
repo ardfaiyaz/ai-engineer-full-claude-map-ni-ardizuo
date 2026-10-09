@@ -4,7 +4,7 @@ description: Audit modified software code for duplicated logic, unnecessary abst
 disable-model-invocation: true
 ---
 
-# <img src="../../assets/lucide/list-checks.svg" width="18" height="18" alt="" /> Reuse Audit
+# ☑️ Reuse Audit
 
 Inspect the relevant repository before recommending changes.
 

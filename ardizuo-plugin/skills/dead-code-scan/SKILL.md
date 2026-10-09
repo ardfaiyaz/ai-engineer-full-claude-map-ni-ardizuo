@@ -4,7 +4,7 @@ description: Investigate potentially unused code, imports, dependencies and unre
 disable-model-invocation: true
 ---
 
-# <img src="../../assets/lucide/file-text.svg" width="18" height="18" alt="" /> Dead Code Scan
+# 📄 Dead Code Scan
 
 Use the existing dead-code-check hook as an advisory signal.
 

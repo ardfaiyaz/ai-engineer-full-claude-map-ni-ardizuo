@@ -43,13 +43,6 @@ def local_plan(config, include_rule=True):
         if not source.is_file():raise FileNotFoundError(f'Missing packaged source: {entry}')
         state='new' if not dest.exists() else ('identical' if dest.is_file() and hash_file(source)==hash_file(dest) else 'CONFLICT')
         plans.append((str(rel),source,dest,state))
-    # Lucide assets are installed alongside prompt Markdown so icons resolve locally,
-    # including when copied outside this GitHub checkout into ~/.claude.
-    for source in sorted((ROOT/'ardizuo-plugin/assets/lucide').glob('*.svg')):
-        rel=Path('assets/lucide')/source.name
-        dest=config/rel
-        state='new' if not dest.exists() else ('identical' if dest.is_file() and hash_file(source)==hash_file(dest) else 'CONFLICT')
-        plans.append((rel.as_posix(),source,dest,state))
     source=ROOT/'global-config/CLAUDE.md'
     dest=config/'CLAUDE.md'
     state='new' if not dest.exists() else ('identical' if dest.is_file() and hash_file(source)==hash_file(dest) else 'CONFLICT')
@@ -137,13 +130,6 @@ def known_marketplaces(manifest, apply):
 def install_templates(source_folder, vault, apply):
     """Never overwrite personal Obsidian templates; all-or-nothing on conflicts."""
     templates = sorted(source_folder.glob('*.md'))
-    # Template headings reference local Lucide SVGs. Validate before any writes.
-    icons = sorted((source_folder.parent/'.ardizuo-icons').glob('*.svg'))
-    if len(icons) < 20: raise RuntimeError('Missing Lucide icons for vault templates')
-    for icon in icons:
-        target=vault/'.ardizuo-icons'/icon.name
-        if target.exists() and (not target.is_file() or hash_file(target)!=hash_file(icon)):
-            raise RuntimeError('Conflicting vault icon; will not overwrite: '+icon.name)
     if not templates: raise RuntimeError('No shipped vault templates found')
     dest = vault/'Templates'
     for src in templates:
@@ -163,15 +149,7 @@ def install_templates(source_folder, vault, apply):
         except FileExistsError:
             raise RuntimeError('Vault template appeared during installation; inspect '+src.name)
         copied += 1
-    icons_installed=0
-    (vault/'.ardizuo-icons').mkdir(parents=True,exist_ok=True)
-    for icon in icons:
-        target=vault/'.ardizuo-icons'/icon.name
-        if target.exists(): continue
-        with target.open('xb') as output: output.write(icon.read_bytes())
-        icons_installed+=1
     print('  Vault templates: installed',copied,'new; identical:',len(templates)-copied,'; no overwrites.')
-    print('  Lucide icons: installed',icons_installed,'new; no overwrites.')
 
 
 def main():
@@ -207,7 +185,7 @@ def main():
     print('\nAI ENGINEER FULL CLAUDE MAP NI ARDIZUO — ASSISTED SETUP\n')
     print('Claude global config:',config)
     print('Mode:', 'APPLY' if args.apply else 'DRY RUN')
-    print('Local definitions: 28 reviewed files + base rule + portable CLAUDE.md + Lucide presentation assets')
+    print('Local definitions: 28 reviewed files + base rule + portable CLAUDE.md; Markdown headings use native emoji')
     print('Third-party clients need internet and may require provider sign-in.')
     # Fail on a conflicting personal vault template BEFORE modifying local Claude files.
     # Dry-run previews the same conflict checks, but never creates folders or notes.

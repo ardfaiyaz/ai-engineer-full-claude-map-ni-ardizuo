@@ -4,7 +4,7 @@ description: Coordinate small independent software development tasks using exist
 disable-model-invocation: true
 ---
 
-# <img src="../../assets/lucide/file-text.svg" width="18" height="18" alt="" /> Team Driven Development
+# 📄 Team Driven Development
 
 This is an original local development-focused adapter, not an official third-party skill.
 

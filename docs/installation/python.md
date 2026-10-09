@@ -1,10 +1,10 @@
-# <img src="../assets/lucide/file-text.svg" width="18" height="18" alt="" /> Python
+# 📄 Python
 
 **Why you might need it:** Supports selected tooling, tests and Python development. Not required to use every Claude Code feature.
 
 <br />
 
-## <img src="../assets/lucide/folder-open.svg" width="18" height="18" alt="" /> 1. Get it from the official source
+## 📁 1. Get it from the official source
 
 [Python — official installation page](https://www.python.org/downloads/windows/)
 
@@ -21,7 +21,7 @@ If you're inside the public Ardizuo repository, don't create project files you i
 
 <br />
 
-## <img src="../assets/lucide/list-checks.svg" width="18" height="18" alt="" /> 2. Verify
+## ☑️ 2. Verify
 
 ```powershell
 python --version
@@ -30,7 +30,7 @@ py --version
 
 <br />
 
-## <img src="../assets/lucide/file-text.svg" width="18" height="18" alt="" /> 3. If something goes wrong
+## 📄 3. If something goes wrong
 
 If `python` opens the Microsoft Store, check Windows App Execution Aliases or use `py`. If the selected Python has no `pip`, follow the [official pip instructions](https://packaging.python.org/en/latest/tutorials/installing-packages/).
 

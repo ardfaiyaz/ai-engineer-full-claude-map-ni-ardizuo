@@ -37,7 +37,7 @@ class FullSetupTests(unittest.TestCase):
             self.assertEqual(c.returncode,0,c.stderr)
             self.assertIn('identical',c.stdout)
             self.assertTrue((cfg/'CLAUDE.md').is_file())
-            self.assertTrue((cfg/'assets/lucide/workflow.svg').is_file())
+            self.assertFalse((cfg/'assets/lucide').exists(), 'Emoji headings need no SVG asset installation')
             (cfg/'agents/diagram-architect.md').write_text('user customization')
             d=subprocess.run(entry+['--apply'],capture_output=True,text=True)
             self.assertNotEqual(d.returncode,0)

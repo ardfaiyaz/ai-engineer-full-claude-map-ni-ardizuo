@@ -34,8 +34,8 @@ def audit():
         raise ValueError('Release coverage does not exactly partition the reference inventory')
     if (len(m['providerLayers']['plugins']),len(m['providerLayers']['targetMCPs']))!=(12,9):
         raise ValueError('Provider manifest count drift')
-    required=[ROOT/'global-config/CLAUDE.md',ROOT/'docs/installation/reproducibility-matrix.md',ROOT/'docs/assets/lucide/workflow.svg',ROOT/'ardizuo-plugin/assets/lucide/workflow.svg']
-    if any(not f.is_file() for f in required):raise ValueError('Missing portable context or icon assets')
+    required=[ROOT/'global-config/CLAUDE.md',ROOT/'docs/installation/reproducibility-matrix.md',ROOT/'docs/installation/full-setup.md']
+    if any(not f.is_file() for f in required):raise ValueError('Missing portable context or release documentation')
     return {'agentNames':{'default':len(local_agents|agent_auto),'target':len(ref['agents'])},
             'directSkillNames':{'default':len(local_skills|skill_auto),'withUpstreamVariants':len(local_skills|skill_auto|set(skill_opt)),'target':len(ref['globalSkills']),'externalUnverified':len(manual),'unknownSource':len(unknown)},
             'executableCommandNames':{'default':len(local_commands|command_auto),'withUpstreamVariants':len(local_commands|command_auto|set(cmd_opt)),'target':len(ref['commands'])-1},

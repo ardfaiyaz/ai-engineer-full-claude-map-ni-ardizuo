@@ -1,4 +1,4 @@
-# <img src="../../docs/assets/lucide/plug.svg" width="18" height="18" alt="" /> GitHub MCP MCP
+# 🔌 GitHub MCP MCP
 
 **Purpose:** Repository, pull-request and issue workflows. **Transport on reference machine:** `stdio`.
 
@@ -6,7 +6,7 @@
 
 <br />
 
-## <img src="../../docs/assets/lucide/download.svg" width="18" height="18" alt="" /> 1. Requirements
+## 📥 1. Requirements
 
 [GitHub MCP — official source](https://github.com/github/github-mcp-server) · [GitHub CLI](../../docs/installation/github-cli.md) · [Docker](../../docs/installation/docker.md)
 
@@ -14,7 +14,7 @@ GitHub CLI OAuth and (for some setups) Docker are used.
 
 <br />
 
-## <img src="../../docs/assets/lucide/plug.svg" width="18" height="18" alt="" /> 2. Register the server (after review)
+## 🔌 2. Register the server (after review)
 
 **Recommended setup:** official Docker OAuth launcher, per [GitHub MCP for Claude Code](https://github.com/github/github-mcp-server/blob/main/docs/installation-guides/install-claude.md). Install and start Docker Desktop first. Port 8085 on the loopback interface must be free.
 
@@ -29,7 +29,7 @@ The server prompts for GitHub browser OAuth when used. No PAT or raw bearer auth
 
 <br />
 
-## <img src="../../docs/assets/lucide/list-checks.svg" width="18" height="18" alt="" /> 3. Authenticate and verify
+## ☑️ 3. Authenticate and verify
 
 ```powershell
 claude mcp list
@@ -39,7 +39,7 @@ Open Claude Code and use `/mcp` to complete provider sign-in and inspect status.
 
 <br />
 
-## <img src="../../docs/assets/lucide/wrench.svg" width="18" height="18" alt="" /> 4. Troubleshoot and remove
+## 🛠️ 4. Troubleshoot and remove
 
 If startup fails, confirm the runtime, endpoint or launcher command, connectivity and permissions using the official source above. Don't paste tokens, full auth headers, raw `.claude.json`, or secret-containing MCP logs into a public issue.
 
@@ -51,7 +51,7 @@ If you no longer need this server, review the configuration first and use `claud
 
 <br />
 
-## <img src="../../docs/assets/lucide/download.svg" width="18" height="18" alt="" /> Ardizuo one-package setup
+## 📥 Ardizuo one-package setup
 
 **Installer:** Supported public registration command (Docker OAuth); interactive GitHub login and runtime verification remain required.
 
@@ -64,7 +64,7 @@ Never paste real keys into your issue, commit, README, or chat. Run `claude mcp 
 
 ---
 
-## <img src="../../docs/assets/lucide/download.svg" width="18" height="18" alt="" /> Current all-layer installer behavior
+## 📥 Current all-layer installer behavior
 
 - **Manifest name:** `github`
 - **Transport:** `stdio`

@@ -3,12 +3,12 @@ kind: learning
 status: draft
 ---
 
-# <img src="../.ardizuo-icons/notebook-pen.svg" width="18" height="18" alt="" /> Learning
+# 📝 Learning
 
-## <img src="../.ardizuo-icons/file-text.svg" width="18" height="18" alt="" /> Context
+## 📄 Context
 
-## <img src="../.ardizuo-icons/file-text.svg" width="18" height="18" alt="" /> What we learned
+## 📄 What we learned
 
-## <img src="../.ardizuo-icons/file-text.svg" width="18" height="18" alt="" /> Evidence
+## 📄 Evidence
 
-## <img src="../.ardizuo-icons/circle-help.svg" width="18" height="18" alt="" /> When to use it again
+## ❓ When to use it again

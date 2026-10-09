@@ -4,7 +4,7 @@ description: Assess React, Next.js and web app bundle splitting with measurable 
 disable-model-invocation: true
 ---
 
-# <img src="../../assets/lucide/file-text.svg" width="18" height="18" alt="" /> Code Splitting
+# 📄 Code Splitting
 
 This is an original local development-focused adapter, not an official third-party skill.
 

@@ -4,7 +4,7 @@ description: Prepare verified software development lessons, architectural decisi
 disable-model-invocation: true
 ---
 
-# <img src="../../assets/lucide/notebook-pen.svg" width="18" height="18" alt="" /> Vault Learning
+# 📝 Vault Learning
 
 Vault location:
 `${CLAUDE_DEV_VAULT}` when set; otherwise `$HOME/Documents/Claude-Dev-Vault`. Resolve the path at runtime.

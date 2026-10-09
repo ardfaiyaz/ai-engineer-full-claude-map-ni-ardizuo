@@ -4,7 +4,7 @@ description: Diagnose and fix application build failures with minimal changes.
 disable-model-invocation: true
 ---
 
-# <img src="../../assets/lucide/wrench.svg" width="18" height="18" alt="" /> Fix Build
+# 🛠️ Fix Build
 
 This is an original local development-focused adapter, not an official third-party skill.
 

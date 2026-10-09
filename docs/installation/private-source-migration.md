@@ -1,12 +1,12 @@
-# <img src="../assets/lucide/bot.svg" width="18" height="18" alt="" /> Privately reviewing missing global agents, skills and commands
+# 🤖 Privately reviewing missing global agents, skills and commands
 
-<img src="../assets/icons/shield.svg" width="18" height="18" alt="" /> **Owner review required before redistribution.**
+🛡️ **Owner review required before redistribution.**
 
 The main installer includes 28 reviewed development assets and obtains other items from their upstream publishers. The author's reference machine has additional agent, skill and command files, but a **filename is not evidence of authorship or an open-source license**. This is a controlled process for inspecting direct-scope definitions without exporting private session data or copying plugin caches.
 
 <br />
 
-## <img src="../assets/lucide/folder-open.svg" width="18" height="18" alt="" /> 1. Prepare a private, outside-the-repo folder
+## 📁 1. Prepare a private, outside-the-repo folder
 
 ```powershell
 cd "$HOME\Documents\ai-engineer-full-claude-map-ni-ardizuo"
@@ -19,7 +19,7 @@ The script looks at the names-only inventory of **21 agents, 62 skills and 32 co
 
 <br />
 
-## <img src="../assets/lucide/file-text.svg" width="18" height="18" alt="" /> 2. Export candidates locally, with explicit approval
+## 📄 2. Export candidates locally, with explicit approval
 
 ```powershell
 python .\scripts\prepare-private-review.py --apply
@@ -29,7 +29,7 @@ Default destination: `$HOME\Documents\Ardizuo-Additional-Assets-PRIVATE`. The sc
 
 <br />
 
-## <img src="../assets/lucide/shield-check.svg" width="18" height="18" alt="" /> 3. Review content, origin and licenses
+## 🛡️ 3. Review content, origin and licenses
 
 For every file, check:
 
@@ -43,7 +43,9 @@ Use a text editor to review each file. An automated pattern scan is an **aid**, 
 
 <br />
 
-## <img src="../assets/lucide/folder-open.svg" width="18" height="18" alt="" /> 4. Integrate only approved sources
+## 📁 4. Integrate only approved sources
+
+For the currently unresolved **17 other direct skills**, you can first run the [read-only origin and supporting-file review](./exact-local-origin-review.md). It checks six pinned public source candidates against your private files locally, counts support files for all 62 skill definitions, and does not publish source content or change configuration.
 
 Only original or redistribution-approved assets should be added to `ardizuo-plugin/` and to an explicit, tested source manifest. Third-party packages should normally be installed from the publisher's marketplace, not vendored into this repository. Update [exact coverage](../components/exact-coverage.md), the license notice, the installation scripts and regression tests together.
 
@@ -51,7 +53,7 @@ Never commit credential-bearing configuration, any `*.local.json` inventory with
 
 <br />
 
-## <img src="../assets/lucide/plug.svg" width="18" height="18" alt="" /> 5. Check live integration separately
+## 🔌 5. Check live integration separately
 
 ```powershell
 python .\scripts\coverage-doctor.py

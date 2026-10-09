@@ -2,7 +2,7 @@
   <img src="./banner.png" width="100%" alt="AI Engineer Full Claude Map ni Ardizuo banner" />
 </p>
 
-<h1 align="center"><img src="./docs/assets/lucide/layers.svg" width="24" height="24" alt="" /> AI Engineer Full Claude Map ni Ardizuo</h1>
+<h1 align="center">🗂️ AI Engineer Full Claude Map ni Ardizuo</h1>
 
 <p align="center"><strong>One repository. One guided installer. A guided Claude Code development stack.</strong></p>
 
@@ -20,15 +20,15 @@
 
 <br />
 
-## <img src="./docs/assets/icons/terminal.svg" width="19" height="19" alt="" /> Installation
+## 💻 Installation
 
 Start here whether you are new to Claude Code or have an existing global setup.
 
-### <img src="docs/assets/lucide/download.svg" width="18" height="18" alt="" /> 1. Check requirements
+### 📥 1. Check requirements
 
 Follow the [Windows requirements guide](./docs/prerequisites.md). Install **Git**, **Python**, **Node.js/npm**, and **Claude Code**. Optional integrations use **uvx**, **GitHub CLI**, **Docker**, and **Obsidian**. The installer does not silently add system packages or modify system policy, and the dashboard overlay is explicitly guided to protect an existing customized Claude Map.
 
-### <img src="docs/assets/lucide/download.svg" width="18" height="18" alt="" /> 2. Download and inspect
+### 📥 2. Download and inspect
 
 ```powershell
 git clone https://github.com/ardfaiyaz/ai-engineer-full-claude-map-ni-ardizuo.git
@@ -39,7 +39,7 @@ cd ai-engineer-full-claude-map-ni-ardizuo
 python .\scripts\verify-all.py
 ```
 
-### <img src="docs/assets/lucide/download.svg" width="18" height="18" alt="" /> 3. Preview the complete setup
+### 📥 3. Preview the complete setup
 
 ```powershell
 # Local files, upstream SuperClaude, 12 plugins, 9 MCP registrations,
@@ -47,7 +47,7 @@ python .\scripts\verify-all.py
 .\scripts\install-all.ps1 -All
 ```
 
-### <img src="docs/assets/lucide/download.svg" width="18" height="18" alt="" /> 4. Install after review
+### 📥 4. Install after review
 
 ```powershell
 # Explicit approval: can download packages, register MCPs and edit settings.
@@ -60,7 +60,7 @@ python .\scripts\verify-all.py
 
 <br />
 
-### <img src="docs/assets/lucide/list-checks.svg" width="18" height="18" alt="" /> Measure exact Development Hub coverage
+### ☑️ Measure exact Development Hub coverage
 
 ```powershell
 # Detailed offline report for EVERY reference agent, skill, command, plugin and MCP.
@@ -78,12 +78,12 @@ The reference list contains **21 agents, 62 direct global skills, 31 executable 
 
 <br />
 
-### <img src="docs/assets/lucide/download.svg" width="18" height="18" alt="" /> Other ways to install
+### 📥 Other ways to install
 
 | Route | When to choose it | Start |
 | :--- | :--- | :--- |
 | **AI-assisted** | You want another AI to guide each step and ask before changes | [INSTALL_WITH_AI.md](./INSTALL_WITH_AI.md) |
-| **Local only** | You want the 28 original development assets plus base rule, portable context and local icons | [Development pack](./docs/installation/ardizuo-development-pack.md) |
+| **Local only** | You want the 28 original development assets plus base rule, portable context and emoji headings | [Development pack](./docs/installation/ardizuo-development-pack.md) |
 | **Core** | You want one minimal global workflow rule | `scripts/install.ps1 -Profile core` |
 | **Manual integration** | You want to pick third-party plugins and MCPs | [Components](./docs/components/README.md) |
 | **Private migration** | You want exact other agent/skill/command files from your own machine reviewed before release | [Asset ownership and migration](./docs/installation/private-source-migration.md) |
@@ -94,7 +94,7 @@ The reference list contains **21 agents, 62 direct global skills, 31 executable 
 
 <br />
 
-## <img src="./docs/assets/icons/workflow.svg" width="19" height="19" alt="" /> How the setup works
+## 🔄 How the setup works
 
 ```text
 Triage  ───→ Contract ───→ Dispatch ───→ Review ───→ Ship
@@ -112,7 +112,7 @@ Native Claude Code features stay native; the installer adds original skills, ups
 
 <br />
 
-## <img src="./docs/assets/icons/package.svg" width="19" height="19" alt="" /> What's in the package?
+## 📦 What's in the package?
 
 | Layer | Coverage | How it is delivered |
 | :--- | :--- | :--- |
@@ -123,7 +123,7 @@ Native Claude Code features stay native; the installer adds original skills, ups
 | SuperClaude commands | ~30 command files | **19 default SuperClaude commands + 11 optional publisher variants; 1 bundled Ardizuo command** |
 | Hook layer | 5 event scripts + shared library | **Included source, opt-in activation** |
 | MCP layer | 9 reference servers | **Nine documented MCPs; seven supported registration flows and two guided/manual credential flows** |
-| Memory | Obsidian vault folder structure, session templates | **Optional 8 folders and 4 templates plus local Lucide icon assets; approved notes only** |
+| Memory | Obsidian vault folder structure, session templates | **Optional 8 folders and 4 templates with emoji headings; approved notes only** |
 | Dashboard | AI / Software Engineer Claude Setup | **Local Claude Map + version-sensitive overlay** |
 
 **Reference inventory:** 21 global agents · 62 global skill files · 32 global commands · 12 enabled plugins · 9 user MCPs. These are the source computer's names-only observations, **not** a promise of live availability on a fresh device.
@@ -136,7 +136,7 @@ Native Claude Code features stay native; the installer adds original skills, ups
 
 <br />
 
-## <img src="./docs/assets/icons/book.svg" width="19" height="19" alt="" /> Guides without the overload
+## 📖 Guides without the overload
 
 | Need help with… | Open this |
 | :--- | :--- |
@@ -151,10 +151,31 @@ Native Claude Code features stay native; the installer adds original skills, ups
 | Testing before publishing | [Release checklist](./docs/release-checklist.md) |
 | Exact inventory and missing capabilities | [Coverage doctor](./docs/components/exact-coverage.md) |
 | Privately reviewing missing original files | [Private migration instructions](./docs/installation/private-source-migration.md) |
+| Verifying exact original skill sources and support files | [Read-only source and sidecar checker](./docs/installation/exact-local-origin-review.md) |
 
 <br />
 
-## <img src="./docs/assets/icons/shield.svg" width="19" height="19" alt="" /> Security and licensing
+## 🧹 Documentation cleanup and maintenance
+
+The documentation uses **emoji headings**. Skills, commands, rules, and Obsidian templates
+need no additional presentation SVGs after installation. Keep the permanent install guides,
+source definitions, and license/security notices; retire dated sprint and hotfix handoff notes.
+
+From the repository root, use:
+
+```powershell
+python .\scripts\cleanup-markdown.py          # preview only
+python .\scripts\cleanup-markdown.py --apply  # update docs; remove only known obsolete files
+python .\scripts\cleanup-markdown.py --check  # verify complete
+python -m unittest discover -s tests -v
+```
+
+The cleanup **never modifies your live Claude installation**, third-party plugin caches,
+API credentials, or existing Obsidian notes. It preserves Markdown frontmatter, fenced code
+examples, source definitions and the project banner. Check `git diff --stat` and
+`git diff --check` before committing the result.
+
+## 🛡️ Security and licensing
 
 - Installation never copies existing account tokens, `.claude.json`, provider credentials, private projects, transcripts or vault notes into this repository.
 - Original files do **not** overwrite different existing files; review conflicts in an isolated `CLAUDE_CONFIG_DIR` first.
@@ -172,21 +193,21 @@ Native Claude Code features stay native; the installer adds original skills, ups
 <p align="center"><sub>Created by Ardizuo · Developer setup distribution · Designed to be inspected and extended</sub></p>
 
 
-### <img src="docs/assets/lucide/blocks.svg" width="18" height="18" alt="" /> Sprint 3 pinned skills
+### 🧩 Sprint 3 pinned skills
 
 The new [publisher-pinned skill installer](docs/installation/pinned-skills.md) verifies public source checksums and installs 8 compared SKILL.md files without overwriting personal definitions. Two publisher variants are opt-in and 19 unresolved skills are explicitly excluded pending author-side comparison. Use `scripts/verify-remaining-skill-sources.py` to compare the next 15 public source candidates privately. The complete five-stage Claude Map rehearsal and Sprint 2 SuperClaude sourcing remain included.
 
 
-### <img src="docs/assets/lucide/blocks.svg" width="18" height="18" alt="" /> Sprint 4: extended source-matched skills
+### 🧩 Sprint 4: extended source-matched skills
 
 The pinned-source setup now supports **20 default third-party SKILL.md prompts**, with five optional upstream variants and four unresolved names. Use [`docs/installation/pinned-skills.md`](docs/installation/pinned-skills.md) for a disposable Windows installation test. A sourced prompt is not necessarily an operational skill without its publisher sidecar files.
 
 
-## <img src="docs/assets/lucide/list-checks.svg" width="18" height="18" alt="" /> What the public installer really reproduces
+## ☑️ What the public installer really reproduces
 
 The reference machine has **21 agent files, 62 direct skill definitions, 31 executable command files plus one `README.md`, 12 enabled plugins and nine target user MCP servers**. The public installer does **not yet** exactly reproduce all of those on a fresh account. See the [release coverage matrix](docs/installation/reproducibility-matrix.md) for default, optional, provider-authenticated, and blocked items. Never publish personal provider configuration or private vault content.
 
 
-## <img src="docs/assets/lucide/shield-check.svg" width="18" height="18" alt="" /> Verified files are not identical to a personal machine in every case
+## 🛡️ Verified files are not identical to a personal machine in every case
 
 The source lock never republishes private local modifications, credentials, cached plugins or licensed third-party files. The public **default** package can reproduce all 21 named agent definitions, 36 of 62 direct skill definitions, and 20 of 31 executable commands; selected upstream versions raise those to 41 and 31 respectively, **but some differ from the original device**. See the [complete by-name reproducibility matrix](./docs/installation/reproducibility-matrix.md) and the [installed-layers audit](./docs/installation/installed-layer-audit.md) for honest verification.

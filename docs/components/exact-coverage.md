@@ -1,12 +1,12 @@
-# <img src="../assets/lucide/list-checks.svg" width="18" height="18" alt="" /> Exact Development Hub coverage — the auditable definition of complete
+# ☑️ Exact Development Hub coverage — the auditable definition of complete
 
-<img src="../assets/icons/network.svg" width="18" height="18" alt="" /> **Name-for-name verification, with explicit evidence tiers.**
+🌐 **Name-for-name verification, with explicit evidence tiers.**
 
 This page explains what a complete reproduction actually means, how the offline checker works, and what remains outside a package author's control. The reference numbers come from the author's exported **names-only** inventory. No credential values, plugin cache source code or private vault notes are included in this repository.
 
 <br />
 
-## <img src="../assets/lucide/folder-open.svg" width="18" height="18" alt="" /> Run the inventory from your cloned project
+## 📁 Run the inventory from your cloned project
 
 ```powershell
 # Shows all 21 agents, 62 global skills, 32 commands, 12 plugins and 9 MCP names.
@@ -23,7 +23,7 @@ The checker reads metadata and searches for recognized definitions. It performs 
 
 <br />
 
-## <img src="../assets/lucide/list-checks.svg" width="18" height="18" alt="" /> Interpreting statuses correctly
+## ☑️ Interpreting statuses correctly
 
 | Status | Meaning | Counted toward presence? |
 | :--- | :--- | :--- |
@@ -39,7 +39,7 @@ The checker treats plugin caches as **untrusted inventories**, never as redistri
 
 <br />
 
-## <img src="../assets/lucide/file-text.svg" width="18" height="18" alt="" /> Completion matrix
+## 📄 Completion matrix
 
 | Layer | Name-for-name target | Source of truth | Remaining proof |
 | :--- | ---: | :--- | :--- |
@@ -53,13 +53,13 @@ The checker treats plugin caches as **untrusted inventories**, never as redistri
 | Claude Map | Development Hub overlay | Claude Map upstream + custom patches | Same UI at localhost, no exposed secrets; check upstream version |
 | Workflow | Five stages and completion mandate | Global Ardizuo rules and files | A sample coding task with observed review/test evidence |
 
-### <img src="../assets/lucide/rocket.svg" width="18" height="18" alt="" /> Why 178 is not the release target
+### 🚀 Why 178 is not the release target
 
 `178 discovered entries` combined plugin cache versions and other related capabilities. It is **not** a list of 178 independent skills. An uninstalled, disabled or stale cached entry must not be presented as a working skill. Built-in commands and MCP capabilities aren't separate redistributable `SKILL.md` files.
 
 <br />
 
-## <img src="../assets/lucide/shield-check.svg" width="18" height="18" alt="" /> How to address a missing source safely
+## 🛡️ How to address a missing source safely
 
 1. Inspect the missing name in this report and compare it to the author's local `~/.claude` installation.
 2. If maintained upstream, install its **official source** and verify its actual capabilities. [SuperClaude](../installation/superclaude.md), [plugins](../../integrations/plugins/README.md) and [MCPs](../../integrations/mcp/README.md) are starting points.
@@ -70,7 +70,7 @@ The checker treats plugin caches as **untrusted inventories**, never as redistri
 
 <br />
 
-## <img src="../assets/lucide/list-checks.svg" width="18" height="18" alt="" /> CLI tests that need a real Claude Code session
+## ☑️ CLI tests that need a real Claude Code session
 
 ```powershell
 claude plugin list
@@ -81,7 +81,7 @@ Inside Claude Code: check `/skills`, `/mcp` and `/hooks`; run a small **real** s
 
 [All components](./README.md) · [Full installer](../installation/full-setup.md) · [Verification checklist](../installation/verification-checklist.md)
 
-## <img src="../assets/lucide/folder-open.svg" width="18" height="18" alt="" /> Sprint 2: published source provenance lock
+## 📁 Sprint 2: published source provenance lock
 
 `setup/source-provenance-lock.json` is generated from a **local read-only comparison** of the 80-file private review export. It discloses only public filenames, source file paths, pinned publisher commits and classification; no private file contents, tokens or local modified-file SHA256 hashes are published.
 
@@ -90,11 +90,11 @@ At the pinned commits: **42 exact byte matches, 6 text matches after newline nor
 These counts are reference-machine file comparisons, *not* a claim that every skill dependency, slash command or agent can run on a newly installed machine.
 
 
-## <img src="../assets/lucide/blocks.svg" width="18" height="18" alt="" /> Sprint 3 skill-source progress
+## 🧩 Sprint 3 skill-source progress
 
 Eight of the 29 additional skill files are now reproducible as publisher-pinned, checksum-verified **SKILL.md instruction files** (2 byte-exact, 6 with only line-ending differences). Two further publisher originals differ from the author reference and require explicit opt-in. The 19 unreviewed skills remain excluded; `setup/skill-source-candidates.json` provides 15 unverified publisher path candidates and 4 unknown sources. Use [the pinned skill guide](../installation/pinned-skills.md) to perform a safe local comparison. Source-file reproducibility does **not** imply required sidecars or runtime behavior are present.
 
 
-## <img src="../assets/lucide/rocket.svg" width="18" height="18" alt="" /> Current release-audit status (after Sprint 4)
+## 🚀 Current release-audit status (after Sprint 4)
 
 The historical **Sprint 2** and **Sprint 3** numbers above describe their individual checkpoints, not today's source lock. The current installer offers **20 default pinned skill files and five explicit upstream variants**, with **four unknown skill origins** and **17 other direct-skill sources** unresolved. Use the [latest matrix](../installation/reproducibility-matrix.md) and `python scripts/release-audit.py` for the authoritative current breakdown. Do not equate 178 dashboard-discovered skill entries with 178 standalone redistributable skill packages.

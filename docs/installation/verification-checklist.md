@@ -1,10 +1,10 @@
-# <img src="../assets/lucide/download.svg" width="18" height="18" alt="" /> Full setup verification checklist
+# 📥 Full setup verification checklist
 
 **Run these checks on a clean Windows user or disposable test configuration before calling the installer complete.** A displayed skill or green dashboard badge is not proof of execution.
 
 <br />
 
-## <img src="../assets/lucide/file-text.svg" width="18" height="18" alt="" /> 1. Prepare the computer
+## 📄 1. Prepare the computer
 
 - [ ] Check Windows version and PowerShell version.
 - [ ] Install Claude Code, Git, Python and Node/npm from official sources.
@@ -13,7 +13,7 @@
 
 <br />
 
-## <img src="../assets/lucide/download.svg" width="18" height="18" alt="" /> 2. Install original development assets
+## 📥 2. Install original development assets
 
 - [ ] Run `scripts/install-all.ps1 -All` as a dry run.
 - [ ] Copy 28 custom files into a disposable `-ConfigDir` and verify identical checksums.
@@ -22,7 +22,7 @@
 
 <br />
 
-## <img src="../assets/lucide/puzzle.svg" width="18" height="18" alt="" /> 3. Framework and plugins
+## 🧩 3. Framework and plugins
 
 - [ ] Confirm SuperClaude agent/command framework is present.
 - [ ] Verify all 21 global agent names from the reference inventory.
@@ -33,7 +33,7 @@
 
 <br />
 
-## <img src="../assets/lucide/shield-check.svg" width="18" height="18" alt="" /> 4. MCP registrations and credentials
+## 🛡️ 4. MCP registrations and credentials
 
 - [ ] Confirm Serena, Sequential Thinking and Chrome DevTools MCP registration.
 - [ ] Confirm Supabase, Figma and Vercel MCP registration.
@@ -44,7 +44,7 @@
 
 <br />
 
-## <img src="../assets/lucide/workflow.svg" width="18" height="18" alt="" /> 5. Hooks, configuration and memory
+## 🔄 5. Hooks, configuration and memory
 
 - [ ] Register all five hooks without removing existing entries.
 - [ ] Confirm hook scripts resolve `hooks/lib/common.mjs`.
@@ -54,7 +54,7 @@
 
 <br />
 
-## <img src="../assets/lucide/monitor.svg" width="18" height="18" alt="" /> 6. Dashboard and end-to-end operation
+## 🖥️ 6. Dashboard and end-to-end operation
 
 - [ ] Install upstream Claude Map and verify the localhost dashboard.
 - [ ] Apply the Ardizuo Development Hub overlay with backups and syntax checks.
@@ -64,7 +64,7 @@
 **Not all 30 steps are fully automated**; account authentication and real development execution require user approval. See [Full guide](./full-setup.md) and [release gates](../release-checklist.md).
 
 
-## <img src="../assets/lucide/puzzle.svg" width="18" height="18" alt="" /> 7. Exact-name and marketplace release gates
+## 🧩 7. Exact-name and marketplace release gates
 
 - [ ] All four declared plugin marketplace sources are reviewed and registered (Anthropic official, Anthropic skills, Ralph and Morph).
 - [ ] `python scripts/coverage-doctor.py --strict` returns success on the **target installed user** only after the literal names are present.
@@ -79,7 +79,7 @@
 
 <br />
 
-## <img src="../assets/lucide/monitor.svg" width="18" height="18" alt="" /> Full Claude Map overlay rehearsal
+## 🖥️ Full Claude Map overlay rehearsal
 
 The initial dashboard preview checks only scaffold anchors. Before using
 `--apply`, rehearse **all five** overlay stages against an unmodified official
@@ -94,6 +94,11 @@ Record all failed stages and do not infer browser/runtime compatibility from
 JavaScript syntax checks alone.
 
 
-## <img src="../assets/lucide/file-text.svg" width="18" height="18" alt="" /> Sprint 4 verification
+## 📄 Sprint 4 verification
 
 Run `python -m unittest discover -s tests -v`, then test the **20 default publisher skills** in a disposable config via `python .\scripts\install-pinned-skills.py --apply --config-dir $testConfig`. Confirm `20` skill subdirectories. The five differing upstream variants are opt-in, and the four unknown-source skills must remain absent. Inspect each installed skill for references to sibling scripts/data; `SKILL.md` alone is not a complete skill package.
+
+
+## 🔎 Verify the exact reference skills and support files
+
+Run `python .\scripts\review-exact-local-components.py` from the repository root before declaring your 62 direct skill definitions reproducible. For six existing source candidates, use `--compare-public` and a private `--output` path as described in the [exact-source guide](./exact-local-origin-review.md). Inspect missing sidecars, source differences and unknown origins; do not treat the resulting counts as proof of skill execution or permission to redistribute private files.

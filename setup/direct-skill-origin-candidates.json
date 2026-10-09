@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "description": "Unapproved, publisher-pinned leads for existing direct-scope skills; informational, never automatically installed or bundled.",
+  "entries": [
+    {"name": "Accessibility"},
+    {"name": "Engineering"},
+    {"name": "UI"},
+    {"name": "UX"},
+    {"name": "built-in-browser"},
+    {"name": "chrome-browser"},
+    {"name": "computer-use"},
+    {
+      "name": "deep-research",
+      "repository": "SuperClaude-Org/SuperClaude_Framework",
+      "revision": "fe68862c8ed9e2afb8120c2d9e27d0c3a7ce73a2",
+      "sourcePath": "plugins/superclaude/skills/deep-research/SKILL.md",
+      "gitBlobSHA1": "8bc6765ef4913db031f83974bc0e9b355b5ef9f9"
+    },
+    {"name": "docs"},
+    {
+      "name": "docx",
+      "repository": "anthropics/skills",
+      "revision": "dbd4588f9e1033efb41dad4bef2f7947c8993d44",
+      "sourcePath": "skills/docx/SKILL.md",
+      "gitBlobSHA1": "fb954a460a1ea2294e9595e87fecce8df043eeba"
+    },
+    {"name": "google-workspace"},
+    {"name": "import-memory"},
+    {"name": "morning"},
+    {
+      "name": "pdf",
+      "repository": "anthropics/skills",
+      "revision": "dbd4588f9e1033efb41dad4bef2f7947c8993d44",
+      "sourcePath": "skills/pdf/SKILL.md",
+      "gitBlobSHA1": "d3e046a5ae107a6cb23cfb16c219837094ab35d3"
+    },
+    {
+      "name": "pptx",
+      "repository": "anthropics/skills",
+      "revision": "dbd4588f9e1033efb41dad4bef2f7947c8993d44",
+      "sourcePath": "skills/pptx/SKILL.md",
+      "gitBlobSHA1": "41cd2306977f269bb1d8169a9643b35053aa66bd"
+    },
+    {
+      "name": "skill-creator",
+      "repository": "anthropics/skills",
+      "revision": "dbd4588f9e1033efb41dad4bef2f7947c8993d44",
+      "sourcePath": "skills/skill-creator/SKILL.md",
+      "gitBlobSHA1": "65b3a402dbd09b8e83f9d637c6b553875189085c"
+    },
+    {
+      "name": "xlsx",
+      "repository": "anthropics/skills",
+      "revision": "dbd4588f9e1033efb41dad4bef2f7947c8993d44",
+      "sourcePath": "skills/xlsx/SKILL.md",
+      "gitBlobSHA1": "9da54804cc8c938586f89363c8da3b3a6e2a563d"
+    }
+  ],
+  "security": "Do not copy local SKILL.md content, plugin caches, sidecars, tokens, or vault notes into the public repository. Git hashes verify remote candidates only; local content comparison must happen on the owner's device."
+}

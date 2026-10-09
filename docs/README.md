@@ -1,10 +1,10 @@
-# <img src="assets/lucide/book-open.svg" width="18" height="18" alt="" /> Documentation hub
+# 📖 Documentation hub
 
 **Welcome.** This directory is organized so you only read what you need. Start with the tools you don't have; skip ones already installed.
 
 <br />
 
-## <img src="assets/lucide/download.svg" width="18" height="18" alt="" /> Install the basics
+## 📥 Install the basics
 
 [Windows requirements](./prerequisites.md) · [All installation guides](./installation/README.md)
 
@@ -19,13 +19,13 @@
 
 <br />
 
-## <img src="assets/lucide/file-text.svg" width="18" height="18" alt="" /> Optional infrastructure
+## 📄 Optional infrastructure
 
 [Docker](./installation/docker.md) · [WSL](./installation/wsl.md) · [Obsidian](./installation/obsidian.md) · [Claude Map](./installation/claude-map.md)
 
 <br />
 
-## <img src="assets/lucide/shield-check.svg" width="18" height="18" alt="" /> Skills, integrations and privacy
+## 🛡️ Skills, integrations and privacy
 
 | Guide | What it covers |
 | :--- | :--- |
@@ -37,7 +37,7 @@
 
 <br />
 
-## <img src="assets/lucide/file-text.svg" width="18" height="18" alt="" /> How the pieces fit
+## 📄 How the pieces fit
 
 [Architecture](./architecture.md) · [Component catalog](./components/README.md) · [Release plan](./release-checklist.md) · [Maintainer plan](./maintainer-next-steps.md)
 
@@ -47,26 +47,26 @@
 
 <br />
 
-## <img src="assets/lucide/download.svg" width="18" height="18" alt="" /> One-package assisted setup
+## 📥 One-package assisted setup
 
 [Full installation and limitations](./installation/full-setup.md) · [Component coverage](./components/README.md).
 
 
 ---
 
-## <img src="assets/lucide/list-checks.svg" width="18" height="18" alt="" /> Completeness audit and source migration
+## ☑️ Completeness audit and source migration
 
 - [Exact Development Hub capability coverage](./components/exact-coverage.md) — offline audit of all named reference agents, skills, commands, plugins and MCP registrations, without claiming connections
 - [Private review of missing definitions](./installation/private-source-migration.md) — safely collect candidate direct-scope sources *outside* the repository, review licenses and redact private data before redistribution
 - [Full installer](./installation/full-setup.md) — marketplace preflight, official GitHub OAuth registration and vault template provisioning
 
 
-## <img src="assets/lucide/list-checks.svg" width="18" height="18" alt="" /> What the public installer really reproduces
+## ☑️ What the public installer really reproduces
 
 The reference machine has **21 agent files, 62 direct skill definitions, 31 executable command files plus one `README.md`, 12 enabled plugins and nine target user MCP servers**. The public installer does **not yet** exactly reproduce all of those on a fresh account. See the [release coverage matrix](installation/reproducibility-matrix.md) for default, optional, provider-authenticated, and blocked items. Never publish personal provider configuration or private vault content.
 
 
-## <img src="assets/lucide/list-checks.svg" width="18" height="18" alt="" /> Inspect a real install without touching it
+## ☑️ Inspect a real install without touching it
 
 Use the [read-only installed-layer verification](./installation/installed-layer-audit.md) to check which expected files, hook registrations, and vault templates actually landed in your chosen Claude configuration. It does not claim that provider authentication or skill execution succeeded.
 

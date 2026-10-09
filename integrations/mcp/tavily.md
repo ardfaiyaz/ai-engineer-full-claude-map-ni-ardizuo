@@ -1,4 +1,4 @@
-# <img src="../../docs/assets/lucide/plug.svg" width="18" height="18" alt="" /> Tavily MCP
+# 🔌 Tavily MCP
 
 **Purpose:** Web research and search responses. **Transport on reference machine:** `stdio`.
 
@@ -6,7 +6,7 @@
 
 <br />
 
-## <img src="../../docs/assets/lucide/download.svg" width="18" height="18" alt="" /> 1. Requirements
+## 📥 1. Requirements
 
 [Tavily — official source](https://docs.tavily.com/) · [API keys](../../docs/security/api-keys-and-powershell.md)
 
@@ -14,7 +14,7 @@ A Tavily account and API key may be required.
 
 <br />
 
-## <img src="../../docs/assets/lucide/plug.svg" width="18" height="18" alt="" /> 2. Register the server (after review)
+## 🔌 2. Register the server (after review)
 
 **Installation:** This is a local `stdio` server. Its package name, launcher arguments, version and required environment vary by upstream implementation. Use [Tavily official documentation](https://docs.tavily.com/) for the exact command and review it before running. Avoid copying credentials or private launcher scripts from another computer.
 
@@ -23,7 +23,7 @@ A Tavily account and API key may be required.
 
 <br />
 
-## <img src="../../docs/assets/lucide/list-checks.svg" width="18" height="18" alt="" /> 3. Authenticate and verify
+## ☑️ 3. Authenticate and verify
 
 ```powershell
 claude mcp list
@@ -33,7 +33,7 @@ Open Claude Code and use `/mcp` to complete provider sign-in and inspect status.
 
 <br />
 
-## <img src="../../docs/assets/lucide/wrench.svg" width="18" height="18" alt="" /> 4. Troubleshoot and remove
+## 🛠️ 4. Troubleshoot and remove
 
 If startup fails, confirm the runtime, endpoint or launcher command, connectivity and permissions using the official source above. Don't paste tokens, full auth headers, raw `.claude.json`, or secret-containing MCP logs into a public issue.
 
@@ -45,7 +45,7 @@ If you no longer need this server, review the configuration first and use `claud
 
 <br />
 
-## <img src="../../docs/assets/lucide/download.svg" width="18" height="18" alt="" /> Ardizuo one-package setup
+## 📥 Ardizuo one-package setup
 
 **Installer:** Requires manual review and authentication; not automatically registered.
 
@@ -58,7 +58,7 @@ Never paste real keys into your issue, commit, README, or chat. Run `claude mcp 
 
 ---
 
-## <img src="../../docs/assets/lucide/download.svg" width="18" height="18" alt="" /> Current all-layer installer behavior
+## 📥 Current all-layer installer behavior
 
 - **Manifest name:** `tavily`
 - **Transport:** `stdio`

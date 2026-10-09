@@ -1,10 +1,10 @@
-# <img src="../assets/lucide/file-text.svg" width="18" height="18" alt="" /> Reproducible, pinned SuperClaude definitions (Sprint 2)
+# 📄 Reproducible, pinned SuperClaude definitions (Sprint 2)
 
 This installer lets a Windows user install **20 upstream agents and 19 upstream commands** matched byte-for-byte against the author's reference files. It is separate from `pipx install superclaude` and does not claim to install the SuperClaude executable, modes or MCP integrations. The author also has **11 locally different SuperClaude commands**; a clean machine can opt into their *publisher originals*, but these will not reproduce the author's modified text.
 
 > Source: [SuperClaude Framework](https://github.com/SuperClaude-Org/SuperClaude_Framework) under MIT. Pinned commit: `fe68862c8ed9e2afb8120c2d9e27d0c3a7ce73a2`. The JSON file `setup/source-provenance-lock.json` records each source file and its Git blob checksum. It includes no author-private files, hashes of private modified files, keys or vault notes.
 
-## <img src="../assets/lucide/settings-2.svg" width="18" height="18" alt="" /> Windows — start in a disposable configuration
+## ⚙️ Windows — start in a disposable configuration
 
 ```powershell
 cd "$HOME\Documents\ai-engineer-full-claude-map-ni-ardizuo"
@@ -42,7 +42,7 @@ You can also invoke this mode through the main installer:
 
 Don't combine `-PinnedSuperClaude` and `-SuperClaude` in one call. `-All` now prefers pinned SuperClaude **file definitions** and eight publisher-pinned skill prompts; the upstream SuperClaude CLI is an explicit alternative via `-SuperClaude`. The pin is for static files, not full SuperClaude CLI functionality.
 
-## <img src="../assets/lucide/book-open.svg" width="18" height="18" alt="" /> What is and is not proven
+## 📖 What is and is not proven
 
 - `EXACT_BYTE_MATCH`: 20 agent files and 19 actual command definitions in the default pinned installer. The upstream command directory's `README.md` is documentation, not a command.
 - `DIFFERENT_CONTENT`: 11 additional SuperClaude command files. They are installed only with `--upstream-variants`, and the public upstream versions may not behave identically to the author's local changes.

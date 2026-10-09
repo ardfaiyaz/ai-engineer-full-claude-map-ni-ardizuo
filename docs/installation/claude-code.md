@@ -1,10 +1,10 @@
-# <img src="../assets/lucide/terminal.svg" width="18" height="18" alt="" /> Claude Code CLI
+# 💻 Claude Code CLI
 
 **Why you might need it:** The actual coding assistant that loads global rules, skills, agents, plugins and MCP registrations.
 
 <br />
 
-## <img src="../assets/lucide/folder-open.svg" width="18" height="18" alt="" /> 1. Get it from the official source
+## 📁 1. Get it from the official source
 
 [Claude Code CLI — official installation page](https://code.claude.com/docs/en/setup)
 
@@ -26,7 +26,7 @@ Inside Claude Code, use `/login`, `/skills`, and `/mcp` as applicable.
 
 <br />
 
-## <img src="../assets/lucide/list-checks.svg" width="18" height="18" alt="" /> 2. Verify
+## ☑️ 2. Verify
 
 ```powershell
 claude --version
@@ -35,7 +35,7 @@ claude doctor
 
 <br />
 
-## <img src="../assets/lucide/file-text.svg" width="18" height="18" alt="" /> 3. If something goes wrong
+## 📄 3. If something goes wrong
 
 If it says `claude: command not found`, reopen PowerShell, then follow the [official troubleshooting guide](https://code.claude.com/docs/en/troubleshooting). Avoid storing API keys unless you intentionally use API billing.
 

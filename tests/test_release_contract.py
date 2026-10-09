@@ -23,7 +23,12 @@ class ReleaseContractTests(unittest.TestCase):
         self.assertFalse(j['freshWindowsAllLayersVerified'])
         strict=subprocess.run([sys.executable,str(ROOT/'scripts/release-audit.py'),'--strict'],capture_output=True,text=True)
         self.assertEqual(strict.returncode,2)
-    def test_all_markdown_titles_use_bundled_icons_without_new_capabilities(self):
+    def test_all_markdown_titles_use_emoji_without_svg_icon_dependencies(self):
+        import importlib.util
+        spec=importlib.util.spec_from_file_location('cleanup_markdown',ROOT/'scripts/cleanup-markdown.py')
+        module=importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(module)
+        valid={emoji+' ' for emoji in module.EMOJI.values()}
         total=0
         for file in ROOT.rglob('*.md'):
             if '__pycache__' in file.parts:continue
@@ -37,16 +42,19 @@ class ReleaseContractTests(unittest.TestCase):
                 if fence:continue
                 m=re.match(r'^#{1,4}\s+(.*)$',line)
                 if m:
-                    self.assertIn('<img src=',m.group(1),f'{file.relative_to(ROOT)}: {line}')
-        self.assertGreaterEqual(total,120)
+                    self.assertTrue(any(m.group(1).startswith(emoji) for emoji in valid),f'{file.relative_to(ROOT)}: {line}')
+                    self.assertNotIn('<img src=',m.group(1))
+        self.assertGreaterEqual(total,110)
+        changes,retired,images=module.plan(ROOT)
+        self.assertEqual((len(changes),len(retired),len(images)),(0,0,0))
     def test_docs_disclose_personas_and_missing_origins(self):
-        text=(ROOT/'docs/components/development-hub-surface.md').read_text()
+        text=(ROOT/'docs/components/development-hub-surface.md').read_text(encoding='utf-8-sig')
         for fragment in ('personas','17 externally sourced','four unknown-source','178 discovered','five-stage'):
             self.assertIn(fragment,text)
-        guide=(ROOT/'docs/installation/installed-layer-audit.md').read_text()
+        guide=(ROOT/'docs/installation/installed-layer-audit.md').read_text(encoding='utf-8-sig')
         self.assertIn('verify-installed-layers.py',guide)
     def test_dashboard_never_auto_reinstalls_live_npm(self):
-        script=(ROOT/'scripts/install-all.py').read_text()
+        script=(ROOT/'scripts/install-all.py').read_text(encoding='utf-8-sig')
         dashboard=script[script.index('    if args.dashboard:'):script.index("    print('\\nFINAL STATUS')")]
         self.assertNotIn('npm install -g',dashboard)
         self.assertNotIn("'--apply'",dashboard)

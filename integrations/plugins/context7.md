@@ -1,4 +1,4 @@
-# <img src="../../docs/assets/lucide/puzzle.svg" width="18" height="18" alt="" /> Context7 plugin
+# 🧩 Context7 plugin
 
 **Purpose:** Version-aware software documentation retrieval.
 
@@ -6,7 +6,7 @@
 
 <br />
 
-## <img src="../../docs/assets/lucide/download.svg" width="18" height="18" alt="" /> 1. Requirements and official source
+## 📥 1. Requirements and official source
 
 [Context7 — official reference](https://context7.com/) · [Node and npm](../../docs/installation/nodejs-npm.md)
 
@@ -14,7 +14,7 @@ Check the provider terms and rate limits; authentication may depend on the plugi
 
 <br />
 
-## <img src="../../docs/assets/lucide/download.svg" width="18" height="18" alt="" /> 2. Install (optional)
+## 📥 2. Install (optional)
 
 Review the [official Claude Code plugin documentation](https://code.claude.com/docs/en/discover-plugins) and the marketplace catalog first. In a terminal with Claude Code available, you can use:
 
@@ -26,7 +26,7 @@ If the marketplace isn't registered, use Claude Code's `/plugin` marketplace UI 
 
 <br />
 
-## <img src="../../docs/assets/lucide/list-checks.svg" width="18" height="18" alt="" /> 3. Sign in and verify
+## ☑️ 3. Sign in and verify
 
 ```powershell
 claude plugin list
@@ -39,7 +39,7 @@ In Claude Code, open `/skills` to inspect the actual available skills and `/mcp`
 
 <br />
 
-## <img src="../../docs/assets/lucide/wrench.svg" width="18" height="18" alt="" /> 4. Troubleshooting and removal
+## 🛠️ 4. Troubleshooting and removal
 
 If the plugin doesn't appear, reload plugins inside Claude Code with `/reload-plugins`, reopen the session, and confirm you used the right marketplace. Review provider account scopes and permissions before connecting.
 
@@ -51,14 +51,14 @@ Use Claude Code's `/plugin` manager or the supported plugin uninstall command to
 
 <br />
 
-## <img src="../../docs/assets/lucide/package.svg" width="18" height="18" alt="" /> One-package option
+## 📦 One-package option
 
 From the repository root, use `scripts/install-all.ps1 -Apply -External -Plugins` after reviewing the dry run. This invokes the CLI install for this plugin; it registers upstream marketplaces first where possible, but does not grant account permissions or guarantee successful provider authentication. For failures, use the manual installer and official source above.
 
 
 ---
 
-## <img src="../../docs/assets/lucide/puzzle.svg" width="18" height="18" alt="" /> Marketplace source and repeatable installation
+## 🧩 Marketplace source and repeatable installation
 
 **Capability:** Library reference retrieval.
 

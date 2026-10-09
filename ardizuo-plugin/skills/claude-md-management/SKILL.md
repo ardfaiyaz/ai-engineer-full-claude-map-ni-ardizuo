@@ -4,7 +4,7 @@ description: Audit global and project CLAUDE.md instructions for conflicts, dupl
 disable-model-invocation: true
 ---
 
-# <img src="../../assets/lucide/file-text.svg" width="18" height="18" alt="" /> Claude Md Management
+# 📄 Claude Md Management
 
 This is an original local development-focused adapter, not an official third-party skill.
 

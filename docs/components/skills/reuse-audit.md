@@ -1,4 +1,4 @@
-# <img src="../../assets/lucide/list-checks.svg" width="18" height="18" alt="" /> reuse-audit
+# ☑️ reuse-audit
 
 **Purpose:** Find reusable implementations before duplicating code.
 
@@ -6,7 +6,7 @@
 
 <br />
 
-## <img src="../../assets/lucide/download.svg" width="18" height="18" alt="" /> Install
+## 📥 Install
 
 From the cloned repository, preview or apply the entire reviewed development pack:
 
@@ -19,7 +19,7 @@ The skill is installed globally under the current user's Claude configuration di
 
 <br />
 
-## <img src="../../assets/lucide/list-checks.svg" width="18" height="18" alt="" /> Verify and use
+## ☑️ Verify and use
 
 Inside Claude Code, check `/skills` and invoke the available skill manually when appropriate. Read the source `SKILL.md` for exact instructions; manual-only skills are not automatically run by merely installing them.
 
@@ -27,7 +27,7 @@ Inside Claude Code, check `/skills` and invoke the available skill manually when
 
 <br />
 
-## <img src="../../assets/lucide/wrench.svg" width="18" height="18" alt="" /> Troubleshooting and removal
+## 🛠️ Troubleshooting and removal
 
 If missing, check `<ClaudeConfig>/skills/reuse-audit/SKILL.md`, restart Claude Code and run `python scripts/verify-all.py`. For removal, back up and remove only the specific installed skill folder; do not delete other users' skills or plugin caches.
 

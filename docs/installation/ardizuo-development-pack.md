@@ -1,10 +1,10 @@
-# <img src="../assets/lucide/file-text.svg" width="18" height="18" alt="" /> Ardizuo development pack · Phase 1
+# 📄 Ardizuo development pack · Phase 1
 
 **Portable source assets for global Claude Code** — no separate website or account required. This phase installs **28 locally authored files**, not the third-party plugins, MCP servers, dashboard, or complete Full profile.
 
 <br />
 
-## <img src="../assets/lucide/download.svg" width="18" height="18" alt="" /> 1. Before installing
+## 📥 1. Before installing
 
 - [Claude Code CLI](./claude-code.md), [Git](./git.md), [Node.js](./nodejs-npm.md), and Windows PowerShell 5.1 or newer.
 - Clone the [repository](https://github.com/ardfaiyaz/ai-engineer-full-claude-map-ni-ardizuo) and open a PowerShell terminal in the root directory.
@@ -14,7 +14,7 @@ The package resolves the user's configuration from `CLAUDE_CONFIG_DIR` if set; o
 
 <br />
 
-## <img src="../assets/lucide/workflow.svg" width="18" height="18" alt="" /> 2. Preview changes — recommended first
+## 🔄 2. Preview changes — recommended first
 
 ```powershell
 .\scripts\install-development.ps1
@@ -30,7 +30,7 @@ The **dry run** lists which files would be created, which already match, and whi
 
 <br />
 
-## <img src="../assets/lucide/download.svg" width="18" height="18" alt="" /> 3. Install only after you approve the plan
+## 📥 3. Install only after you approve the plan
 
 ```powershell
 .\scripts\install-development.ps1 -Apply
@@ -43,7 +43,7 @@ The installer checks file hashes. It includes 16 original local skills, the diag
 
 <br />
 
-## <img src="../assets/lucide/workflow.svg" width="18" height="18" alt="" /> 4. Optionally activate hooks
+## 🔄 4. Optionally activate hooks
 
 Five scripts support `UserPromptSubmit`, `SessionStart`, `PostToolUse` (two scripts) and `Stop`.
 
@@ -58,7 +58,7 @@ Registration merges entries into the existing global `settings.json` and creates
 
 <br />
 
-## <img src="../assets/lucide/notebook-pen.svg" width="18" height="18" alt="" /> 5. Configure optional Obsidian memory
+## 📝 5. Configure optional Obsidian memory
 
 No vault is created by default. The hooks use this default folder:
 
@@ -77,7 +77,7 @@ The environment variable must be visible to the Claude Code process. Do not copy
 
 <br />
 
-## <img src="../assets/lucide/wrench.svg" width="18" height="18" alt="" /> 6. Verify and troubleshoot
+## 🛠️ 6. Verify and troubleshoot
 
 ```powershell
 .\scripts\doctor-development.ps1

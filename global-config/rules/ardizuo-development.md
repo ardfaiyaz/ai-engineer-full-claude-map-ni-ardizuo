@@ -1,4 +1,4 @@
-# <img src="../assets/lucide/workflow.svg" width="18" height="18" alt="" /> Ardizuo development workflow baseline
+# 🔄 Ardizuo development workflow baseline
 
 Apply this as a portable user-level development rule; project-specific instructions may be stricter.
 

@@ -1,4 +1,4 @@
-# <img src="../../assets/lucide/blocks.svg" width="18" height="18" alt="" /> Original Ardizuo skills
+# 🧩 Original Ardizuo skills
 
 **16 original global skill files.** Installed with the development pack, not third-party plugin caches.
 

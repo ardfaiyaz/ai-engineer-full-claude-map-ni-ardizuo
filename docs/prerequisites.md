@@ -1,10 +1,10 @@
-# <img src="assets/lucide/download.svg" width="18" height="18" alt="" /> Prerequisites — Windows-first
+# 📥 Prerequisites — Windows-first
 
 **You do not need to install everything.** Check what you already have, then follow only the relevant guides. WSL and Docker are optional.
 
 <br />
 
-## <img src="assets/lucide/file-text.svg" width="18" height="18" alt="" /> Check your computer first
+## 📄 Check your computer first
 
 From the repository root, open **PowerShell**:
 
@@ -16,7 +16,7 @@ If a command is not recognized, follow its installation guide and reopen PowerSh
 
 <br />
 
-## <img src="assets/lucide/terminal.svg" width="18" height="18" alt="" /> Essential and optional tools
+## 💻 Essential and optional tools
 
 | Tool | When it's needed | Open the guide |
 | :--- | :--- | :--- |
@@ -34,7 +34,7 @@ If a command is not recognized, follow its installation guide and reopen PowerSh
 
 <br />
 
-## <img src="assets/lucide/download.svg" width="18" height="18" alt="" /> Global setup location
+## 📥 Global setup location
 
 The scripts should use `$env:CLAUDE_CONFIG_DIR` if set; otherwise, the current user's `$HOME\.claude` folder. They must not hardcode the creator's username.
 
@@ -51,6 +51,6 @@ Write-Host "Claude configuration directory: $claudeDir"
 
 <br />
 
-## <img src="assets/lucide/download.svg" width="18" height="18" alt="" /> One-package installer
+## 📥 One-package installer
 
 [Read the complete setup guide](./installation/full-setup.md) to prepare your Windows prerequisites before installation. It explains when a plugin or MCP is optional, what requires authentication, and how to preview changes.

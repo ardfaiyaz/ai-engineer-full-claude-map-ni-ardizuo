@@ -1,10 +1,10 @@
-# <img src="../assets/lucide/notebook-pen.svg" width="18" height="18" alt="" /> Obsidian
+# 📝 Obsidian
 
 **Why you might need it:** Optional local Markdown knowledge vault for sessions, ADRs, PRDs and reusable learning notes.
 
 <br />
 
-## <img src="../assets/lucide/folder-open.svg" width="18" height="18" alt="" /> 1. Get it from the official source
+## 📁 1. Get it from the official source
 
 [Obsidian — official installation page](https://obsidian.md/download)
 
@@ -14,7 +14,7 @@ The public repository provides empty templates only. **Do not automatically poin
 
 <br />
 
-## <img src="../assets/lucide/list-checks.svg" width="18" height="18" alt="" /> 2. Verify
+## ☑️ 2. Verify
 
 ```powershell
 Get-Command obsidian -ErrorAction SilentlyContinue
@@ -23,7 +23,7 @@ Test-Path (Join-Path $HOME 'Documents\Claude-Dev-Vault')
 
 <br />
 
-## <img src="../assets/lucide/file-text.svg" width="18" height="18" alt="" /> 3. If something goes wrong
+## 📄 3. If something goes wrong
 
 Obsidian does not necessarily add a CLI command; if `Get-Command` finds nothing, that is not proof the desktop app is absent. Confirm in the app. Vault persistence still needs a separate approved write-and-reload test.
 

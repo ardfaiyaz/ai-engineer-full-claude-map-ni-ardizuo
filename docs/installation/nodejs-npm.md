@@ -1,10 +1,10 @@
-# <img src="../assets/lucide/file-text.svg" width="18" height="18" alt="" /> Node.js and npm
+# 📄 Node.js and npm
 
 **Why you might need it:** Runs JavaScript-based MCPs, Claude Map and many development tools.
 
 <br />
 
-## <img src="../assets/lucide/folder-open.svg" width="18" height="18" alt="" /> 1. Get it from the official source
+## 📁 1. Get it from the official source
 
 [Node.js and npm — official installation page](https://nodejs.org/en/download)
 
@@ -14,7 +14,7 @@ Avoid copying random `npm install -g` commands from untrusted sources. Review th
 
 <br />
 
-## <img src="../assets/lucide/list-checks.svg" width="18" height="18" alt="" /> 2. Verify
+## ☑️ 2. Verify
 
 ```powershell
 node --version
@@ -24,7 +24,7 @@ npm config get prefix
 
 <br />
 
-## <img src="../assets/lucide/file-text.svg" width="18" height="18" alt="" /> 3. If something goes wrong
+## 📄 3. If something goes wrong
 
 If `npm` is not recognized after installing Node.js, reopen PowerShell. If PowerShell reports that `npm.ps1` is blocked, try `npm.cmd --version` first; do not weaken system security policy as a default.
 

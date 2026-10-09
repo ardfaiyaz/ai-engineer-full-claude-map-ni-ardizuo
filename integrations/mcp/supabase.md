@@ -1,4 +1,4 @@
-# <img src="../../docs/assets/lucide/plug.svg" width="18" height="18" alt="" /> Supabase MCP
+# 🔌 Supabase MCP
 
 **Purpose:** Database/project integration. **Transport on reference machine:** `http`.
 
@@ -6,7 +6,7 @@
 
 <br />
 
-## <img src="../../docs/assets/lucide/download.svg" width="18" height="18" alt="" /> 1. Requirements
+## 📥 1. Requirements
 
 [Supabase — official source](https://supabase.com/docs) · [API keys](../../docs/security/api-keys-and-powershell.md)
 
@@ -14,7 +14,7 @@ Project access and provider authentication may be required.
 
 <br />
 
-## <img src="../../docs/assets/lucide/plug.svg" width="18" height="18" alt="" /> 2. Register the server (after review)
+## 🔌 2. Register the server (after review)
 
 **Reference endpoint used by the author:** `https://mcp.supabase.com/mcp?read_only=true`. Check the provider documentation for the current endpoint, then, if approved, register it as a **user-scoped HTTP MCP**:
 
@@ -27,7 +27,7 @@ claude mcp add --scope user --transport http supabase https://mcp.supabase.com/m
 
 <br />
 
-## <img src="../../docs/assets/lucide/list-checks.svg" width="18" height="18" alt="" /> 3. Authenticate and verify
+## ☑️ 3. Authenticate and verify
 
 ```powershell
 claude mcp list
@@ -37,7 +37,7 @@ Open Claude Code and use `/mcp` to complete provider sign-in and inspect status.
 
 <br />
 
-## <img src="../../docs/assets/lucide/wrench.svg" width="18" height="18" alt="" /> 4. Troubleshoot and remove
+## 🛠️ 4. Troubleshoot and remove
 
 If startup fails, confirm the runtime, endpoint or launcher command, connectivity and permissions using the official source above. Don't paste tokens, full auth headers, raw `.claude.json`, or secret-containing MCP logs into a public issue.
 
@@ -49,7 +49,7 @@ If you no longer need this server, review the configuration first and use `claud
 
 <br />
 
-## <img src="../../docs/assets/lucide/download.svg" width="18" height="18" alt="" /> Ardizuo one-package setup
+## 📥 Ardizuo one-package setup
 
 **Installer:** Supported automatic registration after explicit `-Apply -External -Mcps`.
 
@@ -68,7 +68,7 @@ Never paste real keys into your issue, commit, README, or chat. Run `claude mcp 
 
 ---
 
-## <img src="../../docs/assets/lucide/download.svg" width="18" height="18" alt="" /> Current all-layer installer behavior
+## 📥 Current all-layer installer behavior
 
 - **Manifest name:** `supabase`
 - **Transport:** `http`

@@ -1,10 +1,10 @@
-# <img src="../../docs/assets/lucide/puzzle.svg" width="18" height="18" alt="" /> Claude Code plugin catalog
+# 🧩 Claude Code plugin catalog
 
 **Install only what you need.** This page lists the **12 enabled plugins on the author's reference machine**; Core doesn't install these plugins. The **All Layers** installer has an explicit opt-in for marketplace registration and supported third-party installation.
 
 <br />
 
-## <img src="../../docs/assets/lucide/puzzle.svg" width="18" height="18" alt="" /> Reference plugins
+## 🧩 Reference plugins
 
 | Plugin guide | Identifier on reference machine | Core install status |
 | :--- | :--- | :--- |
@@ -23,7 +23,7 @@
 
 <br />
 
-## <img src="../../docs/assets/lucide/download.svg" width="18" height="18" alt="" /> Before installing
+## 📥 Before installing
 
 1. Read [Claude Code plugin docs](https://code.claude.com/docs/en/discover-plugins) and verify the marketplace source.
 2. Check the individual guide's runtime and account requirements.
@@ -37,7 +37,7 @@ Third-party source is not redistributed here. **Enabled ≠ authenticated ≠ in
 [API keys and PowerShell](../../docs/security/api-keys-and-powershell.md) · [Component catalog](../../docs/components/README.md) · [Docs hub](../../docs/README.md)
 
 
-## <img src="../../docs/assets/lucide/puzzle.svg" width="18" height="18" alt="" /> Marketplace setup before installing plugins
+## 🧩 Marketplace setup before installing plugins
 
 Marketplace IDs come from the marketplaces' own catalog, not from their GitHub repository names. Register these first (after inspecting their repositories):
 

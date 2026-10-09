@@ -1,10 +1,10 @@
-# <img src=".ardizuo-icons/notebook-pen.svg" width="18" height="18" alt="" /> Obsidian developer memory
+# 📝 Obsidian developer memory
 
 **Optional local folder, no required cloud sync.** Only the empty folder structure and generic templates are public. Your private sessions and notes never ship with this package.
 
 <br />
 
-## <img src=".ardizuo-icons/folder-open.svg" width="18" height="18" alt="" /> Create the eight folders
+## 📁 Create the eight folders
 
 ```powershell
 .\scripts\install-all.ps1 -Apply -Vault
@@ -14,7 +14,7 @@ Creates `Sessions`, `Learnings`, `ADRs`, `PRDs`, `Dispatch-Logs`, `Diagrams`, `P
 
 <br />
 
-## <img src=".ardizuo-icons/file-text.svg" width="18" height="18" alt="" /> Open and use
+## 📄 Open and use
 
 Install [Obsidian](../docs/installation/obsidian.md), then select **Open folder as vault** and choose the directory. Use [the sample templates](./templates/) to create ADRs, PRDs and learning notes manually.
 
@@ -24,7 +24,7 @@ Install [Obsidian](../docs/installation/obsidian.md), then select **Open folder 
 
 <br />
 
-## <img src=".ardizuo-icons/notebook-pen.svg" width="18" height="18" alt="" /> A custom vault path (optional)
+## 📝 A custom vault path (optional)
 
 The hook library reads `CLAUDE_DEV_VAULT` when set. If you choose a custom vault directory, set the variable for the current PowerShell session before starting Claude Code:
 
@@ -36,7 +36,7 @@ claude
 This is **a path, not an API secret**. To keep this setting for future sessions, you may explicitly set a user-level Windows environment variable; see the [PowerShell guide](../docs/security/api-keys-and-powershell.md). The installer never changes it silently.
 
 
-## <img src=".ardizuo-icons/download.svg" width="18" height="18" alt="" /> Templates are installed without replacement
+## 📥 Templates are installed without replacement
 
 The Full installer now copies the four repository templates (`ADR.md`, `Learning.md`, `PRD.md`, `Session.md`) into the chosen vault's `Templates` directory only when no file with that name exists. Identical templates are skipped, and a customized existing template causes the template step to stop rather than overwrite your work.
 

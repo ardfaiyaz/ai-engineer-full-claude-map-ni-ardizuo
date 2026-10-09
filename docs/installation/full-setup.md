@@ -1,10 +1,10 @@
-# <img src="../assets/lucide/download.svg" width="18" height="18" alt="" /> Full setup — one installer, guided steps
+# 📥 Full setup — one installer, guided steps
 
 **Windows-first.** This setup aims to reproduce the author's Claude development environment without republishing third-party packages or copying secrets.
 
 <br />
 
-## <img src="../assets/lucide/download.svg" width="18" height="18" alt="" /> 1. Prerequisites
+## 📥 1. Prerequisites
 
 Install [Claude Code](./claude-code.md), [Git](./git.md), [Python](./python.md), and [Node/npm](./nodejs-npm.md). Optional tools include [uvx](./uv.md), [GitHub CLI](./github-cli.md), [Docker](./docker.md) and [Obsidian](./obsidian.md).
 
@@ -18,7 +18,7 @@ npm --version
 
 <br />
 
-## <img src="../assets/lucide/workflow.svg" width="18" height="18" alt="" /> 2. Preview everything (no writes)
+## 🔄 2. Preview everything (no writes)
 
 From your cloned project directory:
 
@@ -28,11 +28,11 @@ python .\scripts\verify-all.py
 .\scripts\install-all.ps1 -All
 ```
 
-The preview lists 28 reviewed custom assets, the base rule, a portable global `CLAUDE.md`, the local Lucide icon assets, publisher-pinned agent/command/skill source steps, and optional external actions. No install, vault write or API connection occurs.
+The preview lists 28 reviewed custom assets, the base rule, a portable global `CLAUDE.md`, the local emoji headings, publisher-pinned agent/command/skill source steps, and optional external actions. No install, vault write or API connection occurs.
 
 <br />
 
-## <img src="../assets/lucide/list-checks.svg" width="18" height="18" alt="" /> 3. Test local files in isolation (recommended)
+## ☑️ 3. Test local files in isolation (recommended)
 
 ```powershell
 $testConfig = Join-Path $HOME 'Documents/Ardizuo-Sandbox-Claude-Config'
@@ -48,7 +48,7 @@ $env:CLAUDE_CONFIG_DIR = $old
 
 <br />
 
-## <img src="../assets/lucide/download.svg" width="18" height="18" alt="" /> 4. Apply the complete guided setup
+## 📥 4. Apply the complete guided setup
 
 ```powershell
 .\scripts\install-all.ps1 -Apply -All
@@ -58,7 +58,7 @@ This command can make external network requests and ask you for input. Read the 
 
 **What it attempts:**
 
-1. Copy your original 28 files, core rule, portable global CLAUDE.md and Lucide icon assets, without overwriting conflicting files.
+1. Copy your original 28 files, core rule, portable global CLAUDE.md and emoji headings, without overwriting conflicting files.
 2. Fetch publisher-pinned SuperClaude agent/command definitions (up to 20 agents and 19 byte-exact commands; 11 upstream variants opt-in) and 20 source-compared skill prompts. The upstream SuperClaude CLI is an alternative.
 3. Check and register four official/upstream plugin marketplaces before attempting all 12 plugins. Account sign-in still requires user approval.
 4. Register seven MCP servers, including the official GitHub Docker OAuth launcher, when not already present.
@@ -73,7 +73,7 @@ For a **dashboard-only** install, use [Claude Map setup](../../dashboard/claude-
 
 <br />
 
-## <img src="../assets/lucide/blocks.svg" width="18" height="18" alt="" /> 5. Audit every named reference capability
+## 🧩 5. Audit every named reference capability
 
 ```powershell
 python .\scripts\coverage-doctor.py
@@ -86,7 +86,7 @@ The reference count is not the install promise. See [exact coverage](../componen
 
 <br />
 
-## <img src="../assets/lucide/list-checks.svg" width="18" height="18" alt="" /> 6. Verify honestly
+## ☑️ 6. Verify honestly
 
 ```powershell
 python .\scripts\verify-all.py
@@ -105,13 +105,13 @@ In Claude Code, open `/skills`, `/mcp`, and `/hooks`. Sign in only to services y
 
 <br />
 
-## <img src="../assets/lucide/file-text.svg" width="18" height="18" alt="" /> 7. Rollback and removal
+## 📄 7. Rollback and removal
 
 The installer skips identical assets and fails on conflicting files; it never force-overwrites your unrelated configuration. Use `scripts/backup.ps1` before changing personal rules and refer to its matching `restore.ps1` for supported backups. Claude Map overlay scripts back up their patched source files. There is not yet a fully tested automatic uninstall of every third-party service; use each [plugin](../../integrations/plugins/README.md) or [MCP](../../integrations/mcp/README.md) guide for removal.
 
 <br />
 
-## <img src="../assets/lucide/alert-triangle.svg" width="18" height="18" alt="" /> 8. Known limitations
+## ⚠️ 8. Known limitations
 
 - The Full mode is an **assisted preview**, not a verified one-click offline replica.
 - Some plugin marketplace IDs and CLI options can change; errors require guide-based resolution.
@@ -123,20 +123,20 @@ The installer skips identical assets and fails on conflicting files; it never fo
 
 <br />
 
-## <img src="../assets/lucide/monitor.svg" width="18" height="18" alt="" /> Visual 30-step walkthrough
+## 🖥️ Visual 30-step walkthrough
 
 [Follow the full verification checklist](./verification-checklist.md) after installation.
 
-## <img src="../assets/lucide/folder-open.svg" width="18" height="18" alt="" /> Optional reproducibility: pinned SuperClaude file definitions
+## 📁 Optional reproducibility: pinned SuperClaude file definitions
 
 If you need exactly audited upstream agent/command definitions without running the SuperClaude CLI, use the separate [hash-verified, pinned SuperClaude installer](./pinned-superclaude.md). It installs into an isolated `-ConfigDir` first and refuses conflicts. This is an alternative to the `-All` mode's upstream CLI, **not** an additional automatic overwrite step.
 
 
-## <img src="../assets/lucide/blocks.svg" width="18" height="18" alt="" /> Sprint 4 — 20 publisher-pinned skill definitions
+## 🧩 Sprint 4 — 20 publisher-pinned skill definitions
 
 The unified installer now selects **20** content-matched third-party skill prompts by default and requires **`-SkillUpstreamVariants`** to add the five upstream skills whose text differs from the author’s local files. Four skills have no verified source and cannot be reproduced yet. See [pinned skills](./pinned-skills.md). Downloads and runtime behavior still require an isolated Windows verification.
 
 
-## <img src="../assets/lucide/list-checks.svg" width="18" height="18" alt="" /> Release completeness is an explicit separate check
+## ☑️ Release completeness is an explicit separate check
 
 `python .\scripts\release-audit.py` compares **the package manifest against the reference inventory**; `python .\scripts\verify-installed-layers.py --config-dir $testConfig` checks whether selected package files actually exist under a target config. They do **not** test OAuth, remote MCP connectivity, child skill scripts, agent delegation or the dashboard browser. [See the read-only audit walkthrough](./installed-layer-audit.md).

@@ -31,7 +31,6 @@ def expected(variants=False):
             if p.startswith(('agents/','skills/','commands/sc/')) and not p.endswith('/README.md'):
                 files.add(p)
     files.update(['rules/ardizuo-development.md','CLAUDE.md'])
-    files.update('assets/lucide/'+p.name for p in (ROOT/'ardizuo-plugin/assets/lucide').glob('*.svg'))
     return sorted(files)
 
 def audit(config, variants=False, vault=None):
@@ -69,8 +68,7 @@ def audit(config, variants=False, vault=None):
         dirs=['Sessions','Learnings','ADRs','Dispatch-Logs','PRDs','Diagrams','Projects','Templates']
         templates=sorted(p.name for p in (ROOT/'vault/templates').glob('*.md'))
         vault_result={'foldersFound':sum((vault/d).is_dir() for d in dirs),'foldersExpected':len(dirs),
-                      'templatesFound':sum((vault/'Templates'/n).is_file() for n in templates),'templatesExpected':len(templates),
-                      'lucideIconsFound':sum((vault/'.ardizuo-icons'/p.name).is_file() for p in (ROOT/'vault/.ardizuo-icons').glob('*.svg'))}
+                      'templatesFound':sum((vault/'Templates'/n).is_file() for n in templates),'templatesExpected':len(templates)}
     return {'configDir':str(config),'expectedLocalFiles':len(files),'presentLocalFiles':len(found),
             'missing':missing,'byLayer':by_layer,'hooksRegistered':hooked,'hookSettingsError':err,
             'vault':vault_result,'providers':'NOT TESTED: plugin and MCP connections require Claude CLI and interactive authentication',
