@@ -122,3 +122,10 @@ claude mcp list
 In Claude Code, verify `/skills`, `/mcp` and `/hooks`. The presence of a file doesn't prove a task or agent was run.
 
 [Full installer](../installation/full-setup.md) · [Component catalog](./README.md)
+
+
+## Exact-name release verification
+
+This reference list is now machine-auditable. Run `python scripts/coverage-doctor.py` to obtain an offline, literal-name status report across agents, 62 skills, 32 commands, plugins and MCP servers. The report distinguishes direct sources, enabled plugin caches, unconfirmed caches, and missing entries.
+
+See [the explanation of evidence and limitations](./exact-coverage.md) and [the private source migration procedure](../installation/private-source-migration.md). Do not claim all capability names are installed simply because the corresponding package download completed.

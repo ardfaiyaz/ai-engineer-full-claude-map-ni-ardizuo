@@ -53,4 +53,31 @@ Use Claude Code's `/plugin` manager or the supported plugin uninstall command to
 
 ## One-package option
 
-From the repository root, use `scripts/install-all.ps1 -Apply -External -Plugins` after reviewing the dry run. This invokes the CLI install for this plugin; it does not grant account permissions or guarantee that the marketplace is configured. For failures, use the manual installer and official source above.
+From the repository root, use `scripts/install-all.ps1 -Apply -External -Plugins` after reviewing the dry run. This invokes the CLI install for this plugin; it registers upstream marketplaces first where possible, but does not grant account permissions or guarantee successful provider authentication. For failures, use the manual installer and official source above.
+
+
+---
+
+## Marketplace source and repeatable installation
+
+**Capability:** Morph compaction lifecycle integration.
+
+**Upstream marketplace:** [morphllm/morph-claude-code-plugin](https://github.com/morphllm/morph-claude-code-plugin) — expected catalog ID `morph`. Source code and provider agreements remain third-party. Review the marketplace before proceeding.
+
+```powershell
+# Preview every optional external action without downloading anything.
+.\scripts\install-all.ps1 -All
+
+# To install only supported plugins from their declared marketplaces:
+.\scripts\install-all.ps1 -Apply -External -Plugins
+
+# This plugin's manual equivalent (run from any directory after marketplace setup):
+claude plugin marketplace add morphllm/morph-claude-code-plugin
+claude plugin install morph-compact@morph
+```
+
+If the marketplace already exists, do not remove it; the script attempts to detect registrations before adding them. CLI return code zero does **not** verify plugin runtime state. In Claude Code open `/plugin` and `/skills`, and use `claude plugin list` to distinguish installed versus enabled. Provider-specific OAuth/API key steps are performed by each installer user and must be checked in `/mcp` when applicable.
+
+**Practical safety check:** Follow /morph-compact:install inside Claude Code. The plugin reads/writes compaction context and requires Morph provider setup; do not commit ~/.claude/morph/.env.
+
+**Rollback:** Use Claude Code's plugin manager for this exact `plugin@marketplace` identity. Removing a marketplace may affect other plugins; never delete unrelated caches or sessions.

@@ -35,3 +35,10 @@
 It should walk you through the exact [PowerShell steps](./docs/installation/full-setup.md) and wait for pasted command results. It must never claim remote access to your computer.
 
 [Back to README](./README.md) · [API keys guide](./docs/security/api-keys-and-powershell.md)
+
+
+## Audit reference completeness before release
+
+Ask the assistant to execute `python scripts/coverage-doctor.py --json` and compare the **literal names and statuses** for all 21 agents, 62 global skills, 32 commands, 12 plugins and nine MCP servers. Treat `cached-unconfirmed` and `missing` as uninstalled. Do not guess that SuperClaude, plugins or native commands include a specific file without verifying it.
+
+When a file exists only on your personal machine, follow [private source review](./docs/installation/private-source-migration.md) first. Never use `settings.json`, `.claude.json`, provider caches, session transcripts or Obsidian notes as migration input. The external provider must prompt for its own account credentials.

@@ -62,3 +62,16 @@
 - [ ] Complete security, rollback, licensing and clean-Windows release checks.
 
 **Not all 30 steps are fully automated**; account authentication and real development execution require user approval. See [Full guide](./full-setup.md) and [release gates](../release-checklist.md).
+
+
+## 7. Exact-name and marketplace release gates
+
+- [ ] All four declared plugin marketplace sources are reviewed and registered (Anthropic official, Anthropic skills, Ralph and Morph).
+- [ ] `python scripts/coverage-doctor.py --strict` returns success on the **target installed user** only after the literal names are present.
+- [ ] Cached-only skills are not counted as enabled; the operator has verified individual plugin enablement in Claude.
+- [ ] GitHub MCP uses the approved Docker OAuth launch flow and the user has completed browser consent.
+- [ ] Four Obsidian templates are present in the selected vault; a customized preexisting template is never overwritten.
+- [ ] Every remaining locally customized third-party agent/skill/command has documented source and redistribution permission; otherwise install from official upstream.
+- [ ] No `settings.json`, `.claude.json`, token, session log, plugin cache or private vault note is included in the release.
+
+[See the offline exact-coverage audit](../components/exact-coverage.md). These tests intentionally do not claim that a real OAuth connection or delegated agent ran.

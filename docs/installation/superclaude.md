@@ -1,6 +1,6 @@
 # SuperClaude Framework — agents and sc commands
 
-**Publisher:** [SuperClaude-Org](https://github.com/SuperClaude-Org/SuperClaude_Framework) · **Role:** 20 specialist agents, 30 sc-prefixed commands and development workflow extensions.
+**Publisher:** [SuperClaude-Org](https://github.com/SuperClaude-Org/SuperClaude_Framework) · **Role:** upstream specialist agents, `sc` commands and development workflow extensions. **Important:** exact filenames and agent installation behavior have differed across upstream versions; verify individually rather than assuming 20/20 files.
 
 <br />
 
@@ -29,6 +29,12 @@ superclaude install --list
 ```
 
 Within Claude Code, look for `/sc:research`, `/sc:brainstorm`, and installed specialist agent definitions. Filename discovery is not proof that the agent executed.
+
+```powershell
+python .\scripts\coverage-doctor.py
+```
+
+**If the doctor still shows missing agents**, check the current upstream package and release documentation. An upstream [2026 issue about missing agent files](https://github.com/SuperClaude-Org/SuperClaude_Framework/issues/531) demonstrates why the command succeeding cannot be treated as exact agent-file proof. Do not silently download cached agent files from unrelated plugins or overwrite custom agents.
 
 <br />
 

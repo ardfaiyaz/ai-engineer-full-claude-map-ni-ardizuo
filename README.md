@@ -60,6 +60,21 @@ python .\scripts\verify-all.py
 
 <br />
 
+### Measure exact Development Hub coverage
+
+```powershell
+# Detailed offline report for EVERY reference agent, skill, command, plugin and MCP.
+# "missing" and "cached-unconfirmed" are NOT installed.
+python .\scripts\coverage-doctor.py
+
+# Machine-readable names and statuses; does not print paths, keys or server configuration.
+python .\scripts\coverage-doctor.py --json
+```
+
+The reference list contains **21 agents, 62 direct global skills, 32 commands, 12 enabled plugins and nine MCP server names**. This is not a promise that current upstream SuperClaude/plugin versions reproduce every name. [Read the exact-coverage guide](./docs/components/exact-coverage.md).
+
+<br />
+
 ### Other ways to install
 
 | Route | When to choose it | Start |
@@ -68,6 +83,7 @@ python .\scripts\verify-all.py
 | **Local only** | You only want the 28 custom development assets | [Development pack](./docs/installation/ardizuo-development-pack.md) |
 | **Core** | You want one minimal global workflow rule | `scripts/install.ps1 -Profile core` |
 | **Manual integration** | You want to pick third-party plugins and MCPs | [Components](./docs/components/README.md) |
+| **Private migration** | You want exact other agent/skill/command files from your own machine reviewed before release | [Asset ownership and migration](./docs/installation/private-source-migration.md) |
 
 <br />
 
@@ -98,13 +114,13 @@ Native Claude Code features stay native; the installer adds original skills, ups
 | Layer | Coverage | How it is delivered |
 | :--- | :--- | :--- |
 | Workflow & configuration | Five stages, gates and completion instructions | **Original included files** |
-| Agent layer | 21 reference names | **20 upstream SuperClaude + 1 included diagram agent** |
+| Agent layer | 21 reference names | **1 included diagram agent; target 20 more from upstream (exact matching unverified)** |
 | Original skill layer | 16 custom skills | **Included source files** |
-| Superpowers, Ralph, Expo, etc. | 12 plugin IDs | **CLI installs from their marketplaces** |
+| Superpowers, Ralph, Expo, etc. | 12 plugin IDs | **Marketplace preflight + CLI installs (provider login separate)** |
 | SuperClaude commands | ~30 command files | **Upstream framework installer** |
 | Hook layer | 5 event scripts + shared library | **Included source, opt-in activation** |
-| MCP layer | 9 reference servers | **6 guided registrations + 3 credential-dependent manual steps** |
-| Memory | Obsidian vault folder structure, session templates | **Optional local empty folders, approved notes only** |
+| MCP layer | 9 reference servers | **7 guided registrations including GitHub Docker OAuth; Tavily/Morph remain manual** |
+| Memory | Obsidian vault folder structure, session templates | **Optional folders and 4 templates, approved notes only** |
 | Dashboard | AI / Software Engineer Claude Setup | **Local Claude Map + version-sensitive overlay** |
 
 **Reference inventory:** 21 global agents · 62 global skill files · 32 global commands · 12 enabled plugins · 9 user MCPs. These are the source computer's names-only observations, **not** a promise of live availability on a fresh device.
@@ -130,6 +146,8 @@ Native Claude Code features stay native; the installer adds original skills, ups
 | Obsidian memory | [Vault guide](./vault/README.md) |
 | Fixing common issues | [Troubleshooting](./docs/troubleshooting.md) |
 | Testing before publishing | [Release checklist](./docs/release-checklist.md) |
+| Exact inventory and missing capabilities | [Coverage doctor](./docs/components/exact-coverage.md) |
+| Privately reviewing missing original files | [Private migration instructions](./docs/installation/private-source-migration.md) |
 
 <br />
 

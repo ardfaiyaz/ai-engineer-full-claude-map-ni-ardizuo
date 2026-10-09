@@ -50,3 +50,12 @@
 ## One-package assisted setup
 
 [Full installation and limitations](./installation/full-setup.md) · [Component coverage](./components/README.md).
+
+
+---
+
+## Completeness audit and source migration
+
+- [Exact Development Hub capability coverage](./components/exact-coverage.md) — offline audit of all named reference agents, skills, commands, plugins and MCP registrations, without claiming connections
+- [Private review of missing definitions](./installation/private-source-migration.md) — safely collect candidate direct-scope sources *outside* the repository, review licenses and redact private data before redistribution
+- [Full installer](./installation/full-setup.md) — marketplace preflight, official GitHub OAuth registration and vault template provisioning

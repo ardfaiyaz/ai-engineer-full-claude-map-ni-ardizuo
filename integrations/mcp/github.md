@@ -16,7 +16,13 @@ GitHub CLI OAuth and (for some setups) Docker are used.
 
 ## 2. Register the server (after review)
 
-**Installation:** This is a local `stdio` server. Its package name, launcher arguments, version and required environment vary by upstream implementation. Use [GitHub MCP official documentation](https://github.com/github/github-mcp-server) for the exact command and review it before running. Avoid copying credentials or private launcher scripts from another computer.
+**Recommended setup:** official Docker OAuth launcher, per [GitHub MCP for Claude Code](https://github.com/github/github-mcp-server/blob/main/docs/installation-guides/install-claude.md). Install and start Docker Desktop first. Port 8085 on the loopback interface must be free.
+
+```powershell
+claude mcp add --scope user github -e GITHUB_OAUTH_CALLBACK_PORT=8085 -- docker run -i --rm -p 127.0.0.1:8085:8085 -e GITHUB_OAUTH_CALLBACK_PORT ghcr.io/github/github-mcp-server
+```
+
+The server prompts for GitHub browser OAuth when used. No PAT or raw bearer authorization header is embedded. The Ardizuo Full installer now has this **opt-in registration command** when Docker is available. This does not prove the container started or OAuth succeeded.
 
 
 **Safety:** Prefer read-only mode for exploration. Avoid printing `gh auth token` or putting PATs in command history.
@@ -47,10 +53,36 @@ If you no longer need this server, review the configuration first and use `claud
 
 ## Ardizuo one-package setup
 
-**Installer:** Requires manual review and authentication; not automatically registered.
+**Installer:** Supported public registration command (Docker OAuth); interactive GitHub login and runtime verification remain required.
 
 **Official source:** https://github.com/github/github-mcp-server
 
-**Notes:** Original setup used gh+Docker wrapper. Obtain official read-only setup; never embed gh token in public configuration.
+**Notes:** Recommended official Docker OAuth flow on localhost port 8085. Do not publish OAuth credentials or private settings. Review GitHub tool access before granting write permissions.
 
 Never paste real keys into your issue, commit, README, or chat. Run `claude mcp list` and `/mcp` after registration; presence is not authentication.
+
+
+---
+
+## Current all-layer installer behavior
+
+- **Manifest name:** `github`
+- **Transport:** `stdio`
+- **CLI registration:** Included as a supported, opt-in command
+- **Prerequisites:** `docker`
+- **Official documentation:** https://github.com/github/github-mcp-server
+
+This server's settings are scoped to the **installer user's account**. Existing registrations are not overwritten. The installer tracks the result of a public registration command, but cannot complete an OAuth browser flow or guarantee the server is connected.
+
+```powershell
+# Preview just the third-party MCP registration portion.
+.\scripts\install-all.ps1 -Mcps -External
+
+# Review and explicitly approve only when ready.
+.\scripts\install-all.ps1 -Apply -Mcps -External
+
+# Inspect locally after registration; avoid pasting credentials in issues.
+claude mcp list
+```
+
+For verification, enter Claude Code and open `/mcp`. The desired lifecycle is **registered → connected/authenticated → successful permitted tool call**. The final two states require a real provider session. Do not treat `claude mcp list` or the Ardizuo dashboard as proof of a live successful call.

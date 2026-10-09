@@ -54,3 +54,29 @@ If you no longer need this server, review the configuration first and use `claud
 **Notes:** Requires Morph credentials/provider-specific setup.
 
 Never paste real keys into your issue, commit, README, or chat. Run `claude mcp list` and `/mcp` after registration; presence is not authentication.
+
+
+---
+
+## Current all-layer installer behavior
+
+- **Manifest name:** `morph-mcp`
+- **Transport:** `stdio`
+- **CLI registration:** Requires manual provider credential setup; this package does not guess keys
+- **Prerequisites:** `npx`
+- **Official documentation:** https://docs.morphllm.com
+
+This server's settings are scoped to the **installer user's account**. Existing registrations are not overwritten. The installer tracks the result of a public registration command, but cannot complete an OAuth browser flow or guarantee the server is connected.
+
+```powershell
+# Preview just the third-party MCP registration portion.
+.\scripts\install-all.ps1 -Mcps -External
+
+# Review and explicitly approve only when ready.
+.\scripts\install-all.ps1 -Apply -Mcps -External
+
+# Inspect locally after registration; avoid pasting credentials in issues.
+claude mcp list
+```
+
+For verification, enter Claude Code and open `/mcp`. The desired lifecycle is **registered → connected/authenticated → successful permitted tool call**. The final two states require a real provider session. Do not treat `claude mcp list` or the Ardizuo dashboard as proof of a live successful call.

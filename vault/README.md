@@ -34,3 +34,18 @@ claude
 ```
 
 This is **a path, not an API secret**. To keep this setting for future sessions, you may explicitly set a user-level Windows environment variable; see the [PowerShell guide](../docs/security/api-keys-and-powershell.md). The installer never changes it silently.
+
+
+## Templates are installed without replacement
+
+The Full installer now copies the four repository templates (`ADR.md`, `Learning.md`, `PRD.md`, `Session.md`) into the chosen vault's `Templates` directory only when no file with that name exists. Identical templates are skipped, and a customized existing template causes the template step to stop rather than overwrite your work.
+
+```powershell
+# Test first with a throwaway vault. Use --vault-path to avoid touching a personal vault.
+python .\scripts\install-all.py --config-dir "$HOME\Documents\Ardizuo-Test-Config" --vault --vault-path "$HOME\Documents\Ardizuo-Test-Vault"
+
+# Apply only after reviewing the directory and the template contents.
+python .\scripts\install-all.py --apply --config-dir "$HOME\Documents\Ardizuo-Test-Config" --vault --vault-path "$HOME\Documents\Ardizuo-Test-Vault"
+```
+
+A template file does not mean a private note was written or a Claude session was saved. Keep approval checks for note creation and do not commit the resulting vault.

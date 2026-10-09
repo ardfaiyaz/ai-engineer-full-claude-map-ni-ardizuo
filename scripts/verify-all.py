@@ -41,3 +41,5 @@ print('Obsidian vault folders: ',sum((vault/name).is_dir() for name in manifest[
 print('Dashboard: check separately using docs/installation/claude-map.md')
 print('\nIMPORTANT: Installed/configured != connected/authenticated != actually used.')
 print('Check inside Claude Code: /skills, /mcp and /hooks.')
+
+print('For exact 21-agent / 62-skill / 32-command name coverage, run: python scripts/coverage-doctor.py')

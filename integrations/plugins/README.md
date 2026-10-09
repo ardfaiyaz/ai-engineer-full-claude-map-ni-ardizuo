@@ -1,6 +1,6 @@
 # Claude Code plugin catalog
 
-**Install only what you need.** This page lists the **12 enabled plugins on the author's reference machine**; the repository's Core installer doesn't install them.
+**Install only what you need.** This page lists the **12 enabled plugins on the author's reference machine**; Core doesn't install these plugins. The **All Layers** installer has an explicit opt-in for marketplace registration and supported third-party installation.
 
 <br />
 
@@ -35,3 +35,29 @@ Third-party source is not redistributed here. **Enabled ≠ authenticated ≠ in
 <br />
 
 [API keys and PowerShell](../../docs/security/api-keys-and-powershell.md) · [Component catalog](../../docs/components/README.md) · [Docs hub](../../docs/README.md)
+
+
+## Marketplace setup before installing plugins
+
+Marketplace IDs come from the marketplaces' own catalog, not from their GitHub repository names. Register these first (after inspecting their repositories):
+
+```powershell
+claude plugin marketplace add anthropics/claude-plugins-official
+claude plugin marketplace add anthropics/skills
+claude plugin marketplace add snarktank/ralph
+claude plugin marketplace add morphllm/morph-claude-code-plugin
+```
+
+The first marketplace is ordinarily already available in Claude Code. If so, do **not** remove or overwrite it. The updated Ardizuo `-All` installer detects known marketplaces where the CLI supports listing them and attempts registration before the 12 plugin installations. It skips plugins whose marketplace registration failed.
+
+**Plugin install examples:**
+
+```powershell
+claude plugin install document-skills@anthropic-agent-skills
+claude plugin install ralph-skills@ralph-marketplace
+claude plugin install morph-compact@morph
+```
+
+**Source documentation:** [Anthropic official catalog](https://github.com/anthropics/claude-plugins-official), [Anthropic skills](https://github.com/anthropics/skills), [Ralph](https://github.com/snarktank/ralph), and [Morph](https://github.com/morphllm/morph-claude-code-plugin).
+
+Plugin installation may execute third-party code. Review source and permissions before consenting, and sign in separately to provider accounts. `claude plugin list` is not evidence of a successful provider connection.

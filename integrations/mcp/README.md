@@ -33,3 +33,18 @@
 <br />
 
 [Plugin catalog](../plugins/README.md) · [Requirements](../../docs/prerequisites.md) · [Docs hub](../../docs/README.md)
+
+
+## Seven supported registration commands, two account-specific steps
+
+The All Layers installer can now **attempt** public registrations for Serena, Sequential Thinking, Chrome DevTools, Supabase (read-only), Figma, Vercel, and the [official GitHub MCP Docker OAuth flow](./github.md). Tavily and Morph remain manual credential-dependent setups.
+
+No MCP connector is considered authenticated by merely returning exit code zero. GitHub Docker OAuth will prompt for browser login on first use. Supabase, Figma and Vercel may also need account consent in Claude Code.
+
+```powershell
+.\scripts\install-all.ps1 -External -Mcps          # dry run
+.\scripts\install-all.ps1 -Apply -External -Mcps   # user-approved registration
+claude mcp list
+```
+
+Use [exact reference coverage](../../docs/components/exact-coverage.md) to audit the configured names and then verify live status in `/mcp`.

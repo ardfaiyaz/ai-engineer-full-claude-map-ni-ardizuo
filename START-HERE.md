@@ -35,3 +35,17 @@ Plugin marketplace availability, provider authentication, dashboard compatibilit
 This archive contains original reviewed skills, hooks, a custom agent, rules, manifests, source dashboard patches, separate plugin/MCP installation guides and all generated documentation. Official third-party binaries and private credentials are **not** embedded. The end-to-end Full workflow still needs a clean Windows installation and provider-specific login tests before claiming a stable release.
 
 [Project README](./README.md) · [Security](./SECURITY.md) · [Release checklist](./docs/release-checklist.md)
+
+
+## Maintainer: complete the exact Development Hub inventory
+
+```powershell
+python .\scripts\coverage-doctor.py
+python .\scripts\coverage-doctor.py --json
+
+# Preview which additional direct-scope files exist on your OWN machine.
+# Review ownership and secrets before sharing any contents.
+python .\scripts\prepare-private-review.py
+```
+
+See [exact coverage](./docs/components/exact-coverage.md) and [private source migration](./docs/installation/private-source-migration.md). The package does not invent files for skills that exist only as a reference name, nor can it migrate another user's provider credentials.

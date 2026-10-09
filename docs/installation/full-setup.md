@@ -60,18 +60,31 @@ This command can make external network requests and ask you for input. Read the 
 
 1. Copy your original 28 files and core rule, without overwriting conflicting files.
 2. Install SuperClaude via pipx and then run the upstream setup when absent.
-3. Invoke CLI installation for 12 plugins. Marketplace prerequisites and provider sign-in may still require manual work.
-4. Register six MCPs from public/verified launch commands when not already present.
-5. Explain three remaining credential-dependent MCPs: Tavily, Morph and GitHub.
+3. Check and register four official/upstream plugin marketplaces before attempting all 12 plugins. Account sign-in still requires user approval.
+4. Register seven MCP servers, including the official GitHub Docker OAuth launcher, when not already present.
+5. Explain the two remaining credential-dependent MCPs: Tavily and Morph. GitHub still requires interactive OAuth and a running Docker engine.
 6. Register the five hooks after a private settings backup.
-7. Create the eight empty Obsidian vault folders, without creating session notes.
+7. Create eight Obsidian vault folders and install four supplied templates without overwriting customized ones or creating session notes.
 8. Install the upstream Claude Map npm package; patch compatibility is checked separately.
 
 For a **dashboard-only** install, use [Claude Map setup](../../dashboard/claude-map/README.md).
 
 <br />
 
-## 5. Verify honestly
+## 5. Audit every named reference capability
+
+```powershell
+python .\scripts\coverage-doctor.py
+python .\scripts\coverage-doctor.py --json
+```
+
+The audit reports all 21 reference agent names, 62 skill names, 32 command names, 12 plugins, and nine MCP servers individually. It is offline; it will NOT test provider authentication. `cached-unconfirmed` means a plugin file was found on disk but the corresponding plugin was not confirmed enabled.
+
+The reference count is not the install promise. See [exact coverage](../components/exact-coverage.md) and [privately reviewing missing files](./private-source-migration.md).
+
+<br />
+
+## 6. Verify honestly
 
 ```powershell
 python .\scripts\verify-all.py
@@ -90,13 +103,13 @@ In Claude Code, open `/skills`, `/mcp`, and `/hooks`. Sign in only to services y
 
 <br />
 
-## 6. Rollback and removal
+## 7. Rollback and removal
 
 The installer skips identical assets and fails on conflicting files; it never force-overwrites your unrelated configuration. Use `scripts/backup.ps1` before changing personal rules and refer to its matching `restore.ps1` for supported backups. Claude Map overlay scripts back up their patched source files. There is not yet a fully tested automatic uninstall of every third-party service; use each [plugin](../../integrations/plugins/README.md) or [MCP](../../integrations/mcp/README.md) guide for removal.
 
 <br />
 
-## 7. Known limitations
+## 8. Known limitations
 
 - The Full mode is an **assisted preview**, not a verified one-click offline replica.
 - Some plugin marketplace IDs and CLI options can change; errors require guide-based resolution.

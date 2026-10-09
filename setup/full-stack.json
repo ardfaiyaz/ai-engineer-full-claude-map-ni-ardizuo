@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "stage": "full-setup-assisted-preview",
+  "stage": "assisted-completion-sprint-one",
   "project": "AI Engineer Full Claude Map ni Ardizuo",
   "includedSource": {
     "localFiles": 28,
@@ -297,13 +297,32 @@
     {
       "name": "github",
       "transport": "stdio",
-      "automation": "interactive",
+      "automation": "supported",
       "prerequisites": [
-        "gh",
         "docker"
       ],
       "source": "https://github.com/github/github-mcp-server",
-      "notes": "Original setup used gh+Docker wrapper. Obtain official read-only setup; never embed gh token in public configuration."
+      "notes": "Official GitHub MCP Docker OAuth flow. Requires Docker Desktop running; browser login on first use; fixed loopback port 8085 must be free. No PAT required or embedded. Do not run when another service uses this port.",
+      "argv": [
+        "claude",
+        "mcp",
+        "add",
+        "--scope",
+        "user",
+        "github",
+        "-e",
+        "GITHUB_OAUTH_CALLBACK_PORT=8085",
+        "--",
+        "docker",
+        "run",
+        "-i",
+        "--rm",
+        "-p",
+        "127.0.0.1:8085:8085",
+        "-e",
+        "GITHUB_OAUTH_CALLBACK_PORT",
+        "ghcr.io/github/github-mcp-server"
+      ]
     }
   ],
   "dashboard": {
@@ -341,10 +360,36 @@
     "External account authentication is interactive",
     "Not all 178 discoverable entries are separately redistributable",
     "Some plugins from non-default marketplaces need manual marketplace installation",
-    "Three credential-dependent MCPs are manual until users choose their auth mechanism",
+    "Tavily and Morph MCPs require separate provider credential setup; GitHub has optional Docker OAuth registration",
     "Dashboard patch compatibility cannot be guaranteed without a pinned clean upstream release",
     "Claude built-ins are not bundled",
     "Local agent definitions are not the same as runtime delegation"
   ],
-  "provenance": "User supplied names-only inventory and 28 reviewed original asset files. External sources referenced, not repackaged."
+  "provenance": "User supplied names-only inventory and 28 reviewed original asset files. External sources referenced, not repackaged. Marketplace setup sources verified from upstream README pages; connection still must be checked on user device.",
+  "marketplaces": [
+    {
+      "id": "claude-plugins-official",
+      "source": "anthropics/claude-plugins-official",
+      "url": "https://github.com/anthropics/claude-plugins-official",
+      "note": "Usually preinstalled in Claude Code. Do not change an existing marketplace."
+    },
+    {
+      "id": "anthropic-agent-skills",
+      "source": "anthropics/skills",
+      "url": "https://github.com/anthropics/skills",
+      "note": "Official document-skills and example-skills marketplace."
+    },
+    {
+      "id": "ralph-marketplace",
+      "source": "snarktank/ralph",
+      "url": "https://github.com/snarktank/ralph",
+      "note": "Ralph author marketplace; user should review scripts and terms."
+    },
+    {
+      "id": "morph",
+      "source": "morphllm/morph-claude-code-plugin",
+      "url": "https://github.com/morphllm/morph-claude-code-plugin",
+      "note": "Morph plugin marketplace; Morph API key setup remains interactive."
+    }
+  ]
 }

@@ -60,3 +60,29 @@ claude mcp add --scope user chrome-devtools -- npx -y chrome-devtools-mcp@latest
 **Notes:** May inspect content in a browser; avoid sensitive active sessions.
 
 Never paste real keys into your issue, commit, README, or chat. Run `claude mcp list` and `/mcp` after registration; presence is not authentication.
+
+
+---
+
+## Current all-layer installer behavior
+
+- **Manifest name:** `chrome-devtools`
+- **Transport:** `stdio`
+- **CLI registration:** Included as a supported, opt-in command
+- **Prerequisites:** `npx`
+- **Official documentation:** https://github.com/ChromeDevTools/chrome-devtools-mcp
+
+This server's settings are scoped to the **installer user's account**. Existing registrations are not overwritten. The installer tracks the result of a public registration command, but cannot complete an OAuth browser flow or guarantee the server is connected.
+
+```powershell
+# Preview just the third-party MCP registration portion.
+.\scripts\install-all.ps1 -Mcps -External
+
+# Review and explicitly approve only when ready.
+.\scripts\install-all.ps1 -Apply -Mcps -External
+
+# Inspect locally after registration; avoid pasting credentials in issues.
+claude mcp list
+```
+
+For verification, enter Claude Code and open `/mcp`. The desired lifecycle is **registered → connected/authenticated → successful permitted tool call**. The final two states require a real provider session. Do not treat `claude mcp list` or the Ardizuo dashboard as proof of a live successful call.
