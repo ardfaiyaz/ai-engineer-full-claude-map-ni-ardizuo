@@ -1,24 +1,50 @@
-# Requirements — Windows-first
+# Prerequisites — Windows-first
 
-| Requirement | Role | Core bootstrap | Full setup plan |
-| --- | --- | --- | --- |
-| Windows 10/11 + PowerShell 5.1+ | Local installer and scripts | Required | Required |
-| Claude Code CLI | Agent runtime | Recommended | Required |
-| Git | Clone and repository workflows | Recommended | Required |
-| Node.js + npm | JS runtime, Claude Map and JS MCPs | Recommended | Required for relevant modules |
-| Python 3 | Selected developer tools | Optional | Some modules |
-| `uv` / `uvx` | Python-based MCP launchers such as Serena | Optional | If selected |
-| GitHub CLI (`gh`) | GitHub login and review | Optional | If selected |
-| Docker Desktop | Docker-backed MCPs / optional AIRIS | Optional | If selected |
-| Obsidian | Browse local development notes | Optional | If memory selected |
-| WSL | Linux-only tools | Not required | Optional |
+**You do not need to install everything.** Check what you already have, then follow only the relevant guides. WSL and Docker are optional.
 
-Use `scripts/doctor.ps1` for a local check. The checker does not install system packages or verify account authentication.
+<br />
 
-## Paths
+## Check your computer first
 
-The installer uses `$env:CLAUDE_CONFIG_DIR` if set; otherwise `Join-Path $HOME '.claude'`. This is deliberately independent of the author's username. Vaults and backups are separate from your Git clone and always opt-in.
+From the repository root, open **PowerShell**:
 
-## Provider authentication
+```powershell
+.\scripts\doctor.ps1
+```
 
-Figma, Vercel, Supabase, GitHub, Expo, Stripe, Sentry, Atlassian and Notion may prompt for OAuth or API access. A provider installed or configured in Claude Code may still be unauthenticated. Test with `/mcp`, `claude mcp list`, and the provider's documented verification flow. Use least-privileged / test environments for financial and deployment tools.
+If a command is not recognized, follow its installation guide and reopen PowerShell before retrying.
+
+<br />
+
+## Essential and optional tools
+
+| Tool | When it's needed | Open the guide |
+| :--- | :--- | :--- |
+| **Windows 10/11 + PowerShell** | Supported v1 installer platform | [Windows setup](./installation/windows-powershell.md) |
+| **Claude Code** | Required for the Claude development environment | [Claude Code CLI](./installation/claude-code.md) |
+| **Git** | Clone this repository and manage changes | [Git](./installation/git.md) |
+| **Node.js + npm** | Dashboard and many JavaScript MCP tools | [Node and npm](./installation/nodejs-npm.md) |
+| Python | Selected scripts, plugins and Python projects | [Python](./installation/python.md) |
+| uv / uvx | Selected Python MCPs such as Serena | [uv and uvx](./installation/uv.md) |
+| GitHub CLI (`gh`) | GitHub authentication and repository actions | [GitHub CLI](./installation/github-cli.md) |
+| Docker Desktop | Docker-backed MCP and optional gateway | [Docker](./installation/docker.md) |
+| Obsidian | Browse optional knowledge vault | [Obsidian](./installation/obsidian.md) |
+| WSL | Specific Linux-based development tools | [WSL](./installation/wsl.md) |
+| Local Claude Map | Optional runtime inventory/dashboard | [Claude Map](./installation/claude-map.md) |
+
+<br />
+
+## Global setup location
+
+The scripts should use `$env:CLAUDE_CONFIG_DIR` if set; otherwise, the current user's `$HOME\.claude` folder. They must not hardcode the creator's username.
+
+```powershell
+$claudeDir = if ($env:CLAUDE_CONFIG_DIR) { $env:CLAUDE_CONFIG_DIR } else { Join-Path $HOME '.claude' }
+Write-Host "Claude configuration directory: $claudeDir"
+```
+
+**Authentication is separate from installation.** A configured MCP server can still require sign-in. See [API keys and PowerShell](./security/api-keys-and-powershell.md) and the [MCP catalog](../integrations/mcp/README.md).
+
+<br />
+
+[Next: installation guide index](./installation/README.md) · [Back to documentation](./README.md)

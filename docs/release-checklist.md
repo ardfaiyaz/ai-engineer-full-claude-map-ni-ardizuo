@@ -1,14 +1,38 @@
-# Public release gate
+# Full release checklist
 
-- [ ] Choose and add an explicit license for original code.
-- [ ] Document attribution and redistribution rights for every bundled third-party component.
-- [ ] Review the author's 21 global agent definitions; package only approved, original content.
-- [ ] Review/port original skills, all five hooks, workflow/config files; replace user-specific paths.
-- [ ] Review 12 third-party plugin entries and nine user MCP entries, with prerequisites and installation instructions.
-- [ ] Make each selected Full/profile component installable, versioned and verifiable; do not fake detection statuses.
-- [ ] Implement complete uninstall or rollback for all installed components.
-- [ ] Add attributed, dependency-pinned Claude Map patch with safety tests.
-- [ ] Add real lifecycle checks: agent delegation, completion mandate, vault save/reload and Ship evidence.
-- [ ] Check staged files, Git history, test logs and sample configs for secrets.
-- [ ] Test fresh Windows user install, repeat install, rollback and error recovery.
-- [ ] Create tagged GitHub release only after the above are complete.
+A **public bootstrap preview** is already available. It becomes a full installable release only after every required check passes.
+
+<br />
+
+## Source and licensing
+
+- [ ] Choose a LICENSE covering original content only.
+- [ ] Attribute upstream Claude Map, plugins and other authors appropriately.
+- [ ] Review and license-check 21 agent definitions.
+- [ ] Review all original skills, five hooks and global rules for secrets, paths and side effects.
+
+<br />
+
+## Installer and guides
+
+- [ ] Package approved assets with idempotent installation and collision handling.
+- [ ] Make Full, Frontend, Backend, Mobile and Custom profiles genuinely installable or explicitly mark incomplete.
+- [ ] Provide verified dependency and [installation guides](./installation/README.md).
+- [ ] Verify all [plugin](../integrations/plugins/README.md) and [MCP](../integrations/mcp/README.md) registrations and auth flows.
+- [ ] Bundle an attributed, version-pinned local dashboard patch with tests.
+- [ ] Make rollback and uninstall work without modifying unrelated user settings.
+
+<br />
+
+## Runtime and security
+
+- [ ] Test explicit agent delegation and truthful reporting of no delegation.
+- [ ] Verify real completion mandate, tests, builds, Git review and Ship evidence.
+- [ ] Test approved Obsidian note write and retrieval in a new session.
+- [ ] Run a clean Windows install, repeat installation and rollback.
+- [ ] Scan tracked files, Git history, sample environment files and CI logs for private data.
+- [ ] Tag a stable release only after the package meets its stated scope.
+
+<br />
+
+[Maintainer notes](./maintainer-next-steps.md) · [Security](../SECURITY.md) · [README](../README.md)

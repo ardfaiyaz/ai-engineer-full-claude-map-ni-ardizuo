@@ -1,0 +1,48 @@
+# Figma MCP
+
+**Purpose:** Design files, components and handoff context. **Transport on reference machine:** `http`.
+
+**Status:** Reference-only; not installed, registered or authenticated by the Core bootstrap.
+
+<br />
+
+## 1. Requirements
+
+[Figma — official source](https://developers.figma.com/) · [API keys](../../docs/security/api-keys-and-powershell.md)
+
+Connect only the design workspace/files you need, normally via provider sign-in.
+
+<br />
+
+## 2. Register the server (after review)
+
+**Reference endpoint used by the author:** `https://mcp.figma.com/mcp`. Check the provider documentation for the current endpoint, then, if approved, register it as a **user-scoped HTTP MCP**:
+
+```powershell
+claude mcp add --scope user --transport http figma https://mcp.figma.com/mcp
+```
+
+
+**Safety:** Use read-only design permissions where practical.
+
+<br />
+
+## 3. Authenticate and verify
+
+```powershell
+claude mcp list
+```
+
+Open Claude Code and use `/mcp` to complete provider sign-in and inspect status. A config entry is only **configured** until the server is actually connected. Grant only the needed access, ideally in a test environment.
+
+<br />
+
+## 4. Troubleshoot and remove
+
+If startup fails, confirm the runtime, endpoint or launcher command, connectivity and permissions using the official source above. Don't paste tokens, full auth headers, raw `.claude.json`, or secret-containing MCP logs into a public issue.
+
+If you no longer need this server, review the configuration first and use `claude mcp get figma` to confirm the scope, then use `claude mcp remove figma` only for the matching registration; verify with `claude mcp list`. Check your installed Claude CLI's help if the flags differ.
+
+<br />
+
+[All MCP servers](./README.md) · [API keys](../../docs/security/api-keys-and-powershell.md) · [Documentation hub](../../docs/README.md)
