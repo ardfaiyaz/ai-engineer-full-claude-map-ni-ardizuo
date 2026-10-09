@@ -27,7 +27,7 @@ def relpath(s):
     parts=Path(s.replace('\\','/')).parts
     if not parts or any(p in ('','..','.') for p in parts) or s.startswith(('/', '\\')) or ':' in s:
         raise ValueError('Untrusted relative path in manifest')
-    if parts[0] not in ('agents','commands','hooks','rules','skills','workflows'):
+    if parts[0] not in ('agents','commands','hooks','rules','skills','workflows','assets'):
         raise ValueError('Unapproved destination category')
     return Path(*parts)
 
@@ -43,6 +43,17 @@ def local_plan(config, include_rule=True):
         if not source.is_file():raise FileNotFoundError(f'Missing packaged source: {entry}')
         state='new' if not dest.exists() else ('identical' if dest.is_file() and hash_file(source)==hash_file(dest) else 'CONFLICT')
         plans.append((str(rel),source,dest,state))
+    # Lucide assets are installed alongside prompt Markdown so icons resolve locally,
+    # including when copied outside this GitHub checkout into ~/.claude.
+    for source in sorted((ROOT/'ardizuo-plugin/assets/lucide').glob('*.svg')):
+        rel=Path('assets/lucide')/source.name
+        dest=config/rel
+        state='new' if not dest.exists() else ('identical' if dest.is_file() and hash_file(source)==hash_file(dest) else 'CONFLICT')
+        plans.append((rel.as_posix(),source,dest,state))
+    source=ROOT/'global-config/CLAUDE.md'
+    dest=config/'CLAUDE.md'
+    state='new' if not dest.exists() else ('identical' if dest.is_file() and hash_file(source)==hash_file(dest) else 'CONFLICT')
+    plans.append(('CLAUDE.md',source,dest,state))
     if include_rule:
         source=ROOT/'global-config/rules/ardizuo-development.md'
         dest=config/'rules/ardizuo-development.md'
@@ -126,6 +137,13 @@ def known_marketplaces(manifest, apply):
 def install_templates(source_folder, vault, apply):
     """Never overwrite personal Obsidian templates; all-or-nothing on conflicts."""
     templates = sorted(source_folder.glob('*.md'))
+    # Template headings reference local Lucide SVGs. Validate before any writes.
+    icons = sorted((source_folder.parent/'.ardizuo-icons').glob('*.svg'))
+    if len(icons) < 20: raise RuntimeError('Missing Lucide icons for vault templates')
+    for icon in icons:
+        target=vault/'.ardizuo-icons'/icon.name
+        if target.exists() and (not target.is_file() or hash_file(target)!=hash_file(icon)):
+            raise RuntimeError('Conflicting vault icon; will not overwrite: '+icon.name)
     if not templates: raise RuntimeError('No shipped vault templates found')
     dest = vault/'Templates'
     for src in templates:
@@ -145,7 +163,15 @@ def install_templates(source_folder, vault, apply):
         except FileExistsError:
             raise RuntimeError('Vault template appeared during installation; inspect '+src.name)
         copied += 1
+    icons_installed=0
+    (vault/'.ardizuo-icons').mkdir(parents=True,exist_ok=True)
+    for icon in icons:
+        target=vault/'.ardizuo-icons'/icon.name
+        if target.exists(): continue
+        with target.open('xb') as output: output.write(icon.read_bytes())
+        icons_installed+=1
     print('  Vault templates: installed',copied,'new; identical:',len(templates)-copied,'; no overwrites.')
+    print('  Lucide icons: installed',icons_installed,'new; no overwrites.')
 
 
 def main():
@@ -158,6 +184,8 @@ def main():
     ap.add_argument('--dashboard',action='store_true',help='Opt-in to npm install -g claude-map; dashboard patch is separate')
     ap.add_argument('--superclaude',action='store_true',help='Allow upstream SuperClaude pipx install and install command')
     ap.add_argument('--pinned-superclaude',action='store_true',help='Install commit-pinned, hash-verified SuperClaude files (optional network with --apply)')
+    ap.add_argument('--pinned-skills',action='store_true',help='Install 20 pinned third-party skill prompts (network only with --apply)')
+    ap.add_argument('--skill-upstream-variants',action='store_true',help='Opt in to 5 upstream skill prompts different from author references')
     ap.add_argument('--upstream-variants',action='store_true',help='Opt in to 11 upstream commands different from author references')
     ap.add_argument('--plugins',action='store_true',help='Allow third-party plugin install commands')
     ap.add_argument('--mcps',action='store_true',help='Allow supported third-party MCP registration commands')
@@ -168,6 +196,8 @@ def main():
         raise ValueError('Choose --superclaude (upstream CLI) OR --pinned-superclaude (static pinned definitions), not both.')
     if args.upstream_variants and not args.pinned_superclaude:
         raise ValueError('--upstream-variants requires --pinned-superclaude.')
+    if args.skill_upstream_variants and not args.pinned_skills:
+        raise ValueError('--skill-upstream-variants requires --pinned-skills.')
     if args.config_dir and args.vault and not args.vault_path and args.apply:
         raise ValueError('Isolated --config-dir with --vault requires an explicit --vault-path. No real default vault changed.')
     if args.config_dir and args.external and args.apply:
@@ -177,7 +207,7 @@ def main():
     print('\nAI ENGINEER FULL CLAUDE MAP NI ARDIZUO — ASSISTED SETUP\n')
     print('Claude global config:',config)
     print('Mode:', 'APPLY' if args.apply else 'DRY RUN')
-    print('Source-owned local files: 28 + one base rule')
+    print('Local definitions: 28 reviewed files + base rule + portable CLAUDE.md + Lucide presentation assets')
     print('Third-party clients need internet and may require provider sign-in.')
     # Fail on a conflicting personal vault template BEFORE modifying local Claude files.
     # Dry-run previews the same conflict checks, but never creates folders or notes.
@@ -199,6 +229,14 @@ def main():
         actions['pinned-superclaude']=run_external(command,'pinned 20 agents + 19 matching commands (11 variants opt-in)',False)
         if actions['pinned-superclaude']!='cli-success':
             raise RuntimeError('Pinned SuperClaude installation failed; review output and retry in a fresh test config.')
+    if args.pinned_skills:
+        print('\nPINNED THIRD-PARTY SKILL PROMPTS (SAFE, NON-OVERWRITING)')
+        command=[sys.executable,str(ROOT/'scripts/install-pinned-skills.py'),'--config-dir',str(config)]
+        if args.skill_upstream_variants:command.append('--upstream-variants')
+        if args.apply:command.append('--apply')
+        actions['pinned-skills']=run_external(command,'20 source-matched skill prompts; 5 upstream variants opt-in',False)
+        if actions['pinned-skills']!='cli-success':
+            raise RuntimeError('Pinned skill installation failed; review output and retry in a fresh test config.')
     if args.superclaude:
         print('\nSUPERCLAUDE — upstream installer (20 agent definitions and sc commands)')
         if not external_enabled: print('  SKIPPED; external installs not authorized')
@@ -269,16 +307,15 @@ def main():
             install_templates(ROOT/'vault/templates',vault,False)
     if args.dashboard:
         print('\nOPTIONAL CLAUDE MAP LOCAL DASHBOARD')
-        if not external_enabled:print('  SKIPPED; external installs not authorized')
-        else:
-            actions['dashboard-npm']=run_external(mf['dashboard']['npm'],'npm install -g claude-map',not args.apply)
-            if args.apply and actions['dashboard-npm']=='cli-success':
-                actions['dashboard-overlay']=run_external([sys.executable,str(ROOT/'scripts/install-dashboard.py'),'--apply'], 'install version-sensitive Ardizuo Development Hub overlay',False)
-            print('  IMPORTANT: custom Development Hub patch is version-sensitive; check dashboard/claude-map/README.md')
+        print('  GUIDED ONLY: never overwrite or upgrade an existing global Claude Map installation automatically.')
+        print('  npm claude-map@1.2.3 and the existing five-stage overlay require a separate compatibility rehearsal.')
+        print('  See dashboard/claude-map/README.md. First run python scripts/install-dashboard.py --rehearse')
+        print('  Then review backups and compatibility before any explicit live --apply.')
+        actions['dashboard']='manual-rehearsal-required'
     print('\nFINAL STATUS')
     print('  Local files:', 'installed or identical' if args.apply else 'planned only')
     print('  Third-party actions:', len(actions),'tracked (0 exit is not provider authentication)')
-    print('  Unautomated: Tavily/Morph credential-dependent MCPs; Claude built-ins; unlicensed/unknown skills; Dashboard compatibility.')
+    print('  Still pending: 4 unknown skill sources; 17 external direct-skill origins; 5 optional skill versions; 11 optional command versions; sidecars and runtime checks.')
     print('  Next: python scripts/coverage-doctor.py ; claude plugin list ; claude mcp list ; in Claude Code /mcp, /skills and /hooks.')
     print('  This setup never copies your personal auth secrets or private vault notes.')
     if any(v in ('failed','missing-dependency','marketplace-not-ready') for v in actions.values()):

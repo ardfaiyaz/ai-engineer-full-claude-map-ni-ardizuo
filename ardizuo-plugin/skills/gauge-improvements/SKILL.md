@@ -4,7 +4,7 @@ description: Assess development changes with baseline and after-state metrics.
 disable-model-invocation: true
 ---
 
-# Gauge Improvements
+# <img src="../../assets/lucide/file-text.svg" width="18" height="18" alt="" /> Gauge Improvements
 
 This is an original local development-focused adapter, not an official third-party skill.
 

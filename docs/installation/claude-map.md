@@ -1,10 +1,10 @@
-# Claude Map dashboard (optional)
+# <img src="../assets/lucide/monitor.svg" width="18" height="18" alt="" /> Claude Map dashboard (optional)
 
 **Why you might need it:** Local-only visualization of Claude Code configuration and the workflow architecture.
 
 <br />
 
-## 1. Get it from the official source
+## <img src="../assets/lucide/folder-open.svg" width="18" height="18" alt="" /> 1. Get it from the official source
 
 [Claude Map dashboard (optional) — official installation page](https://github.com/shamim0902/claude-map)
 
@@ -14,7 +14,7 @@ Read the upstream Claude Map repository and its supported installation instructi
 
 <br />
 
-## 2. Verify
+## <img src="../assets/lucide/list-checks.svg" width="18" height="18" alt="" /> 2. Verify
 
 ```powershell
 node --version
@@ -23,7 +23,7 @@ npm --version
 
 <br />
 
-## 3. If something goes wrong
+## <img src="../assets/lucide/file-text.svg" width="18" height="18" alt="" /> 3. If something goes wrong
 
 If an existing local dashboard shows missing tools, remember it may only scan certain folders; use `claude plugin list`, `/skills`, and `claude mcp list` as the live sources. Never expose the dashboard to the public network or return raw MCP credentials.
 

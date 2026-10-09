@@ -1,10 +1,10 @@
-# uv and uvx
+# <img src="../assets/lucide/file-text.svg" width="18" height="18" alt="" /> uv and uvx
 
 **Why you might need it:** Launches isolated Python tooling and some Python-based MCP servers, including Serena.
 
 <br />
 
-## 1. Get it from the official source
+## <img src="../assets/lucide/folder-open.svg" width="18" height="18" alt="" /> 1. Get it from the official source
 
 [uv and uvx — official installation page](https://docs.astral.sh/uv/getting-started/installation/)
 
@@ -18,7 +18,7 @@ Do not run unknown `uvx` packages. Check the publisher and version of any MCP la
 
 <br />
 
-## 2. Verify
+## <img src="../assets/lucide/list-checks.svg" width="18" height="18" alt="" /> 2. Verify
 
 ```powershell
 uv --version
@@ -27,7 +27,7 @@ uvx --version
 
 <br />
 
-## 3. If something goes wrong
+## <img src="../assets/lucide/file-text.svg" width="18" height="18" alt="" /> 3. If something goes wrong
 
 If the tools are not on PATH, reopen PowerShell and inspect the installation location in [Astral's installer documentation](https://docs.astral.sh/uv/reference/installer/).
 

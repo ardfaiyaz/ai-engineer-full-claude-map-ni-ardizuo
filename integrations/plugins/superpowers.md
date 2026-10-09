@@ -1,4 +1,4 @@
-# Superpowers plugin
+# <img src="../../docs/assets/lucide/puzzle.svg" width="18" height="18" alt="" /> Superpowers plugin
 
 **Purpose:** Structured brainstorming, testing, debugging and review.
 
@@ -6,7 +6,7 @@
 
 <br />
 
-## 1. Requirements and official source
+## <img src="../../docs/assets/lucide/download.svg" width="18" height="18" alt="" /> 1. Requirements and official source
 
 [Superpowers — official reference](https://github.com/obra/superpowers) · [Claude Code CLI](../../docs/installation/claude-code.md)
 
@@ -14,7 +14,7 @@ No account is usually required for local skills; agent model usage still depends
 
 <br />
 
-## 2. Install (optional)
+## <img src="../../docs/assets/lucide/download.svg" width="18" height="18" alt="" /> 2. Install (optional)
 
 Review the [official Claude Code plugin documentation](https://code.claude.com/docs/en/discover-plugins) and the marketplace catalog first. In a terminal with Claude Code available, you can use:
 
@@ -26,7 +26,7 @@ If the marketplace isn't registered, use Claude Code's `/plugin` marketplace UI 
 
 <br />
 
-## 3. Sign in and verify
+## <img src="../../docs/assets/lucide/list-checks.svg" width="18" height="18" alt="" /> 3. Sign in and verify
 
 ```powershell
 claude plugin list
@@ -39,7 +39,7 @@ In Claude Code, open `/skills` to inspect the actual available skills and `/mcp`
 
 <br />
 
-## 4. Troubleshooting and removal
+## <img src="../../docs/assets/lucide/wrench.svg" width="18" height="18" alt="" /> 4. Troubleshooting and removal
 
 If the plugin doesn't appear, reload plugins inside Claude Code with `/reload-plugins`, reopen the session, and confirm you used the right marketplace. Review provider account scopes and permissions before connecting.
 
@@ -51,14 +51,14 @@ Use Claude Code's `/plugin` manager or the supported plugin uninstall command to
 
 <br />
 
-## One-package option
+## <img src="../../docs/assets/lucide/package.svg" width="18" height="18" alt="" /> One-package option
 
 From the repository root, use `scripts/install-all.ps1 -Apply -External -Plugins` after reviewing the dry run. This invokes the CLI install for this plugin; it registers upstream marketplaces first where possible, but does not grant account permissions or guarantee successful provider authentication. For failures, use the manual installer and official source above.
 
 
 ---
 
-## Marketplace source and repeatable installation
+## <img src="../../docs/assets/lucide/puzzle.svg" width="18" height="18" alt="" /> Marketplace source and repeatable installation
 
 **Capability:** Planning, TDD, code review and execution workflows.
 

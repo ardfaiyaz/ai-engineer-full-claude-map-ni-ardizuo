@@ -1,0 +1,215 @@
+{
+  "schemaVersion": 1,
+  "note": "Local-only source comparison completed 2026-10-10: 12 equivalent, 3 differing, 4 unknown. This lead list is informational; install approvals live exclusively in source-provenance-lock.json. approvedForInstall stays false in this historical list.",
+  "entries": [
+    {
+      "target": "skills/accessibility-audit/SKILL.md",
+      "status": "content-differs-upstream-opt-in-variant",
+      "candidateRepository": "dominika-zajac/better-frontend-skills",
+      "revision": "92cdb7e73323f6d627dbab0462e94ba8786f3264",
+      "sourceFilePath": "skills/accessibility-audit/SKILL.md",
+      "gitBlobSHA1": "02af5181204de36a92a1d79ef6ac516a0a57403a",
+      "approvedForInstall": false,
+      "lastComparedStatus": "DIFFERENT_CONTENT",
+      "promotedToSourceLock": true
+    },
+    {
+      "target": "skills/accessibility-diff/SKILL.md",
+      "status": "source-unknown",
+      "candidateRepository": null,
+      "revision": null,
+      "sourceFilePath": null,
+      "gitBlobSHA1": null,
+      "approvedForInstall": false,
+      "lastComparedStatus": "SOURCE_UNKNOWN",
+      "promotedToSourceLock": false
+    },
+    {
+      "target": "skills/accessibility-fix/SKILL.md",
+      "status": "content-differs-upstream-opt-in-variant",
+      "candidateRepository": "dominika-zajac/better-frontend-skills",
+      "revision": "92cdb7e73323f6d627dbab0462e94ba8786f3264",
+      "sourceFilePath": "skills/accessibility-fix/SKILL.md",
+      "gitBlobSHA1": "44340e341d32eec379b817bf34186cd16236adaa",
+      "approvedForInstall": false,
+      "lastComparedStatus": "DIFFERENT_CONTENT",
+      "promotedToSourceLock": true
+    },
+    {
+      "target": "skills/accessibility-inspect/SKILL.md",
+      "status": "source-unknown",
+      "candidateRepository": null,
+      "revision": null,
+      "sourceFilePath": null,
+      "gitBlobSHA1": null,
+      "approvedForInstall": false,
+      "lastComparedStatus": "SOURCE_UNKNOWN",
+      "promotedToSourceLock": false
+    },
+    {
+      "target": "skills/accessibility-scan/SKILL.md",
+      "status": "source-unknown",
+      "candidateRepository": null,
+      "revision": null,
+      "sourceFilePath": null,
+      "gitBlobSHA1": null,
+      "approvedForInstall": false,
+      "lastComparedStatus": "SOURCE_UNKNOWN",
+      "promotedToSourceLock": false
+    },
+    {
+      "target": "skills/animate/SKILL.md",
+      "status": "matched-pinned-in-source-lock",
+      "candidateRepository": "emilkowalski/skills",
+      "revision": "e8a175de22ae1e49370fc144c1f3bb9aeedf988d",
+      "sourceFilePath": "skills/animate/SKILL.md",
+      "gitBlobSHA1": "7c3b20c6ed681b2d47c9ca9e3ee0e659ed47d032",
+      "approvedForInstall": false,
+      "lastComparedStatus": "TEXT_MATCH_LINE_ENDINGS_ONLY",
+      "promotedToSourceLock": true
+    },
+    {
+      "target": "skills/animation-vocabulary/SKILL.md",
+      "status": "matched-pinned-in-source-lock",
+      "candidateRepository": "emilkowalski/skills",
+      "revision": "e8a175de22ae1e49370fc144c1f3bb9aeedf988d",
+      "sourceFilePath": "skills/animation-vocabulary/SKILL.md",
+      "gitBlobSHA1": "5ab2976514c74a194ebf069506d95ff3a5a0084f",
+      "approvedForInstall": false,
+      "lastComparedStatus": "TEXT_MATCH_LINE_ENDINGS_ONLY",
+      "promotedToSourceLock": true
+    },
+    {
+      "target": "skills/apple-design/SKILL.md",
+      "status": "matched-pinned-in-source-lock",
+      "candidateRepository": "emilkowalski/skills",
+      "revision": "e8a175de22ae1e49370fc144c1f3bb9aeedf988d",
+      "sourceFilePath": "skills/apple-design/SKILL.md",
+      "gitBlobSHA1": "adf68c517f2d7d2781587d619de07f4de286da57",
+      "approvedForInstall": false,
+      "lastComparedStatus": "TEXT_MATCH_LINE_ENDINGS_ONLY",
+      "promotedToSourceLock": true
+    },
+    {
+      "target": "skills/ci-cd-and-automation/SKILL.md",
+      "status": "matched-pinned-in-source-lock",
+      "candidateRepository": "addyosmani/agent-skills",
+      "revision": "1401c8b8030e023baeebb31781a6653fe8e93026",
+      "sourceFilePath": "skills/ci-cd-and-automation/SKILL.md",
+      "gitBlobSHA1": "118456fcb10225c030769a4fee7815b9c536b0ce",
+      "approvedForInstall": false,
+      "lastComparedStatus": "EXACT_BYTE_MATCH",
+      "promotedToSourceLock": true
+    },
+    {
+      "target": "skills/emil-design-eng/SKILL.md",
+      "status": "matched-pinned-in-source-lock",
+      "candidateRepository": "emilkowalski/skills",
+      "revision": "e8a175de22ae1e49370fc144c1f3bb9aeedf988d",
+      "sourceFilePath": "skills/emil-design-eng/SKILL.md",
+      "gitBlobSHA1": "62ce902af8dd32c590ea7203e9ab2edb1d6ef81a",
+      "approvedForInstall": false,
+      "lastComparedStatus": "TEXT_MATCH_LINE_ENDINGS_ONLY",
+      "promotedToSourceLock": true
+    },
+    {
+      "target": "skills/find-animation-opportunities/SKILL.md",
+      "status": "matched-pinned-in-source-lock",
+      "candidateRepository": "emilkowalski/skills",
+      "revision": "e8a175de22ae1e49370fc144c1f3bb9aeedf988d",
+      "sourceFilePath": "skills/find-animation-opportunities/SKILL.md",
+      "gitBlobSHA1": "d3b030fbca9abad9220a032f72d425c6b7fa2de8",
+      "approvedForInstall": false,
+      "lastComparedStatus": "TEXT_MATCH_LINE_ENDINGS_ONLY",
+      "promotedToSourceLock": true
+    },
+    {
+      "target": "skills/improve-animations/SKILL.md",
+      "status": "matched-pinned-in-source-lock",
+      "candidateRepository": "emilkowalski/skills",
+      "revision": "e8a175de22ae1e49370fc144c1f3bb9aeedf988d",
+      "sourceFilePath": "skills/improve-animations/SKILL.md",
+      "gitBlobSHA1": "d6e77f37272329af0cc36f9eeedbe5226e86ce63",
+      "approvedForInstall": false,
+      "lastComparedStatus": "TEXT_MATCH_LINE_ENDINGS_ONLY",
+      "promotedToSourceLock": true
+    },
+    {
+      "target": "skills/owasp-security/SKILL.md",
+      "status": "source-unknown",
+      "candidateRepository": null,
+      "revision": null,
+      "sourceFilePath": null,
+      "gitBlobSHA1": null,
+      "approvedForInstall": false,
+      "lastComparedStatus": "SOURCE_UNKNOWN",
+      "promotedToSourceLock": false
+    },
+    {
+      "target": "skills/pick-ui-library/SKILL.md",
+      "status": "matched-pinned-in-source-lock",
+      "candidateRepository": "emilkowalski/skills",
+      "revision": "e8a175de22ae1e49370fc144c1f3bb9aeedf988d",
+      "sourceFilePath": "skills/pick-ui-library/SKILL.md",
+      "gitBlobSHA1": "5e0028e988b88d2a88a019fdc978b4732243e467",
+      "approvedForInstall": false,
+      "lastComparedStatus": "TEXT_MATCH_LINE_ENDINGS_ONLY",
+      "promotedToSourceLock": true
+    },
+    {
+      "target": "skills/playwright-best-practices/SKILL.md",
+      "status": "content-differs-upstream-opt-in-variant",
+      "candidateRepository": "vitalics/playwright-labs",
+      "revision": "be116c4523b1adf403cef3b7dc71f5e01d842d3a",
+      "sourceFilePath": "packages/playwright-best-practices/SKILL.md",
+      "gitBlobSHA1": "b0cd7e7e240239e2b3e9fe6024ba79bc2aeee2a5",
+      "approvedForInstall": false,
+      "lastComparedStatus": "DIFFERENT_CONTENT",
+      "promotedToSourceLock": true
+    },
+    {
+      "target": "skills/prototype/SKILL.md",
+      "status": "matched-pinned-in-source-lock",
+      "candidateRepository": "emilkowalski/skills",
+      "revision": "e8a175de22ae1e49370fc144c1f3bb9aeedf988d",
+      "sourceFilePath": "skills/prototype/SKILL.md",
+      "gitBlobSHA1": "dbcc1a23c66933f7372c0aacbce2b0d7cc6100b6",
+      "approvedForInstall": false,
+      "lastComparedStatus": "TEXT_MATCH_LINE_ENDINGS_ONLY",
+      "promotedToSourceLock": true
+    },
+    {
+      "target": "skills/review-animations/SKILL.md",
+      "status": "matched-pinned-in-source-lock",
+      "candidateRepository": "emilkowalski/skills",
+      "revision": "e8a175de22ae1e49370fc144c1f3bb9aeedf988d",
+      "sourceFilePath": "skills/review-animations/SKILL.md",
+      "gitBlobSHA1": "577a64397267ce20960de2202950594d5bd6f9b6",
+      "approvedForInstall": false,
+      "lastComparedStatus": "TEXT_MATCH_LINE_ENDINGS_ONLY",
+      "promotedToSourceLock": true
+    },
+    {
+      "target": "skills/vercel-composition-patterns/SKILL.md",
+      "status": "matched-pinned-in-source-lock",
+      "candidateRepository": "vercel-labs/agent-skills",
+      "revision": "063bee94c3f4df8453406c830b0a7df0f2860278",
+      "sourceFilePath": "skills/composition-patterns/SKILL.md",
+      "gitBlobSHA1": "d07025bf943345bc1cf15eb923594f889ff881f0",
+      "approvedForInstall": false,
+      "lastComparedStatus": "EXACT_BYTE_MATCH",
+      "promotedToSourceLock": true
+    },
+    {
+      "target": "skills/vercel-react-best-practices/SKILL.md",
+      "status": "matched-pinned-in-source-lock",
+      "candidateRepository": "vercel-labs/agent-skills",
+      "revision": "063bee94c3f4df8453406c830b0a7df0f2860278",
+      "sourceFilePath": "skills/react-best-practices/SKILL.md",
+      "gitBlobSHA1": "237988de4a66dd8a71d30a2c24ebe1a86b58d04e",
+      "approvedForInstall": false,
+      "lastComparedStatus": "EXACT_BYTE_MATCH",
+      "promotedToSourceLock": true
+    }
+  ]
+}

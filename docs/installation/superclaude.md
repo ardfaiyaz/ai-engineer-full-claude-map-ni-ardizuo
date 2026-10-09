@@ -1,16 +1,16 @@
-# SuperClaude Framework — agents and sc commands
+# <img src="../assets/lucide/bot.svg" width="18" height="18" alt="" /> SuperClaude Framework — agents and sc commands
 
 **Publisher:** [SuperClaude-Org](https://github.com/SuperClaude-Org/SuperClaude_Framework) · **Role:** upstream specialist agents, `sc` commands and development workflow extensions. **Important:** exact filenames and agent installation behavior have differed across upstream versions; verify individually rather than assuming 20/20 files.
 
 <br />
 
-## Requirements
+## <img src="../assets/lucide/download.svg" width="18" height="18" alt="" /> Requirements
 
 Install [Python](./python.md), [Claude Code](./claude-code.md) and [pipx](https://pipx.pypa.io/stable/installation/). For optional SuperClaude MCP features, follow the framework's official documentation.
 
 <br />
 
-## Install (official method)
+## <img src="../assets/lucide/download.svg" width="18" height="18" alt="" /> Install (official method)
 
 ```powershell
 pipx install superclaude
@@ -21,7 +21,7 @@ The `superclaude install` command modifies global Claude Code assets. Preview ch
 
 <br />
 
-## Verify
+## <img src="../assets/lucide/list-checks.svg" width="18" height="18" alt="" /> Verify
 
 ```powershell
 superclaude doctor
@@ -38,7 +38,7 @@ python .\scripts\coverage-doctor.py
 
 <br />
 
-## Troubleshooting and removal
+## <img src="../assets/lucide/wrench.svg" width="18" height="18" alt="" /> Troubleshooting and removal
 
 If the CLI isn't found after installing with pipx, reopen PowerShell and check `pipx list` and your PATH. If it reports conflicts, stop and use the official [installation guide](https://github.com/SuperClaude-Org/SuperClaude_Framework/blob/master/docs/getting-started/installation.md), rather than deleting existing users' files.
 
@@ -46,6 +46,6 @@ For removal, use the upstream framework's uninstall instructions, review generat
 
 [Installation guides](./README.md) · [Reference agent list](../components/coverage.md)
 
-## Exact source pin for repeatable definitions
+## <img src="../assets/lucide/folder-open.svg" width="18" height="18" alt="" /> Exact source pin for repeatable definitions
 
 The [pinned SuperClaude installer](./pinned-superclaude.md) can reproduce 20 upstream agent definitions and 19 identical command definitions without installing SuperClaude's Python CLI. Another 11 command definitions are available as explicitly opted-in publisher originals, not exact matches for the author's locally changed files. Use this mode in a disposable config and test runtime behavior separately.

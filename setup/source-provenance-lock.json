@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "source": "Ardizuo 80-file private source hash comparison (2026-10-09); ONLY public filenames/status; no private content or personal hashes",
+  "source": "Ardizuo 80-file private-source comparisons (2026-10-09 through 2026-10-10); public source names/status only; no private content or personal hashes",
   "important": "A match to upstream does not prove any particular local modification is redistributable. Pin source, preserve notices. Third-party code is downloaded from its owner at user opt-in, not bundled.",
   "upstream": {
     "repository": "SuperClaude-Org/SuperClaude_Framework",
@@ -469,8 +469,13 @@
     },
     {
       "target": "skills/accessibility-audit/SKILL.md",
-      "comparison": "UNMAPPED",
-      "installPolicy": "manual-source-review"
+      "comparison": "DIFFERENT_CONTENT",
+      "installPolicy": "opt-in-upstream-variant",
+      "upstreamRepository": "dominika-zajac/better-frontend-skills",
+      "revision": "92cdb7e73323f6d627dbab0462e94ba8786f3264",
+      "sourceFilePath": "skills/accessibility-audit/SKILL.md",
+      "gitBlobSHA1": "02af5181204de36a92a1d79ef6ac516a0a57403a",
+      "publisherLicense": "MIT"
     },
     {
       "target": "skills/accessibility-diff/SKILL.md",
@@ -479,8 +484,13 @@
     },
     {
       "target": "skills/accessibility-fix/SKILL.md",
-      "comparison": "UNMAPPED",
-      "installPolicy": "manual-source-review"
+      "comparison": "DIFFERENT_CONTENT",
+      "installPolicy": "opt-in-upstream-variant",
+      "upstreamRepository": "dominika-zajac/better-frontend-skills",
+      "revision": "92cdb7e73323f6d627dbab0462e94ba8786f3264",
+      "sourceFilePath": "skills/accessibility-fix/SKILL.md",
+      "gitBlobSHA1": "44340e341d32eec379b817bf34186cd16236adaa",
+      "publisherLicense": "MIT"
     },
     {
       "target": "skills/accessibility-inspect/SKILL.md",
@@ -494,78 +504,123 @@
     },
     {
       "target": "skills/animate/SKILL.md",
-      "comparison": "UNMAPPED",
-      "installPolicy": "manual-source-review"
+      "comparison": "TEXT_MATCH_LINE_ENDINGS_ONLY",
+      "installPolicy": "automatic-reviewed-upstream",
+      "upstreamRepository": "emilkowalski/skills",
+      "revision": "e8a175de22ae1e49370fc144c1f3bb9aeedf988d",
+      "sourceFilePath": "skills/animate/SKILL.md",
+      "gitBlobSHA1": "7c3b20c6ed681b2d47c9ca9e3ee0e659ed47d032",
+      "publisherLicense": "MIT"
     },
     {
       "target": "skills/animation-vocabulary/SKILL.md",
-      "comparison": "UNMAPPED",
-      "installPolicy": "manual-source-review"
+      "comparison": "TEXT_MATCH_LINE_ENDINGS_ONLY",
+      "installPolicy": "automatic-reviewed-upstream",
+      "upstreamRepository": "emilkowalski/skills",
+      "revision": "e8a175de22ae1e49370fc144c1f3bb9aeedf988d",
+      "sourceFilePath": "skills/animation-vocabulary/SKILL.md",
+      "gitBlobSHA1": "5ab2976514c74a194ebf069506d95ff3a5a0084f",
+      "publisherLicense": "MIT"
     },
     {
       "target": "skills/apple-design/SKILL.md",
-      "comparison": "UNMAPPED",
-      "installPolicy": "manual-source-review"
+      "comparison": "TEXT_MATCH_LINE_ENDINGS_ONLY",
+      "installPolicy": "automatic-reviewed-upstream",
+      "upstreamRepository": "emilkowalski/skills",
+      "revision": "e8a175de22ae1e49370fc144c1f3bb9aeedf988d",
+      "sourceFilePath": "skills/apple-design/SKILL.md",
+      "gitBlobSHA1": "adf68c517f2d7d2781587d619de07f4de286da57",
+      "publisherLicense": "MIT"
     },
     {
       "target": "skills/bencium-innovative-ux-designer/SKILL.md",
       "comparison": "TEXT_MATCH_LINE_ENDINGS_ONLY",
-      "installPolicy": "manual-source-review",
+      "installPolicy": "automatic-reviewed-upstream",
       "upstreamRepository": "bencium/bencium-marketplace",
       "revision": "5de46a39b4640fa419560cd0b67e4c4b50dac802",
-      "sourceFilePath": "bencium-innovative-ux-designer/skills/bencium-innovative-ux-designer/SKILL.md"
+      "sourceFilePath": "bencium-innovative-ux-designer/skills/bencium-innovative-ux-designer/SKILL.md",
+      "gitBlobSHA1": "89868c9c052763b7542492e44feeea0c4909555d",
+      "publisherLicense": "MIT"
     },
     {
       "target": "skills/ci-cd-and-automation/SKILL.md",
-      "comparison": "UNMAPPED",
-      "installPolicy": "manual-source-review"
+      "comparison": "EXACT_BYTE_MATCH",
+      "installPolicy": "automatic-reviewed-upstream",
+      "upstreamRepository": "addyosmani/agent-skills",
+      "revision": "1401c8b8030e023baeebb31781a6653fe8e93026",
+      "sourceFilePath": "skills/ci-cd-and-automation/SKILL.md",
+      "gitBlobSHA1": "118456fcb10225c030769a4fee7815b9c536b0ce",
+      "publisherLicense": "MIT"
     },
     {
       "target": "skills/design/SKILL.md",
       "comparison": "TEXT_MATCH_LINE_ENDINGS_ONLY",
-      "installPolicy": "manual-source-review",
+      "installPolicy": "automatic-reviewed-upstream",
       "upstreamRepository": "nextlevelbuilder/ui-ux-pro-max-skill",
       "revision": "50d8a7de0900119855614541f15a1a616691eb33",
-      "sourceFilePath": ".claude/skills/design/SKILL.md"
+      "sourceFilePath": ".claude/skills/design/SKILL.md",
+      "gitBlobSHA1": "6ffc5039f8aede70b6201ff13795c14a9d892953",
+      "publisherLicense": "MIT"
     },
     {
       "target": "skills/design-system/SKILL.md",
       "comparison": "TEXT_MATCH_LINE_ENDINGS_ONLY",
-      "installPolicy": "manual-source-review",
+      "installPolicy": "automatic-reviewed-upstream",
       "upstreamRepository": "nextlevelbuilder/ui-ux-pro-max-skill",
       "revision": "50d8a7de0900119855614541f15a1a616691eb33",
-      "sourceFilePath": ".claude/skills/design-system/SKILL.md"
+      "sourceFilePath": ".claude/skills/design-system/SKILL.md",
+      "gitBlobSHA1": "804e553325fedc49dd7e75c30c6cffeebaa6650b",
+      "publisherLicense": "MIT"
     },
     {
       "target": "skills/emil-design-eng/SKILL.md",
-      "comparison": "UNMAPPED",
-      "installPolicy": "manual-source-review"
+      "comparison": "TEXT_MATCH_LINE_ENDINGS_ONLY",
+      "installPolicy": "automatic-reviewed-upstream",
+      "upstreamRepository": "emilkowalski/skills",
+      "revision": "e8a175de22ae1e49370fc144c1f3bb9aeedf988d",
+      "sourceFilePath": "skills/emil-design-eng/SKILL.md",
+      "gitBlobSHA1": "62ce902af8dd32c590ea7203e9ab2edb1d6ef81a",
+      "publisherLicense": "MIT"
     },
     {
       "target": "skills/find-animation-opportunities/SKILL.md",
-      "comparison": "UNMAPPED",
-      "installPolicy": "manual-source-review"
+      "comparison": "TEXT_MATCH_LINE_ENDINGS_ONLY",
+      "installPolicy": "automatic-reviewed-upstream",
+      "upstreamRepository": "emilkowalski/skills",
+      "revision": "e8a175de22ae1e49370fc144c1f3bb9aeedf988d",
+      "sourceFilePath": "skills/find-animation-opportunities/SKILL.md",
+      "gitBlobSHA1": "d3b030fbca9abad9220a032f72d425c6b7fa2de8",
+      "publisherLicense": "MIT"
     },
     {
       "target": "skills/find-skills/SKILL.md",
       "comparison": "EXACT_BYTE_MATCH",
-      "installPolicy": "manual-source-review",
+      "installPolicy": "automatic-reviewed-upstream",
       "upstreamRepository": "vercel-labs/skills",
       "revision": "13e4063a1cf913f5606d57d42ab83a86f5001e04",
-      "sourceFilePath": "skills/find-skills/SKILL.md"
+      "sourceFilePath": "skills/find-skills/SKILL.md",
+      "gitBlobSHA1": "a41bdd074bb587afd861332cf2f473f3154de4d7",
+      "publisherLicense": "MIT"
     },
     {
       "target": "skills/impeccable/SKILL.md",
       "comparison": "DIFFERENT_CONTENT",
-      "installPolicy": "manual-source-review",
+      "installPolicy": "opt-in-upstream-variant",
       "upstreamRepository": "pbakaus/impeccable",
       "revision": "d631a8827f99414d2b6daba4ef08b7f8701751d7",
-      "sourceFilePath": ".claude/skills/impeccable/SKILL.md"
+      "sourceFilePath": ".claude/skills/impeccable/SKILL.md",
+      "gitBlobSHA1": "db84db9c79ddd0024d0dfb18b2f5715e7e5ba560",
+      "publisherLicense": "Apache-2.0"
     },
     {
       "target": "skills/improve-animations/SKILL.md",
-      "comparison": "UNMAPPED",
-      "installPolicy": "manual-source-review"
+      "comparison": "TEXT_MATCH_LINE_ENDINGS_ONLY",
+      "installPolicy": "automatic-reviewed-upstream",
+      "upstreamRepository": "emilkowalski/skills",
+      "revision": "e8a175de22ae1e49370fc144c1f3bb9aeedf988d",
+      "sourceFilePath": "skills/improve-animations/SKILL.md",
+      "gitBlobSHA1": "d6e77f37272329af0cc36f9eeedbe5226e86ce63",
+      "publisherLicense": "MIT"
     },
     {
       "target": "skills/owasp-security/SKILL.md",
@@ -574,73 +629,113 @@
     },
     {
       "target": "skills/pick-ui-library/SKILL.md",
-      "comparison": "UNMAPPED",
-      "installPolicy": "manual-source-review"
+      "comparison": "TEXT_MATCH_LINE_ENDINGS_ONLY",
+      "installPolicy": "automatic-reviewed-upstream",
+      "upstreamRepository": "emilkowalski/skills",
+      "revision": "e8a175de22ae1e49370fc144c1f3bb9aeedf988d",
+      "sourceFilePath": "skills/pick-ui-library/SKILL.md",
+      "gitBlobSHA1": "5e0028e988b88d2a88a019fdc978b4732243e467",
+      "publisherLicense": "MIT"
     },
     {
       "target": "skills/playwright-best-practices/SKILL.md",
-      "comparison": "UNMAPPED",
-      "installPolicy": "manual-source-review"
+      "comparison": "DIFFERENT_CONTENT",
+      "installPolicy": "opt-in-upstream-variant",
+      "upstreamRepository": "vitalics/playwright-labs",
+      "revision": "be116c4523b1adf403cef3b7dc71f5e01d842d3a",
+      "sourceFilePath": "packages/playwright-best-practices/SKILL.md",
+      "gitBlobSHA1": "b0cd7e7e240239e2b3e9fe6024ba79bc2aeee2a5",
+      "publisherLicense": "MIT"
     },
     {
       "target": "skills/prototype/SKILL.md",
-      "comparison": "UNMAPPED",
-      "installPolicy": "manual-source-review"
+      "comparison": "TEXT_MATCH_LINE_ENDINGS_ONLY",
+      "installPolicy": "automatic-reviewed-upstream",
+      "upstreamRepository": "emilkowalski/skills",
+      "revision": "e8a175de22ae1e49370fc144c1f3bb9aeedf988d",
+      "sourceFilePath": "skills/prototype/SKILL.md",
+      "gitBlobSHA1": "dbcc1a23c66933f7372c0aacbce2b0d7cc6100b6",
+      "publisherLicense": "MIT"
     },
     {
       "target": "skills/review-animations/SKILL.md",
-      "comparison": "UNMAPPED",
-      "installPolicy": "manual-source-review"
+      "comparison": "TEXT_MATCH_LINE_ENDINGS_ONLY",
+      "installPolicy": "automatic-reviewed-upstream",
+      "upstreamRepository": "emilkowalski/skills",
+      "revision": "e8a175de22ae1e49370fc144c1f3bb9aeedf988d",
+      "sourceFilePath": "skills/review-animations/SKILL.md",
+      "gitBlobSHA1": "577a64397267ce20960de2202950594d5bd6f9b6",
+      "publisherLicense": "MIT"
     },
     {
       "target": "skills/supabase/SKILL.md",
       "comparison": "DIFFERENT_CONTENT",
-      "installPolicy": "manual-source-review",
+      "installPolicy": "opt-in-upstream-variant",
       "upstreamRepository": "supabase/agent-skills",
       "revision": "c9be0e931b7930f7d02126d04774d904c381e7d7",
-      "sourceFilePath": "skills/supabase/SKILL.md"
+      "sourceFilePath": "skills/supabase/SKILL.md",
+      "gitBlobSHA1": "66093e0a0f8d9268094c1a4b38c04419b787ca89",
+      "publisherLicense": "MIT"
     },
     {
       "target": "skills/supabase-postgres-best-practices/SKILL.md",
       "comparison": "TEXT_MATCH_LINE_ENDINGS_ONLY",
-      "installPolicy": "manual-source-review",
+      "installPolicy": "automatic-reviewed-upstream",
       "upstreamRepository": "supabase/agent-skills",
       "revision": "c9be0e931b7930f7d02126d04774d904c381e7d7",
-      "sourceFilePath": "skills/supabase-postgres-best-practices/SKILL.md"
+      "sourceFilePath": "skills/supabase-postgres-best-practices/SKILL.md",
+      "gitBlobSHA1": "6400792389dfcc82c81953054e546bd72ebcd259",
+      "publisherLicense": "MIT"
     },
     {
       "target": "skills/ui-styling/SKILL.md",
       "comparison": "TEXT_MATCH_LINE_ENDINGS_ONLY",
-      "installPolicy": "manual-source-review",
+      "installPolicy": "automatic-reviewed-upstream",
       "upstreamRepository": "nextlevelbuilder/ui-ux-pro-max-skill",
       "revision": "50d8a7de0900119855614541f15a1a616691eb33",
-      "sourceFilePath": ".claude/skills/ui-styling/SKILL.md"
+      "sourceFilePath": ".claude/skills/ui-styling/SKILL.md",
+      "gitBlobSHA1": "b5a9acb9643e10b3629c0b9cac7e616c1080b597",
+      "publisherLicense": "MIT"
     },
     {
       "target": "skills/ui-ux-pro-max/SKILL.md",
       "comparison": "TEXT_MATCH_LINE_ENDINGS_ONLY",
-      "installPolicy": "manual-source-review",
+      "installPolicy": "automatic-reviewed-upstream",
       "upstreamRepository": "nextlevelbuilder/ui-ux-pro-max-skill",
       "revision": "50d8a7de0900119855614541f15a1a616691eb33",
-      "sourceFilePath": ".claude/skills/ui-ux-pro-max/SKILL.md"
+      "sourceFilePath": ".claude/skills/ui-ux-pro-max/SKILL.md",
+      "gitBlobSHA1": "41f8e2fd7f8c568228d0b55186ebe3f7b4007377",
+      "publisherLicense": "MIT"
     },
     {
       "target": "skills/vercel-composition-patterns/SKILL.md",
-      "comparison": "UNMAPPED",
-      "installPolicy": "manual-source-review"
+      "comparison": "EXACT_BYTE_MATCH",
+      "installPolicy": "automatic-reviewed-upstream",
+      "upstreamRepository": "vercel-labs/agent-skills",
+      "revision": "063bee94c3f4df8453406c830b0a7df0f2860278",
+      "sourceFilePath": "skills/composition-patterns/SKILL.md",
+      "gitBlobSHA1": "d07025bf943345bc1cf15eb923594f889ff881f0",
+      "publisherLicense": "UNVERIFIED"
     },
     {
       "target": "skills/vercel-react-best-practices/SKILL.md",
-      "comparison": "UNMAPPED",
-      "installPolicy": "manual-source-review"
+      "comparison": "EXACT_BYTE_MATCH",
+      "installPolicy": "automatic-reviewed-upstream",
+      "upstreamRepository": "vercel-labs/agent-skills",
+      "revision": "063bee94c3f4df8453406c830b0a7df0f2860278",
+      "sourceFilePath": "skills/react-best-practices/SKILL.md",
+      "gitBlobSHA1": "237988de4a66dd8a71d30a2c24ebe1a86b58d04e",
+      "publisherLicense": "UNVERIFIED"
     },
     {
       "target": "skills/web-design-guidelines/SKILL.md",
       "comparison": "EXACT_BYTE_MATCH",
-      "installPolicy": "manual-source-review",
+      "installPolicy": "automatic-reviewed-upstream",
       "upstreamRepository": "vercel-labs/agent-skills",
       "revision": "063bee94c3f4df8453406c830b0a7df0f2860278",
-      "sourceFilePath": "skills/web-design-guidelines/SKILL.md"
+      "sourceFilePath": "skills/web-design-guidelines/SKILL.md",
+      "gitBlobSHA1": "ceae92ab319216a68274168fba9b63b998b65997",
+      "publisherLicense": "UNVERIFIED"
     }
   ]
 }

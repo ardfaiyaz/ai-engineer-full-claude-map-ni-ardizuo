@@ -1,8 +1,8 @@
-# Global Development Orchestration
+# <img src="../assets/lucide/workflow.svg" width="18" height="18" alt="" /> Global Development Orchestration
 
 These rules apply across all local repositories.
 
-## Task Selection
+## <img src="../assets/lucide/file-text.svg" width="18" height="18" alt="" /> Task Selection
 
 For significant development tasks, consult the task mappings in:
 
@@ -12,7 +12,7 @@ The mappings are advisory. Read the file when relevant, not for every trivial re
 
 Select only the relevant existing skills, agents and tools.
 
-## Parallel Work
+## <img src="../assets/lucide/file-text.svg" width="18" height="18" alt="" /> Parallel Work
 
 For complex tasks involving independent work, consult:
 
@@ -21,7 +21,7 @@ ${CLAUDE_CONFIG_DIR}/workflows/wave-protocol.md (or ~/.claude/workflows/wave-pro
 Use Superpowers or SuperClaude orchestration where appropriate.
 Avoid multiple agents editing the same files.
 
-## Completion
+## <img src="../assets/lucide/file-text.svg" width="18" height="18" alt="" /> Completion
 
 Follow these principles before declaring substantial work complete:
 
@@ -35,7 +35,7 @@ For detailed quality requirements, consult:
 
 ${CLAUDE_CONFIG_DIR}/workflows/completion-mandate.md (or ~/.claude/workflows/completion-mandate.md)
 
-## Safety
+## <img src="../assets/lucide/shield-check.svg" width="18" height="18" alt="" /> Safety
 
 - Preserve project-specific architecture and instructions.
 - Do not execute unnecessary tools.

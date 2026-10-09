@@ -1,10 +1,10 @@
-﻿---
+---
 name: dead-code-scan
 description: Investigate potentially unused code, imports, dependencies and unreachable branches using repository-aware analysis tools.
 disable-model-invocation: true
 ---
 
-# Dead Code Scan
+# <img src="../../assets/lucide/file-text.svg" width="18" height="18" alt="" /> Dead Code Scan
 
 Use the existing dead-code-check hook as an advisory signal.
 

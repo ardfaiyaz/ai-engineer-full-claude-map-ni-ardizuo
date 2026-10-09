@@ -1,10 +1,10 @@
-# Security policy
+# <img src="docs/assets/lucide/shield-check.svg" width="18" height="18" alt="" /> Security policy
 
 **Keep the public installer safe for a normal Windows user account.** Do not publish secrets or private development artifacts.
 
 <br />
 
-## Never commit
+## <img src="docs/assets/lucide/git-branch.svg" width="18" height="18" alt="" /> Never commit
 
 - `.claude.json`, credential files, provider tokens, OAuth refresh tokens or authentication headers.
 - `.env` files with real keys, PowerShell profiles containing secrets, or sensitive environment exports.
@@ -16,7 +16,7 @@ Use clean templates without values. `.gitignore` is only an accident-prevention 
 
 <br />
 
-## Safe installation and permissions
+## <img src="docs/assets/lucide/shield-check.svg" width="18" height="18" alt="" /> Safe installation and permissions
 
 - Review script changes before using `-Apply`.
 - Prefer **user scope**, no administrator elevation and no silent file overwrite.
@@ -28,13 +28,13 @@ Use clean templates without values. `.gitignore` is only an accident-prevention 
 
 <br />
 
-## Learn how to manage keys
+## <img src="docs/assets/lucide/book-open.svg" width="18" height="18" alt="" /> Learn how to manage keys
 
 [API keys and PowerShell](./docs/security/api-keys-and-powershell.md) · [Windows permissions](./docs/security/windows-permissions.md) · [MCP setup](./integrations/mcp/README.md)
 
 <br />
 
-## Responsible reporting
+## <img src="docs/assets/lucide/file-text.svg" width="18" height="18" alt="" /> Responsible reporting
 
 If you believe you've found a credential leak or vulnerability, **do not open a public issue containing secrets or reproduction keys**. Contact the repository owner privately through their GitHub profile or available private security reporting channel. Revoke any exposed key immediately and check Git history and logs.
 

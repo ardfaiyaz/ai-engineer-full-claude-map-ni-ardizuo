@@ -1,8 +1,8 @@
-# Sprint 2 — source-pinned SuperClaude (public source, private-file safe)
+# <img src="docs/assets/lucide/shield-check.svg" width="18" height="18" alt="" /> Sprint 2 — source-pinned SuperClaude (public source, private-file safe)
 
 This update is a **patch for the repo on main at `d3c792f`**, not a complete replacement.
 
-## Implemented
+## <img src="docs/assets/lucide/file-text.svg" width="18" height="18" alt="" /> Implemented
 
 - A source provenance lock for the 80 candidates: 42 byte-exact, 6 newline-normalized, 13 modified, 19 unmapped.
 - A hash-verified installer for 20 upstream agents + 19 exact command definitions. Optional 11 upstream command variants for a clean machine.
@@ -10,7 +10,7 @@ This update is a **patch for the repo on main at `d3c792f`**, not a complete rep
 - Create-only, preflight conflict checking, all-downloads-before-writes and rollback of new files upon failure.
 - Explicit upstream MIT attribution, new setup documentation, regression tests.
 
-## Run this on Windows — no live changes
+## <img src="docs/assets/lucide/file-text.svg" width="18" height="18" alt="" /> Run this on Windows — no live changes
 
 ```powershell
 cd "$HOME\Documents\ai-engineer-full-claude-map-ni-ardizuo"

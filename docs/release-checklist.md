@@ -1,10 +1,10 @@
-# Full release checklist
+# <img src="assets/lucide/list-checks.svg" width="18" height="18" alt="" /> Full release checklist
 
 The **assisted Full preview** includes original assets and external installation orchestration. It is not yet a verified stable release; these gates must pass first.
 
 <br />
 
-## Source and licensing
+## <img src="assets/lucide/folder-open.svg" width="18" height="18" alt="" /> Source and licensing
 
 - [x] Add MIT license for original Ardizuo-owned files (external packages retain upstream licensing).
 - [ ] Attribute upstream Claude Map, plugins and other authors appropriately.
@@ -13,7 +13,7 @@ The **assisted Full preview** includes original assets and external installation
 
 <br />
 
-## Installer and guides
+## <img src="assets/lucide/download.svg" width="18" height="18" alt="" /> Installer and guides
 
 - [x] Package the 28 reviewed original assets with hash checks and collision-safe installation.
 - [ ] Make Full, Frontend, Backend, Mobile and Custom profiles genuinely installable or explicitly mark incomplete.
@@ -24,7 +24,7 @@ The **assisted Full preview** includes original assets and external installation
 
 <br />
 
-## Runtime and security
+## <img src="assets/lucide/shield-check.svg" width="18" height="18" alt="" /> Runtime and security
 
 - [ ] Test explicit agent delegation and truthful reporting of no delegation.
 - [ ] Verify real completion mandate, tests, builds, Git review and Ship evidence.
@@ -36,3 +36,19 @@ The **assisted Full preview** includes original assets and external installation
 <br />
 
 [Maintainer notes](./maintainer-next-steps.md) · [Security](../SECURITY.md) · [README](../README.md)
+
+
+## <img src="assets/lucide/list-checks.svg" width="18" height="18" alt="" /> Package-vs-live release gates
+
+- [x] 21 agent definitions covered by bundled + pinned default sources; test delegated execution separately.
+- [x] 20 pinned source-matched skills and 16 bundled original skill files; no overwrites.
+- [x] 31 executable commands available as default plus optional original-publisher variants; 11 variants are not equal to reference customization.
+- [x] 12 plugin identifiers and nine target MCP registration guides included.
+- [ ] Verify installs, logins and tool execution on a **fresh** Windows account; Atlassian plugin MCP login is allowed to remain an explicitly deferred optional feature.
+- [ ] Identify and approve 17 separately sourced direct skills and four unknown-source direct skill files; do not invent replacements.
+- [ ] Inspect sibling support files required by any pinned `SKILL.md`, not just its main prompt.
+- [ ] Review the seven differing locally customized Ardizuo files before deciding whether to update the public version.
+- [x] All README and guide headings use relative, locally bundled Lucide SVG presentation assets.
+- [ ] Test restoration/rollback for external install failures and verify clean-device user-scoped installation.
+
+Use [the exact release matrix](./installation/reproducibility-matrix.md) and the [installed files verifier](./installation/installed-layer-audit.md).

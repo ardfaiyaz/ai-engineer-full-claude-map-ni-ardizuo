@@ -4,7 +4,7 @@ description: Analyze hard-to-reproduce software defects using evidence-driven de
 disable-model-invocation: true
 ---
 
-# Root Cause Analysis
+# <img src="../../assets/lucide/file-text.svg" width="18" height="18" alt="" /> Root Cause Analysis
 
 This is an original local development-focused adapter, not an official third-party skill.
 

@@ -21,12 +21,12 @@ class PinnedSuperClaudeTests(unittest.TestCase):
     def test_counts_and_no_private_hashes(self):
         rows=self.lock['entries']
         self.assertEqual(len(rows),80)
-        self.assertEqual({s:sum(x['comparison']==s for x in rows) for s in ('EXACT_BYTE_MATCH','DIFFERENT_CONTENT','UNMAPPED','TEXT_MATCH_LINE_ENDINGS_ONLY')},{'EXACT_BYTE_MATCH':42,'DIFFERENT_CONTENT':13,'UNMAPPED':19,'TEXT_MATCH_LINE_ENDINGS_ONLY':6})
+        self.assertEqual({s:sum(x['comparison']==s for x in rows) for s in ('EXACT_BYTE_MATCH','DIFFERENT_CONTENT','UNMAPPED','TEXT_MATCH_LINE_ENDINGS_ONLY')},{'EXACT_BYTE_MATCH':45,'DIFFERENT_CONTENT':16,'UNMAPPED':4,'TEXT_MATCH_LINE_ENDINGS_ONLY':15})
         selected=mod.allowed_rows(self.lock)
         self.assertEqual(len(selected),39)
         self.assertEqual(len([1 for row,_ in selected if row['target'].startswith('agents/')]),20)
         self.assertEqual(len(mod.allowed_rows(self.lock,True)),50)
-        self.assertEqual(sum(row['installPolicy']=='opt-in-upstream-variant' for row in rows),11)
+        self.assertEqual(sum(row['installPolicy']=='opt-in-upstream-variant' and row['target'].startswith('commands/') for row in rows),11)
         self.assertEqual(sum(row['installPolicy']=='docs-only' for row in rows),1)
         self.assertNotIn('SHA256', str(rows))
         self.assertNotIn('Origin', str(rows))

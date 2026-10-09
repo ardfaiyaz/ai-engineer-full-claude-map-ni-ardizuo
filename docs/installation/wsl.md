@@ -1,10 +1,10 @@
-# Windows Subsystem for Linux (WSL)
+# <img src="../assets/lucide/layers.svg" width="18" height="18" alt="" /> Windows Subsystem for Linux (WSL)
 
 **Why you might need it:** Optional Linux environment for tools that do not support Windows directly.
 
 <br />
 
-## 1. Get it from the official source
+## <img src="../assets/lucide/folder-open.svg" width="18" height="18" alt="" /> 1. Get it from the official source
 
 [Windows Subsystem for Linux (WSL) — official installation page](https://learn.microsoft.com/en-us/windows/wsl/install)
 
@@ -18,7 +18,7 @@ Follow Microsoft's instructions for selecting a distribution and creating a Linu
 
 <br />
 
-## 2. Verify
+## <img src="../assets/lucide/list-checks.svg" width="18" height="18" alt="" /> 2. Verify
 
 ```powershell
 wsl --status
@@ -27,7 +27,7 @@ wsl --list --verbose
 
 <br />
 
-## 3. If something goes wrong
+## <img src="../assets/lucide/file-text.svg" width="18" height="18" alt="" /> 3. If something goes wrong
 
 If WSL doesn't start, check virtualization, Windows feature requirements and the official [WSL troubleshooting guide](https://learn.microsoft.com/en-us/windows/wsl/troubleshooting).
 

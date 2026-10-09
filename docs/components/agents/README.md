@@ -1,4 +1,4 @@
-# Agent layer
+# <img src="../../assets/lucide/bot.svg" width="18" height="18" alt="" /> Agent layer
 
 The reference installation lists **21 global agent names**: 20 provided by the upstream [SuperClaude Framework](../../installation/superclaude.md) and one original `diagram-architect` agent.
 

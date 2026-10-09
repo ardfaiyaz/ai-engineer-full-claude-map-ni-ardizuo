@@ -1,4 +1,4 @@
-# Commands and completion workflow
+# <img src="../../assets/lucide/command.svg" width="18" height="18" alt="" /> Commands and completion workflow
 
 Most of the 32 source-machine global command names are supplied by upstream [SuperClaude](../../installation/superclaude.md). `log-to-vault` is an original Ardizuo command included in the local development pack.
 

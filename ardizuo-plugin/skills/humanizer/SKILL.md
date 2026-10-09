@@ -4,7 +4,7 @@ description: Polish technical documentation so it is precise, natural and readab
 disable-model-invocation: true
 ---
 
-# Humanizer
+# <img src="../../assets/lucide/file-text.svg" width="18" height="18" alt="" /> Humanizer
 
 This is an original local development-focused adapter, not an official third-party skill.
 

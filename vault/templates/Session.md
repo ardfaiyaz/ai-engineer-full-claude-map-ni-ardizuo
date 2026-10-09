@@ -5,26 +5,26 @@ date: ""
 status: proposed
 ---
 
-# Session note
+# <img src="../.ardizuo-icons/notebook-pen.svg" width="18" height="18" alt="" /> Session note
 
 <br />
 
-## Goal
+## <img src="../.ardizuo-icons/file-text.svg" width="18" height="18" alt="" /> Goal
 
 <br />
 
-## Changes actually made
+## <img src="../.ardizuo-icons/file-text.svg" width="18" height="18" alt="" /> Changes actually made
 
 <br />
 
-## Verification evidence
+## <img src="../.ardizuo-icons/file-text.svg" width="18" height="18" alt="" /> Verification evidence
 
 <br />
 
-## Outstanding tasks
+## <img src="../.ardizuo-icons/file-text.svg" width="18" height="18" alt="" /> Outstanding tasks
 
 <br />
 
-## Next session
+## <img src="../.ardizuo-icons/file-text.svg" width="18" height="18" alt="" /> Next session
 
 <!-- Save to a user's chosen vault only after explicit approval. -->

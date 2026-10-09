@@ -1,10 +1,10 @@
-# log-to-vault command
+# <img src="../../assets/lucide/command.svg" width="18" height="18" alt="" /> log-to-vault command
 
 **Purpose:** Propose a sanitized session note and save it **only after the user explicitly approves its exact content**.
 
 <br />
 
-## Install
+## <img src="../../assets/lucide/download.svg" width="18" height="18" alt="" /> Install
 
 The command lives under `ardizuo-plugin/commands/log-to-vault.md` and is copied by the original development pack installer.
 
@@ -14,7 +14,7 @@ The command lives under `ardizuo-plugin/commands/log-to-vault.md` and is copied 
 
 <br />
 
-## Set up memory
+## <img src="../../assets/lucide/notebook-pen.svg" width="18" height="18" alt="" /> Set up memory
 
 Create an [Obsidian vault](../../../vault/README.md), open it as a folder, and optionally set `CLAUDE_DEV_VAULT` if it uses a nondefault directory.
 
@@ -24,7 +24,7 @@ In Claude Code, execute `/log-to-vault` **after genuine project work**, review t
 
 <br />
 
-## Troubleshooting
+## <img src="../../assets/lucide/wrench.svg" width="18" height="18" alt="" /> Troubleshooting
 
 If the command cannot find notes or staging metadata, check the vault directory, global command discovery, and the approved write target. File writes and session hooks are separate; none occur simply because this page exists.
 

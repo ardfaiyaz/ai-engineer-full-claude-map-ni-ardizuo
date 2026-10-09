@@ -1,4 +1,4 @@
-# Ardizuo Claude Map — full five-stage sandbox rehearsal
+# <img src="docs/assets/lucide/monitor.svg" width="18" height="18" alt="" /> Ardizuo Claude Map — full five-stage sandbox rehearsal
 
 This update adds a **read-only-on-live-files** rehearsal mode. All 5 patch scripts
 run against temporary copies of the dashboard source with HOME, USERPROFILE and

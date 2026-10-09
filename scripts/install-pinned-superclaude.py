@@ -43,6 +43,10 @@ def allowed_rows(lock, upstream_variants=False, category='all'):
         raise ValueError('Unexpected upstream pin; review before use')
     selected=[]
     for row in lock['entries']:
+        # Sprint 3 introduces separately reviewed pinned skill entries in the same lock.
+        # SuperClaude installer must ignore them rather than treating them as agent paths.
+        if not row['target'].startswith(('agents/', 'commands/')):
+            continue
         policy=row['installPolicy']
         if policy != 'automatic-reviewed-upstream' and not (upstream_variants and policy=='opt-in-upstream-variant'):
             continue

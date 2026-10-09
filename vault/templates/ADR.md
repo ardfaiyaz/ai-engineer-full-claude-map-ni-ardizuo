@@ -3,14 +3,14 @@ kind: adr
 status: proposed
 ---
 
-# Decision title
+# <img src="../.ardizuo-icons/file-text.svg" width="18" height="18" alt="" /> Decision title
 
-## Context
+## <img src="../.ardizuo-icons/file-text.svg" width="18" height="18" alt="" /> Context
 
-## Decision
+## <img src="../.ardizuo-icons/file-text.svg" width="18" height="18" alt="" /> Decision
 
-## Options considered
+## <img src="../.ardizuo-icons/file-text.svg" width="18" height="18" alt="" /> Options considered
 
-## Consequences
+## <img src="../.ardizuo-icons/file-text.svg" width="18" height="18" alt="" /> Consequences
 
-## Verification / references
+## <img src="../.ardizuo-icons/book-open.svg" width="18" height="18" alt="" /> Verification / references

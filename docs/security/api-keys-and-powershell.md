@@ -1,10 +1,10 @@
-# API keys, OAuth, and PowerShell privacy
+# <img src="../assets/lucide/shield-check.svg" width="18" height="18" alt="" /> API keys, OAuth, and PowerShell privacy
 
 **Read this before connecting MCP servers or provider plugins.** You usually do not need an API key to use the Claude Code subscription sign-in flow. Other providers may require OAuth, API keys or organization permissions.
 
 <br />
 
-## 1. Choose the safer authentication method
+## <img src="../assets/lucide/shield-check.svg" width="18" height="18" alt="" /> 1. Choose the safer authentication method
 
 | Preferred approach | Best for | Why |
 | :--- | :--- | :--- |
@@ -17,7 +17,7 @@
 
 <br />
 
-## 2. Getting a provider key (only if needed)
+## <img src="../assets/lucide/file-text.svg" width="18" height="18" alt="" /> 2. Getting a provider key (only if needed)
 
 Open the provider's **official console** and use its API or developer section. Choose minimal scopes, development/test environment, and an expiry if available. Some tools may offer OAuth instead and should use that first.
 
@@ -38,7 +38,7 @@ MCPs that support browser sign-in often **do not need any manual API token**.
 
 <br />
 
-## 3. Mask a key while typing (PowerShell 5.1 compatible)
+## <img src="../assets/lucide/terminal.svg" width="18" height="18" alt="" /> 3. Mask a key while typing (PowerShell 5.1 compatible)
 
 `Read-Host -AsSecureString` hides the *input*. But environment variables are **ordinary strings**, not a secure vault. The value can exist in process memory and be read by sufficiently privileged software.
 
@@ -66,7 +66,7 @@ Remove-Item Env:MY_SERVICE_API_KEY -ErrorAction SilentlyContinue
 
 <br />
 
-## 4. What NOT to do
+## <img src="../assets/lucide/file-text.svg" width="18" height="18" alt="" /> 4. What NOT to do
 
 ```powershell
 # DO NOT put a real key in these examples:
@@ -81,7 +81,7 @@ For persistent credentials, follow the provider's OAuth/credential-store instruc
 
 <br />
 
-## 5. Verify safely without revealing the value
+## <img src="../assets/lucide/shield-check.svg" width="18" height="18" alt="" /> 5. Verify safely without revealing the value
 
 ```powershell
 # Only checks if the variable is populated. It does not print its content.
@@ -95,7 +95,7 @@ Inside Claude Code, open `/mcp` to inspect sign-in requirements. A configured en
 
 <br />
 
-## 6. If a key was exposed
+## <img src="../assets/lucide/file-text.svg" width="18" height="18" alt="" /> 6. If a key was exposed
 
 1. **Revoke or rotate it immediately** in the provider console.
 2. Check Git history, CI logs, shell history, screenshots, pasted prompts and exposed files.
@@ -104,7 +104,7 @@ Inside Claude Code, open `/mcp` to inspect sign-in requirements. A configured en
 
 <br />
 
-### Official references
+### <img src="../assets/lucide/book-open.svg" width="18" height="18" alt="" /> Official references
 
 - [PowerShell: environment variable scopes](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_environment_variables)
 - [Microsoft: Read-Host and secure input](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/read-host)

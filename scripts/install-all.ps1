@@ -7,6 +7,8 @@ param(
     [switch]$Mcps,
     [switch]$SuperClaude,
     [switch]$PinnedSuperClaude,
+    [switch]$PinnedSkills,
+    [switch]$SkillUpstreamVariants,
     [switch]$UpstreamVariants,
     [switch]$Hooks,
     [switch]$Vault,
@@ -18,13 +20,15 @@ $ErrorActionPreference = 'Stop'
 $script = Join-Path $PSScriptRoot 'install-all.py'
 if (-not (Get-Command python -ErrorAction SilentlyContinue)) { throw 'Python 3 required. See docs/installation/python.md.' }
 $arguments = @($script)
-if ($All) { $External = $true; $SuperClaude = $true; $Plugins = $true; $Mcps = $true; $Hooks = $true; $Vault = $true; $Dashboard = $true }
+if ($All) { $External = $true; if (-not $SuperClaude) { $PinnedSuperClaude = $true }; $PinnedSkills = $true; $Plugins = $true; $Mcps = $true; $Hooks = $true; $Vault = $true; $Dashboard = $true }
 if ($Apply) { $arguments += '--apply' }
 if ($External) { $arguments += '--external' }
 if ($Plugins) { $arguments += '--plugins' }
 if ($Mcps) { $arguments += '--mcps' }
 if ($SuperClaude) { $arguments += '--superclaude' }
 if ($PinnedSuperClaude) { $arguments += '--pinned-superclaude' }
+if ($PinnedSkills) { $arguments += '--pinned-skills' }
+if ($SkillUpstreamVariants) { $arguments += '--skill-upstream-variants' }
 if ($UpstreamVariants) { $arguments += '--upstream-variants' }
 if ($Hooks) { $arguments += '--hooks' }
 if ($Vault) { $arguments += '--vault' }

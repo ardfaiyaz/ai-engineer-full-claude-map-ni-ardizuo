@@ -1,10 +1,10 @@
-﻿---
+---
 name: reuse-audit
 description: Audit modified software code for duplicated logic, unnecessary abstractions, and opportunities to reuse existing components, hooks, utilities, and services.
 disable-model-invocation: true
 ---
 
-# Reuse Audit
+# <img src="../../assets/lucide/list-checks.svg" width="18" height="18" alt="" /> Reuse Audit
 
 Inspect the relevant repository before recommending changes.
 

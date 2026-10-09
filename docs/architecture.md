@@ -1,10 +1,10 @@
-# Developer orchestration architecture
+# <img src="assets/lucide/workflow.svg" width="18" height="18" alt="" /> Developer orchestration architecture
 
 The system has **five development stages**. The dashboard is a map of *capabilities*; a passing end-to-end run needs separate evidence.
 
 <br />
 
-## Workflow Surface
+## <img src="assets/lucide/workflow.svg" width="18" height="18" alt="" /> Workflow Surface
 
 ```text
 Triage  ->  Contract  ->  Dispatch  ->  Review  ->  Ship
@@ -20,7 +20,7 @@ Triage  ->  Contract  ->  Dispatch  ->  Review  ->  Ship
 
 <br />
 
-## Completion mandate
+## <img src="assets/lucide/file-text.svg" width="18" height="18" alt="" /> Completion mandate
 
 `simplify` · `code-review` · `reuse-audit` · `dead-code-scan` · `vault-learning`
 
@@ -28,7 +28,7 @@ A checkbox must reflect **what actually ran**, not simply whether a name is inst
 
 <br />
 
-## System layers
+## <img src="assets/lucide/layers.svg" width="18" height="18" alt="" /> System layers
 
 | Layer | Responsibilities | Current public status |
 | :--- | :--- | :--- |
@@ -42,7 +42,7 @@ A checkbox must reflect **what actually ran**, not simply whether a name is inst
 
 <br />
 
-## Verification plan
+## <img src="assets/lucide/file-text.svg" width="18" height="18" alt="" /> Verification plan
 
 - Agent delegation: inspect actual delegated-task invocation and outcome.
 - Skills: check the tool invoked, not just folder names or plugin enablement.

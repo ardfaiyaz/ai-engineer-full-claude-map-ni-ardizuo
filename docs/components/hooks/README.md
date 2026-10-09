@@ -1,4 +1,4 @@
-# Lifecycle hook guides
+# <img src="../../assets/lucide/workflow.svg" width="18" height="18" alt="" /> Lifecycle hook guides
 
 **Five reviewed Node hooks** and a shared helper. Hook definitions and event registrations are separate steps.
 

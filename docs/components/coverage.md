@@ -1,10 +1,10 @@
-# Reference inventory coverage
+# <img src="../assets/lucide/list-checks.svg" width="18" height="18" alt="" /> Reference inventory coverage
 
 **This is the author's named source-machine inventory, not a list of packages silently copied into the installer.** The dashboard counted about 178 discovered entries across local, nested and plugin inventories; those categories overlap.
 
 <br />
 
-## 21 global agent definitions
+## <img src="../assets/lucide/bot.svg" width="18" height="18" alt="" /> 21 global agent definitions
 
 20 are normally installed by the [SuperClaude framework](../installation/superclaude.md); `diagram-architect` is included here as reviewed Ardizuo source.
 
@@ -34,7 +34,7 @@
 
 <br />
 
-## 62 global skill names
+## <img src="../assets/lucide/blocks.svg" width="18" height="18" alt="" /> 62 global skill names
 
 Only 16 are in the original Ardizuo development pack. Others must be obtained from their source under their own license, or added to a future optional manifest after confirming origin. **Do not mistake a same-name custom replacement for an official upstream package.**
 
@@ -105,13 +105,13 @@ Only 16 are in the original Ardizuo development pack. Others must be obtained fr
 
 <br />
 
-## Commands and plugins
+## <img src="../assets/lucide/puzzle.svg" width="18" height="18" alt="" /> Commands and plugins
 
 The source machine reported **32 global command filenames**. Most `sc:*` capabilities are supplied by the upstream SuperClaude installation; `log-to-vault` is included in the Ardizuo pack. The [12 plugin](../../integrations/plugins/README.md) and [nine MCP](../../integrations/mcp/README.md) entries are listed separately.
 
 <br />
 
-## Verify on a new computer
+## <img src="../assets/lucide/list-checks.svg" width="18" height="18" alt="" /> Verify on a new computer
 
 ```powershell
 python .\scripts\verify-all.py
@@ -124,7 +124,7 @@ In Claude Code, verify `/skills`, `/mcp` and `/hooks`. The presence of a file do
 [Full installer](../installation/full-setup.md) · [Component catalog](./README.md)
 
 
-## Exact-name release verification
+## <img src="../assets/lucide/rocket.svg" width="18" height="18" alt="" /> Exact-name release verification
 
 This reference list is now machine-auditable. Run `python scripts/coverage-doctor.py` to obtain an offline, literal-name status report across agents, 62 skills, 32 commands, plugins and MCP servers. The report distinguishes direct sources, enabled plugin caches, unconfirmed caches, and missing entries.
 

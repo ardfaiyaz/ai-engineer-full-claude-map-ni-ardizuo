@@ -1,4 +1,4 @@
-# Component catalog
+# <img src="../assets/lucide/package.svg" width="18" height="18" alt="" /> Component catalog
 
 **The following is the reference-machine inventory, not a list of assets installed by the public Core script.** Choose the appropriate guide for a component before installing it.
 
@@ -19,7 +19,7 @@
 
 <br />
 
-## What each guide answers
+## <img src="../assets/lucide/book-open.svg" width="18" height="18" alt="" /> What each guide answers
 
 **What is it?** · **Do I need it?** · **Official source** · **Prerequisites** · **How to install** · **How to verify** · **How to troubleshoot or remove**
 
@@ -31,12 +31,12 @@ Some plugins supply differently named skills from those shown in the reference d
 
 <br />
 
-## Full reference matrix
+## <img src="../assets/lucide/book-open.svg" width="18" height="18" alt="" /> Full reference matrix
 
 [All 21 agents and 62 global skill names, with provenance](./coverage.md) · [16 original skill guides](./skills/README.md)
 
 <br />
 
-## Deep dives by layer
+## <img src="../assets/lucide/layers.svg" width="18" height="18" alt="" /> Deep dives by layer
 
 [Agent layer](./agents/README.md) · [16 original skills](./skills/README.md) · [Five hooks](./hooks/README.md) · [Original commands](./commands/README.md)

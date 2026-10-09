@@ -1,10 +1,10 @@
-# Docker Desktop
+# <img src="../assets/lucide/file-text.svg" width="18" height="18" alt="" /> Docker Desktop
 
 **Why you might need it:** Needed only for container-based MCP servers or optional gateway integrations.
 
 <br />
 
-## 1. Get it from the official source
+## <img src="../assets/lucide/folder-open.svg" width="18" height="18" alt="" /> 1. Get it from the official source
 
 [Docker Desktop — official installation page](https://docs.docker.com/desktop/setup/install/windows-install/)
 
@@ -14,7 +14,7 @@ Docker may use WSL 2. Install WSL only if the selected backend requires it. Be a
 
 <br />
 
-## 2. Verify
+## <img src="../assets/lucide/list-checks.svg" width="18" height="18" alt="" /> 2. Verify
 
 ```powershell
 docker --version
@@ -23,7 +23,7 @@ docker info
 
 <br />
 
-## 3. If something goes wrong
+## <img src="../assets/lucide/file-text.svg" width="18" height="18" alt="" /> 3. If something goes wrong
 
 `docker --version` shows only that the CLI is installed. `docker info` also checks that the daemon is available. If it fails, start Docker Desktop, confirm WSL 2, and check virtualization.
 

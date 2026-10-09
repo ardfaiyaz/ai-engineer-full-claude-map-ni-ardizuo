@@ -1,10 +1,10 @@
-# Windows permissions and safe installation
+# <img src="../assets/lucide/shield-check.svg" width="18" height="18" alt="" /> Windows permissions and safe installation
 
 **Default to normal user permissions.** You do not need Administrator PowerShell just to add user-scope Claude rules, plugins or many MCP entries.
 
 <br />
 
-## Safe defaults
+## <img src="../assets/lucide/shield-check.svg" width="18" height="18" alt="" /> Safe defaults
 
 - Use `$HOME` and respect `$env:CLAUDE_CONFIG_DIR`; don't hardcode `C:\Users\Someone`.
 - Preview installer changes before using `-Apply`.
@@ -15,7 +15,7 @@
 
 <br />
 
-## Preflight
+## <img src="../assets/lucide/file-text.svg" width="18" height="18" alt="" /> Preflight
 
 ```powershell
 $PSVersionTable.PSVersion

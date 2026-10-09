@@ -1,10 +1,10 @@
-# Diagram architect — original agent
+# <img src="../../assets/lucide/bot.svg" width="18" height="18" alt="" /> Diagram architect — original agent
 
 **Purpose:** Generate evidence-based architecture, flow, sequence and data diagrams for development tasks. This agent definition is included under `ardizuo-plugin/agents/diagram-architect.md`.
 
 <br />
 
-## Install and verify
+## <img src="../../assets/lucide/download.svg" width="18" height="18" alt="" /> Install and verify
 
 ```powershell
 .\scripts\install-all.ps1

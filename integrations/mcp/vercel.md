@@ -1,4 +1,4 @@
-# Vercel MCP
+# <img src="../../docs/assets/lucide/plug.svg" width="18" height="18" alt="" /> Vercel MCP
 
 **Purpose:** Project deployment configuration and diagnostics. **Transport on reference machine:** `http`.
 
@@ -6,7 +6,7 @@
 
 <br />
 
-## 1. Requirements
+## <img src="../../docs/assets/lucide/download.svg" width="18" height="18" alt="" /> 1. Requirements
 
 [Vercel — official source](https://vercel.com/docs) · [API keys](../../docs/security/api-keys-and-powershell.md)
 
@@ -14,7 +14,7 @@ Provider sign-in and project permissions may be required.
 
 <br />
 
-## 2. Register the server (after review)
+## <img src="../../docs/assets/lucide/plug.svg" width="18" height="18" alt="" /> 2. Register the server (after review)
 
 **Reference endpoint used by the author:** `https://mcp.vercel.com`. Check the provider documentation for the current endpoint, then, if approved, register it as a **user-scoped HTTP MCP**:
 
@@ -27,7 +27,7 @@ claude mcp add --scope user --transport http vercel https://mcp.vercel.com
 
 <br />
 
-## 3. Authenticate and verify
+## <img src="../../docs/assets/lucide/list-checks.svg" width="18" height="18" alt="" /> 3. Authenticate and verify
 
 ```powershell
 claude mcp list
@@ -37,7 +37,7 @@ Open Claude Code and use `/mcp` to complete provider sign-in and inspect status.
 
 <br />
 
-## 4. Troubleshoot and remove
+## <img src="../../docs/assets/lucide/wrench.svg" width="18" height="18" alt="" /> 4. Troubleshoot and remove
 
 If startup fails, confirm the runtime, endpoint or launcher command, connectivity and permissions using the official source above. Don't paste tokens, full auth headers, raw `.claude.json`, or secret-containing MCP logs into a public issue.
 
@@ -49,7 +49,7 @@ If you no longer need this server, review the configuration first and use `claud
 
 <br />
 
-## Ardizuo one-package setup
+## <img src="../../docs/assets/lucide/download.svg" width="18" height="18" alt="" /> Ardizuo one-package setup
 
 **Installer:** Supported automatic registration after explicit `-Apply -External -Mcps`.
 
@@ -68,7 +68,7 @@ Never paste real keys into your issue, commit, README, or chat. Run `claude mcp 
 
 ---
 
-## Current all-layer installer behavior
+## <img src="../../docs/assets/lucide/download.svg" width="18" height="18" alt="" /> Current all-layer installer behavior
 
 - **Manifest name:** `vercel`
 - **Transport:** `http`

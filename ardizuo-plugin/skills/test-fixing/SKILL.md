@@ -4,7 +4,7 @@ description: Investigate and repair failing project tests with a reproducible wo
 disable-model-invocation: true
 ---
 
-# Test Fixing
+# <img src="../../assets/lucide/wrench.svg" width="18" height="18" alt="" /> Test Fixing
 
 This is an original local development-focused adapter, not an official third-party skill.
 

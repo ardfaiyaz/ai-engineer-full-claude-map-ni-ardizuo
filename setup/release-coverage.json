@@ -1,0 +1,220 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Repo installability coverage; this is not a runtime/authentication claim.",
+  "lastReviewed": "2026-10-10",
+  "referenceCounts": {
+    "agents": 21,
+    "directSkills": 62,
+    "commandMarkdown": 32,
+    "executableCommands": 31,
+    "plugins": 12,
+    "targetMCPs": 9,
+    "hookScripts": 5,
+    "workflowStages": 5,
+    "vaultFolders": 8,
+    "vaultTemplates": 4
+  },
+  "defaultInstall": {
+    "agents": {
+      "reviewedBundled": [
+        "diagram-architect"
+      ],
+      "verifiedPinnedSuperClaude": [
+        "backend-architect",
+        "business-panel-experts",
+        "deep-research",
+        "deep-research-agent",
+        "devops-architect",
+        "frontend-architect",
+        "learning-guide",
+        "performance-engineer",
+        "pm-agent",
+        "python-expert",
+        "quality-engineer",
+        "refactoring-expert",
+        "repo-index",
+        "requirements-analyst",
+        "root-cause-analyst",
+        "security-engineer",
+        "self-review",
+        "socratic-mentor",
+        "system-architect",
+        "technical-writer"
+      ]
+    },
+    "directSkills": {
+      "reviewedBundled": [
+        "claude-md-management",
+        "clean-code-typescript",
+        "code-splitting",
+        "dead-code-scan",
+        "fix-build",
+        "gauge-improvements",
+        "humanizer",
+        "pragmatic-code-guidelines",
+        "react-native-best-practices",
+        "reuse-audit",
+        "root-cause-analysis",
+        "ship-learn-next",
+        "team-driven-development",
+        "technical-style-guide",
+        "test-fixing",
+        "vault-learning"
+      ],
+      "verifiedPinned": [
+        "animate",
+        "animation-vocabulary",
+        "apple-design",
+        "bencium-innovative-ux-designer",
+        "ci-cd-and-automation",
+        "design",
+        "design-system",
+        "emil-design-eng",
+        "find-animation-opportunities",
+        "find-skills",
+        "improve-animations",
+        "pick-ui-library",
+        "prototype",
+        "review-animations",
+        "supabase-postgres-best-practices",
+        "ui-styling",
+        "ui-ux-pro-max",
+        "vercel-composition-patterns",
+        "vercel-react-best-practices",
+        "web-design-guidelines"
+      ]
+    },
+    "commands": {
+      "reviewedBundled": [
+        "log-to-vault"
+      ],
+      "verifiedPinnedSuperClaude": [
+        "agent",
+        "analyze",
+        "build",
+        "business-panel",
+        "design",
+        "document",
+        "git",
+        "help",
+        "index-repo",
+        "load",
+        "pm",
+        "reflect",
+        "research",
+        "save",
+        "sc",
+        "select-tool",
+        "spawn",
+        "test",
+        "troubleshoot"
+      ]
+    },
+    "globalContext": [
+      "CLAUDE.md",
+      "rules/ardizuo-development.md",
+      "rules/developer-orchestration.md"
+    ],
+    "presentationAssets": "Lucide SVG icons installed with Markdown, do not affect source component inventory"
+  },
+  "optInUpstreamVersions": {
+    "commands": [
+      "brainstorm",
+      "cleanup",
+      "estimate",
+      "explain",
+      "implement",
+      "improve",
+      "index",
+      "recommend",
+      "spec-panel",
+      "task",
+      "workflow"
+    ],
+    "skills": [
+      "accessibility-audit",
+      "accessibility-fix",
+      "impeccable",
+      "playwright-best-practices",
+      "supabase"
+    ],
+    "warning": "These do not replicate customized reference-machine versions."
+  },
+  "notAutomaticallyReproduced": {
+    "directSkillsRequiringVerifiedOriginOrExternalSource": [
+      "Accessibility",
+      "Engineering",
+      "UI",
+      "UX",
+      "built-in-browser",
+      "chrome-browser",
+      "computer-use",
+      "deep-research",
+      "docs",
+      "docx",
+      "google-workspace",
+      "import-memory",
+      "morning",
+      "pdf",
+      "pptx",
+      "skill-creator",
+      "xlsx"
+    ],
+    "directSkillsWithUnknownSafeSource": [
+      "accessibility-diff",
+      "accessibility-inspect",
+      "accessibility-scan",
+      "owasp-security"
+    ],
+    "locallyCustomizedArdizuoAssets": [
+      "commands/log-to-vault.md",
+      "hooks/lib/common.mjs",
+      "hooks/vault-session-init.mjs",
+      "rules/developer-orchestration.md",
+      "skills/vault-learning/SKILL.md",
+      "workflows/completion-mandate.md",
+      "workflows/wave-protocol.md"
+    ],
+    "supportingFiles": "Additional skill scripts/references/data and runtime dependencies have not all been verified."
+  },
+  "providerLayers": {
+    "plugins": [
+      "playwright@claude-plugins-official",
+      "context7@claude-plugins-official",
+      "superpowers@claude-plugins-official",
+      "document-skills@anthropic-agent-skills",
+      "example-skills@anthropic-agent-skills",
+      "morph-compact@morph",
+      "ralph-skills@ralph-marketplace",
+      "expo@claude-plugins-official",
+      "stripe@claude-plugins-official",
+      "sentry@claude-plugins-official",
+      "atlassian@claude-plugins-official",
+      "notion@claude-plugins-official"
+    ],
+    "targetMCPs": [
+      "serena",
+      "sequential-thinking",
+      "chrome-devtools",
+      "tavily",
+      "morph-mcp",
+      "supabase",
+      "figma",
+      "vercel",
+      "github"
+    ],
+    "hookScripts": [
+      "dead-code-check",
+      "log-to-vault",
+      "skill-gate-check",
+      "stop-vault-log",
+      "vault-session-init"
+    ],
+    "claudeMap": "Package installation + overlay rehearsal needed; live dashboard confirmed on reference machine only.",
+    "pluginAuthentication": "Not copied or bundled; Atlassian optional/auth pending on last reported live check.",
+    "hookRegistration": "Opt-in -Hooks; five source scripts included by default, executable runtime not inferred.",
+    "vault": "Opt-in -Vault and -VaultPath; no personal notes redistributed."
+  },
+  "dashboardConfigLayer": {"personas": "Observed on reference dashboard, source not bundled or verified", "globalCLAUDEmd": "Portable template provided, reference content not reproduced", "personalGitHubLauncher": "Reference exists; not redistributed, official Docker OAuth alternative guided"},
+  "scope": "User-scoped; does not copy existing secrets, sessions, caches, or personal notes."
+}

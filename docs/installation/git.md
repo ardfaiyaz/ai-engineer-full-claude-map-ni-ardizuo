@@ -1,10 +1,10 @@
-# Git for Windows
+# <img src="../assets/lucide/git-branch.svg" width="18" height="18" alt="" /> Git for Windows
 
 **Why you might need it:** Clones repositories, tracks changes, enables worktrees and helps Claude inspect diffs.
 
 <br />
 
-## 1. Get it from the official source
+## <img src="../assets/lucide/folder-open.svg" width="18" height="18" alt="" /> 1. Get it from the official source
 
 [Git for Windows — official installation page](https://git-scm.com/install/windows)
 
@@ -25,7 +25,7 @@ Use your real preferred identity; these are examples.
 
 <br />
 
-## 2. Verify
+## <img src="../assets/lucide/list-checks.svg" width="18" height="18" alt="" /> 2. Verify
 
 ```powershell
 git --version
@@ -34,7 +34,7 @@ git config --global --get user.name
 
 <br />
 
-## 3. If something goes wrong
+## <img src="../assets/lucide/file-text.svg" width="18" height="18" alt="" /> 3. If something goes wrong
 
 If Git is not found after installation, close and reopen the terminal. If the repository is public, check changes with `git status` and `git diff` before committing.
 

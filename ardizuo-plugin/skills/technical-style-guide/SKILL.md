@@ -4,7 +4,7 @@ description: Improve engineering documentation with a consistent, precise techni
 disable-model-invocation: true
 ---
 
-# Technical Style Guide
+# <img src="../../assets/lucide/book-open.svg" width="18" height="18" alt="" /> Technical Style Guide
 
 This is an original local development-focused adapter, not an official third-party skill.
 

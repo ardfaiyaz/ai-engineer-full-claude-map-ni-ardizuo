@@ -4,7 +4,7 @@ description: Apply concise evidence-based code quality principles to software ch
 disable-model-invocation: true
 ---
 
-# Pragmatic Code Guidelines
+# <img src="../../assets/lucide/book-open.svg" width="18" height="18" alt="" /> Pragmatic Code Guidelines
 
 This is an original local development-focused adapter, not an official third-party skill.
 

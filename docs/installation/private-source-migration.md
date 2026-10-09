@@ -1,4 +1,4 @@
-# Privately reviewing missing global agents, skills and commands
+# <img src="../assets/lucide/bot.svg" width="18" height="18" alt="" /> Privately reviewing missing global agents, skills and commands
 
 <img src="../assets/icons/shield.svg" width="18" height="18" alt="" /> **Owner review required before redistribution.**
 
@@ -6,7 +6,7 @@ The main installer includes 28 reviewed development assets and obtains other ite
 
 <br />
 
-## 1. Prepare a private, outside-the-repo folder
+## <img src="../assets/lucide/folder-open.svg" width="18" height="18" alt="" /> 1. Prepare a private, outside-the-repo folder
 
 ```powershell
 cd "$HOME\Documents\ai-engineer-full-claude-map-ni-ardizuo"
@@ -19,7 +19,7 @@ The script looks at the names-only inventory of **21 agents, 62 skills and 32 co
 
 <br />
 
-## 2. Export candidates locally, with explicit approval
+## <img src="../assets/lucide/file-text.svg" width="18" height="18" alt="" /> 2. Export candidates locally, with explicit approval
 
 ```powershell
 python .\scripts\prepare-private-review.py --apply
@@ -29,7 +29,7 @@ Default destination: `$HOME\Documents\Ardizuo-Additional-Assets-PRIVATE`. The sc
 
 <br />
 
-## 3. Review content, origin and licenses
+## <img src="../assets/lucide/shield-check.svg" width="18" height="18" alt="" /> 3. Review content, origin and licenses
 
 For every file, check:
 
@@ -43,7 +43,7 @@ Use a text editor to review each file. An automated pattern scan is an **aid**, 
 
 <br />
 
-## 4. Integrate only approved sources
+## <img src="../assets/lucide/folder-open.svg" width="18" height="18" alt="" /> 4. Integrate only approved sources
 
 Only original or redistribution-approved assets should be added to `ardizuo-plugin/` and to an explicit, tested source manifest. Third-party packages should normally be installed from the publisher's marketplace, not vendored into this repository. Update [exact coverage](../components/exact-coverage.md), the license notice, the installation scripts and regression tests together.
 
@@ -51,7 +51,7 @@ Never commit credential-bearing configuration, any `*.local.json` inventory with
 
 <br />
 
-## 5. Check live integration separately
+## <img src="../assets/lucide/plug.svg" width="18" height="18" alt="" /> 5. Check live integration separately
 
 ```powershell
 python .\scripts\coverage-doctor.py
