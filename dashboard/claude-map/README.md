@@ -1,43 +1,69 @@
 # Claude Map — AI / Software Engineer Claude Setup
 
-**Local-only visualization with the five-stage Workflow Surface and status-colored capability layers.** The customized dashboard extends [upstream Claude Map](https://github.com/shamim0902/claude-map); it is not a hosted website or a replacement for Claude Code.
+**Local-only visualization with the five-stage workflow surface and capability layers.** Ardizuo's dashboard extends [upstream Claude Map](https://github.com/shamim0902/claude-map); it is not a hosted site or a replacement for Claude Code.
 
-<br />
-
-## Install the base dashboard
-
-Review [Node.js/npm prerequisites](../../docs/installation/nodejs-npm.md), then:
+## Check the installed package on Windows
 
 ```powershell
-npm install -g claude-map
+npm ls -g claude-map --depth=0
+$mapRoot = Join-Path ((npm root -g).Trim()) 'claude-map'
+Test-Path (Join-Path $mapRoot 'server.js')
+Test-Path (Join-Path $mapRoot 'public/app.js')
+python .\scripts\install-dashboard.py --map-root "$mapRoot"
+```
+
+The dashboard installer now resolves `npm.cmd` automatically on Windows. The explicit `--map-root` override is useful for diagnostics and for portable/test installations.
+
+The **default mode is read-only**. It checks that the package exists and that the initial Development Hub scaffold can be applied (or is already present). **This does not prove compatibility of the remaining four overlay stages.** A mismatch stops with an explanatory error instead of silently modifying files.
+
+Do not use `--apply` until the installed upstream version and all five patches have been reviewed in a disposable installation. Some overlays are version-sensitive; a successful initial preflight alone is insufficient. The current user's installed version is `claude-map@1.2.3`, but the exact custom modifications on that installation are not yet known.
+
+## Rehearse all five stages in a disposable copy
+
+The initial preview checks only the scaffold. The new `--rehearse` mode runs
+**all five** overlay scripts against temporary copies of `server.js` and
+`public/app.js`. It redirects `HOME`, `USERPROFILE` and `CLAUDE_CONFIG_DIR`
+to an isolated temporary folder, so patch-created backups and the optional
+agent file cannot change your existing setup.
+
+```powershell
+python .\scripts\install-dashboard.py --rehearse
+```
+
+For a reliable *fresh-install* compatibility test, use an **unmodified official
+Claude Map 1.2.3 archive**, not your already-customized global installation:
+
+```powershell
+$testRoot = Join-Path $HOME 'Documents/Ardizuo-Map-Upstream-Test'
+if (Test-Path $testRoot) { throw 'Test folder exists. Choose a fresh path.' }
+New-Item -ItemType Directory -Path $testRoot | Out-Null
+npm pack claude-map@1.2.3 --pack-destination $testRoot
+if ($LASTEXITCODE -ne 0) { throw 'npm pack failed' }
+tar -xzf (Join-Path $testRoot 'claude-map-1.2.3.tgz') -C $testRoot
+if ($LASTEXITCODE -ne 0) { throw 'tar extraction failed' }
+python .\scripts\install-dashboard.py --map-root (Join-Path $testRoot 'package') --rehearse
+```
+
+`npm pack` downloads the published tarball into that folder and does **not**
+reinstall or overwrite your live dashboard. When the current dashboard has
+already been modified, the rehearsal may stop at an already-applied stage;
+rehearse the clean archive to test reproducibility.
+
+A successful rehearsal verifies source compatibility and JavaScript syntax,
+**not** browser rendering, runtime behavior or external connections. If any
+stage fails, **do not run `--apply`**; collect its error output first.
+
+## Apply only after full compatibility review
+
+Stop the dashboard server. Back up your complete global `claude-map` package, not just `server.js` and `public/app.js`, in case an overlay stage also writes auxiliary files. Then, and only then:
+
+```powershell
+python .\scripts\install-dashboard.py --map-root "$mapRoot" --apply
 claude-map -p 8888
 ```
 
-Stop the running server before modifying the installed package. Open <http://localhost:8888> (never expose port 8888 on an untrusted network).
+Open <http://localhost:8888/?tab=devhub> and refresh. Keep this dashboard local and on a trusted machine. Some upstream patches can create a missing diagram agent under the active Claude config; install and inspect the Ardizuo local assets first. Never put tokens, private `.claude.json`, settings backups or vault notes into the repository.
 
-<br />
-
-## Optional Ardizuo Development Hub overlay
-
-This distribution includes the source patches that created the author's dashboard. They are **version-sensitive**; an updated upstream release may change the code anchors. Always preview and let the installer back up the files before modifying them.
-
-```powershell
-python .\scripts\install-dashboard.py          # dry run: no changes
-python .\scripts\install-dashboard.py --apply # patch known structure
-```
-
-On success, restart Claude Map and open `http://localhost:8888/?tab=devhub`, then press Ctrl+Shift+R.
-
-The overlay attempts to add the actual title **AI / Software Engineer Claude Setup**, monochrome UI with green/red status badges, and the workflow/skill/agent/hook/config/vault/MCP/plugin layers. It does **not** execute checks or log into providers. If the script reports an incompatible upstream version, it restores `server.js` and `app.js`; do not force the patch manually.
-
-<br />
-
-## Compatibility and data safety
-
-- Do not copy personal `.claude.json`, `settings.json` or vault data into the dashboard package.
-- Do not expose raw MCP URLs with keys, token headers, environment variables, or session text in HTTP responses.
-- Installed files and enabled plugins are configuration evidence only; the live connection-check action is separate.
-- Claude Map itself includes file editing and terminal features. Keep it local and trusted.
-- Upstream code and license remain attributed to the project author. This repository ships overlays, not the original project's complete source.
+The intended UI has the title **AI / Software Engineer Claude Setup**, the five-stage workflow, and status views for agents, skills, commands, hooks, config, vault, plugins and MCPs. Detected/configured does not mean authenticated or successfully executed.
 
 [Full setup](../../docs/installation/full-setup.md) · [Architecture](../../docs/architecture.md) · [Security](../../SECURITY.md)

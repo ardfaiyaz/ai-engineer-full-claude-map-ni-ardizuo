@@ -75,3 +75,20 @@
 - [ ] No `settings.json`, `.claude.json`, token, session log, plugin cache or private vault note is included in the release.
 
 [See the offline exact-coverage audit](../components/exact-coverage.md). These tests intentionally do not claim that a real OAuth connection or delegated agent ran.
+
+
+<br />
+
+## Full Claude Map overlay rehearsal
+
+The initial dashboard preview checks only scaffold anchors. Before using
+`--apply`, rehearse **all five** overlay stages against an unmodified official
+Claude Map archive as explained in [the dashboard setup](../../dashboard/claude-map/README.md).
+
+```powershell
+python .\scripts\install-dashboard.py --rehearse
+```
+
+The rehearsal redirects patch-created files into temporary private folders.
+Record all failed stages and do not infer browser/runtime compatibility from
+JavaScript syntax checks alone.
