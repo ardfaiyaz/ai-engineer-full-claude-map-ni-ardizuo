@@ -1,0 +1,9 @@
+{
+  "name": "core",
+  "description": "Bootstrap rule, no external installs",
+  "assetIds": [
+    "ardizuo-development-rule"
+  ],
+  "installableInBootstrap": true,
+  "note": "Non-destructive, user-scoped base rule only."
+}

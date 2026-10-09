@@ -1,0 +1,125 @@
+{
+  "schemaVersion": 1,
+  "project": "AI Engineer Full Claude Map ni Ardizuo",
+  "stage": "bootstrap-preview",
+  "supportedPlatform": "Windows 10/11 PowerShell 5.1+",
+  "installScope": "user",
+  "claudeConfigResolution": "CLAUDE_CONFIG_DIR or $HOME/.claude",
+  "packagedAssets": [
+    {
+      "id": "ardizuo-development-rule",
+      "kind": "rule",
+      "source": "global-config/rules/ardizuo-development.md",
+      "destination": "rules/ardizuo-development.md",
+      "installable": true
+    }
+  ],
+  "plannedAssets": {
+    "workflowStages": [
+      "Triage",
+      "Contract",
+      "Dispatch",
+      "Review",
+      "Ship"
+    ],
+    "completionMandate": [
+      "simplify",
+      "code-review",
+      "reuse-audit",
+      "dead-code-scan",
+      "vault-learning"
+    ],
+    "originalGlobalAgentsForReview": [
+      "backend-architect",
+      "business-panel-experts",
+      "deep-research",
+      "deep-research-agent",
+      "devops-architect",
+      "diagram-architect",
+      "frontend-architect",
+      "learning-guide",
+      "performance-engineer",
+      "pm-agent",
+      "python-expert",
+      "quality-engineer",
+      "refactoring-expert",
+      "repo-index",
+      "requirements-analyst",
+      "root-cause-analyst",
+      "security-engineer",
+      "self-review",
+      "socratic-mentor",
+      "system-architect",
+      "technical-writer"
+    ],
+    "originalHooksForReview": [
+      "skill-gate-check",
+      "vault-session-init",
+      "log-to-vault",
+      "stop-vault-log",
+      "dead-code-check"
+    ],
+    "externalPluginsForUserInstallation": [
+      "playwright@claude-plugins-official",
+      "context7@claude-plugins-official",
+      "superpowers@claude-plugins-official",
+      "document-skills@anthropic-agent-skills",
+      "example-skills@anthropic-agent-skills",
+      "morph-compact@morph",
+      "ralph-skills@ralph-marketplace",
+      "expo@claude-plugins-official",
+      "stripe@claude-plugins-official",
+      "sentry@claude-plugins-official",
+      "atlassian@claude-plugins-official",
+      "notion@claude-plugins-official"
+    ],
+    "externalUserMcpReferencesNoSecrets": [
+      {
+        "name": "serena",
+        "transport": "stdio"
+      },
+      {
+        "name": "sequential-thinking",
+        "transport": "stdio"
+      },
+      {
+        "name": "chrome-devtools",
+        "transport": "stdio"
+      },
+      {
+        "name": "tavily",
+        "transport": "stdio"
+      },
+      {
+        "name": "morph-mcp",
+        "transport": "stdio"
+      },
+      {
+        "name": "supabase",
+        "transport": "http"
+      },
+      {
+        "name": "figma",
+        "transport": "http"
+      },
+      {
+        "name": "vercel",
+        "transport": "http"
+      },
+      {
+        "name": "github",
+        "transport": "stdio"
+      }
+    ],
+    "optionalObsidianVault": true,
+    "optionalLocalDashboard": true
+  },
+  "constraints": [
+    "No social-media tools",
+    "Never export credentials",
+    "No silent overwrites",
+    "No implicit external installs",
+    "No false execution/connection claims"
+  ],
+  "notes": "External names reflect author-reported setup. This manifest does not install or authenticate the referenced third-party services."
+}

@@ -1,0 +1,9 @@
+{
+  "name": "custom",
+  "description": "Selective installer; future profile",
+  "assetIds": [
+    "ardizuo-development-rule"
+  ],
+  "installableInBootstrap": false,
+  "note": "This is profile metadata; installer supports only core until components are packaged."
+}

@@ -1,0 +1,9 @@
+{
+  "name": "full",
+  "description": "All developer layers and 12 plugins, 9 MCP references; requires reviewed assets",
+  "assetIds": [
+    "ardizuo-development-rule"
+  ],
+  "installableInBootstrap": false,
+  "note": "This is profile metadata; installer supports only core until components are packaged."
+}
