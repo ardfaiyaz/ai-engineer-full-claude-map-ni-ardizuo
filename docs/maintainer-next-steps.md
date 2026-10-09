@@ -6,16 +6,16 @@
 
 ## Next three development milestones
 
-### 1. Audit original source assets
+### 1. Complete ownership and portability review
 
 - Collect **only the files Ardizuo authored or has redistribution rights to**.
 - Review the 21 agents, five hooks, custom skills and workflow rules for secrets, personal paths and side effects.
 - Do not export the whole `.claude` folder or plugin cache.
 
-### 2. Implement the Full profile
+### 2. Complete the assisted Full profile and optional presets
 
-- Add idempotent installation for audited assets with a dry run, collision handling and rollback.
-- Register third-party components from official sources **with explicit user consent**.
+- The 28 original assets already support dry-run, idempotence and collision checks; now finish lifecycle rollback, verified Windows tests and optional uninstall.
+- The Full orchestrator can attempt upstream installs with explicit user consent; verify actual provider login, marketplace availability, and pin tested versions.
 - Support Core, Full and specialized profiles only when tested, not just defined in JSON.
 
 ### 3. Verify and release

@@ -42,3 +42,21 @@ If you no longer need this server, review the configuration first and use `claud
 <br />
 
 [All MCP servers](./README.md) · [API keys](../../docs/security/api-keys-and-powershell.md) · [Documentation hub](../../docs/README.md)
+
+<br />
+
+## Ardizuo one-package setup
+
+**Installer:** Supported automatic registration after explicit `-Apply -External -Mcps`.
+
+Run the orchestrator to register it. The underlying command is shown below for reference:
+
+```powershell
+claude mcp add --scope user sequential-thinking -- npx -y @modelcontextprotocol/server-sequential-thinking
+```
+
+**Official source:** https://github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking
+
+**Notes:** Node/npm required; inspect package before accepting execution.
+
+Never paste real keys into your issue, commit, README, or chat. Run `claude mcp list` and `/mcp` after registration; presence is not authentication.

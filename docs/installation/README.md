@@ -32,3 +32,27 @@ These are short, **Windows-first** guides. Every tool gets its own page, officia
 **Before connecting providers:** read [API keys and PowerShell](../security/api-keys-and-powershell.md). Installing the executable is not the same as connecting a service.
 
 [Back to prerequisites](../prerequisites.md) · [Documentation hub](../README.md)
+
+<br />
+
+## Original Ardizuo development pack
+
+[Install 28 reviewed global Claude Code assets](./ardizuo-development-pack.md). This is optional and separate from external plugin/MCP installation.
+
+<br />
+
+## Complete guided setup
+
+[Full installation — one orchestrator and optional integrations](./full-setup.md).
+
+<br />
+
+## Agent framework
+
+[SuperClaude (20 agents and sc commands)](./superclaude.md).
+
+<br />
+
+## Verify everything
+
+[30-step install and end-to-end checklist](./verification-checklist.md).

@@ -1,10 +1,21 @@
 [CmdletBinding()]
 param(
-    [ValidateSet('core','full','frontend','backend','mobile','custom')]
+    [ValidateSet('core','development','full','frontend','backend','mobile','custom')]
     [string]$Profile = 'core',
     [switch]$Apply
 )
 $ErrorActionPreference = 'Stop'
+if ($Profile -eq 'full') {
+    Write-Host 'Full is an ASSISTED installer. Requires optional external installs and OAuth.'
+    Write-Host 'Preview: .\scripts\install-all.ps1 -All'
+    Write-Host 'Apply after review: .\scripts\install-all.ps1 -Apply -All'
+    if ($Apply) { throw 'For full installation, use install-all.ps1 -Apply -All after reviewing the preview.' }
+    return
+}
+if ($Profile -eq 'development') {
+    & (Join-Path $PSScriptRoot 'install-development.ps1') -Apply:$Apply
+    return
+}
 
 $repo = (Resolve-Path -LiteralPath (Join-Path $PSScriptRoot '..')).Path
 $source = Join-Path $repo 'global-config\rules\ardizuo-development.md'

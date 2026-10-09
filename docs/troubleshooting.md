@@ -40,3 +40,9 @@ Run `git diff --cached --check` after staging and before committing. If you adde
 <br />
 
 [Docs hub](./README.md) · [Security](../SECURITY.md)
+
+<br />
+
+## One-package troubleshooting
+
+**If the local installer reports CONFLICT:** do not force overwrite. Use a sandbox `-ConfigDir` to compare the original asset with your version. **If plugin installation fails:** check the marketplace and version inside Claude Code `/plugin`. **If MCP is configured but disconnected:** authenticate using `/mcp`; do not paste tokens into logs. **If Claude Map patch is incompatible:** the patch restores backups; use upstream dashboard until the extension is updated. [Full guide](./installation/full-setup.md).

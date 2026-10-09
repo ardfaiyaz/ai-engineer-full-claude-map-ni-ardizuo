@@ -1,12 +1,12 @@
 # Full release checklist
 
-A **public bootstrap preview** is already available. It becomes a full installable release only after every required check passes.
+The **assisted Full preview** includes original assets and external installation orchestration. It is not yet a verified stable release; these gates must pass first.
 
 <br />
 
 ## Source and licensing
 
-- [ ] Choose a LICENSE covering original content only.
+- [x] Add MIT license for original Ardizuo-owned files (external packages retain upstream licensing).
 - [ ] Attribute upstream Claude Map, plugins and other authors appropriately.
 - [ ] Review and license-check 21 agent definitions.
 - [ ] Review all original skills, five hooks and global rules for secrets, paths and side effects.
@@ -15,11 +15,11 @@ A **public bootstrap preview** is already available. It becomes a full installab
 
 ## Installer and guides
 
-- [ ] Package approved assets with idempotent installation and collision handling.
+- [x] Package the 28 reviewed original assets with hash checks and collision-safe installation.
 - [ ] Make Full, Frontend, Backend, Mobile and Custom profiles genuinely installable or explicitly mark incomplete.
-- [ ] Provide verified dependency and [installation guides](./installation/README.md).
+- [x] Provide individual official-linked dependency and [installation guides](./installation/README.md).
 - [ ] Verify all [plugin](../integrations/plugins/README.md) and [MCP](../integrations/mcp/README.md) registrations and auth flows.
-- [ ] Bundle an attributed, version-pinned local dashboard patch with tests.
+- [ ] Verify an attributed, version-pinned Claude Map overlay against a clean upstream Windows install (patch sources are included but version-sensitive).
 - [ ] Make rollback and uninstall work without modifying unrelated user settings.
 
 <br />

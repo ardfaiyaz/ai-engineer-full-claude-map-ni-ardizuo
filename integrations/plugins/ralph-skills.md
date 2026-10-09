@@ -48,3 +48,9 @@ Use Claude Code's `/plugin` manager or the supported plugin uninstall command to
 <br />
 
 [All plugins](./README.md) · [Secrets and authentication](../../docs/security/api-keys-and-powershell.md) · [Documentation hub](../../docs/README.md)
+
+<br />
+
+## One-package option
+
+From the repository root, use `scripts/install-all.ps1 -Apply -External -Plugins` after reviewing the dry run. This invokes the CLI install for this plugin; it does not grant account permissions or guarantee that the marketplace is configured. For failures, use the manual installer and official source above.

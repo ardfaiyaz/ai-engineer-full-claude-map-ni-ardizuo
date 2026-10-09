@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "project": "AI Engineer Full Claude Map ni Ardizuo",
-  "stage": "bootstrap-preview",
+  "stage": "assisted-full-preview",
   "supportedPlatform": "Windows 10/11 PowerShell 5.1+",
   "installScope": "user",
   "claudeConfigResolution": "CLAUDE_CONFIG_DIR or $HOME/.claude",
@@ -11,6 +11,202 @@
       "kind": "rule",
       "source": "global-config/rules/ardizuo-development.md",
       "destination": "rules/ardizuo-development.md",
+      "installable": true
+    },
+    {
+      "id": "development:agents/diagram-architect.md",
+      "kind": "original-development-asset",
+      "source": "ardizuo-plugin/agents/diagram-architect.md",
+      "destination": "agents/diagram-architect.md",
+      "installable": true
+    },
+    {
+      "id": "development:commands/log-to-vault.md",
+      "kind": "original-development-asset",
+      "source": "ardizuo-plugin/commands/log-to-vault.md",
+      "destination": "commands/log-to-vault.md",
+      "installable": true
+    },
+    {
+      "id": "development:hooks/dead-code-check.mjs",
+      "kind": "original-development-asset",
+      "source": "ardizuo-plugin/hooks/dead-code-check.mjs",
+      "destination": "hooks/dead-code-check.mjs",
+      "installable": true
+    },
+    {
+      "id": "development:hooks/lib/common.mjs",
+      "kind": "original-development-asset",
+      "source": "ardizuo-plugin/hooks/lib/common.mjs",
+      "destination": "hooks/lib/common.mjs",
+      "installable": true
+    },
+    {
+      "id": "development:hooks/log-to-vault.mjs",
+      "kind": "original-development-asset",
+      "source": "ardizuo-plugin/hooks/log-to-vault.mjs",
+      "destination": "hooks/log-to-vault.mjs",
+      "installable": true
+    },
+    {
+      "id": "development:hooks/skill-gate-check.mjs",
+      "kind": "original-development-asset",
+      "source": "ardizuo-plugin/hooks/skill-gate-check.mjs",
+      "destination": "hooks/skill-gate-check.mjs",
+      "installable": true
+    },
+    {
+      "id": "development:hooks/stop-vault-log.mjs",
+      "kind": "original-development-asset",
+      "source": "ardizuo-plugin/hooks/stop-vault-log.mjs",
+      "destination": "hooks/stop-vault-log.mjs",
+      "installable": true
+    },
+    {
+      "id": "development:hooks/vault-session-init.mjs",
+      "kind": "original-development-asset",
+      "source": "ardizuo-plugin/hooks/vault-session-init.mjs",
+      "destination": "hooks/vault-session-init.mjs",
+      "installable": true
+    },
+    {
+      "id": "development:rules/developer-orchestration.md",
+      "kind": "original-development-asset",
+      "source": "ardizuo-plugin/rules/developer-orchestration.md",
+      "destination": "rules/developer-orchestration.md",
+      "installable": true
+    },
+    {
+      "id": "development:skills/claude-md-management/SKILL.md",
+      "kind": "original-development-asset",
+      "source": "ardizuo-plugin/skills/claude-md-management/SKILL.md",
+      "destination": "skills/claude-md-management/SKILL.md",
+      "installable": true
+    },
+    {
+      "id": "development:skills/clean-code-typescript/SKILL.md",
+      "kind": "original-development-asset",
+      "source": "ardizuo-plugin/skills/clean-code-typescript/SKILL.md",
+      "destination": "skills/clean-code-typescript/SKILL.md",
+      "installable": true
+    },
+    {
+      "id": "development:skills/code-splitting/SKILL.md",
+      "kind": "original-development-asset",
+      "source": "ardizuo-plugin/skills/code-splitting/SKILL.md",
+      "destination": "skills/code-splitting/SKILL.md",
+      "installable": true
+    },
+    {
+      "id": "development:skills/dead-code-scan/SKILL.md",
+      "kind": "original-development-asset",
+      "source": "ardizuo-plugin/skills/dead-code-scan/SKILL.md",
+      "destination": "skills/dead-code-scan/SKILL.md",
+      "installable": true
+    },
+    {
+      "id": "development:skills/fix-build/SKILL.md",
+      "kind": "original-development-asset",
+      "source": "ardizuo-plugin/skills/fix-build/SKILL.md",
+      "destination": "skills/fix-build/SKILL.md",
+      "installable": true
+    },
+    {
+      "id": "development:skills/gauge-improvements/SKILL.md",
+      "kind": "original-development-asset",
+      "source": "ardizuo-plugin/skills/gauge-improvements/SKILL.md",
+      "destination": "skills/gauge-improvements/SKILL.md",
+      "installable": true
+    },
+    {
+      "id": "development:skills/humanizer/SKILL.md",
+      "kind": "original-development-asset",
+      "source": "ardizuo-plugin/skills/humanizer/SKILL.md",
+      "destination": "skills/humanizer/SKILL.md",
+      "installable": true
+    },
+    {
+      "id": "development:skills/pragmatic-code-guidelines/SKILL.md",
+      "kind": "original-development-asset",
+      "source": "ardizuo-plugin/skills/pragmatic-code-guidelines/SKILL.md",
+      "destination": "skills/pragmatic-code-guidelines/SKILL.md",
+      "installable": true
+    },
+    {
+      "id": "development:skills/react-native-best-practices/SKILL.md",
+      "kind": "original-development-asset",
+      "source": "ardizuo-plugin/skills/react-native-best-practices/SKILL.md",
+      "destination": "skills/react-native-best-practices/SKILL.md",
+      "installable": true
+    },
+    {
+      "id": "development:skills/reuse-audit/SKILL.md",
+      "kind": "original-development-asset",
+      "source": "ardizuo-plugin/skills/reuse-audit/SKILL.md",
+      "destination": "skills/reuse-audit/SKILL.md",
+      "installable": true
+    },
+    {
+      "id": "development:skills/root-cause-analysis/SKILL.md",
+      "kind": "original-development-asset",
+      "source": "ardizuo-plugin/skills/root-cause-analysis/SKILL.md",
+      "destination": "skills/root-cause-analysis/SKILL.md",
+      "installable": true
+    },
+    {
+      "id": "development:skills/ship-learn-next/SKILL.md",
+      "kind": "original-development-asset",
+      "source": "ardizuo-plugin/skills/ship-learn-next/SKILL.md",
+      "destination": "skills/ship-learn-next/SKILL.md",
+      "installable": true
+    },
+    {
+      "id": "development:skills/team-driven-development/SKILL.md",
+      "kind": "original-development-asset",
+      "source": "ardizuo-plugin/skills/team-driven-development/SKILL.md",
+      "destination": "skills/team-driven-development/SKILL.md",
+      "installable": true
+    },
+    {
+      "id": "development:skills/technical-style-guide/SKILL.md",
+      "kind": "original-development-asset",
+      "source": "ardizuo-plugin/skills/technical-style-guide/SKILL.md",
+      "destination": "skills/technical-style-guide/SKILL.md",
+      "installable": true
+    },
+    {
+      "id": "development:skills/test-fixing/SKILL.md",
+      "kind": "original-development-asset",
+      "source": "ardizuo-plugin/skills/test-fixing/SKILL.md",
+      "destination": "skills/test-fixing/SKILL.md",
+      "installable": true
+    },
+    {
+      "id": "development:skills/vault-learning/SKILL.md",
+      "kind": "original-development-asset",
+      "source": "ardizuo-plugin/skills/vault-learning/SKILL.md",
+      "destination": "skills/vault-learning/SKILL.md",
+      "installable": true
+    },
+    {
+      "id": "development:workflows/completion-mandate.md",
+      "kind": "original-development-asset",
+      "source": "ardizuo-plugin/workflows/completion-mandate.md",
+      "destination": "workflows/completion-mandate.md",
+      "installable": true
+    },
+    {
+      "id": "development:workflows/skill-gates.json",
+      "kind": "original-development-asset",
+      "source": "ardizuo-plugin/workflows/skill-gates.json",
+      "destination": "workflows/skill-gates.json",
+      "installable": true
+    },
+    {
+      "id": "development:workflows/wave-protocol.md",
+      "kind": "original-development-asset",
+      "source": "ardizuo-plugin/workflows/wave-protocol.md",
+      "destination": "workflows/wave-protocol.md",
       "installable": true
     }
   ],
@@ -121,5 +317,17 @@
     "No implicit external installs",
     "No false execution/connection claims"
   ],
-  "notes": "External names reflect author-reported setup. This manifest does not install or authenticate the referenced third-party services."
+  "notes": "Core and Development original assets are installable. Full uses the separate optional external orchestrator, which may require authentication and manual steps. This is not a verified complete offline replica.",
+  "developmentPack": {
+    "manifest": "setup/development-assets.json",
+    "profile": "setup/profiles/development.json",
+    "installer": "scripts/install-development.ps1",
+    "installable": true,
+    "fileCount": 28,
+    "hookRegistration": "opt-in",
+    "noExternalPluginsMcpDashboard": true
+  },
+  "fullAssistedInstaller": "scripts/install-all.ps1",
+  "fullInstallManifest": "setup/full-stack.json",
+  "fullProfileRuntime": "Assisted full: original local files plus upstream installers and provider sign-in; not guaranteed authenticated or working until verified"
 }

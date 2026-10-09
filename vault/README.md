@@ -1,26 +1,36 @@
-# Obsidian knowledge templates
+# Obsidian developer memory
 
-These are **empty example templates**, not any user's private notes.
-
-<br />
-
-## Start safely
-
-1. [Install Obsidian](../docs/installation/obsidian.md) and create/open a vault of your choice.
-2. Copy **only the blank templates** you want into your own vault's Templates folder.
-3. Create Sessions, Learnings, ADRs and PRDs as needed. Use descriptive names and dates.
-4. Review any proposed AI-generated note and **approve saving it explicitly**.
-5. Test retrieval in a new Claude Code session before claiming memory persistence.
+**Optional local folder, no required cloud sync.** Only the empty folder structure and generic templates are public. Your private sessions and notes never ship with this package.
 
 <br />
 
-| Template | Best for |
-| :--- | :--- |
-| [Session](./templates/Session.md) | Notes on one task and the next steps |
-| [Learning](./templates/Learning.md) | Reusable technical lessons |
-| [ADR](./templates/ADR.md) | Architecture choices and tradeoffs |
-| [PRD](./templates/PRD.md) | Product scope and acceptance criteria |
+## Create the eight folders
 
-Do not copy an existing vault, private company notes or personal sessions into Git.
+```powershell
+.\scripts\install-all.ps1 -Apply -Vault
+```
 
-[Security](../SECURITY.md) · [Docs hub](../docs/README.md)
+Creates `Sessions`, `Learnings`, `ADRs`, `PRDs`, `Dispatch-Logs`, `Diagrams`, `Projects`, and `Templates` under your Documents vault by default. To choose a different directory, pass `-VaultPath "D:\MyVault"`.
+
+<br />
+
+## Open and use
+
+Install [Obsidian](../docs/installation/obsidian.md), then select **Open folder as vault** and choose the directory. Use [the sample templates](./templates/) to create ADRs, PRDs and learning notes manually.
+
+`/log-to-vault` is an original Claude command, but it must ask before writing a note. Never authorize automatic export of private conversations, credentials, or raw source files. Test note save and reload on a disposable project before enabling hooks globally.
+
+[Full installer](../docs/installation/full-setup.md) · [Credential safety](../docs/security/api-keys-and-powershell.md)
+
+<br />
+
+## A custom vault path (optional)
+
+The hook library reads `CLAUDE_DEV_VAULT` when set. If you choose a custom vault directory, set the variable for the current PowerShell session before starting Claude Code:
+
+```powershell
+$env:CLAUDE_DEV_VAULT = 'D:\MyVault'
+claude
+```
+
+This is **a path, not an API secret**. To keep this setting for future sessions, you may explicitly set a user-level Windows environment variable; see the [PowerShell guide](../docs/security/api-keys-and-powershell.md). The installer never changes it silently.

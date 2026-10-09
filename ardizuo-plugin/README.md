@@ -1,28 +1,15 @@
-# Ardizuo developer plugin
+# Ardizuo development assets (Phase 1)
 
-**Planned plugin — not ready to install as a complete agent/skill distribution.** The existing `.claude-plugin/plugin.json` is metadata scaffolding only.
+This folder contains **reviewed, portable, development-only local assets**:
 
-<br />
+- 16 manually authored helper skills, including `reuse-audit`, `dead-code-scan` and `vault-learning`.
+- `diagram-architect` subagent, a session-note command, five hook scripts plus `hooks/lib/common.mjs`.
+- Workflow configuration files and a global orchestration rule.
 
-## What will be included
+These originated in the author's own setup and have been adapted to avoid the author's hard-coded Windows paths. A preliminary secret scan and syntax checks are included; verify provenance and perform a manual review before a public release. No third-party plugin cache is redistributed.
 
-Reviewed original specialist agents, manual skills, commands and Node lifecycle hooks. Original files must be stripped of local usernames, secrets and implicit write operations before reuse.
+Use **`scripts/install-development.ps1`** from the repository root. The installer is a separate global asset installer; `plugin.json` is not a substitute for the workflow and hook installation.
 
-<br />
+By default it only previews changes. `-Apply` copies files only when targets are absent or identical; it will not overwrite user-modified files. Hook activation is optional and handled by `scripts/register-hooks.mjs` with an independent approval step.
 
-## How users will install it (after release)
-
-The [Claude Code plugin documentation](https://code.claude.com/docs/en/plugins) describes how to package plugins. Exact marketplace registration and installation commands will be published after the plugin files and version are validated; no working marketplace distribution is claimed today.
-
-<br />
-
-## Maintainer checks
-
-- Keep plugin-owned assets separate from Claude Code's global cache.
-- Test discoverability with `/skills` and reviewed hook lifecycle tests.
-- Confirm user-level installations do not overwrite personal settings.
-- Provide release versions, changelog, rollback and user approval for write operations.
-
-<br />
-
-[Component catalog](../docs/components/README.md) · [Developer architecture](../docs/architecture.md) · [Docs hub](../docs/README.md)
+See [Phase 1 setup guide](../docs/installation/ardizuo-development-pack.md).

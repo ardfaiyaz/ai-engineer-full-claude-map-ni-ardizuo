@@ -1,51 +1,37 @@
-# Install with an AI assistant
+# Install with any capable AI assistant
 
-**One prompt, any capable assistant.** Works with Claude Code, Codex, and other assistants that can read local files and run commands. If the assistant cannot access your computer, it can guide you through the commands instead.
-
-> **Important:** This repository is a **bootstrap preview**, not the full stack. The only executable profile currently installs one namespaced global rule. Never claim otherwise.
+**Copy the prompt below into Claude Code, Codex or an AI with computer/terminal access.** If your AI cannot access your PC, it must provide manual steps rather than claiming it installed anything.
 
 <br />
 
-## Before you start
+## Before you paste the prompt
 
-1. [Install Claude Code](./docs/installation/claude-code.md) and [Git](./docs/installation/git.md).
-2. Read the [prerequisites](./docs/prerequisites.md) and [security guidance](./SECURITY.md).
-3. Clone the [public repository](https://github.com/ardfaiyaz/ai-engineer-full-claude-map-ni-ardizuo) and open the local folder in your AI coding assistant.
+1. Install [Claude Code](./docs/installation/claude-code.md), [Git](./docs/installation/git.md), [Python](./docs/installation/python.md) and [Node/npm](./docs/installation/nodejs-npm.md).
+2. Clone this GitHub repository and open the **local clone** in your AI assistant.
+3. Review [security](./SECURITY.md) and [the Full installer guide](./docs/installation/full-setup.md).
 
 <br />
 
 ## Copy this prompt
 
-> Help me install **AI Engineer Full Claude Map ni Ardizuo** from the local repository folder I'm in. **Do not guess, auto-run arbitrary scripts, or silently install external components.**
+> Help me install **AI Engineer Full Claude Map ni Ardizuo** globally on my Windows machine from this cloned repository.
 >
-> 1. Read `README.md`, `SECURITY.md`, `setup/manifest.json`, the requested `setup/profiles/*.json`, and the installation scripts. Respect documented limitations: **only the Core bootstrap is executable today**.
-> 2. Determine my actual OS, `$HOME` and `$env:CLAUDE_CONFIG_DIR` if set. Do not hardcode a username or modify other people's directories. Run `scripts/doctor.ps1` and summarize tools already present.
-> 3. Ask which profile I'd like. For Full, Frontend, Backend, Mobile or Custom, describe pending implementation honestly. **Do not construct a replacement installer from cached plugin files.**
-> 4. Run a **dry run** using `scripts/install.ps1 -Profile core`. Explain exactly what file would be created or changed. Stop on collisions.
-> 5. **Ask me for explicit approval** before `-Apply`, downloads, credential prompts, provider sign-ins, model-consuming tests, or changes to Git repositories.
-> 6. For any desired external plugin or MCP, follow the relevant [official-linked component guide](./docs/README.md) and user-approved supported commands. Prefer OAuth; do not ask me to paste secrets in chat or put tokens in shell history.
-> 7. Do not inspect or publish credentials, `.claude.json`, private Obsidian notes, local session logs, or other personal files. Do not add social-media tooling.
-> 8. Verify results separately as installed, configured, connected, or executed. Run the documented smoke tests only after approval.
-> 9. Do not commit, push, deploy, send requests on my behalf, or write vault notes without explicit instruction.
-> 10. Finish with a brief status table and specific commands for verification and rollback.
+> 1. Read README.md, SECURITY.md, setup/full-stack.json, setup/development-assets.json, the Full installer script, and the relevant component docs. Do not make up dependencies or package names.
+> 2. Detect my actual home folder and optional `CLAUDE_CONFIG_DIR`. Never hardcode an author's username or read/private-copy credentials.
+> 3. Run `scripts/doctor.ps1` and `python scripts/verify-all.py`. Explain prerequisites needed before proceeding.
+> 4. Run `scripts/install-all.ps1 -All` **without -Apply** and explain its dry-run plan.
+> 5. Ask for explicit approval before using `-Apply`, external downloads, OAuth/login, vault creation, dashboard patches, changes to settings.json, Git actions or expensive operations.
+> 6. With approval, run the installer with the requested components. Never treat failed CLI steps as installed, or configured MCPs as connected.
+> 7. Follow official provider links for plugin marketplaces and credential-dependent Tavily, Morph and GitHub MCP setups. Guide the user to enter keys locally; never ask them to paste keys into the chat.
+> 8. For an isolated test, use `-ConfigDir` WITHOUT external installation flags. Verify collisions, hash checks and hook registration before touching a live configuration.
+> 9. Verify Claude's `/skills`, `/mcp`, `/hooks` and the local dashboard. Do not assert any agent delegation, vault write, testing or deployment unless it actually happened.
+> 10. Never commit/push/deploy, edit projects, or write Obsidian notes without separate approval. No social-media integrations.
+> 11. Summarize installed, configured, connected, blocked and manual steps. Provide safe rollback guidance.
 
 <br />
 
-## If the AI cannot access your computer
+## If the AI cannot run commands
 
-Ask it for a **reviewed, copy-and-paste Windows PowerShell walkthrough**, then run those commands yourself. Do not accept claims that it installed a plugin or authenticated an MCP without actual command output.
+It should walk you through the exact [PowerShell steps](./docs/installation/full-setup.md) and wait for pasted command results. It must never claim remote access to your computer.
 
-<br />
-
-## Quick verification commands
-
-```powershell
-.\scripts\doctor.ps1
-.\scripts\install.ps1 -Profile core  # dry run only
-claude plugin list
-claude mcp list
-```
-
-**Do not run `-Apply` until you understand the file destination.** See the [Windows permissions guide](./docs/security/windows-permissions.md) and [API key guide](./docs/security/api-keys-and-powershell.md).
-
-[Back to README](./README.md) · [All guides](./docs/README.md)
+[Back to README](./README.md) · [API keys guide](./docs/security/api-keys-and-powershell.md)

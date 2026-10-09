@@ -1,0 +1,350 @@
+{
+  "schemaVersion": 1,
+  "stage": "full-setup-assisted-preview",
+  "project": "AI Engineer Full Claude Map ni Ardizuo",
+  "includedSource": {
+    "localFiles": 28,
+    "localManifest": "setup/development-assets.json",
+    "agentsViaUpstream": "SuperClaude 20 agent definitions",
+    "customAgent": "diagram-architect"
+  },
+  "superclaude": {
+    "source": "https://github.com/SuperClaude-Org/SuperClaude_Framework",
+    "install": [
+      "pipx",
+      "install",
+      "superclaude"
+    ],
+    "configure": [
+      "superclaude",
+      "install"
+    ],
+    "check": [
+      "superclaude",
+      "doctor"
+    ]
+  },
+  "plugins": [
+    {
+      "id": "playwright@claude-plugins-official",
+      "install": [
+        "claude",
+        "plugin",
+        "install",
+        "playwright@claude-plugins-official"
+      ],
+      "requiresConfirmation": true
+    },
+    {
+      "id": "context7@claude-plugins-official",
+      "install": [
+        "claude",
+        "plugin",
+        "install",
+        "context7@claude-plugins-official"
+      ],
+      "requiresConfirmation": true
+    },
+    {
+      "id": "superpowers@claude-plugins-official",
+      "install": [
+        "claude",
+        "plugin",
+        "install",
+        "superpowers@claude-plugins-official"
+      ],
+      "requiresConfirmation": true
+    },
+    {
+      "id": "document-skills@anthropic-agent-skills",
+      "install": [
+        "claude",
+        "plugin",
+        "install",
+        "document-skills@anthropic-agent-skills"
+      ],
+      "requiresConfirmation": true
+    },
+    {
+      "id": "example-skills@anthropic-agent-skills",
+      "install": [
+        "claude",
+        "plugin",
+        "install",
+        "example-skills@anthropic-agent-skills"
+      ],
+      "requiresConfirmation": true
+    },
+    {
+      "id": "morph-compact@morph",
+      "install": [
+        "claude",
+        "plugin",
+        "install",
+        "morph-compact@morph"
+      ],
+      "requiresConfirmation": true
+    },
+    {
+      "id": "ralph-skills@ralph-marketplace",
+      "install": [
+        "claude",
+        "plugin",
+        "install",
+        "ralph-skills@ralph-marketplace"
+      ],
+      "requiresConfirmation": true
+    },
+    {
+      "id": "expo@claude-plugins-official",
+      "install": [
+        "claude",
+        "plugin",
+        "install",
+        "expo@claude-plugins-official"
+      ],
+      "requiresConfirmation": true
+    },
+    {
+      "id": "stripe@claude-plugins-official",
+      "install": [
+        "claude",
+        "plugin",
+        "install",
+        "stripe@claude-plugins-official"
+      ],
+      "requiresConfirmation": true
+    },
+    {
+      "id": "sentry@claude-plugins-official",
+      "install": [
+        "claude",
+        "plugin",
+        "install",
+        "sentry@claude-plugins-official"
+      ],
+      "requiresConfirmation": true
+    },
+    {
+      "id": "atlassian@claude-plugins-official",
+      "install": [
+        "claude",
+        "plugin",
+        "install",
+        "atlassian@claude-plugins-official"
+      ],
+      "requiresConfirmation": true
+    },
+    {
+      "id": "notion@claude-plugins-official",
+      "install": [
+        "claude",
+        "plugin",
+        "install",
+        "notion@claude-plugins-official"
+      ],
+      "requiresConfirmation": true
+    }
+  ],
+  "mcp": [
+    {
+      "name": "serena",
+      "transport": "stdio",
+      "automation": "supported",
+      "prerequisites": [
+        "uvx"
+      ],
+      "argv": [
+        "claude",
+        "mcp",
+        "add",
+        "--scope",
+        "user",
+        "serena",
+        "--",
+        "uvx",
+        "--from",
+        "git+https://github.com/oraios/serena",
+        "serena",
+        "start-mcp-server",
+        "--context",
+        "ide-assistant"
+      ],
+      "source": "https://github.com/oraios/serena",
+      "notes": "Activate the current project when needed. Remote git source downloads on first launch."
+    },
+    {
+      "name": "sequential-thinking",
+      "transport": "stdio",
+      "automation": "supported",
+      "prerequisites": [
+        "npx"
+      ],
+      "argv": [
+        "claude",
+        "mcp",
+        "add",
+        "--scope",
+        "user",
+        "sequential-thinking",
+        "--",
+        "npx",
+        "-y",
+        "@modelcontextprotocol/server-sequential-thinking"
+      ],
+      "source": "https://github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking",
+      "notes": "Node/npm required; inspect package before accepting execution."
+    },
+    {
+      "name": "chrome-devtools",
+      "transport": "stdio",
+      "automation": "supported",
+      "prerequisites": [
+        "npx"
+      ],
+      "argv": [
+        "claude",
+        "mcp",
+        "add",
+        "--scope",
+        "user",
+        "chrome-devtools",
+        "--",
+        "npx",
+        "-y",
+        "chrome-devtools-mcp@latest"
+      ],
+      "source": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
+      "notes": "May inspect content in a browser; avoid sensitive active sessions."
+    },
+    {
+      "name": "tavily",
+      "transport": "stdio",
+      "automation": "interactive",
+      "prerequisites": [
+        "npx"
+      ],
+      "source": "https://docs.tavily.com/documentation/mcp",
+      "notes": "Requires Tavily key; follow provider guide and avoid storing a literal token in CLI history."
+    },
+    {
+      "name": "morph-mcp",
+      "transport": "stdio",
+      "automation": "interactive",
+      "prerequisites": [
+        "npx"
+      ],
+      "source": "https://docs.morphllm.com",
+      "notes": "Requires Morph credentials/provider-specific setup."
+    },
+    {
+      "name": "supabase",
+      "transport": "http",
+      "automation": "supported",
+      "prerequisites": [],
+      "argv": [
+        "claude",
+        "mcp",
+        "add",
+        "--transport",
+        "http",
+        "--scope",
+        "user",
+        "supabase",
+        "https://mcp.supabase.com/mcp?read_only=true"
+      ],
+      "source": "https://supabase.com/docs/guides/getting-started/mcp",
+      "notes": "OAuth needed; read-only flag is default in this pack."
+    },
+    {
+      "name": "figma",
+      "transport": "http",
+      "automation": "supported",
+      "prerequisites": [],
+      "argv": [
+        "claude",
+        "mcp",
+        "add",
+        "--transport",
+        "http",
+        "--scope",
+        "user",
+        "figma",
+        "https://mcp.figma.com/mcp"
+      ],
+      "source": "https://developers.figma.com/docs/figma-mcp-server/",
+      "notes": "OAuth/account access required."
+    },
+    {
+      "name": "vercel",
+      "transport": "http",
+      "automation": "supported",
+      "prerequisites": [],
+      "argv": [
+        "claude",
+        "mcp",
+        "add",
+        "--transport",
+        "http",
+        "--scope",
+        "user",
+        "vercel",
+        "https://mcp.vercel.com"
+      ],
+      "source": "https://vercel.com/docs/mcp/vercel-mcp",
+      "notes": "OAuth/account access required; deployment actions require explicit consent."
+    },
+    {
+      "name": "github",
+      "transport": "stdio",
+      "automation": "interactive",
+      "prerequisites": [
+        "gh",
+        "docker"
+      ],
+      "source": "https://github.com/github/github-mcp-server",
+      "notes": "Original setup used gh+Docker wrapper. Obtain official read-only setup; never embed gh token in public configuration."
+    }
+  ],
+  "dashboard": {
+    "source": "https://github.com/shamim0902/claude-map",
+    "npm": [
+      "npm",
+      "install",
+      "-g",
+      "claude-map"
+    ],
+    "patches": [
+      "claude_map_video_dashboard_patch.py",
+      "claude_map_minimal_complete.py",
+      "claude_map_status_theme.py",
+      "claude_map_finalize_integrations.py"
+    ],
+    "compatibility": "patches require specific upstream and previous Development Hub scaffold; inspect and test, may require manual adaptation"
+  },
+  "memory": {
+    "folders": [
+      "Sessions",
+      "Learnings",
+      "ADRs",
+      "PRDs",
+      "Dispatch-Logs",
+      "Diagrams",
+      "Projects",
+      "Templates"
+    ],
+    "source": "vault/templates",
+    "defaultDirectory": "Documents/Claude-Dev-Vault",
+    "approvalRequired": true
+  },
+  "limitations": [
+    "External account authentication is interactive",
+    "Not all 178 discoverable entries are separately redistributable",
+    "Some plugins from non-default marketplaces need manual marketplace installation",
+    "Three credential-dependent MCPs are manual until users choose their auth mechanism",
+    "Dashboard patch compatibility cannot be guaranteed without a pinned clean upstream release",
+    "Claude built-ins are not bundled",
+    "Local agent definitions are not the same as runtime delegation"
+  ],
+  "provenance": "User supplied names-only inventory and 28 reviewed original asset files. External sources referenced, not repackaged."
+}

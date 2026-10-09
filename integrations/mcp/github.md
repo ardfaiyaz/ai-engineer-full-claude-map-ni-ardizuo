@@ -42,3 +42,15 @@ If you no longer need this server, review the configuration first and use `claud
 <br />
 
 [All MCP servers](./README.md) · [API keys](../../docs/security/api-keys-and-powershell.md) · [Documentation hub](../../docs/README.md)
+
+<br />
+
+## Ardizuo one-package setup
+
+**Installer:** Requires manual review and authentication; not automatically registered.
+
+**Official source:** https://github.com/github/github-mcp-server
+
+**Notes:** Original setup used gh+Docker wrapper. Obtain official read-only setup; never embed gh token in public configuration.
+
+Never paste real keys into your issue, commit, README, or chat. Run `claude mcp list` and `/mcp` after registration; presence is not authentication.

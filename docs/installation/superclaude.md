@@ -1,0 +1,41 @@
+# SuperClaude Framework — agents and sc commands
+
+**Publisher:** [SuperClaude-Org](https://github.com/SuperClaude-Org/SuperClaude_Framework) · **Role:** 20 specialist agents, 30 sc-prefixed commands and development workflow extensions.
+
+<br />
+
+## Requirements
+
+Install [Python](./python.md), [Claude Code](./claude-code.md) and [pipx](https://pipx.pypa.io/stable/installation/). For optional SuperClaude MCP features, follow the framework's official documentation.
+
+<br />
+
+## Install (official method)
+
+```powershell
+pipx install superclaude
+superclaude install
+```
+
+The `superclaude install` command modifies global Claude Code assets. Preview changes and back up existing configuration before accepting upstream prompts. The Ardizuo Full installer invokes this only when you explicitly select `-SuperClaude` (or `-All`).
+
+<br />
+
+## Verify
+
+```powershell
+superclaude doctor
+superclaude install --list
+```
+
+Within Claude Code, look for `/sc:research`, `/sc:brainstorm`, and installed specialist agent definitions. Filename discovery is not proof that the agent executed.
+
+<br />
+
+## Troubleshooting and removal
+
+If the CLI isn't found after installing with pipx, reopen PowerShell and check `pipx list` and your PATH. If it reports conflicts, stop and use the official [installation guide](https://github.com/SuperClaude-Org/SuperClaude_Framework/blob/master/docs/getting-started/installation.md), rather than deleting existing users' files.
+
+For removal, use the upstream framework's uninstall instructions, review generated changes, and retain user-authored files.
+
+[Installation guides](./README.md) · [Reference agent list](../components/coverage.md)

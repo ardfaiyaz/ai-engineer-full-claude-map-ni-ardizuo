@@ -9,15 +9,15 @@ class BootstrapTests(unittest.TestCase):
     def test_manifest_and_packaged_asset_exist(self):
         data = json.loads((ROOT / 'setup' / 'manifest.json').read_text(encoding='utf-8'))
         self.assertEqual(data['schemaVersion'], 1)
-        self.assertEqual(data['stage'], 'bootstrap-preview')
+        self.assertEqual(data['stage'], 'assisted-full-preview')
         for asset in data['packagedAssets']:
             self.assertTrue((ROOT / asset['source']).is_file(), asset['source'])
             self.assertFalse('..' in pathlib.PurePosixPath(asset['source']).parts)
 
-    def test_only_core_profile_is_installable(self):
+    def test_only_reviewed_profiles_are_installable(self):
         for path in (ROOT / 'setup' / 'profiles').glob('*.json'):
             data = json.loads(path.read_text(encoding='utf-8'))
-            self.assertEqual(data['installableInBootstrap'], path.stem == 'core')
+            self.assertEqual(data['installableInBootstrap'], path.stem in ('core', 'development'))
 
     def test_no_home_directory_is_hardcoded_in_install_scripts(self):
         for path in (ROOT / 'scripts').glob('*.ps1'):

@@ -1,9 +1,18 @@
 {
   "name": "full",
-  "description": "All developer layers and 12 plugins, 9 MCP references; requires reviewed assets",
+  "description": "Guided one-package developer environment with 28 original assets + upstream SuperClaude, 12 plugins, 9 MCPs, vault and dashboard",
   "assetIds": [
     "ardizuo-development-rule"
   ],
   "installableInBootstrap": false,
-  "note": "This is profile metadata; installer supports only core until components are packaged."
+  "note": "Full assisted setup exists. CLI registration/install is not equivalent to connected/authenticated. Dashboard overlay remains version-sensitive.",
+  "installer": "scripts/install-all.ps1",
+  "installCommand": ".\\scripts\\install-all.ps1 -Apply -All",
+  "assistedPreview": true,
+  "requiresExternalAuth": true,
+  "requiresManualProviderSteps": [
+    "tavily",
+    "morph-mcp",
+    "github"
+  ]
 }

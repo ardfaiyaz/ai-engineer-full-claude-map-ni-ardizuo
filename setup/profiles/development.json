@@ -1,0 +1,9 @@
+{
+  "name": "development",
+  "description": "Locally authored development pack; no third-party plugins or MCP connections",
+  "fileManifest": "setup/development-assets.json",
+  "installer": "scripts/install-development.ps1",
+  "installableInBootstrap": true,
+  "requiresManualHookOptIn": true,
+  "note": "Phase 1 assets only. Full is not installable yet."
+}

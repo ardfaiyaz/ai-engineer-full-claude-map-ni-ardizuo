@@ -7,13 +7,23 @@ status: proposed
 
 # Session note
 
+<br />
+
 ## Goal
+
+<br />
 
 ## Changes actually made
 
+<br />
+
 ## Verification evidence
 
+<br />
+
 ## Outstanding tasks
+
+<br />
 
 ## Next session
 

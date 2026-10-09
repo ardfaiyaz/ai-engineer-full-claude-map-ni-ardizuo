@@ -1,0 +1,81 @@
+﻿{
+  "version": 1,
+  "scope": "user",
+  "selectionPolicy": {
+    "selectOnlyRelevant": true,
+    "avoidDuplicateWorkflows": true,
+    "preferExistingSkills": true,
+    "requireSpecialistsOnlyWhenUseful": true
+  },
+  "taskCategories": {
+    "frontend": {
+      "skills": [
+        "vercel-react-best-practices",
+        "vercel-composition-patterns",
+        "web-design-guidelines"
+      ],
+      "agents": ["frontend-architect"]
+    },
+    "ui-ux": {
+      "skills": [
+        "ui-ux-pro-max",
+        "design-system",
+        "impeccable"
+      ],
+      "agents": ["frontend-architect"]
+    },
+    "backend": {
+      "skills": [
+        "supabase",
+        "supabase-postgres-best-practices"
+      ],
+      "agents": ["backend-architect"]
+    },
+    "debugging": {
+      "skills": [
+        "superpowers:systematic-debugging"
+      ],
+      "agents": ["root-cause-analyst"]
+    },
+    "testing": {
+      "skills": [
+        "superpowers:test-driven-development",
+        "playwright-best-practices"
+      ],
+      "agents": ["quality-engineer"]
+    },
+    "security": {
+      "skills": [
+        "owasp-security",
+        "security-review"
+      ],
+      "agents": ["security-engineer"]
+    },
+    "refactoring": {
+      "skills": [
+        "reuse-audit",
+        "dead-code-scan"
+      ],
+      "agents": ["refactoring-expert"]
+    },
+    "planning": {
+      "skills": [
+        "superpowers:brainstorming",
+        "superpowers:writing-plans"
+      ],
+      "agents": ["system-architect", "pm-agent"]
+    },
+    "devops": {
+      "skills": [
+        "ci-cd-and-automation"
+      ],
+      "agents": ["devops-architect"]
+    },
+    "documentation": {
+      "skills": [
+        "vault-learning"
+      ],
+      "agents": ["technical-writer"]
+    }
+  }
+}

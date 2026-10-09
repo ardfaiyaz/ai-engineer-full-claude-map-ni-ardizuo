@@ -46,3 +46,21 @@ If you no longer need this server, review the configuration first and use `claud
 <br />
 
 [All MCP servers](./README.md) · [API keys](../../docs/security/api-keys-and-powershell.md) · [Documentation hub](../../docs/README.md)
+
+<br />
+
+## Ardizuo one-package setup
+
+**Installer:** Supported automatic registration after explicit `-Apply -External -Mcps`.
+
+Run the orchestrator to register it. The underlying command is shown below for reference:
+
+```powershell
+claude mcp add --transport http --scope user supabase https://mcp.supabase.com/mcp?read_only=true
+```
+
+**Official source:** https://supabase.com/docs/guides/getting-started/mcp
+
+**Notes:** OAuth needed; read-only flag is default in this pack.
+
+Never paste real keys into your issue, commit, README, or chat. Run `claude mcp list` and `/mcp` after registration; presence is not authentication.

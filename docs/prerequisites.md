@@ -48,3 +48,9 @@ Write-Host "Claude configuration directory: $claudeDir"
 <br />
 
 [Next: installation guide index](./installation/README.md) · [Back to documentation](./README.md)
+
+<br />
+
+## One-package installer
+
+[Read the complete setup guide](./installation/full-setup.md) to prepare your Windows prerequisites before installation. It explains when a plugin or MCP is optional, what requires authentication, and how to preview changes.

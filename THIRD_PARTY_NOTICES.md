@@ -1,30 +1,22 @@
-# Third-party attribution and licenses
+# Third-party licenses and attribution
 
-**This project is a configuration and installation effort, not a repackaged distribution of other developers' work.** Third-party licenses and ownership remain with their respective authors.
-
-<br />
-
-## Reference projects
-
-| Project | Official source | How we use it |
-| :--- | :--- | :--- |
-| Claude Code | [Anthropic docs](https://code.claude.com/docs/en/setup) | Install the runtime using official distribution |
-| Claude Map | [Upstream source](https://github.com/shamim0902/claude-map) | Optional *planned* attributed fork or patch; not bundled yet |
-| Superpowers | [Upstream source](https://github.com/obra/superpowers) | Plugin reference; not redistributed |
-| Ralph | [Upstream source](https://github.com/snarktank/ralph) | PRD/plugin reference; not redistributed |
-| Claude Code plugins | [Plugin documentation](https://code.claude.com/docs/en/discover-plugins) | Installed from upstream marketplaces with consent |
-| MCP implementations | [Official MCP documentation](https://code.claude.com/docs/en/mcp) | Registered from official providers, not copied from another user |
+This repository includes original Ardizuo files and references tools maintained by other projects. **It does not claim ownership of external plugin, CLI, MCP or dashboard code.**
 
 <br />
 
-## Before a full release
+## Upstream sources
 
-1. Select and add a license covering **only original Ardizuo-authored code**.
-2. Identify ownership/license of every bundled agent, hook, skill and generated script.
-3. Preserve any upstream license, author attribution and modification notices required by redistribution.
-4. Prefer pinned upstream dependencies and separate install instructions over shipping third-party caches.
-5. Audit the dashboard patch for upstream version compatibility and security.
+- [Claude Code — Anthropic](https://code.claude.com/docs/en/overview)
+- [SuperClaude Framework](https://github.com/SuperClaude-Org/SuperClaude_Framework)
+- [Superpowers plugin and other Claude plugins](https://code.claude.com/docs/en/discover-plugins)
+- [Claude Map dashboard — shamim0902](https://github.com/shamim0902/claude-map)
+- MCP providers and original URLs under [integrations/mcp](./integrations/mcp/README.md)
+- Provider plugins and official references under [integrations/plugins](./integrations/plugins/README.md)
 
-**No blanket license grant for third-party content is implied by this repository.** License selection for the original work remains pending.
+<br />
 
-[Security](./SECURITY.md) · [Release checklist](./docs/release-checklist.md) · [README](./README.md)
+## Redistribution boundary
+
+Only reviewed original local skills, agent, hooks and rules are included as sources. Third-party packages are installed using their own official installers, with each provider's licenses and terms. Ardizuo-owned source is offered under the project MIT license. Preserve every upstream license and notice in any derived work.
+
+[Security guidance](./SECURITY.md) · [Release checklist](./docs/release-checklist.md)

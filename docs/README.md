@@ -41,6 +41,12 @@
 
 [Architecture](./architecture.md) · [Component catalog](./components/README.md) · [Release plan](./release-checklist.md) · [Maintainer plan](./maintainer-next-steps.md)
 
-> **Bootstrap preview:** Only one namespaced development rule is currently installed by the Core script. Other components are documented references until packaged and verified.
+> **Assisted Full preview:** The Core rule and 28 reviewed Ardizuo files can be installed locally. The Full orchestrator attempts supported upstream packages, MCPs, hooks, Obsidian and dashboard setup after explicit approval. OAuth, three credential-dependent MCPs, and version-specific overlay testing still require manual follow-up.
 
 [Back to project README](../README.md)
+
+<br />
+
+## One-package assisted setup
+
+[Full installation and limitations](./installation/full-setup.md) · [Component coverage](./components/README.md).

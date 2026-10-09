@@ -46,3 +46,21 @@ If you no longer need this server, review the configuration first and use `claud
 <br />
 
 [All MCP servers](./README.md) · [API keys](../../docs/security/api-keys-and-powershell.md) · [Documentation hub](../../docs/README.md)
+
+<br />
+
+## Ardizuo one-package setup
+
+**Installer:** Supported automatic registration after explicit `-Apply -External -Mcps`.
+
+Run the orchestrator to register it. The underlying command is shown below for reference:
+
+```powershell
+claude mcp add --transport http --scope user vercel https://mcp.vercel.com
+```
+
+**Official source:** https://vercel.com/docs/mcp/vercel-mcp
+
+**Notes:** OAuth/account access required; deployment actions require explicit consent.
+
+Never paste real keys into your issue, commit, README, or chat. Run `claude mcp list` and `/mcp` after registration; presence is not authentication.

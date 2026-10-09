@@ -1,48 +1,73 @@
 <p align="center">
-  <img src="./banner.png" alt="AI Engineer Full Claude Map ni Ardizuo banner" width="100%" />
+  <img src="./banner.png" width="100%" alt="AI Engineer Full Claude Map ni Ardizuo banner" />
 </p>
 
 <h1 align="center">AI Engineer Full Claude Map ni Ardizuo</h1>
 
-<p align="center"><strong>A modular, global Claude Code setup for AI and software engineers.</strong></p>
+<p align="center"><strong>One repository. One guided installer. A guided Claude Code development stack.</strong></p>
 
-<p align="center">Windows-first &nbsp;·&nbsp; Local-first &nbsp;·&nbsp; Developer-focused &nbsp;·&nbsp; No hosted website</p>
+<p align="center">Windows-first &nbsp;·&nbsp; Global configuration &nbsp;·&nbsp; Optional services &nbsp;·&nbsp; Local Claude Map dashboard</p>
 
-<p align="center"><a href="#start-here">Get started</a> &nbsp;·&nbsp; <a href="./INSTALL_WITH_AI.md">Install with AI</a> &nbsp;·&nbsp; <a href="./docs/architecture.md">Architecture</a> &nbsp;·&nbsp; <a href="./docs/prerequisites.md">Requirements</a> &nbsp;·&nbsp; <a href="./docs/README.md">All guides</a></p>
-
-<br />
-
-> **Status: bootstrap preview — not a Full release.** The checked-in installer currently adds **one namespaced global rule**. Skills, agents, hooks, provider integrations and the custom dashboard are being reviewed and packaged. The Full profile is **not yet installable**.
+<p align="center"><a href="#-installation"><strong>Install</strong></a> &nbsp;·&nbsp; <a href="./INSTALL_WITH_AI.md">Use an AI assistant</a> &nbsp;·&nbsp; <a href="./docs/README.md">All documentation</a> &nbsp;·&nbsp; <a href="./docs/architecture.md">Architecture</a></p>
 
 <br />
 
-<a id="start-here"></a>
-## <img src="./docs/assets/icons/terminal.svg" width="21" height="21" alt="" /> Start here
-
-Choose whichever approach fits you. Everything runs locally; you don't need a hosted website.
-
-| Installation route | Recommended for | Guide |
-| :--- | :--- | :--- |
-| **AI-assisted** | Guided, approval-first setup | [INSTALL_WITH_AI.md](./INSTALL_WITH_AI.md) |
-| **Manual** | Control over each component | [Prerequisites](./docs/prerequisites.md) · [Component catalog](./docs/components/README.md) |
-| **PowerShell bootstrap** | Safe Windows starting point | [Local scripts](./scripts/) |
+> **Assisted Full Installer Preview.** This repository packages the original Ardizuo development components and automates supported third-party installation steps. External accounts and several MCP servers still require manual consent/authentication. The existing 178 discovered skills are **not** all independently bundled: installed source packages, native commands, and plugin caches overlap. Do not confuse configured with connected or executed.
 
 <br />
 
-### Quick start · Windows PowerShell
+---
+
+<br />
+
+## <img src="./docs/assets/icons/terminal.svg" width="19" height="19" alt="" /> Installation
+
+Start here whether you are new to Claude Code or have an existing global setup.
+
+### 1. Check requirements
+
+Follow the [Windows requirements guide](./docs/prerequisites.md). Install **Git**, **Python**, **Node.js/npm**, and **Claude Code**. Optional integrations use **uvx**, **GitHub CLI**, **Docker**, and **Obsidian**. The installer does not silently add system packages or modify system policy.
+
+### 2. Download and inspect
 
 ```powershell
 git clone https://github.com/ardfaiyaz/ai-engineer-full-claude-map-ni-ardizuo.git
 cd ai-engineer-full-claude-map-ni-ardizuo
 
+# Inventory only — no network calls or model usage
 .\scripts\doctor.ps1
-.\scripts\install.ps1 -Profile core         # Dry run only
-
-# Review changes before choosing to apply:
-.\scripts\install.ps1 -Profile core -Apply
+python .\scripts\verify-all.py
 ```
 
-The current Core bootstrap only adds `rules/ardizuo-development.md` inside the resolved global Claude config directory. It does **not** install or authenticate plugins and MCPs.
+### 3. Preview the complete setup
+
+```powershell
+# Local files, upstream SuperClaude, 12 plugins, 9 MCP registrations,
+# optional hooks, vault and Claude Map. DRY RUN only.
+.\scripts\install-all.ps1 -All
+```
+
+### 4. Install after review
+
+```powershell
+# Explicit approval: can download packages, register MCPs and edit settings.
+.\scripts\install-all.ps1 -Apply -All
+```
+
+**Important:** This is one entrypoint, but not a no-consent background installer. Provider OAuth and API keys cannot be migrated from another user, and installation failures are reported rather than disguised as success. If the Claude Map overlay is incompatible with upstream, run the [dashboard compatibility guide](./dashboard/claude-map/README.md) instead.
+
+[Detailed one-command walkthrough →](./docs/installation/full-setup.md)
+
+<br />
+
+### Other ways to install
+
+| Route | When to choose it | Start |
+| :--- | :--- | :--- |
+| **AI-assisted** | You want another AI to guide each step and ask before changes | [INSTALL_WITH_AI.md](./INSTALL_WITH_AI.md) |
+| **Local only** | You only want the 28 custom development assets | [Development pack](./docs/installation/ardizuo-development-pack.md) |
+| **Core** | You want one minimal global workflow rule | `scripts/install.ps1 -Profile core` |
+| **Manual integration** | You want to pick third-party plugins and MCPs | [Components](./docs/components/README.md) |
 
 <br />
 
@@ -50,35 +75,41 @@ The current Core bootstrap only adds `rules/ardizuo-development.md` inside the r
 
 <br />
 
-## <img src="./docs/assets/icons/workflow.svg" width="21" height="21" alt="" /> Developer workflow
+## <img src="./docs/assets/icons/workflow.svg" width="19" height="19" alt="" /> How the setup works
 
 ```text
-Triage  →  Contract  →  Dispatch  →  Review  →  Ship
+Triage  ───→ Contract ───→ Dispatch ───→ Review ───→ Ship
+                      │
+           Agents · Skills · Rules
+                      │
+        Hooks · Memory · MCP · Plugins
 ```
 
-Planned layers: specialist agents, skills, lifecycle hooks, global rules, optional Obsidian memory, MCP integrations, plugins and a localhost dashboard.
+**Completion mandate:** `simplify` · `code-review` · `reuse-audit` · `dead-code-scan` · `vault-learning`
 
-**Completion mandate:** `simplify` · `code-review` · `reuse-audit` · `dead-code-scan` · `vault-learning`.
+Native Claude Code features stay native; the installer adds original skills, upstream SuperClaude and approved plugin integrations instead of making fake copies of built-in features.
 
-Availability is not execution: the eventual checker distinguishes **installed**, **configured**, **authenticated**, and **tested**.
-
-[Explore the architecture →](./docs/architecture.md)
+[Detailed system architecture →](./docs/architecture.md)
 
 <br />
 
-## <img src="./docs/assets/icons/package.svg" width="21" height="21" alt="" /> What's ready?
+## <img src="./docs/assets/icons/package.svg" width="19" height="19" alt="" /> What's in the package?
 
-| Included now | Planned / pending review |
-| :--- | :--- |
-| Core rule installer with safe dry run | Original agent, skill and hook packaging |
-| Dependency and names-only inventory checks | Complete plugin and MCP installation workflows |
-| Backup/restore utilities for supported files | Functional Full and specialist profiles |
-| Manifests, six profile definitions, documentation | Attributed and tested dashboard distribution |
-| AI prompt and Obsidian templates | Live orchestration, vault and Ship verification |
+| Layer | Coverage | How it is delivered |
+| :--- | :--- | :--- |
+| Workflow & configuration | Five stages, gates and completion instructions | **Original included files** |
+| Agent layer | 21 reference names | **20 upstream SuperClaude + 1 included diagram agent** |
+| Original skill layer | 16 custom skills | **Included source files** |
+| Superpowers, Ralph, Expo, etc. | 12 plugin IDs | **CLI installs from their marketplaces** |
+| SuperClaude commands | ~30 command files | **Upstream framework installer** |
+| Hook layer | 5 event scripts + shared library | **Included source, opt-in activation** |
+| MCP layer | 9 reference servers | **6 guided registrations + 3 credential-dependent manual steps** |
+| Memory | Obsidian vault folder structure, session templates | **Optional local empty folders, approved notes only** |
+| Dashboard | AI / Software Engineer Claude Setup | **Local Claude Map + version-sensitive overlay** |
 
-**Reference machine only:** the author's names-only inventory shows **21 global agents**, **62 global skill files**, **5 custom hooks**, **12 enabled plugins**, and **9 user-scoped MCP registrations**. Those components are **not yet bundled** in this repository. The inventory does not prove authentication or runtime use.
+**Reference inventory:** 21 global agents · 62 global skill files · 32 global commands · 12 enabled plugins · 9 user MCPs. These are the source computer's names-only observations, **not** a promise of live availability on a fresh device.
 
-[Component catalog →](./docs/components/README.md)
+[Component-by-component reference →](./docs/components/README.md)
 
 <br />
 
@@ -86,33 +117,35 @@ Availability is not execution: the eventual checker distinguishes **installed**,
 
 <br />
 
-## <img src="./docs/assets/icons/book.svg" width="21" height="21" alt="" /> Guides
+## <img src="./docs/assets/icons/book.svg" width="19" height="19" alt="" /> Guides without the overload
 
-| Guide | Contents |
+| Need help with… | Open this |
 | :--- | :--- |
-| [Install with AI](./INSTALL_WITH_AI.md) | Portable setup prompt with explicit approvals |
-| [Prerequisites](./docs/prerequisites.md) | Choose what to install; each dependency has its own guide |
-| [Installation guides](./docs/installation/README.md) | Official sources, recommended PowerShell commands and verification |
-| [API keys and PowerShell](./docs/security/api-keys-and-powershell.md) | OAuth, masked prompts, temporary variables, leaks and rotation |
-| [Component catalog](./docs/components/README.md) | Agents, skills, hooks, rules, memory and dashboard |
-| [Plugin references](./integrations/plugins/README.md) | Third-party plugin checklist |
-| [MCP references](./integrations/mcp/README.md) | Transports and authentication requirements |
-| [Release checklist](./docs/release-checklist.md) | Tests required before a full release |
-| [All documentation](./docs/README.md) | Browse guides without reading everything at once |
+| Installing required tools | [Prerequisites and individual installers](./docs/prerequisites.md) |
+| Setting up plugins | [12 plugin-specific guides](./integrations/plugins/README.md) |
+| Configuring MCP servers | [9 MCP-specific guides](./integrations/mcp/README.md) |
+| Getting API keys or OAuth | [Credentials and PowerShell security](./docs/security/api-keys-and-powershell.md) |
+| Global setup, hooks and conflicts | [Full installer walkthrough](./docs/installation/full-setup.md) |
+| Claude Map local dashboard | [Dashboard setup](./dashboard/claude-map/README.md) |
+| Obsidian memory | [Vault guide](./vault/README.md) |
+| Fixing common issues | [Troubleshooting](./docs/troubleshooting.md) |
+| Testing before publishing | [Release checklist](./docs/release-checklist.md) |
 
 <br />
 
-## <img src="./docs/assets/icons/shield.svg" width="21" height="21" alt="" /> Security and licensing
+## <img src="./docs/assets/icons/shield.svg" width="19" height="19" alt="" /> Security and licensing
 
-- Never commit live `.claude.json`, tokens, private notes, session histories or plugin caches.
-- Third-party tools are **referenced**, not redistributed, unless their licenses expressly permit it.
-- Claude Map changes must retain upstream attribution and keep secret-bearing endpoints out of the dashboard.
-- No social-media integrations, agents, or automation are included.
+- Installation never copies existing account tokens, `.claude.json`, provider credentials, private projects, transcripts or vault notes into this repository.
+- Original files do **not** overwrite different existing files; review conflicts in an isolated `CLAUDE_CONFIG_DIR` first.
+- Hook activation, external installs, account sign-ins, vault creation and dashboard patches remain explicit actions.
+- The dashboard must stay on **localhost**; MCP inventory views must never expose environment values, auth headers or private paths.
+- Third-party tools belong to their original publishers. Their licenses, subscriptions and permissions still apply.
+- There are no social-media workflows or integrations in the distributed manifest.
 
-**License selection is pending.** Publicly visible source is not the same as a completed, licensed open-source release.
+**License:** [MIT for the original Ardizuo project files](./LICENSE). Third-party programs and external packages retain their own licenses. This is an installer preview, not a tested v1.0 release.
 
-[Security](./SECURITY.md) &nbsp;·&nbsp; [API key safety](./docs/security/api-keys-and-powershell.md) &nbsp;·&nbsp; [Third-party notices](./THIRD_PARTY_NOTICES.md)
+[Security policy](./SECURITY.md) &nbsp;·&nbsp; [Third-party notices](./THIRD_PARTY_NOTICES.md)
 
 <br />
 
-<p align="center"><sub>Portable development workflows · Ardizuo</sub></p>
+<p align="center"><sub>Created by Ardizuo · Developer setup distribution · Designed to be inspected and extended</sub></p>
