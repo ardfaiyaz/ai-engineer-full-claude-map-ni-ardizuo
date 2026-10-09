@@ -1,61 +1,68 @@
-# 🖥️ Start here — AI Engineer Full Claude Map ni Ardizuo
+# 🚀 Install Ardizuo's Claude Code setup
 
-**Single ZIP package. Windows-first. No hosted website.**
+**For Windows 10/11, PowerShell, and your own Claude account.** This is a public, assisted setup—not a copy of the maintainer's private credentials, vault, or every customized skill file.
 
-<br />
+## ✅ 1. Prerequisites
 
-## 📥 For someone installing it
-
-Read the main [README](./README.md). Install the required [prerequisites](./docs/prerequisites.md), then open PowerShell inside the repository:
+You need **Git, Python 3, Node.js/npm, and Claude Code** installed and available in a new PowerShell window. Check them:
 
 ```powershell
-# Preview everything without changes
+git --version
+python --version
+node --version
+npm --version
+claude --version
+```
+
+Missing something? Use the [prerequisites guide](./docs/prerequisites.md). Optional MCP servers may also need `uvx`, Docker, GitHub CLI, or a provider account.
+
+## 📥 2. Clone, preview, install
+
+```powershell
+git clone https://github.com/ardfaiyaz/ai-engineer-full-claude-map-ni-ardizuo.git
+cd ai-engineer-full-claude-map-ni-ardizuo
+
+# Inspect exactly what will change. No writes.
 .\scripts\install-all.ps1 -All
 
-# After reading the plan and giving explicit approval
+# Apply only after approving the preview.
 .\scripts\install-all.ps1 -Apply -All
 ```
 
-Plugin marketplace availability, provider authentication, dashboard compatibility and MCP credentials require attention. Open the [Full setup walkthrough](./docs/installation/full-setup.md), then the [30-step verification checklist](./docs/installation/verification-checklist.md).
+**`-Apply -All` is consequential.** It can install plugins, register MCP servers and hooks, and create a separate optional Obsidian vault. It does not import login sessions or credentials. The customized Claude Map overlay is **not** applied automatically; follow the [dashboard guide](./dashboard/claude-map/README.md) if you want it.
 
-<br />
+If you **already have** a personal Claude configuration, preview first. The installer refuses to overwrite different files. Do **not** delete your existing `.claude` folder to force an install. Resolve conflicts by comparing the files you actually want to retain. For an isolated preview, use `-ConfigDir "$HOME\Documents\Ardizuo-Preview" -PinnedSuperClaude -PinnedSkills` **without** `-All`.
 
-## 📄 For the repository maintainer
-
-1. Commit any existing local changes before applying this ZIP. Do not extract over unexpected uncommitted edits.
-2. Extract all contents to the root of `ai-engineer-full-claude-map-ni-ardizuo` (it overwrites earlier documentation and installation scripts). This is a **repository source update**, not an executable installer by itself.
-3. Run `python -m unittest discover -s tests -v` and `git diff --check`.
-4. Run an isolated test: `scripts/install-all.ps1 -ConfigDir "$HOME\Documents\Ardizuo-Test-Config"` (dry run), then add `-Apply` if safe. Do **not** use `-All` with isolated config for external CLI installers.
-5. Review all source/credential/third-party licensing changes and commit/push only your approved files. No secrets or private vault notes are included.
-
-<br />
-
-## 📖 What is included and not guaranteed
-
-This archive contains original reviewed skills, hooks, a custom agent, rules, manifests, source dashboard patches, separate plugin/MCP installation guides and all generated documentation. Official third-party binaries and private credentials are **not** embedded. The end-to-end Full workflow still needs a clean Windows installation and provider-specific login tests before claiming a stable release.
-
-[Project README](./README.md) · [Security](./SECURITY.md) · [Release checklist](./docs/release-checklist.md)
-
-
-## 📦 Maintainer: complete the exact Development Hub inventory
+## 🔑 3. Connect the services you use
 
 ```powershell
-python .\scripts\coverage-doctor.py
-python .\scripts\coverage-doctor.py --json
-
-# Preview which additional direct-scope files exist on your OWN machine.
-# Review ownership and secrets before sharing any contents.
-python .\scripts\prepare-private-review.py
+claude plugin list
+claude mcp list
 ```
 
-See [exact coverage](./docs/components/exact-coverage.md) and [private source migration](./docs/installation/private-source-migration.md). The package does not invent files for skills that exist only as a reference name, nor can it migrate another user's provider credentials.
+Open Claude Code and inspect `/skills`, `/hooks`, and `/mcp`. Authenticate only services you intend to use. Atlassian authentication may remain optional. Other users need their **own** API keys and OAuth grants; never share an exported `.claude.json` or `settings.json`.
 
+## ☑️ 4. One quick local verification
 
-## ☑️ What the public installer really reproduces
+```powershell
+python .\scripts\verify-installed-layers.py --strict-local --require-hooks
+```
 
-The reference machine has **21 agent files, 62 direct skill definitions, 31 executable command files plus one `README.md`, 12 enabled plugins and nine target user MCP servers**. The public installer does **not yet** exactly reproduce all of those on a fresh account. See the [release coverage matrix](docs/installation/reproducibility-matrix.md) for default, optional, provider-authenticated, and blocked items. Never publish personal provider configuration or private vault content.
+This checks package files and hook registration—not whether a skill executed or an MCP is authenticated. For an exact reference-versus-public-package view, run `python .\scripts\release-audit.py`.
 
+## 📦 What you actually get
 
-## ☑️ Inspect a real install without touching it
+| Layer | Public installation path |
+| --- | --- |
+| Agents | **21/21** definitions by default |
+| Skills | **36/62** direct definitions by default, up to **41/62** using different upstream variants |
+| Executable commands | **20/31** by default, up to **31/31** using different upstream variants |
+| Plugins | 12 guided CLI installations; individual logins may be necessary |
+| MCP servers | 9 targeted integrations; registration and authentication are separate |
+| Hooks | Five handlers, registered in `-All` with explicit `-Apply` |
+| Workflow / rules | Five-stage instructions, `CLAUDE.md`, rule files and gates |
+| Memory / dashboard | Empty vault templates are optional; the dashboard overlay needs a separate compatibility rehearsal |
 
-Use the [read-only installed-layer verification](./docs/installation/installed-layer-audit.md) to check which expected files, hook registrations, and vault templates actually landed in your chosen Claude configuration. It does not claim that provider authentication or skill execution succeeded.
+**The missing skills are not silently invented.** Seventeen other direct-skill origins, four unknown-source skill definitions, and certain publisher sidecar files are not yet reproduced by this public installer. A plugin's own skills and built-in Claude commands are not additional bundled global `SKILL.md` files. The [by-name reproducibility matrix](./docs/installation/reproducibility-matrix.md) gives the exact distinctions.
+
+Need details? Read the [full setup](./docs/installation/full-setup.md), [troubleshooting](./docs/troubleshooting.md), [security policy](./SECURITY.md), or [release checklist](./docs/release-checklist.md).

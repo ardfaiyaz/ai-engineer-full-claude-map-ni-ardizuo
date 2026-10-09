@@ -4,7 +4,7 @@
 
 <h1 align="center">🗂️ AI Engineer Full Claude Map ni Ardizuo</h1>
 
-<p align="center"><strong>One repository. One guided installer. A guided Claude Code development stack.</strong></p>
+<p align="center"><strong>One public setup. One guided installer. Clear coverage and opt-in integrations.</strong></p>
 
 <p align="center">Windows-first &nbsp;·&nbsp; Global configuration &nbsp;·&nbsp; Optional services &nbsp;·&nbsp; Local Claude Map dashboard</p>
 
@@ -12,7 +12,7 @@
 
 <br />
 
-> **Assisted Full Installer Preview.** This repository packages the original Ardizuo development components and automates supported third-party installation steps. External accounts and several MCP servers still require manual consent/authentication. The existing 178 discovered skills are **not** all independently bundled: installed source packages, native commands, and plugin caches overlap. Do not confuse configured with connected or executed.
+> **Public assisted installer.** This repository packages the original Ardizuo development components and automates supported third-party installation steps. External accounts and several MCP servers still require manual consent/authentication. The existing 178 discovered skills are **not** all independently bundled: installed source packages, native commands, and plugin caches overlap. Do not confuse configured with connected or executed.
 
 <br />
 
@@ -155,6 +155,20 @@ Native Claude Code features stay native; the installer adds original skills, ups
 
 <br />
 
+## ☑️ Five-minute setup checklist
+
+**Install:** [Start here](./START-HERE.md) for a short Windows walkthrough. The only required repository entrypoint is `scripts/install-all.ps1` (preview with `-All`, then apply with `-Apply -All`).
+
+**Verify:**
+
+```powershell
+python .\scripts\verify-installed-layers.py --strict-local --require-hooks
+claude plugin list
+claude mcp list
+```
+
+This checks package files, registered hooks, and CLI-level provider information. It does not assert that all 62 reference skills were reproduced or that every remote account is authenticated. See the [release checklist](./docs/release-checklist.md).
+
 ## 🧹 Documentation cleanup and maintenance
 
 The documentation uses **emoji headings**. Skills, commands, rules, and Obsidian templates
@@ -184,30 +198,10 @@ examples, source definitions and the project banner. Check `git diff --stat` and
 - Third-party tools belong to their original publishers. Their licenses, subscriptions and permissions still apply.
 - There are no social-media workflows or integrations in the distributed manifest.
 
-**License:** [MIT for the original Ardizuo project files](./LICENSE). Third-party programs and external packages retain their own licenses. This is an installer preview, not a tested v1.0 release.
+**License:** [MIT for the original Ardizuo project files](./LICENSE). Third-party programs and external packages retain their own licenses. This is an assisted installer with tested packaged components, not a byte-identical export of the author's device.
 
 [Security policy](./SECURITY.md) &nbsp;·&nbsp; [Third-party notices](./THIRD_PARTY_NOTICES.md)
 
 <br />
 
 <p align="center"><sub>Created by Ardizuo · Developer setup distribution · Designed to be inspected and extended</sub></p>
-
-
-### 🧩 Sprint 3 pinned skills
-
-The new [publisher-pinned skill installer](docs/installation/pinned-skills.md) verifies public source checksums and installs 8 compared SKILL.md files without overwriting personal definitions. Two publisher variants are opt-in and 19 unresolved skills are explicitly excluded pending author-side comparison. Use `scripts/verify-remaining-skill-sources.py` to compare the next 15 public source candidates privately. The complete five-stage Claude Map rehearsal and Sprint 2 SuperClaude sourcing remain included.
-
-
-### 🧩 Sprint 4: extended source-matched skills
-
-The pinned-source setup now supports **20 default third-party SKILL.md prompts**, with five optional upstream variants and four unresolved names. Use [`docs/installation/pinned-skills.md`](docs/installation/pinned-skills.md) for a disposable Windows installation test. A sourced prompt is not necessarily an operational skill without its publisher sidecar files.
-
-
-## ☑️ What the public installer really reproduces
-
-The reference machine has **21 agent files, 62 direct skill definitions, 31 executable command files plus one `README.md`, 12 enabled plugins and nine target user MCP servers**. The public installer does **not yet** exactly reproduce all of those on a fresh account. See the [release coverage matrix](docs/installation/reproducibility-matrix.md) for default, optional, provider-authenticated, and blocked items. Never publish personal provider configuration or private vault content.
-
-
-## 🛡️ Verified files are not identical to a personal machine in every case
-
-The source lock never republishes private local modifications, credentials, cached plugins or licensed third-party files. The public **default** package can reproduce all 21 named agent definitions, 36 of 62 direct skill definitions, and 20 of 31 executable commands; selected upstream versions raise those to 41 and 31 respectively, **but some differ from the original device**. See the [complete by-name reproducibility matrix](./docs/installation/reproducibility-matrix.md) and the [installed-layers audit](./docs/installation/installed-layer-audit.md) for honest verification.

@@ -1,142 +1,78 @@
-# 📥 Full setup — one installer, guided steps
+# 📥 Complete Windows installation
 
-**Windows-first.** This setup aims to reproduce the author's Claude development environment without republishing third-party packages or copying secrets.
+This is the canonical install sequence for the **existing Ardizuo development setup**. It uses the repository's current installer; it does not add extra components or invent private assets.
 
-<br />
+## ✅ Requirements
 
-## 📥 1. Prerequisites
-
-Install [Claude Code](./claude-code.md), [Git](./git.md), [Python](./python.md), and [Node/npm](./nodejs-npm.md). Optional tools include [uvx](./uv.md), [GitHub CLI](./github-cli.md), [Docker](./docker.md) and [Obsidian](./obsidian.md).
+Open PowerShell and verify Git, Python, Node.js/npm, and Claude Code are installed:
 
 ```powershell
-claude --version
 git --version
 python --version
 node --version
 npm --version
+claude --version
 ```
 
-<br />
+See the [prerequisites guide](../prerequisites.md) for installation help. Some optional MCPs also need `uvx`, Docker or a provider account.
 
-## 🔄 2. Preview everything (no writes)
-
-From your cloned project directory:
+## 🚀 Install from GitHub
 
 ```powershell
-.\scripts\doctor.ps1
-python .\scripts\verify-all.py
+git clone https://github.com/ardfaiyaz/ai-engineer-full-claude-map-ni-ardizuo.git
+cd ai-engineer-full-claude-map-ni-ardizuo
+
+# Safe preview: no files installed or providers contacted.
 .\scripts\install-all.ps1 -All
-```
 
-The preview lists 28 reviewed custom assets, the base rule, a portable global `CLAUDE.md`, the local emoji headings, publisher-pinned agent/command/skill source steps, and optional external actions. No install, vault write or API connection occurs.
-
-<br />
-
-## ☑️ 3. Test local files in isolation (recommended)
-
-```powershell
-$testConfig = Join-Path $HOME 'Documents/Ardizuo-Sandbox-Claude-Config'
-.\scripts\install-all.ps1 -ConfigDir $testConfig
-.\scripts\install-all.ps1 -Apply -ConfigDir $testConfig
-$old = $env:CLAUDE_CONFIG_DIR
-$env:CLAUDE_CONFIG_DIR = $testConfig
-python .\scripts\verify-all.py
-$env:CLAUDE_CONFIG_DIR = $old
-```
-
-**External CLI installation is intentionally blocked when `-ConfigDir` is used.** The pinned SuperClaude and pinned skill download installers can be isolated safely with `-ConfigDir -PinnedSuperClaude -PinnedSkills` because they explicitly write only under that folder. Most plugin/MCP CLI installs cannot be isolated this way.
-
-<br />
-
-## 📥 4. Apply the complete guided setup
-
-```powershell
+# Apply the reviewed changes. Provider downloads, hooks and vault creation can occur.
 .\scripts\install-all.ps1 -Apply -All
 ```
 
-This command can make external network requests and ask you for input. Read the plan before using it. It does **not** enter credentials, grant OAuth access, or guarantee the dashboard patch works with every upstream Claude Map release.
+If a conflicting file already exists, the non-overwriting installer stops rather than replacing your own config. Keep a backup, compare the files, and select only the parts you want. `-All` is best suited to a **fresh** Windows user configuration.
 
-**What it attempts:**
-
-1. Copy your original 28 files, core rule, portable global CLAUDE.md and emoji headings, without overwriting conflicting files.
-2. Fetch publisher-pinned SuperClaude agent/command definitions (up to 20 agents and 19 byte-exact commands; 11 upstream variants opt-in) and 20 source-compared skill prompts. The upstream SuperClaude CLI is an alternative.
-3. Check and register four official/upstream plugin marketplaces before attempting all 12 plugins. Account sign-in still requires user approval.
-4. Register seven MCP servers, including the official GitHub Docker OAuth launcher, when not already present.
-5. Explain the two remaining credential-dependent MCPs: Tavily and Morph. GitHub still requires interactive OAuth and a running Docker engine.
-6. Register the five hooks after a private settings backup.
-7. Create eight Obsidian vault folders and install four supplied templates without overwriting customized ones or creating session notes.
-8. **Guide** the Claude Map installation: do not silently upgrade or repatch an existing global dashboard. Rehearse the five-stage overlay and approve live modification separately.
-
-For a **dashboard-only** install, use [Claude Map setup](../../dashboard/claude-map/README.md). For tested static source setup, read [pinned SuperClaude](./pinned-superclaude.md) and [pinned skills](./pinned-skills.md).
-
-**Not a perfect clone:** A complete 30-command upstream set needs `-UpstreamVariants`, five modified publisher skill versions need `-SkillUpstreamVariants`, four skills still lack verified sources and 17 additional direct-skill origins require separate installation, and sidecars/runtime behavior are not automatically covered.
-
-<br />
-
-## 🧩 5. Audit every named reference capability
+## 🔑 Finish accounts and connection checks
 
 ```powershell
-python .\scripts\coverage-doctor.py
-python .\scripts\coverage-doctor.py --json
-```
-
-The audit reports all 21 reference agent names, 62 skill names, 32 command names, 12 plugins, and nine MCP servers individually. It is offline; it will NOT test provider authentication. `cached-unconfirmed` means a plugin file was found on disk but the corresponding plugin was not confirmed enabled.
-
-The reference count is not the install promise. See [exact coverage](../components/exact-coverage.md) and [privately reviewing missing files](./private-source-migration.md).
-
-<br />
-
-## ☑️ 6. Verify honestly
-
-```powershell
-python .\scripts\verify-all.py
 claude plugin list
 claude mcp list
+python .\scripts\verify-installed-layers.py --strict-local --require-hooks
 ```
 
-In Claude Code, open `/skills`, `/mcp`, and `/hooks`. Sign in only to services you intend to use. Run a small delegated code-review, local test build and explicitly approved vault-note test to verify runtime behavior. For **file-by-file deployment evidence**, run `python .\scripts\verify-installed-layers.py --config-dir $testConfig` on an isolated configuration and read [the installed-layers guide](./installed-layer-audit.md).
+Inside Claude Code, inspect `/skills`, `/mcp`, and `/hooks`. A plugin can be installed but need OAuth; an MCP can be registered but disconnected. Each friend uses their **own** accounts and secrets. You may skip Atlassian authentication unless you use it.
 
-**Status meanings:**
+## 🛠️ Existing setup or cautious trial
 
-- **Installed:** file/package found
-- **Configured:** CLI registration found
-- **Authenticated/connected:** provider handshakes verified in Claude Code
-- **Executed:** observed agent/tool/hook output exists; not inferred from configuration
+Test only locally installed definitions in a separate configuration. Do **not** combine `-ConfigDir` with `-Apply -All`, because external plugin/MCP CLI operations are user-scoped:
 
-<br />
+```powershell
+$trial = Join-Path $HOME 'Documents/Ardizuo-Trial-Config'
+.\scripts\install-all.ps1 -ConfigDir $trial -PinnedSuperClaude -PinnedSkills
+.\scripts\install-all.ps1 -Apply -ConfigDir $trial -PinnedSuperClaude -PinnedSkills -Hooks
+python .\scripts\verify-installed-layers.py --config-dir $trial --strict-local --require-hooks
+```
 
-## 📄 7. Rollback and removal
+For original upstream versions **different from** the maintainer's files, the explicit switches are `-SkillUpstreamVariants` (five more skill prompts) and `-UpstreamVariants` (11 more SuperClaude commands). Those are not exact personal copies, so leave them off unless needed. Some pinned skills require publisher-side support files that are not part of the current installer.
 
-The installer skips identical assets and fails on conflicting files; it never force-overwrites your unrelated configuration. Use `scripts/backup.ps1` before changing personal rules and refer to its matching `restore.ps1` for supported backups. Claude Map overlay scripts back up their patched source files. There is not yet a fully tested automatic uninstall of every third-party service; use each [plugin](../../integrations/plugins/README.md) or [MCP](../../integrations/mcp/README.md) guide for removal.
+## 🖥️ Optional Claude Map dashboard
 
-<br />
+The five-stage Development Hub overlay **is not silently patched by `-All`**. See the [dashboard setup](../../dashboard/claude-map/README.md), rehearse against a compatible Claude Map version, review backups, then separately approve any live changes. Opening the dashboard is not proof of agent execution.
 
-## ⚠️ 8. Known limitations
+## 📋 Exact scope and limitations
 
-- The Full mode is an **assisted preview**, not a verified one-click offline replica.
-- Some plugin marketplace IDs and CLI options can change; errors require guide-based resolution.
-- 178 discovered skill entries do **not** mean 178 independent skills or redistributable files.
-- Native Claude built-ins, OAuth credentials and personal Obsidian notes are not bundled.
-- Dashboard overlays are version-sensitive; see [the dashboard guide](../../dashboard/claude-map/README.md).
+| Reference component | Default package | Optional publisher versions |
+| --- | --- | --- |
+| Agent definitions | 21 / 21 | — |
+| Direct skill definitions | 36 / 62 | 41 / 62 |
+| Executable commands | 20 / 31 | 31 / 31 |
+| Plugin IDs | 12 documented/CLI-supported | Provider sign-in separately |
+| Target MCP servers | 9 documented/supported | Provider sign-in separately |
+| Hooks | Five handlers (when selected) | Runtime actions require an actual Claude session |
 
-[Read the repository overview →](../../README.md) · [Troubleshooting](../troubleshooting.md)
+The maintainer's machine also has other direct-skill folders and associated files whose origin or redistribution status isn't resolved. **The installer will not fabricate them.** Provider caches, native commands and plugin skills are not independently counted as bundled global `SKILL.md` files. See the [by-name matrix](./reproducibility-matrix.md), [origin review](./exact-local-origin-review.md), and [security policy](../../SECURITY.md).
 
-<br />
+## 🛠️ Troubleshooting and undo
 
-## 🖥️ Visual 30-step walkthrough
+Use [troubleshooting](../troubleshooting.md) for missing tools and login prompts; use the [plugin](../../integrations/plugins/README.md) and [MCP](../../integrations/mcp/README.md) guides for provider-specific setup. The installer does not overwrite different files, but external package installations and account authorizations may need manual cleanup. `scripts/backup.ps1` and `scripts/restore.ps1` cover only their documented backup scope—**not** every provider or a universal uninstall.
 
-[Follow the full verification checklist](./verification-checklist.md) after installation.
-
-## 📁 Optional reproducibility: pinned SuperClaude file definitions
-
-If you need exactly audited upstream agent/command definitions without running the SuperClaude CLI, use the separate [hash-verified, pinned SuperClaude installer](./pinned-superclaude.md). It installs into an isolated `-ConfigDir` first and refuses conflicts. This is an alternative to the `-All` mode's upstream CLI, **not** an additional automatic overwrite step.
-
-
-## 🧩 Sprint 4 — 20 publisher-pinned skill definitions
-
-The unified installer now selects **20** content-matched third-party skill prompts by default and requires **`-SkillUpstreamVariants`** to add the five upstream skills whose text differs from the author’s local files. Four skills have no verified source and cannot be reproduced yet. See [pinned skills](./pinned-skills.md). Downloads and runtime behavior still require an isolated Windows verification.
-
-
-## ☑️ Release completeness is an explicit separate check
-
-`python .\scripts\release-audit.py` compares **the package manifest against the reference inventory**; `python .\scripts\verify-installed-layers.py --config-dir $testConfig` checks whether selected package files actually exist under a target config. They do **not** test OAuth, remote MCP connectivity, child skill scripts, agent delegation or the dashboard browser. [See the read-only audit walkthrough](./installed-layer-audit.md).
+[One-page starting guide](../../START-HERE.md) · [Release checklist](../release-checklist.md)
