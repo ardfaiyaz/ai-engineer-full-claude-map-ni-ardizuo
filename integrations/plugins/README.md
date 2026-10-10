@@ -4,6 +4,10 @@
 The Ardizuo setup uses **12 plugins**, all listed below. The repository does not bundle plugin source code or another person's account sessions.
 
 
+<br />
+<br />
+
+
 ## 🚀 Recommended: install the existing plugin set
 
 
@@ -23,6 +27,10 @@ claude plugin list
 An installer attempt is **not** proof of successful installation, enablement or provider sign-in. Each user authorizes their own account.
 
 
+<br />
+<br />
+
+
 ## 📋 Included plugin IDs
 
 
@@ -40,6 +48,10 @@ An installer attempt is **not** proof of successful installation, enablement or 
 | `sentry@claude-plugins-official` | Error monitoring and issue triage; requires authorization |
 | `atlassian@claude-plugins-official` | Atlassian tools; sign-in optional if unused |
 | `notion@claude-plugins-official` | Notion workspace interaction; requires authorization |
+
+
+<br />
+<br />
 
 
 ## ⌨️ Manual commands (only if the guided installer did not finish)
@@ -70,6 +82,10 @@ claude plugin install notion@claude-plugins-official
 ```
 
 In Claude Code, check `/plugin` and `/skills`. If applicable, connect the plugin's service through `/mcp` (e.g. Notion, Sentry, Stripe, Atlassian). An Atlassian login can remain unconnected if you do not use it.
+
+
+<br />
+<br />
 
 
 ## 🛡️ Troubleshoot or remove

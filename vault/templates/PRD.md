@@ -8,11 +8,13 @@ status: draft
 
 
 <br />
+<br />
 
 
 ## 📄 Problem and users
 
 
+<br />
 <br />
 
 
@@ -20,17 +22,20 @@ status: draft
 
 
 <br />
+<br />
 
 
 ## 📄 User stories
 
 
 <br />
+<br />
 
 
 ## 📄 Acceptance criteria
 
 
+<br />
 <br />
 
 

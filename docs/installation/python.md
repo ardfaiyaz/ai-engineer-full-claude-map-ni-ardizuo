@@ -4,6 +4,10 @@
 Python runs Ardizuo's setup scripts and optional MCP tooling. It is required by the current assisted installer.
 
 
+<br />
+<br />
+
+
 ## 📥 Windows PowerShell
 
 
@@ -17,6 +21,10 @@ A newer supported Python release is also suitable. Reopen PowerShell:
 python --version
 python -m pip --version
 ```
+
+
+<br />
+<br />
 
 
 ## ⌨️ Bash alternative
@@ -36,6 +44,10 @@ sudo apt update
 sudo apt install -y python3 python3-venv
 python3 --version
 ```
+
+
+<br />
+<br />
 
 
 ## 🛠️ Troubleshooting

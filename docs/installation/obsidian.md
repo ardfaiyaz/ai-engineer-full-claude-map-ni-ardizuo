@@ -4,6 +4,10 @@
 Use Obsidian to view the **empty local vault templates** created by this repository. Personal vault notes are never included.
 
 
+<br />
+<br />
+
+
 ## 📥 Windows PowerShell
 
 
@@ -14,6 +18,10 @@ winget install --id Obsidian.Obsidian --exact --source winget
 Then launch Obsidian and choose **Open folder as vault**, selecting `Documents\Claude-Dev-Vault` (or the separate vault path you approved).
 
 
+<br />
+<br />
+
+
 ## ⌨️ Bash alternative
 
 
@@ -22,6 +30,10 @@ On macOS with Homebrew:
 ```bash
 brew install --cask obsidian
 ```
+
+
+<br />
+<br />
 
 
 ## ✅ Verify the template directory

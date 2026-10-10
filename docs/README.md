@@ -4,6 +4,10 @@
 Welcome! You do **not** need to read every file. Most people can install the supported setup using [the quick start](../START-HERE.md).
 
 
+<br />
+<br />
+
+
 ## 🚀 Common tasks
 
 
@@ -15,6 +19,10 @@ Welcome! You do **not** need to read every file. Most people can install the sup
 | Set up nine MCP servers | [MCP catalog](../integrations/mcp/README.md) |
 | Add Claude Map on localhost | [Dashboard](./installation/claude-map.md) |
 | Fix common errors | [Troubleshooting](./troubleshooting.md) |
+
+
+<br />
+<br />
 
 
 ## 📋 Reference and maintainer material

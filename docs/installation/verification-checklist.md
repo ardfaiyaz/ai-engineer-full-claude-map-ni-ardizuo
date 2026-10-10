@@ -4,6 +4,10 @@
 **Run these checks on a clean Windows user or disposable test configuration before calling the installer complete.** A displayed skill or green dashboard badge is not proof of execution.
 
 
+<br />
+<br />
+
+
 ## 📄 1. Prepare the computer
 
 
@@ -13,6 +17,10 @@
 - [ ] Run `scripts/doctor.ps1` and review all missing tools.
 
 
+<br />
+<br />
+
+
 ## 📥 2. Install original development assets
 
 
@@ -20,6 +28,10 @@
 - [ ] Copy 28 custom files into a disposable `-ConfigDir` and verify identical checksums.
 - [ ] Re-run the installer: identical files should be skipped.
 - [ ] Introduce a different existing file: installer should refuse overwriting.
+
+
+<br />
+<br />
 
 
 ## 🧩 3. Framework and plugins
@@ -33,6 +45,10 @@
 - [ ] Confirm optional Expo, Stripe, Sentry, Atlassian and Notion provider skills are enabled as intended.
 
 
+<br />
+<br />
+
+
 ## 🛡️ 4. MCP registrations and credentials
 
 
@@ -42,6 +58,10 @@
 - [ ] Complete Morph authentication and verify it works.
 - [ ] Complete GitHub MCP authentication with appropriately limited permissions.
 - [ ] Inspect `/mcp` and document actual **Connected** statuses, not just registrations.
+
+
+<br />
+<br />
 
 
 ## 🔄 5. Hooks, configuration and memory
@@ -54,6 +74,10 @@
 - [ ] Test one note save only after approval and reload that note in a new session.
 
 
+<br />
+<br />
+
+
 ## 🖥️ 6. Dashboard and end-to-end operation
 
 
@@ -63,6 +87,10 @@
 - [ ] Complete security, rollback, licensing and clean-Windows release checks.
 
 **Not all 30 steps are fully automated**; account authentication and real development execution require user approval. See [Full guide](./full-setup.md) and [release gates](../release-checklist.md).
+
+
+<br />
+<br />
 
 
 ## 🧩 7. Exact-name and marketplace release gates
@@ -77,6 +105,10 @@
 - [ ] No `settings.json`, `.claude.json`, token, session log, plugin cache or private vault note is included in the release.
 
 [See the offline exact-coverage audit](../components/exact-coverage.md). These tests intentionally do not claim that a real OAuth connection or delegated agent ran.
+
+
+<br />
+<br />
 
 
 ## 🖥️ Full Claude Map overlay rehearsal
@@ -95,10 +127,18 @@ Record all failed stages and do not infer browser/runtime compatibility from
 JavaScript syntax checks alone.
 
 
+<br />
+<br />
+
+
 ## 📄 Sprint 4 verification
 
 
 Run `python -m unittest discover -s tests -v`, then test the **20 default publisher skills** in a disposable config via `python .\scripts\install-pinned-skills.py --apply --config-dir $testConfig`. Confirm `20` skill subdirectories. The five differing upstream variants are opt-in, and the four unknown-source skills must remain absent. Inspect each installed skill for references to sibling scripts/data; `SKILL.md` alone is not a complete skill package.
+
+
+<br />
+<br />
 
 
 ## 🔎 Verify the exact reference skills and support files

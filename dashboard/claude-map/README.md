@@ -4,6 +4,10 @@
 **Local-only visualization with the five-stage workflow surface and capability layers.** Ardizuo's dashboard extends [upstream Claude Map](https://github.com/shamim0902/claude-map); it is not a hosted site or a replacement for Claude Code.
 
 
+<br />
+<br />
+
+
 ## 📥 Check the installed package on Windows
 
 
@@ -20,6 +24,10 @@ The dashboard installer now resolves `npm.cmd` automatically on Windows. The exp
 The **default mode is read-only**. It checks that the package exists and that the initial Development Hub scaffold can be applied (or is already present). **This does not prove compatibility of the remaining four overlay stages.** A mismatch stops with an explanatory error instead of silently modifying files.
 
 Do not use `--apply` until the installed upstream version and all five patches have been reviewed in a disposable installation. Some overlays are version-sensitive; a successful initial preflight alone is insufficient. The current user's installed version is `claude-map@1.2.3`, but the exact custom modifications on that installation are not yet known.
+
+
+<br />
+<br />
 
 
 ## 📄 Rehearse all five stages in a disposable copy
@@ -57,6 +65,10 @@ rehearse the clean archive to test reproducibility.
 A successful rehearsal verifies source compatibility and JavaScript syntax,
 **not** browser rendering, runtime behavior or external connections. If any
 stage fails, **do not run `--apply`**; collect its error output first.
+
+
+<br />
+<br />
 
 
 ## 🔄 Apply only after full compatibility review

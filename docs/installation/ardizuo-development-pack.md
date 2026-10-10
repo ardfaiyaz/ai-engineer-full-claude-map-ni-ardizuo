@@ -4,6 +4,10 @@
 **Portable source assets for global Claude Code** — no separate website or account required. This phase installs **28 locally authored files**, not the third-party plugins, MCP servers, dashboard, or complete Full profile.
 
 
+<br />
+<br />
+
+
 ## 📥 1. Before installing
 
 
@@ -12,6 +16,10 @@
 - Close active Claude Code sessions while changing the global configuration.
 
 The package resolves the user's configuration from `CLAUDE_CONFIG_DIR` if set; otherwise from `$HOME\.claude`. It never uses the author's original Windows username.
+
+
+<br />
+<br />
 
 
 ## 🔄 2. Preview changes — recommended first
@@ -30,6 +38,10 @@ Or from the main installer once this phase is merged:
 The **dry run** lists which files would be created, which already match, and which conflict. A conflict **blocks the entire installation**; existing files are never overwritten. If your machine already has a development setup, use a disposable Windows user profile or a temporary `CLAUDE_CONFIG_DIR` for first testing.
 
 
+<br />
+<br />
+
+
 ## 📥 3. Install only after you approve the plan
 
 
@@ -41,6 +53,10 @@ The **dry run** lists which files would be created, which already match, and whi
 The installer checks file hashes. It includes 16 original local skills, the diagram agent, a manual vault command, five hook scripts plus shared helper, three workflows, and a developer rule.
 
 **Installing files does not enable hooks, authenticate third-party services, run agents, or write to Obsidian.**
+
+
+<br />
+<br />
 
 
 ## 🔄 4. Optionally activate hooks
@@ -56,6 +72,10 @@ node .\scripts\register-hooks.mjs --apply        # only after review
 Registration merges entries into the existing global `settings.json` and creates a **private backup** of the previous settings in the Claude configuration folder. Existing entries are preserved, and matching hook commands are not duplicated.
 
 **Review changes and close Claude Code first.** `settings.json` may contain sensitive configuration; never commit your backup. If Claude Code uses a custom shell or config path, inspect `/hooks` after restarting to verify activation. Successful registration is not proof a lifecycle event actually ran.
+
+
+<br />
+<br />
 
 
 ## 📝 5. Configure optional Obsidian memory
@@ -75,6 +95,10 @@ claude
 ```
 
 The environment variable must be visible to the Claude Code process. Do not copy anyone else's vault notes. `/log-to-vault` previews the complete note and requires your explicit affirmative approval before saving it. The `SessionStart` hook only reads previously approved notes.
+
+
+<br />
+<br />
 
 
 ## 🛠️ 6. Verify and troubleshoot

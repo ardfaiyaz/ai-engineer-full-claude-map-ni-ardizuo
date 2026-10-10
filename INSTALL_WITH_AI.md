@@ -4,12 +4,20 @@
 **Copy the prompt below into Claude Code, Codex or an AI with computer/terminal access.** If your AI cannot access your PC, it must provide manual steps rather than claiming it installed anything.
 
 
+<br />
+<br />
+
+
 ## 📄 Before you paste the prompt
 
 
 1. Install [Claude Code](./docs/installation/claude-code.md), [Git](./docs/installation/git.md), [Python](./docs/installation/python.md) and [Node/npm](./docs/installation/nodejs-npm.md).
 2. Clone this GitHub repository and open the **local clone** in your AI assistant.
 3. Review [security](./SECURITY.md) and [the Full installer guide](./docs/installation/full-setup.md).
+
+
+<br />
+<br />
 
 
 ## 📄 Copy this prompt
@@ -30,6 +38,10 @@
 > 11. Summarize installed, configured, connected, blocked and manual steps. Provide safe rollback guidance.
 
 
+<br />
+<br />
+
+
 ## ⌨️ If the AI cannot run commands
 
 
@@ -38,12 +50,20 @@ It should walk you through the exact [PowerShell steps](./docs/installation/full
 [Back to README](./README.md) · [API keys guide](./docs/security/api-keys-and-powershell.md)
 
 
+<br />
+<br />
+
+
 ## ☑️ Audit reference completeness before release
 
 
 Ask the assistant to execute `python scripts/coverage-doctor.py --json` and compare the **literal names and statuses** for all 21 agents, 62 global skills, 32 commands, 12 plugins and nine MCP servers. Treat `cached-unconfirmed` and `missing` as uninstalled. Do not guess that SuperClaude, plugins or native commands include a specific file without verifying it.
 
 When a file exists only on your personal machine, follow [private source review](./docs/installation/private-source-migration.md) first. Never use `settings.json`, `.claude.json`, provider caches, session transcripts or Obsidian notes as migration input. The external provider must prompt for its own account credentials.
+
+
+<br />
+<br />
 
 
 ## ☑️ Inspect a real install without touching it

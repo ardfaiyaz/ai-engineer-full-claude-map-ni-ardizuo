@@ -4,6 +4,10 @@
 **Two different questions:** Does the **public package** install its supported components? Does it **exactly clone** the maintainer's private device? The first has passed an isolated Windows installation. The second has unresolved sources and cannot honestly be called complete.
 
 
+<br />
+<br />
+
+
 ## 📦 Public package — verified scope
 
 
@@ -15,6 +19,10 @@
 - [x] **Optional memory templates** and a five-stage Claude Map rehearsal are available, without bundling personal notes.
 - [x] Installer previews first, avoids overwriting different files, and leaves credentials out of the package.
 - [x] Markdown uses emoji headings and obsolete sprint handoff notes were removed.
+
+
+<br />
+<br />
 
 
 ## 🖥️ New Windows device — short acceptance check
@@ -29,6 +37,10 @@
 - [ ] If using Claude Map, run the *separate* dashboard rehearsal and verify the five stages in the local browser.
 
 
+<br />
+<br />
+
+
 ## ⚠️ Known limits — not hidden blockers
 
 
@@ -38,6 +50,10 @@
 - **Accounts:** user logins, provider OAuth, API keys, account-scoped MCP connections and private vault contents are not redistributable.
 - **Runtime:** source presence, CLI exit code and configured status do not demonstrate executed agent delegation, hook side effects or completed tasks.
 - **Removal:** there is no universally safe automatic uninstall for all third-party packages. Keep personal backups and use the provider's instructions.
+
+
+<br />
+<br />
 
 
 ## 🛡️ Maintainer's final publication gate

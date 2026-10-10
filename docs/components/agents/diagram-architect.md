@@ -4,6 +4,10 @@
 **Purpose:** Generate evidence-based architecture, flow, sequence and data diagrams for development tasks. This agent definition is included under `ardizuo-plugin/agents/diagram-architect.md`.
 
 
+<br />
+<br />
+
+
 ## 📥 Install and verify
 
 

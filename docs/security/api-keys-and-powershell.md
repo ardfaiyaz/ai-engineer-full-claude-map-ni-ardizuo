@@ -4,6 +4,10 @@
 **Read this before connecting MCP servers or provider plugins.** You usually do not need an API key to use the Claude Code subscription sign-in flow. Other providers may require OAuth, API keys or organization permissions.
 
 
+<br />
+<br />
+
+
 ## 🛡️ 1. Choose the safer authentication method
 
 
@@ -15,6 +19,10 @@
 | `.env` file in a Git repository | **Avoid for sensitive keys** | Easy to leak through logs, commits or backups |
 
 **Never** commit credentials, paste live keys into an AI prompt, or add them to command-line flags where command history can record them.
+
+
+<br />
+<br />
 
 
 ## 📄 2. Getting a provider key (only if needed)
@@ -36,6 +44,10 @@ Open the provider's **official console** and use its API or developer section. C
 | Notion | [Integrations](https://developers.notion.com/docs/create-a-notion-integration) | Limit pages and permissions explicitly |
 
 MCPs that support browser sign-in often **do not need any manual API token**.
+
+
+<br />
+<br />
 
 
 ## 💻 3. Mask a key while typing (PowerShell 5.1 compatible)
@@ -66,6 +78,10 @@ Remove-Item Env:MY_SERVICE_API_KEY -ErrorAction SilentlyContinue
 **Limitations:** The string exists unencrypted in the current PowerShell process and is inherited by child processes while set. It is **not invisible** to the operating system, debuggers, administrators or processes with appropriate access. For stronger protection use provider OAuth or an application credential store, not environment variables.
 
 
+<br />
+<br />
+
+
 ## 📄 4. What NOT to do
 
 
@@ -79,6 +95,10 @@ Remove-Item Env:MY_SERVICE_API_KEY -ErrorAction SilentlyContinue
 Do not put long-lived secrets in `$PROFILE`, `settings.json`, public `.mcp.json`, repository `.env` files, screenshots, CI logs, or prompt text. **Ignoring `.env` via `.gitignore` reduces accidents but does not encrypt a file.**
 
 For persistent credentials, follow the provider's OAuth/credential-store instructions. If a service only supports static keys, document exactly where it stores them and assess whether you trust that storage before continuing.
+
+
+<br />
+<br />
 
 
 ## 🛡️ 5. Verify safely without revealing the value
@@ -95,6 +115,10 @@ claude mcp list
 Inside Claude Code, open `/mcp` to inspect sign-in requirements. A configured entry is **not** the same as an authenticated, working server.
 
 
+<br />
+<br />
+
+
 ## 📄 6. If a key was exposed
 
 
@@ -102,6 +126,9 @@ Inside Claude Code, open `/mcp` to inspect sign-in requirements. A configured en
 2. Check Git history, CI logs, shell history, screenshots, pasted prompts and exposed files.
 3. Replace the credential in trusted storage and reduce its permissions.
 4. If it was committed, follow your organization's incident process; deleting a file in a later commit does **not** remove the original secret from Git history.
+
+
+<br />
 
 
 ### 📖 Official references

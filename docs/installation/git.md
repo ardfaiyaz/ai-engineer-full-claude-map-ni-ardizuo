@@ -4,6 +4,10 @@
 Git is required to clone the repository and review changes.
 
 
+<br />
+<br />
+
+
 ## 📥 Windows PowerShell
 
 
@@ -25,6 +29,10 @@ git config --global user.email "you@example.com"
 ```
 
 
+<br />
+<br />
+
+
 ## ⌨️ Bash alternative
 
 
@@ -42,6 +50,10 @@ sudo apt update
 sudo apt install -y git
 git --version
 ```
+
+
+<br />
+<br />
 
 
 ## 🛠️ Troubleshooting

@@ -4,6 +4,10 @@
 This is the canonical install sequence for the **existing Ardizuo development setup**. It uses the repository's current installer; it does not add extra components or invent private assets.
 
 
+<br />
+<br />
+
+
 ## ✅ Requirements
 
 
@@ -18,6 +22,10 @@ claude --version
 ```
 
 See the [prerequisites guide](../prerequisites.md) for installation help. Some optional MCPs also need `uvx`, Docker or a provider account.
+
+
+<br />
+<br />
 
 
 ## 🚀 Install from GitHub
@@ -37,6 +45,10 @@ cd ai-engineer-full-claude-map-ni-ardizuo
 If a conflicting file already exists, the non-overwriting installer stops rather than replacing your own config. Keep a backup, compare the files, and select only the parts you want. `-All` is best suited to a **fresh** Windows user configuration.
 
 
+<br />
+<br />
+
+
 ## 🔑 Finish accounts and connection checks
 
 
@@ -47,6 +59,10 @@ python .\scripts\verify-installed-layers.py --strict-local --require-hooks
 ```
 
 Inside Claude Code, inspect `/skills`, `/mcp`, and `/hooks`. A plugin can be installed but need OAuth; an MCP can be registered but disconnected. Each friend uses their **own** accounts and secrets. You may skip Atlassian authentication unless you use it.
+
+
+<br />
+<br />
 
 
 ## 🛠️ Existing setup or cautious trial
@@ -64,10 +80,18 @@ python .\scripts\verify-installed-layers.py --config-dir $trial --strict-local -
 For original upstream versions **different from** the maintainer's files, the explicit switches are `-SkillUpstreamVariants` (five more skill prompts) and `-UpstreamVariants` (11 more SuperClaude commands). Those are not exact personal copies, so leave them off unless needed. Some pinned skills require publisher-side support files that are not part of the current installer.
 
 
+<br />
+<br />
+
+
 ## 🖥️ Optional Claude Map dashboard
 
 
 The five-stage Development Hub overlay **is not silently patched by `-All`**. See the [dashboard setup](../../dashboard/claude-map/README.md), rehearse against a compatible Claude Map version, review backups, then separately approve any live changes. Opening the dashboard is not proof of agent execution.
+
+
+<br />
+<br />
 
 
 ## 📋 Exact scope and limitations
@@ -83,6 +107,10 @@ The five-stage Development Hub overlay **is not silently patched by `-All`**. Se
 | Hooks | Five handlers (when selected) | Runtime actions require an actual Claude session |
 
 The maintainer's machine also has other direct-skill folders and associated files whose origin or redistribution status isn't resolved. **The installer will not fabricate them.** Provider caches, native commands and plugin skills are not independently counted as bundled global `SKILL.md` files. See the [by-name matrix](./reproducibility-matrix.md), [origin review](./exact-local-origin-review.md), and [security policy](../../SECURITY.md).
+
+
+<br />
+<br />
 
 
 ## 🛠️ Troubleshooting and undo

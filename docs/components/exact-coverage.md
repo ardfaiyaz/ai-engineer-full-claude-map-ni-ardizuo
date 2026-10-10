@@ -6,6 +6,10 @@
 This page explains what a complete reproduction actually means, how the offline checker works, and what remains outside a package author's control. The reference numbers come from the author's exported **names-only** inventory. No credential values, plugin cache source code or private vault notes are included in this repository.
 
 
+<br />
+<br />
+
+
 ## 📁 Run the inventory from your cloned project
 
 
@@ -21,6 +25,10 @@ python .\scripts\coverage-doctor.py --strict
 ```
 
 The checker reads metadata and searches for recognized definitions. It performs **no network calls**, opens no session transcripts or Obsidian notes, does not invoke models, and never outputs API key values or raw MCP configurations. It is a **local inventory**, not a penetration test or authentication probe.
+
+
+<br />
+<br />
 
 
 ## ☑️ Interpreting statuses correctly
@@ -39,6 +47,10 @@ The checker reads metadata and searches for recognized definitions. It performs 
 The checker treats plugin caches as **untrusted inventories**, never as redistributable source. It may not discover newer plugin layouts or runtime-native capabilities. Some commands are built into Claude Code and have no Markdown file to locate. A plugin may be enabled but its server inaccessible. These subtleties are why a strict zero-missing report is necessary but **not sufficient** for release.
 
 
+<br />
+<br />
+
+
 ## 📄 Completion matrix
 
 
@@ -55,10 +67,17 @@ The checker treats plugin caches as **untrusted inventories**, never as redistri
 | Workflow | Five stages and completion mandate | Global Ardizuo rules and files | A sample coding task with observed review/test evidence |
 
 
+<br />
+
+
 ### 🚀 Why 178 is not the release target
 
 
 `178 discovered entries` combined plugin cache versions and other related capabilities. It is **not** a list of 178 independent skills. An uninstalled, disabled or stale cached entry must not be presented as a working skill. Built-in commands and MCP capabilities aren't separate redistributable `SKILL.md` files.
+
+
+<br />
+<br />
 
 
 ## 🛡️ How to address a missing source safely
@@ -70,6 +89,10 @@ The checker treats plugin caches as **untrusted inventories**, never as redistri
 4. Only after a reviewed source is added to the distributor manifest should the one-command installer treat the item as installable. Use a clean Windows test before declaring completion.
 
 **Never** fill a gap by making a placeholder agent/skill and calling it the user's original. That would turn a reference inventory into a misleading clone.
+
+
+<br />
+<br />
 
 
 ## ☑️ CLI tests that need a real Claude Code session
@@ -85,6 +108,10 @@ Inside Claude Code: check `/skills`, `/mcp` and `/hooks`; run a small **real** s
 [All components](./README.md) · [Full installer](../installation/full-setup.md) · [Verification checklist](../installation/verification-checklist.md)
 
 
+<br />
+<br />
+
+
 ## 📁 Sprint 2: published source provenance lock
 
 
@@ -95,10 +122,18 @@ At the pinned commits: **42 exact byte matches, 6 text matches after newline nor
 These counts are reference-machine file comparisons, *not* a claim that every skill dependency, slash command or agent can run on a newly installed machine.
 
 
+<br />
+<br />
+
+
 ## 🧩 Sprint 3 skill-source progress
 
 
 Eight of the 29 additional skill files are now reproducible as publisher-pinned, checksum-verified **SKILL.md instruction files** (2 byte-exact, 6 with only line-ending differences). Two further publisher originals differ from the author reference and require explicit opt-in. The 19 unreviewed skills remain excluded; `setup/skill-source-candidates.json` provides 15 unverified publisher path candidates and 4 unknown sources. Use [the pinned skill guide](../installation/pinned-skills.md) to perform a safe local comparison. Source-file reproducibility does **not** imply required sidecars or runtime behavior are present.
+
+
+<br />
+<br />
 
 
 ## 🚀 Current release-audit status (after Sprint 4)

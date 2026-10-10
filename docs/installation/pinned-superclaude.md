@@ -6,6 +6,10 @@ This installer lets a Windows user install **20 upstream agents and 19 upstream 
 > Source: [SuperClaude Framework](https://github.com/SuperClaude-Org/SuperClaude_Framework) under MIT. Pinned commit: `fe68862c8ed9e2afb8120c2d9e27d0c3a7ce73a2`. The JSON file `setup/source-provenance-lock.json` records each source file and its Git blob checksum. It includes no author-private files, hashes of private modified files, keys or vault notes.
 
 
+<br />
+<br />
+
+
 ## ⚙️ Windows — start in a disposable configuration
 
 
@@ -44,6 +48,10 @@ You can also invoke this mode through the main installer:
 ```
 
 Don't combine `-PinnedSuperClaude` and `-SuperClaude` in one call. `-All` now prefers pinned SuperClaude **file definitions** and eight publisher-pinned skill prompts; the upstream SuperClaude CLI is an explicit alternative via `-SuperClaude`. The pin is for static files, not full SuperClaude CLI functionality.
+
+
+<br />
+<br />
 
 
 ## 📖 What is and is not proven

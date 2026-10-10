@@ -17,10 +17,18 @@ Start here if a command isn't found or a plugin/MCP shows missing.
 | `git push` reports everything up to date | `git status` | You may not have staged/committed changes; see [Git commands](./installation/git.md) |
 
 
+<br />
+<br />
+
+
 ## 🌿 Windows Git line-endings
 
 
 Warnings such as `LF will be replaced by CRLF` are generally informational. Run `git diff --check`; review file changes and scripts before staging. Do not change global Git settings blindly.
+
+
+<br />
+<br />
 
 
 ## 🌿 A reliable Git sequence
@@ -41,10 +49,18 @@ Run `git diff --cached --check` after staging and before committing. If you adde
 [Docs hub](./README.md) · [Security](../SECURITY.md)
 
 
+<br />
+<br />
+
+
 ## 🛠️ One-package troubleshooting
 
 
 **If the local installer reports CONFLICT:** do not force overwrite. Use a sandbox `-ConfigDir` to compare the original asset with your version. **If plugin installation fails:** check the marketplace and version inside Claude Code `/plugin`. **If MCP is configured but disconnected:** authenticate using `/mcp`; do not paste tokens into logs. **If Claude Map patch is incompatible:** the patch restores backups; use upstream dashboard until the extension is updated. [Full guide](./installation/full-setup.md).
+
+
+<br />
+<br />
 
 
 ## 🧩 A required plugin is missing after the one-command installer
@@ -53,16 +69,28 @@ Run `git diff --cached --check` after staging and before committing. If you adde
 First run `claude plugin marketplace list`. Make sure the required marketplace exists; the Full installer now attempts to register four upstream sources before installing plugins. The two Anthropic marketplaces have different IDs: `claude-plugins-official` and `anthropic-agent-skills`. Ralph uses `ralph-marketplace`, while Morph uses `morph`. Review each [publisher's original source](../integrations/plugins/README.md). Run `claude plugin list` and inspect `/plugin` before rerunning installation. An API login may still be required after the plugin is present.
 
 
+<br />
+<br />
+
+
 ## 🤖 Agent/skill/command counts do not match the author's dashboard
 
 
 Run `python scripts/coverage-doctor.py` from your cloned repository. A direct Markdown definition counts as file-present; plugin cached but disabled counts as **cached-unconfirmed**, not installed. Some commands are Claude built-ins and some SuperClaude releases may lay out their agent files differently. See [exact coverage](./components/exact-coverage.md) and [private source migration](./installation/private-source-migration.md) rather than generating placeholder files.
 
 
+<br />
+<br />
+
+
 ## 📝 My Obsidian templates already exist or have been customized
 
 
 The installer refuses to overwrite different versions in `Templates`. Make a private backup, compare your template to the packaged file and resolve the difference yourself. If testing with `-ConfigDir`, always specify a separate `-VaultPath` to avoid inadvertently changing your personal vault.
+
+
+<br />
+<br />
 
 
 ## 🔌 GitHub MCP does not start

@@ -4,6 +4,10 @@
 Five existing Ardizuo hook handlers are included as `.mjs` files. **Installing a hook file is not the same as registering or executing it.** This page replaces five repetitive hook help pages; no hook code was removed.
 
 
+<br />
+<br />
+
+
 ## 📋 Included lifecycle handlers
 
 
@@ -14,6 +18,10 @@ Five existing Ardizuo hook handlers are included as `.mjs` files. **Installing a
 | `PostToolUse` | `log-to-vault.mjs` | Tracks approved file changes for vault logging. |
 | `PostToolUse` | `dead-code-check.mjs` | Flags potential dead code after supported edits. |
 | `Stop` | `stop-vault-log.mjs` | Finalizes or queues an approved session summary. |
+
+
+<br />
+<br />
 
 
 ## 📥 Install and register
@@ -28,6 +36,10 @@ python .\scripts\verify-installed-layers.py --strict-local --require-hooks
 ```
 
 Existing `settings.json` hooks are preserved. On a conflict, the installer stops rather than overwriting another handler. Hook event execution must be checked in a real Claude Code session using `/hooks`.
+
+
+<br />
+<br />
 
 
 ## 🛡️ Privacy and troubleshooting

@@ -4,6 +4,10 @@
 This repository includes original Ardizuo files and references tools maintained by other projects. **It does not claim ownership of external plugin, CLI, MCP or dashboard code.**
 
 
+<br />
+<br />
+
+
 ## 📁 Upstream sources
 
 
@@ -15,6 +19,10 @@ This repository includes original Ardizuo files and references tools maintained 
 - Provider plugins and official references under [integrations/plugins](./integrations/plugins/README.md)
 
 
+<br />
+<br />
+
+
 ## 📄 Redistribution boundary
 
 
@@ -23,10 +31,18 @@ Only reviewed original local skills, agent, hooks and rules are included as sour
 [Security guidance](./SECURITY.md) · [Release checklist](./docs/release-checklist.md)
 
 
+<br />
+<br />
+
+
 ## 📁 Pinned SuperClaude source definitions
 
 
 The optional `scripts/install-pinned-superclaude.py` fetches public source files from [SuperClaude Framework](https://github.com/SuperClaude-Org/SuperClaude_Framework), commit `fe68862c8ed9e2afb8120c2d9e27d0c3a7ce73a2`. Copyright **SuperClaude Framework Contributors**. **MIT License**: [upstream license text](https://github.com/SuperClaude-Org/SuperClaude_Framework/blob/fe68862c8ed9e2afb8120c2d9e27d0c3a7ce73a2/LICENSE). Installations must retain any upstream attribution and license obligations. Ardizuo publishes **a manifest and installer**, not copies of these third-party source files.
+
+
+<br />
+<br />
 
 
 ## 🧩 Pinned third-party SKILL.md prompts (Sprint 3)
@@ -42,6 +58,10 @@ The optional `scripts/install-pinned-superclaude.py` fetches public source files
 - [Impeccable](https://github.com/pbakaus/impeccable) — Apache-2.0, optional upstream variant
 
 Additional **unapproved source candidates** are tracked in `setup/skill-source-candidates.json`; no rights to republish those materials are implied.
+
+
+<br />
+<br />
 
 
 ## 🧩 Sprint 4 skill provenance additions

@@ -3,6 +3,8 @@
 
 Use the existing agents and Superpowers delegation workflows.
 
+
+<br />
 <br />
 
 
@@ -12,6 +14,8 @@ Use the existing agents and Superpowers delegation workflows.
 - Identify requirements, architecture and task boundaries.
 - Use specialists only when they add value.
 
+
+<br />
 <br />
 
 
@@ -21,6 +25,8 @@ Use the existing agents and Superpowers delegation workflows.
 - Identify independent tasks that can safely run in parallel.
 - Identify file ownership and dependencies.
 
+
+<br />
 <br />
 
 
@@ -31,6 +37,8 @@ Use the existing agents and Superpowers delegation workflows.
 - Use isolated worktrees when appropriate.
 - Keep shared contracts consistent.
 
+
+<br />
 <br />
 
 
@@ -40,6 +48,8 @@ Use the existing agents and Superpowers delegation workflows.
 - Verify tests and implementation results.
 - Reconcile integration issues.
 
+
+<br />
 <br />
 
 
@@ -48,6 +58,8 @@ Use the existing agents and Superpowers delegation workflows.
 - Apply the global completion mandate.
 - Summarize changes, verification and outstanding issues.
 
+
+<br />
 <br />
 
 

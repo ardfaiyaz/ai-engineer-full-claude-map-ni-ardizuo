@@ -4,6 +4,10 @@
 Claude Code is the assistant that actually loads your agents, commands, plugins, MCP registrations and skills. Every user signs in with **their own** account.
 
 
+<br />
+<br />
+
+
 ## 📥 Windows PowerShell
 
 
@@ -14,6 +18,10 @@ claude
 ```
 
 If Winget cannot find the package, use Anthropic's [official native setup guide](https://code.claude.com/docs/en/setup) to select the current supported Windows installer.
+
+
+<br />
+<br />
 
 
 ## ⌨️ Bash alternative (macOS/Linux only)
@@ -29,6 +37,10 @@ claude --version
 ```
 
 This is for systems supported by the official installer, **not** a Bash substitute for Ardizuo's Windows `.ps1` scripts.
+
+
+<br />
+<br />
 
 
 ## ✅ Sign in and verify

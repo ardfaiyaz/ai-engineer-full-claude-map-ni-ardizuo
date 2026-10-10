@@ -8,6 +8,10 @@ A **Windows-first Claude Code development setup** with agents, skills, commands,
 This is an **assisted open-source setup**, not a copy of anyone's private tokens, accounts or unreleased skill files.
 
 
+<br />
+<br />
+
+
 ## 📥 Copy, paste, install (Windows PowerShell)
 
 
@@ -43,6 +47,10 @@ winget install --id Anthropic.ClaudeCode --exact --source winget
 [Short setup checklist](./START-HERE.md) · [Troubleshooting](./docs/troubleshooting.md)
 
 
+<br />
+<br />
+
+
 ## 📦 What the public installer provides
 
 
@@ -61,6 +69,10 @@ winget install --id Anthropic.ClaudeCode --exact --source winget
 The public package intentionally **does not** bundle unsourced third-party skill files, private notes, credentials or provider sessions. File presence is not runtime execution proof.
 
 
+<br />
+<br />
+
+
 ## 🧭 Choose the next step
 
 
@@ -75,6 +87,10 @@ The public package intentionally **does not** bundle unsourced third-party skill
 | Understand file conflicts and restore options | [Full setup](./docs/installation/full-setup.md) |
 
 
+<br />
+<br />
+
+
 ## 🔄 Development workflow
 
 
@@ -85,6 +101,10 @@ Triage  →  Contract  →  Dispatch  →  Review  →  Ship
 ```
 
 The dashboard is a local visualization of this architecture. **Detected** does not mean used, connected or authenticated.
+
+
+<br />
+<br />
 
 
 ## 🛡️ Security and support

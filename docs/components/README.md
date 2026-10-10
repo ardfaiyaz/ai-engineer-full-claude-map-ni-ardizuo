@@ -4,6 +4,10 @@
 This setup has five workflow stages: **Triage → Contract → Dispatch → Review → Ship**. A dashboard label can mean a local definition, native Claude command, plugin skill or MCP-equivalent capability.
 
 
+<br />
+<br />
+
+
 ## 📋 Choose a layer
 
 
@@ -16,6 +20,10 @@ This setup has five workflow stages: **Triage → Contract → Dispatch → Revi
 | Plugins | [12-plugin catalog](../../integrations/plugins/README.md) |
 | MCP servers | [Nine-MCP catalog](../../integrations/mcp/README.md) |
 | Dashboard | [Development Hub display](./development-hub-surface.md) |
+
+
+<br />
+<br />
 
 
 ## 🔎 What is actually installed?

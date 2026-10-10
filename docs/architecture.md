@@ -4,6 +4,10 @@
 The system has **five development stages**. The dashboard is a map of *capabilities*; a passing end-to-end run needs separate evidence.
 
 
+<br />
+<br />
+
+
 ## 🔄 Workflow Surface
 
 
@@ -20,12 +24,20 @@ Triage  ->  Contract  ->  Dispatch  ->  Review  ->  Ship
 | **Ship** | Verify readiness and document handoff | Builds, Git review, rollback plan and notes |
 
 
+<br />
+<br />
+
+
 ## 📄 Completion mandate
 
 
 `simplify` · `code-review` · `reuse-audit` · `dead-code-scan` · `vault-learning`
 
 A checkbox must reflect **what actually ran**, not simply whether a name is installed or built in. Delegation is optional on very small tasks; **do not fabricate agent calls**.
+
+
+<br />
+<br />
 
 
 ## 🗂️ System layers
@@ -40,6 +52,10 @@ A checkbox must reflect **what actually ran**, not simply whether a name is inst
 | Memory | Optional Obsidian vault templates | Safe templates bundled; private notes excluded |
 | MCP & plugins | Provider-backed tools and services | Reference guides; auth performed by user |
 | Dashboard | Local Claude Map architecture view | Version-pinned, attributed package pending |
+
+
+<br />
+<br />
 
 
 ## 📄 Verification plan

@@ -4,6 +4,10 @@
 WSL provides a Linux shell on Windows. **The Ardizuo `.ps1` installer itself remains Windows PowerShell-first.** You do not need WSL for the main setup.
 
 
+<br />
+<br />
+
+
 ## 📥 Windows PowerShell (administrator only if required)
 
 
@@ -17,6 +21,10 @@ You may need a reboot and to create a Linux user. Then verify:
 wsl --status
 wsl --list --verbose
 ```
+
+
+<br />
+<br />
 
 
 ## ⌨️ After opening Ubuntu Bash in WSL

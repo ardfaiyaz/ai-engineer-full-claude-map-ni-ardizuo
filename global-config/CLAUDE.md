@@ -4,6 +4,10 @@
 This is a **portable, deliberately minimal** Claude Code `CLAUDE.md`. It contains no personal vault content, paths, accounts, API keys or fabricated agent abilities. The installer installs it **only if absent**; an existing global `CLAUDE.md` is treated as a conflict and is never replaced.
 
 
+<br />
+<br />
+
+
 ## ☑️ Development sequence
 
 
@@ -16,6 +20,10 @@ Use **Triage → Contract → Dispatch → Review → Ship** for non-trivial sof
 5. **Ship:** State changed files, verification performed, remaining risk, and a truthful completion status. Never claim tests passed unless executed.
 
 
+<br />
+<br />
+
+
 ## 🛡️ Safety and approvals
 
 
@@ -25,10 +33,18 @@ Use **Triage → Contract → Dispatch → Review → Ship** for non-trivial sof
 - Seek user permission for destructive operations, deployments, credential changes, and writing Obsidian notes. Do not automate social-media activity.
 
 
+<br />
+<br />
+
+
 ## 📝 Learning and documentation
 
 
 Use approved repo-local source files as the source of truth. The optional vault-learning flow proposes reusable, evidence-backed notes, excludes confidential data, and writes **only after explicit user approval**.
+
+
+<br />
+<br />
 
 
 ## 🤖 Agent and tool availability

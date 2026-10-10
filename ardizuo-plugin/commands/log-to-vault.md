@@ -8,12 +8,20 @@ Draft a development session note for the knowledge vault. Nothing may be written
 Optional title or focus from the user: $ARGUMENTS
 
 
+<br />
+<br />
+
+
 ## 📄 1. Gather
 
 
 - Project name: the basename of the git root containing the current working directory (or the working directory's basename if there is no git repo). Replace characters outside `A-Za-z0-9._-` with `-`.
 - File-change metadata: in `${CLAUDE_CONFIG_DIR}/state/vault-staging/` (or `~/.claude/state/vault-staging/` when unset), read the most recently modified `*.jsonl` whose entries have `"project"` equal to this project name. Each line has `ts`, `tool`, `project`, `file`. If none exists, rely on your own knowledge of this session.
 - Your own understanding of what was done, decided and verified in this session.
+
+
+<br />
+<br />
 
 
 ## 📄 2. Draft
@@ -41,6 +49,10 @@ tags: [session]
 Keep `## Next steps` accurate: the SessionStart hook surfaces it in the next session for this project.
 
 
+<br />
+<br />
+
+
 ## 📄 3. Sanitize (mandatory)
 
 
@@ -52,6 +64,10 @@ The note must not contain:
 - code blocks longer than 10 lines
 
 Re-read the draft against this list and remove anything that violates it.
+
+
+<br />
+<br />
 
 
 ## 📄 4. Approval (mandatory)

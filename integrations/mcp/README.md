@@ -4,6 +4,10 @@
 This project targets **nine user-scoped MCP registrations**. **Registered**, **connected** and **authenticated** are different states. Never copy another person's `.claude.json` or credentials.
 
 
+<br />
+<br />
+
+
 ## 🚀 Recommended: register supported MCPs
 
 
@@ -23,6 +27,10 @@ claude mcp list
 Tavily and Morph are deliberately **manual** because they need private credentials. The installer does not guess or embed API keys. GitHub's Docker option requires a running Docker Desktop instance and an unused port 8085.
 
 
+<br />
+<br />
+
+
 ## 📋 Included MCP names
 
 
@@ -37,6 +45,10 @@ Tavily and Morph are deliberately **manual** because they need private credentia
 | `figma` | `http` | Supported registration | Figma integration (OAuth) |
 | `vercel` | `http` | Supported registration | Vercel account and project tools (OAuth) |
 | `github` | `stdio` | Supported registration | GitHub tools through Docker OAuth and free loopback port 8085 |
+
+
+<br />
+<br />
 
 
 ## ⌨️ Individual registration commands
@@ -76,6 +88,10 @@ claude mcp get morph-mcp
 ```
 
 **Do not paste API keys into shell commands, issue reports or GitHub commits.** Use your provider's supported authentication and secure environment configuration. Provider instructions: [Tavily](https://docs.tavily.com/documentation/mcp) · [Morph](https://docs.morphllm.com).
+
+
+<br />
+<br />
 
 
 ## ✅ After registration

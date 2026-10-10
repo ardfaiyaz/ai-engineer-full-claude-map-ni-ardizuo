@@ -4,6 +4,10 @@
 Node.js is needed for JavaScript MCP servers and Claude Map. npm is included with Node.js.
 
 
+<br />
+<br />
+
+
 ## 📥 Windows PowerShell — install the LTS release
 
 
@@ -20,6 +24,10 @@ npx.cmd --version
 ```
 
 
+<br />
+<br />
+
+
 ## ⌨️ Bash alternative
 
 
@@ -32,6 +40,10 @@ npm --version
 ```
 
 On Linux, install a supported Node.js LTS version using your distribution's official package instructions or an existing Node version manager. A Windows `.ps1` installer cannot be run from Bash.
+
+
+<br />
+<br />
 
 
 ## 🛠️ If npm does not start

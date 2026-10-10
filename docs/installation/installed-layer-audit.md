@@ -4,6 +4,10 @@
 **Purpose:** Confirm the contents of your installed configuration without assuming that every listed skill, plugin or MCP works. Use this after the unified installer and before claiming that the setup reproduces the full reference environment.
 
 
+<br />
+<br />
+
+
 ## 🔎 Three different evidence checks
 
 
@@ -14,6 +18,10 @@
 | `python .\scripts\coverage-doctor.py --strict` | Live Claude user-scope inventory | Reference names exist and plugin/MCP identifiers are configured locally; **not provider authentication** |
 
 All three scripts are read-only. None downloads skills, edits your configuration, runs a hook or connects an MCP. For active connections, inspect `claude mcp list` and then test only services you have authorized.
+
+
+<br />
+<br />
 
 
 ## 📥 Fresh, isolated Windows test
@@ -38,6 +46,10 @@ python .\scripts\verify-installed-layers.py --config-dir $test --require-hooks -
 The verifier intentionally expects **36 direct skill files and 20 executable command files** in the default target, alongside all **21 agents**, the reviewed hooks/rules/workflows, portable `CLAUDE.md`, and emoji headings. It does not claim to find the remaining personal skill files which the public package cannot yet reproduce.
 
 
+<br />
+<br />
+
+
 ## 🧩 When you choose the additional upstream versions
 
 
@@ -53,6 +65,10 @@ python .\scripts\verify-installed-layers.py --config-dir $variantTest --upstream
 The resulting 41 skills and 31 executable commands are **not identical to every customized file on the author's computer**. The unverified 17 other direct skills and four unknown-source skills remain excluded. Never claim full 62-skill package coverage from these counts.
 
 
+<br />
+<br />
+
+
 ## 📝 Optional Obsidian template audit
 
 
@@ -63,6 +79,10 @@ python .\scripts\verify-installed-layers.py --config-dir $test --vault-path "$HO
 ```
 
 The output counts eight expected folders and four template Markdown files; it does **not** read personal vault notes, write learnings, or verify that Claude successfully created a note. Test note creation only with explicit user approval.
+
+
+<br />
+<br />
 
 
 ## 🔌 Plugins and MCPs require a separate, live check
@@ -76,6 +96,10 @@ claude mcp list
 In Claude Code, inspect `/skills`, `/mcp` and `/hooks`. The last known reference-machine inventory had **12 enabled plugins**, **nine connected target MCP servers**, and one **optional Atlassian plugin MCP** requiring authentication. The Atlassian login can remain deferred, but it must not be misreported as connected. Other Claude.ai account-level MCPs are connected account integrations, not nine extra global MCPs installed by this package.
 
 
+<br />
+<br />
+
+
 ## 🛠️ Failure scenarios
 
 
@@ -85,6 +109,10 @@ In Claude Code, inspect `/skills`, `/mcp` and `/hooks`. The last known reference
 - **Skill visible but tool call fails:** Check the original publisher's supporting scripts, software dependencies and permissions. A single `SKILL.md` is not always a functional complete skill.
 - **Provider says needs authentication:** Follow the vendor's OAuth/API key flow; installation and enabled status do not authorize access.
 - **Strict release audit exits nonzero:** This is intentional while the public package remains below the exact reference inventory and fresh-device runtime tests are unfinished.
+
+
+<br />
+<br />
 
 
 ## 🛡️ Publication and privacy boundary

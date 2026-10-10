@@ -3,10 +3,15 @@
 
 Apply verification proportional to the development task.
 
+
+<br />
 <br />
 
 
 ## 📄 Before Completion
+
+
+<br />
 
 
 ### 📄 Correctness
@@ -14,6 +19,9 @@ Apply verification proportional to the development task.
 - Confirm the requested requirements were implemented.
 - Check for regressions and unintended changes.
 - Validate important edge cases.
+
+
+<br />
 
 
 ### 📄 Maintainability
@@ -24,11 +32,17 @@ Apply verification proportional to the development task.
 - Follow established project conventions.
 
 
+<br />
+
+
 ### 🛡️ Security
 
 - Check authorization and validation where relevant.
 - Avoid leaking credentials and sensitive data.
 - Review risky dependencies and operations.
+
+
+<br />
 
 
 ### ☑️ Testing
@@ -39,11 +53,17 @@ Apply verification proportional to the development task.
 - Never claim tests passed unless actually executed.
 
 
+<br />
+
+
 ### 📄 Scope
 
 - Avoid unrelated changes.
 - Do not automatically delete unused code.
 - Do not commit, push or deploy without authorization.
+
+
+<br />
 
 
 ### 📄 Delivery

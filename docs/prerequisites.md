@@ -4,6 +4,10 @@
 **Use Windows PowerShell 5.1 or newer for the supported installer.** Install only the tools your machine is missing. Links are optional help; you can copy commands here without opening another page.
 
 
+<br />
+<br />
+
+
 ## 🚀 Required — Windows PowerShell
 
 
@@ -23,6 +27,10 @@ npm.cmd --version
 python --version
 claude --version
 ```
+
+
+<br />
+<br />
 
 
 ## 🧩 Optional tools — install only when needed
@@ -48,6 +56,10 @@ winget install --id Microsoft.PowerShell --exact --source winget
 For WSL (only if you need Linux tools), `wsl --install` may require an administrator terminal and reboot.
 
 
+<br />
+<br />
+
+
 ## 🖥️ Optional upstream Claude Map
 
 
@@ -57,6 +69,10 @@ claude-map -p 8888
 ```
 
 The Ardizuo overlay is a separate compatibility-sensitive step; use [Claude Map instructions](./installation/claude-map.md).
+
+
+<br />
+<br />
 
 
 ## ⌨️ Bash examples (macOS or Linux)
@@ -73,6 +89,10 @@ npm install --global claude-map@1.2.3
 ```
 
 The Ardizuo global installer is Windows PowerShell-first; the Bash examples only install their named upstream tools.
+
+
+<br />
+<br />
 
 
 ## ✅ Find help for one tool

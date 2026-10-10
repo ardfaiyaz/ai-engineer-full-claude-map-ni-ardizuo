@@ -10,11 +10,13 @@ status: proposed
 
 
 <br />
+<br />
 
 
 ## 📄 Goal
 
 
+<br />
 <br />
 
 
@@ -22,17 +24,20 @@ status: proposed
 
 
 <br />
+<br />
 
 
 ## 📄 Verification evidence
 
 
 <br />
+<br />
 
 
 ## 📄 Outstanding tasks
 
 
+<br />
 <br />
 
 

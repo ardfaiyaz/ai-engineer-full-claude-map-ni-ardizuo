@@ -4,6 +4,10 @@
 **Default to normal user permissions.** You do not need Administrator PowerShell just to add user-scope Claude rules, plugins or many MCP entries.
 
 
+<br />
+<br />
+
+
 ## 🛡️ Safe defaults
 
 
@@ -13,6 +17,10 @@
 - Never disable antivirus, firewall, account protection or execution policy globally as a convenience.
 - For MCPs, grant access only to the required repos, directories, projects or test data.
 - For repository actions, keep review, push and deploy permissions separate from read-only checks.
+
+
+<br />
+<br />
 
 
 ## 📄 Preflight

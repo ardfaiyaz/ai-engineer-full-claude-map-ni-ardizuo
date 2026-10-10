@@ -4,6 +4,10 @@
 **Windows 10/11, PowerShell, your own Claude Code account.** Most users need only this page.
 
 
+<br />
+<br />
+
+
 ## ✅ 1. Install the required tools
 
 
@@ -28,6 +32,10 @@ claude --version
 If you use Serena or GitHub's Docker MCP, you may also need [uv](./docs/installation/uv.md) or [Docker](./docs/installation/docker.md).
 
 
+<br />
+<br />
+
+
 ## 📥 2. Download and preview
 
 
@@ -40,6 +48,10 @@ cd ai-engineer-full-claude-map-ni-ardizuo
 Preview reports intended changes. If the installer reports a conflicting file in your existing `.claude` folder, **stop and compare** rather than deleting it.
 
 
+<br />
+<br />
+
+
 ## 🚀 3. Install only after review
 
 
@@ -48,6 +60,10 @@ Preview reports intended changes. If the installer reports a conflicting file in
 ```
 
 This attempts the existing agents, skills, commands, plugins, supported MCP registrations, hooks and empty vault setup. It does **not** copy private credentials, reproduce all 62 original skills, or automatically patch your dashboard.
+
+
+<br />
+<br />
 
 
 ## 🔑 4. Connect accounts and confirm installed plugins
@@ -60,6 +76,10 @@ claude
 ```
 
 Inside Claude Code, inspect `/plugin`, `/skills`, `/mcp` and `/hooks`. Sign in to each service you choose to use. Optional Atlassian authentication can be skipped if you do not use it.
+
+
+<br />
+<br />
 
 
 ## ☑️ 5. One final local check
@@ -79,6 +99,10 @@ A missing file is reported by name. If `rules/ardizuo-development.md` is missing
 This verifier does **not** check provider login or execution. [Full setup and troubleshooting](./docs/installation/full-setup.md).
 
 
+<br />
+<br />
+
+
 ## 🖥️ Optional: Claude Map dashboard
 
 
@@ -88,6 +112,10 @@ claude-map -p 8888
 ```
 
 The original Claude Map is available at <http://localhost:8888>. To apply the **Ardizuo Development Hub overlay**, follow [the separate rehearsal and backup steps](./docs/installation/claude-map.md); don't apply patches blindly.
+
+
+<br />
+<br />
 
 
 ## ⌨️ Bash commands (only on systems with Bash and the prerequisites installed)

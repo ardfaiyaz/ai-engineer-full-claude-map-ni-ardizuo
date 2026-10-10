@@ -4,6 +4,10 @@
 Claude Map is an **upstream npm application** for browsing local Claude Code configuration. Ardizuo's five-stage Development Hub is a **separate, version-sensitive overlay**.
 
 
+<br />
+<br />
+
+
 ## 📥 Install upstream Claude Map — Windows PowerShell
 
 
@@ -18,6 +22,10 @@ claude-map -p 8888
 Then open <http://localhost:8888>. Use `Ctrl+C` to stop the server.
 
 
+<br />
+<br />
+
+
 ## ⌨️ Bash (macOS/Linux with Node.js and npm)
 
 
@@ -27,6 +35,10 @@ claude-map -p 8888
 ```
 
 Bash can launch **upstream** Claude Map, but Ardizuo's current package patch/testing workflow is **Windows-first**. Do not assume the dashboard overlay has been verified on Linux or macOS.
+
+
+<br />
+<br />
 
 
 ## 🧪 Add the existing five-stage Development Hub
@@ -51,6 +63,10 @@ claude-map -p 8888
 ```
 
 Open <http://localhost:8888/?tab=devhub>. **`-Apply -All` does not patch the live dashboard automatically.** A successful rehearsal checks patch compatibility and JavaScript syntax, not runtime browser rendering.
+
+
+<br />
+<br />
 
 
 ## 🛠️ Common issues

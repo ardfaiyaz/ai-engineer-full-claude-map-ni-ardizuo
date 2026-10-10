@@ -4,7 +4,14 @@
 **Goal:** Package a safe, reproducible Windows-first global Claude Code development configuration. No hosted site and no social-media features.
 
 
+<br />
+<br />
+
+
 ## 📄 Next three development milestones
+
+
+<br />
 
 
 ### 🔄 1. Complete ownership and portability review
@@ -15,12 +22,18 @@
 - Do not export the whole `.claude` folder or plugin cache.
 
 
+<br />
+
+
 ### ⚙️ 2. Complete the assisted Full profile and optional presets
 
 
 - The 28 original assets already support dry-run, idempotence and collision checks; now finish lifecycle rollback, verified Windows tests and optional uninstall.
 - The Full orchestrator can attempt upstream installs with explicit user consent; verify actual provider login, marketplace availability, and pin tested versions.
 - Support Core, Full and specialized profiles only when tested, not just defined in JSON.
+
+
+<br />
 
 
 ### ☑️ 3. Verify and release

@@ -4,6 +4,10 @@
 **Purpose:** Propose a sanitized session note and save it **only after the user explicitly approves its exact content**.
 
 
+<br />
+<br />
+
+
 ## 📥 Install
 
 
@@ -14,6 +18,10 @@ The command lives under `ardizuo-plugin/commands/log-to-vault.md` and is copied 
 ```
 
 
+<br />
+<br />
+
+
 ## 📝 Set up memory
 
 
@@ -22,6 +30,10 @@ Create an [Obsidian vault](../../../vault/README.md), open it as a folder, and o
 In Claude Code, execute `/log-to-vault` **after genuine project work**, review the proposed note, and select either Save, Revise or Don't save. Check the actual file in Obsidian and verify it is available on a later session.
 
 **Never record:** credentials, raw transcripts, personal identifiers, absolute home paths, proprietary code dumps, or `.env` values. If there is no substantive session work, no note is needed.
+
+
+<br />
+<br />
 
 
 ## 🛠️ Troubleshooting

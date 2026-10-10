@@ -6,6 +6,10 @@
 > **Release decision: not yet a complete clone.** Your live machine's coverage can be 100% while a new user's **package reproducibility** is still partial. A successfully installed `.md` file does not prove its tools ran. One optional Atlassian plugin MCP login is intentionally nonblocking.
 
 
+<br />
+<br />
+
+
 ## ☑️ At a glance
 
 
@@ -25,6 +29,10 @@
 | **Recovery and security** | Existing personal configuration must be protected | Preview, conflict refusal, limited backups and tests | Full per-provider rollback / fresh-machine signoff still incomplete |
 
 
+<br />
+<br />
+
+
 ## 📥 How to install without replacing your working configuration
 
 
@@ -35,6 +43,10 @@
 **Scenario C — You do not want Atlassian authentication:** Leave it disconnected. Claude CLI currently reports all nine target MCP servers connected and the other six plugin MCPs connected on the reference machine; optional Atlassian sign-in is **not** a release gate. No OAuth tokens are stored in this repo.
 
 **Scenario D — You want exact byte-identical reference customizations:** Do not enable `-UpstreamVariants` or `-SkillUpstreamVariants` as a substitute for the author's modified files. Those flags install publicly available publisher versions; your actual personal variants require ownership, licensing and privacy review before any public redistribution.
+
+
+<br />
+<br />
 
 
 ## ☑️ All 62 direct skill names — installability
@@ -110,6 +122,10 @@
 </details>
 
 
+<br />
+<br />
+
+
 ## ☑️ All 32 command Markdown files — 31 executable
 
 
@@ -153,6 +169,10 @@
 </details>
 
 
+<br />
+<br />
+
+
 ## 🔌 All plugins and target MCP registrations
 
 
@@ -194,6 +214,10 @@ Each plugin has a dedicated [installation page](../../integrations/plugins/READM
 </details>
 
 
+<br />
+<br />
+
+
 ## 🔄 Hooks, workflow and memory layer
 
 
@@ -204,10 +228,18 @@ Each plugin has a dedicated [installation page](../../integrations/plugins/READM
 **Obsidian:** Eight folder names and four note templates are public; private notes are not. Use `-Vault -VaultPath <your-chosen-path>` in the real account, and confirm before any note write.
 
 
+<br />
+<br />
+
+
 ## 🔎 Audit original local skills before promoting them
 
 
 The [exact-local source and sidecar checker](./exact-local-origin-review.md) provides six pinned **unapproved** public source leads for existing direct skills (`deep-research`, `docx`, `pdf`, `pptx`, `xlsx`, `skill-creator`). It verifies source hashes privately on the reference machine, inventories supporting-file counts for all 62 direct skills and checks the seven customized Ardizuo files without exporting their content. No release coverage number is increased until matching content, necessary sidecars, license compliance, a safe installer and real execution are confirmed.
+
+
+<br />
+<br />
 
 
 ## ⚠️ Remaining blockers before a complete public release
@@ -218,6 +250,10 @@ The [exact-local source and sidecar checker](./exact-local-origin-review.md) pro
 3. **Variant differences:** Five skill and 11 command upstream variants do not duplicate local customizations. Seven existing Ardizuo assets also differ from public source.
 4. **Sidecars and runtime:** Publishers may use scripts, references or tools beyond `SKILL.md`; actual agent, command, hook and provider task calls still need verification.
 5. **Fresh Windows acceptance:** Test network downloads, provider auth, browser dashboard, backups, repeat installation and partial failures on a clean account before calling it a one-click replica.
+
+
+<br />
+<br />
 
 
 ## 🛡️ Safety and evidence definitions

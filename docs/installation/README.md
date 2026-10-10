@@ -4,6 +4,10 @@
 Start with **[the five-step quick start](../../START-HERE.md)**. It contains the recommended copy-and-paste commands. Read individual pages only if a prerequisite or provider needs extra attention.
 
 
+<br />
+<br />
+
+
 ## ✅ Start here
 
 
@@ -15,6 +19,10 @@ Start with **[the five-step quick start](../../START-HERE.md)**. It contains the
 | MCP registration and credentials | [Nine-MCP catalog](../../integrations/mcp/README.md) |
 | Optional Claude Map | [Claude Map commands](./claude-map.md) |
 | Optional Obsidian | [Obsidian](./obsidian.md) |
+
+
+<br />
+<br />
 
 
 ## 🛠️ Advanced reference (only if needed)

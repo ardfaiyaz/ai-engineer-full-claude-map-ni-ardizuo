@@ -4,6 +4,10 @@
 **This is the author's named source-machine inventory, not a list of packages silently copied into the installer.** The dashboard counted about 178 discovered entries across local, nested and plugin inventories; those categories overlap.
 
 
+<br />
+<br />
+
+
 ## 🤖 21 global agent definitions
 
 
@@ -32,6 +36,10 @@
 | `socratic-mentor` | Install via upstream SuperClaude |
 | `system-architect` | Install via upstream SuperClaude |
 | `technical-writer` | Install via upstream SuperClaude |
+
+
+<br />
+<br />
 
 
 ## 🧩 62 global skill names
@@ -105,10 +113,18 @@ Only 16 are in the original Ardizuo development pack. Others must be obtained fr
 | `xlsx` | Third-party or locally sourced; verify origin/terms |
 
 
+<br />
+<br />
+
+
 ## 🧩 Commands and plugins
 
 
 The source machine reported **32 global command filenames**. Most `sc:*` capabilities are supplied by the upstream SuperClaude installation; `log-to-vault` is included in the Ardizuo pack. The [12 plugin](../../integrations/plugins/README.md) and [nine MCP](../../integrations/mcp/README.md) entries are listed separately.
+
+
+<br />
+<br />
 
 
 ## ☑️ Verify on a new computer
@@ -123,6 +139,10 @@ claude mcp list
 In Claude Code, verify `/skills`, `/mcp` and `/hooks`. The presence of a file doesn't prove a task or agent was run.
 
 [Full installer](../installation/full-setup.md) · [Component catalog](./README.md)
+
+
+<br />
+<br />
 
 
 ## 🚀 Exact-name release verification

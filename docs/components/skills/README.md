@@ -4,6 +4,10 @@
 This repository includes **16 Ardizuo-authored skills**. Their real Claude Code instructions live in `ardizuo-plugin/skills/<name>/SKILL.md`; this catalog replaces 16 repetitive installation pages.
 
 
+<br />
+<br />
+
+
 ## 📋 What each skill is for
 
 
@@ -27,6 +31,10 @@ This repository includes **16 Ardizuo-authored skills**. Their real Claude Code 
 | `vault-learning` | Capture approved, reusable lessons in the local vault. |
 
 
+<br />
+<br />
+
+
 ## 📥 Install the complete set
 
 
@@ -41,6 +49,10 @@ From the cloned repository in **Windows PowerShell**:
 ```
 
 These skills are also included when you choose the guided `-Apply -All` install. Existing different files are **never overwritten**.
+
+
+<br />
+<br />
 
 
 ## ✅ Verify and use

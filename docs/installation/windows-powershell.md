@@ -4,6 +4,10 @@
 Windows 10/11 with Windows PowerShell 5.1 is the supported installation target. You **do not need an administrator terminal** for Ardizuo's user-scoped files.
 
 
+<br />
+<br />
+
+
 ## ✅ Check your shell
 
 
@@ -19,6 +23,10 @@ winget install --id Microsoft.PowerShell --exact --source winget
 ```
 
 Do not change the system-wide execution policy to `Unrestricted`. If scripts are blocked, review them first and follow your organization's policy.
+
+
+<br />
+<br />
 
 
 ## 🛠️ If script execution is restricted

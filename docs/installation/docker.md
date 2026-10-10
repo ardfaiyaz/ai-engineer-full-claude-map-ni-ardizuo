@@ -4,6 +4,10 @@
 Only required if you choose the existing Docker-backed GitHub MCP flow. It is **not** needed for most Ardizuo files.
 
 
+<br />
+<br />
+
+
 ## 📥 Windows PowerShell
 
 
@@ -21,6 +25,10 @@ docker info
 `docker info` checks that the Docker engine is running; `docker --version` does not.
 
 
+<br />
+<br />
+
+
 ## ⌨️ Bash alternative
 
 
@@ -31,6 +39,10 @@ brew install --cask docker
 ```
 
 Launch Docker Desktop manually and verify with `docker info`. On Linux, follow the distro-specific [Docker Engine guide](https://docs.docker.com/engine/install/); macOS Docker Desktop and Linux Docker Engine are different products.
+
+
+<br />
+<br />
 
 
 ## 🛡️ Security

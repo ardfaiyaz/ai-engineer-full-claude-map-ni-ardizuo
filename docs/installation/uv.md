@@ -4,6 +4,10 @@
 `uvx` is needed for the existing Serena MCP registration. Skip this installation if you are not using Serena.
 
 
+<br />
+<br />
+
+
 ## 📥 Windows PowerShell
 
 
@@ -14,6 +18,10 @@ uvx --version
 ```
 
 Reopen PowerShell if the command is not recognized.
+
+
+<br />
+<br />
 
 
 ## ⌨️ Bash alternative

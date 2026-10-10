@@ -4,6 +4,10 @@
 **Keep the public installer safe for a normal Windows user account.** Do not publish secrets or private development artifacts.
 
 
+<br />
+<br />
+
+
 ## 🌿 Never commit
 
 
@@ -14,6 +18,10 @@
 - Docker credential files, SSH keys, private certificate files and cloud service accounts.
 
 Use clean templates without values. `.gitignore` is only an accident-prevention tool; **it does not remove secrets from existing Git history.**
+
+
+<br />
+<br />
 
 
 ## 🛡️ Safe installation and permissions
@@ -28,10 +36,18 @@ Use clean templates without values. `.gitignore` is only an accident-prevention 
 - Bind any local dashboard to localhost and **never expose raw MCP headers, environment variables or `.claude.json` via API endpoints.**
 
 
+<br />
+<br />
+
+
 ## 📖 Learn how to manage keys
 
 
 [API keys and PowerShell](./docs/security/api-keys-and-powershell.md) · [Windows permissions](./docs/security/windows-permissions.md) · [MCP setup](./integrations/mcp/README.md)
+
+
+<br />
+<br />
 
 
 ## 📄 Responsible reporting
