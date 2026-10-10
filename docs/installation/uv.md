@@ -1,38 +1,32 @@
-# 📄 uv and uvx
+# 📦 uv and uvx
 
-**Why you might need it:** Launches isolated Python tooling and some Python-based MCP servers, including Serena.
 
-<br />
+`uvx` is needed for the existing Serena MCP registration. Skip this installation if you are not using Serena.
 
-## 📁 1. Get it from the official source
 
-[uv and uvx — official installation page](https://docs.astral.sh/uv/getting-started/installation/)
+## 📥 Windows PowerShell
 
-Use the official Astral installer or choose a supported package manager. Official Windows installer command (inspect the source first):
 
 ```powershell
-powershell -ExecutionPolicy Bypass -c "irm https://astral.sh/uv/install.ps1 | iex"
-```
-
-Do not run unknown `uvx` packages. Check the publisher and version of any MCP launcher before registering it.
-
-<br />
-
-## ☑️ 2. Verify
-
-```powershell
+winget install --id astral-sh.uv --exact --source winget
 uv --version
 uvx --version
 ```
 
-<br />
-
-## 📄 3. If something goes wrong
-
-If the tools are not on PATH, reopen PowerShell and inspect the installation location in [Astral's installer documentation](https://docs.astral.sh/uv/reference/installer/).
+Reopen PowerShell if the command is not recognized.
 
 
+## ⌨️ Bash alternative
 
-<br />
 
-[All installation guides](./README.md) · [Prerequisites](../prerequisites.md) · [Troubleshooting](../troubleshooting.md)
+macOS with Homebrew:
+
+```bash
+brew install uv
+uv --version
+uvx --version
+```
+
+On Linux, use the [official uv installation instructions](https://docs.astral.sh/uv/getting-started/installation/) for your distribution. Never run an unknown `uvx` package without checking its publisher.
+
+[Installation index](./README.md) · [MCP catalog](../../integrations/mcp/README.md)

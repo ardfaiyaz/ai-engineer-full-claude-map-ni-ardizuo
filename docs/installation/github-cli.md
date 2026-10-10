@@ -1,44 +1,39 @@
-# 🌿 GitHub CLI (gh)
+# 🌿 GitHub CLI (`gh`)
 
-**Why you might need it:** Offers an interactive and safer way to authenticate to GitHub for repository actions.
 
-<br />
+Optional: useful for your own GitHub login, PRs and repository maintenance; not required to clone a public repository.
 
-## 📁 1. Get it from the official source
 
-[GitHub CLI (gh) — official installation page](https://cli.github.com/)
+## 📥 Windows PowerShell
 
-**Recommended on Windows:** official installer or Windows Package Manager:
 
 ```powershell
-winget install --id GitHub.cli -e --source winget
-```
-
-Then authenticate interactively with a browser instead of pasting a personal access token into scripts:
-
-```powershell
+winget install --id GitHub.cli --exact --source winget
+gh --version
 gh auth login
 ```
 
-Choose GitHub.com and HTTPS if those match your use case.
+Follow the browser-based sign-in. Never paste a token into this repository or a public issue.
 
-<br />
 
-## ☑️ 2. Verify
+## ⌨️ Bash alternative
+
+
+macOS with Homebrew:
+
+```bash
+brew install gh
+gh auth login
+```
+
+
+## ✅ Verify
+
 
 ```powershell
-gh --version
 gh auth status
 ```
 
-<br />
+Do not share `gh auth token` output. [Official GitHub CLI instructions](https://cli.github.com/manual/gh_auth_login).
 
-## 📄 3. If something goes wrong
-
-If you need to change accounts or permissions, use `gh auth login` / `gh auth refresh` and review scopes. Never print, paste, log or commit the output of `gh auth token`. See [the GitHub CLI manual](https://cli.github.com/manual/gh_auth_login).
-
-
-
-<br />
-
-[All installation guides](./README.md) · [Prerequisites](../prerequisites.md) · [Troubleshooting](../troubleshooting.md)
+[Installation index](./README.md)

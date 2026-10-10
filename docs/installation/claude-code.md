@@ -1,47 +1,46 @@
-# 💻 Claude Code CLI
+# 🤖 Claude Code
 
-**Why you might need it:** The actual coding assistant that loads global rules, skills, agents, plugins and MCP registrations.
 
-<br />
+Claude Code is the assistant that actually loads your agents, commands, plugins, MCP registrations and skills. Every user signs in with **their own** account.
 
-## 📁 1. Get it from the official source
 
-[Claude Code CLI — official installation page](https://code.claude.com/docs/en/setup)
+## 📥 Windows PowerShell
 
-**Recommended:** use Anthropic's native Windows installer after reading its official instructions. As a package-manager alternative, the Claude Code docs support:
 
 ```powershell
-winget install Anthropic.ClaudeCode
-```
-
-Native install script (review before execution): `https://claude.ai/install.ps1`. The official command is `irm https://claude.ai/install.ps1 | iex`; only use it after reviewing and trusting the source.
-
-Launch Claude, sign in with your own supported account, and confirm that global settings are in your user profile:
-
-```powershell
+winget install --id Anthropic.ClaudeCode --exact --source winget
+claude --version
 claude
 ```
 
-Inside Claude Code, use `/login`, `/skills`, and `/mcp` as applicable.
+If Winget cannot find the package, use Anthropic's [official native setup guide](https://code.claude.com/docs/en/setup) to select the current supported Windows installer.
 
-<br />
 
-## ☑️ 2. Verify
+## ⌨️ Bash alternative (macOS/Linux only)
 
-```powershell
+
+Anthropic provides a native installation script. **Review the linked official source before executing a remote script**:
+
+```bash
+curl -fsSL https://claude.ai/install.sh -o claude-install.sh
+less claude-install.sh
+bash claude-install.sh
 claude --version
-claude doctor
 ```
 
-<br />
-
-## 📄 3. If something goes wrong
-
-If it says `claude: command not found`, reopen PowerShell, then follow the [official troubleshooting guide](https://code.claude.com/docs/en/troubleshooting). Avoid storing API keys unless you intentionally use API billing.
+This is for systems supported by the official installer, **not** a Bash substitute for Ardizuo's Windows `.ps1` scripts.
 
 
-**More reading:** [official plugin instructions](https://code.claude.com/docs/en/discover-plugins) · [MCP docs](https://code.claude.com/docs/en/mcp) · [skills](https://code.claude.com/docs/en/skills).
+## ✅ Sign in and verify
 
-<br />
 
-[All installation guides](./README.md) · [Prerequisites](../prerequisites.md) · [Troubleshooting](../troubleshooting.md)
+```powershell
+claude
+claude doctor
+claude plugin list
+claude mcp list
+```
+
+Inside Claude Code, use `/skills`, `/hooks` and `/mcp`. If a command is missing, reopen your terminal and check the [official troubleshooting guide](https://code.claude.com/docs/en/troubleshooting).
+
+[Full Ardizuo installation](./full-setup.md)

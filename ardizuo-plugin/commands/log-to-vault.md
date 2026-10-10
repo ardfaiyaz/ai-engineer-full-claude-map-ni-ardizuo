@@ -7,13 +7,17 @@ Draft a development session note for the knowledge vault. Nothing may be written
 
 Optional title or focus from the user: $ARGUMENTS
 
+
 ## 📄 1. Gather
+
 
 - Project name: the basename of the git root containing the current working directory (or the working directory's basename if there is no git repo). Replace characters outside `A-Za-z0-9._-` with `-`.
 - File-change metadata: in `${CLAUDE_CONFIG_DIR}/state/vault-staging/` (or `~/.claude/state/vault-staging/` when unset), read the most recently modified `*.jsonl` whose entries have `"project"` equal to this project name. Each line has `ts`, `tool`, `project`, `file`. If none exists, rely on your own knowledge of this session.
 - Your own understanding of what was done, decided and verified in this session.
 
+
 ## 📄 2. Draft
+
 
 Use this structure, under 60 lines:
 
@@ -36,7 +40,9 @@ tags: [session]
 
 Keep `## Next steps` accurate: the SessionStart hook surfaces it in the next session for this project.
 
+
 ## 📄 3. Sanitize (mandatory)
+
 
 The note must not contain:
 - raw prompts, conversation transcripts, or tool output dumps
@@ -47,7 +53,9 @@ The note must not contain:
 
 Re-read the draft against this list and remove anything that violates it.
 
+
 ## 📄 4. Approval (mandatory)
+
 
 Show the complete draft and the target path inside the configured vault: `${CLAUDE_DEV_VAULT}/Sessions/<project>/YYYY-MM-DD-<slug>.md`, or if `CLAUDE_DEV_VAULT` is unset, `$HOME/Documents/Claude-Dev-Vault/Sessions/<project>/YYYY-MM-DD-<slug>.md`. Resolve the actual directory for this user at runtime; never use the author's Windows username. Then ask the user directly (use a supported interactive prompt if available): **Save as shown** / **Revise first** / **Don't save**.
 

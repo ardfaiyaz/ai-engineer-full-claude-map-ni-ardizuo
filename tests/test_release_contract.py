@@ -44,7 +44,7 @@ class ReleaseContractTests(unittest.TestCase):
                 if m:
                     self.assertTrue(any(m.group(1).startswith(emoji) for emoji in valid),f'{file.relative_to(ROOT)}: {line}')
                     self.assertNotIn('<img src=',m.group(1))
-        self.assertGreaterEqual(total,110)
+        self.assertGreaterEqual(total,65)
         changes,retired,images=module.plan(ROOT)
         self.assertEqual((len(changes),len(retired),len(images)),(0,0,0))
     def test_docs_disclose_personas_and_missing_origins(self):

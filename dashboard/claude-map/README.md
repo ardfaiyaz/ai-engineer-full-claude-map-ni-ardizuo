@@ -1,8 +1,11 @@
 # 📥 Claude Map — AI / Software Engineer Claude Setup
 
+
 **Local-only visualization with the five-stage workflow surface and capability layers.** Ardizuo's dashboard extends [upstream Claude Map](https://github.com/shamim0902/claude-map); it is not a hosted site or a replacement for Claude Code.
 
+
 ## 📥 Check the installed package on Windows
+
 
 ```powershell
 npm ls -g claude-map --depth=0
@@ -18,7 +21,9 @@ The **default mode is read-only**. It checks that the package exists and that th
 
 Do not use `--apply` until the installed upstream version and all five patches have been reviewed in a disposable installation. Some overlays are version-sensitive; a successful initial preflight alone is insufficient. The current user's installed version is `claude-map@1.2.3`, but the exact custom modifications on that installation are not yet known.
 
+
 ## 📄 Rehearse all five stages in a disposable copy
+
 
 The initial preview checks only the scaffold. The new `--rehearse` mode runs
 **all five** overlay scripts against temporary copies of `server.js` and
@@ -53,7 +58,9 @@ A successful rehearsal verifies source compatibility and JavaScript syntax,
 **not** browser rendering, runtime behavior or external connections. If any
 stage fails, **do not run `--apply`**; collect its error output first.
 
+
 ## 🔄 Apply only after full compatibility review
+
 
 Stop the dashboard server. Back up your complete global `claude-map` package, not just `server.js` and `public/app.js`, in case an overlay stage also writes auxiliary files. Then, and only then:
 

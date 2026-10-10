@@ -1,41 +1,46 @@
-# 📄 Python
+# 🐍 Python 3
 
-**Why you might need it:** Supports selected tooling, tests and Python development. Not required to use every Claude Code feature.
 
-<br />
+Python runs Ardizuo's setup scripts and optional MCP tooling. It is required by the current assisted installer.
 
-## 📁 1. Get it from the official source
 
-[Python — official installation page](https://www.python.org/downloads/windows/)
+## 📥 Windows PowerShell
 
-Download the supported current Python release or the Python install manager from Python.org. On older installations, ensure `python` and `py` resolve correctly; don't blindly modify PATH if you already use a version manager.
-
-Create project-specific virtual environments instead of installing all packages globally:
 
 ```powershell
-py -m venv .venv
-.\.venv\Scripts\python.exe -m pip --version
+winget install --id Python.Python.3.13 --exact --source winget
 ```
 
-If you're inside the public Ardizuo repository, don't create project files you intend to commit as dependencies.
-
-<br />
-
-## ☑️ 2. Verify
+A newer supported Python release is also suitable. Reopen PowerShell:
 
 ```powershell
 python --version
-py --version
+python -m pip --version
 ```
 
-<br />
 
-## 📄 3. If something goes wrong
-
-If `python` opens the Microsoft Store, check Windows App Execution Aliases or use `py`. If the selected Python has no `pip`, follow the [official pip instructions](https://packaging.python.org/en/latest/tutorials/installing-packages/).
+## ⌨️ Bash alternative
 
 
+macOS with Homebrew:
 
-<br />
+```bash
+brew install python
+python3 --version
+```
 
-[All installation guides](./README.md) · [Prerequisites](../prerequisites.md) · [Troubleshooting](../troubleshooting.md)
+Ubuntu/Debian:
+
+```bash
+sudo apt update
+sudo apt install -y python3 python3-venv
+python3 --version
+```
+
+
+## 🛠️ Troubleshooting
+
+
+If `python` opens the Microsoft Store on Windows, check App Execution Aliases or try `py --version`. Avoid placing a project virtual environment inside files you intend to commit. Official source: [python.org](https://www.python.org/downloads/).
+
+[Installation index](./README.md)

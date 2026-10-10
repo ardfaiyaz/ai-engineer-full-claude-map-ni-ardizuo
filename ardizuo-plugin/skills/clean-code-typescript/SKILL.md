@@ -4,7 +4,9 @@ description: Review TypeScript code for clarity, types, boundaries, maintainabil
 disable-model-invocation: true
 ---
 
+
 # 💻 Clean Code Typescript
+
 
 This is an original local development-focused adapter, not an official third-party skill.
 

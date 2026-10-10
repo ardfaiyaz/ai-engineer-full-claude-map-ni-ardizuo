@@ -1,45 +1,52 @@
-# 🌿 Git for Windows
+# 🌿 Git
 
-**Why you might need it:** Clones repositories, tracks changes, enables worktrees and helps Claude inspect diffs.
 
-<br />
+Git is required to clone the repository and review changes.
 
-## 📁 1. Get it from the official source
 
-[Git for Windows — official installation page](https://git-scm.com/install/windows)
+## 📥 Windows PowerShell
 
-**Recommended:** download Git for Windows from the official site, accept the default options, then reopen PowerShell. If you prefer Windows Package Manager:
 
 ```powershell
-winget install --id Git.Git -e --source winget
+winget install --id Git.Git --exact --source winget
 ```
 
-For your first commit only, configure your own identity:
-
-```powershell
-git config --global user.name "Your display name"
-git config --global user.email "you@example.com"
-```
-
-Use your real preferred identity; these are examples.
-
-<br />
-
-## ☑️ 2. Verify
+Reopen PowerShell and verify:
 
 ```powershell
 git --version
-git config --global --get user.name
 ```
 
-<br />
+Only if you plan to commit changes, set your **own** identity:
 
-## 📄 3. If something goes wrong
+```powershell
+git config --global user.name "Your Name"
+git config --global user.email "you@example.com"
+```
 
-If Git is not found after installation, close and reopen the terminal. If the repository is public, check changes with `git status` and `git diff` before committing.
+
+## ⌨️ Bash alternative
 
 
+macOS with Homebrew:
 
-<br />
+```bash
+brew install git
+git --version
+```
 
-[All installation guides](./README.md) · [Prerequisites](../prerequisites.md) · [Troubleshooting](../troubleshooting.md)
+Ubuntu/Debian:
+
+```bash
+sudo apt update
+sudo apt install -y git
+git --version
+```
+
+
+## 🛠️ Troubleshooting
+
+
+Reopen your terminal if Git isn't on `PATH`. Before committing, use `git status` and `git diff --check`. Official source: [git-scm.com](https://git-scm.com/install/windows).
+
+[Installation index](./README.md)

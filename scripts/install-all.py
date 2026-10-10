@@ -255,7 +255,7 @@ def main():
                 if name in existing:
                     print('  '+name+' — configured already (connectivity NOT verified)'); actions[k]='already-configured';continue
                 if entry['automation']!='supported':
-                    print('  '+name+' — requires manual credential/provider flow: integrations/mcp/'+name+'.md')
+                    print('  '+name+' — requires manual credential/provider flow: integrations/mcp/README.md (server: '+name+')')
                     actions[k]='manual';continue
                 missing=[p for p in entry.get('prerequisites',[]) if not shutil.which(p)]
                 if missing:

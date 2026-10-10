@@ -1,10 +1,11 @@
 # 🔄 Developer orchestration architecture
 
+
 The system has **five development stages**. The dashboard is a map of *capabilities*; a passing end-to-end run needs separate evidence.
 
-<br />
 
 ## 🔄 Workflow Surface
+
 
 ```text
 Triage  ->  Contract  ->  Dispatch  ->  Review  ->  Ship
@@ -18,17 +19,17 @@ Triage  ->  Contract  ->  Dispatch  ->  Review  ->  Ship
 | **Review** | Review tests, quality and security | Test outputs and review findings |
 | **Ship** | Verify readiness and document handoff | Builds, Git review, rollback plan and notes |
 
-<br />
 
 ## 📄 Completion mandate
+
 
 `simplify` · `code-review` · `reuse-audit` · `dead-code-scan` · `vault-learning`
 
 A checkbox must reflect **what actually ran**, not simply whether a name is installed or built in. Delegation is optional on very small tasks; **do not fabricate agent calls**.
 
-<br />
 
 ## 🗂️ System layers
+
 
 | Layer | Responsibilities | Current public status |
 | :--- | :--- | :--- |
@@ -40,9 +41,9 @@ A checkbox must reflect **what actually ran**, not simply whether a name is inst
 | MCP & plugins | Provider-backed tools and services | Reference guides; auth performed by user |
 | Dashboard | Local Claude Map architecture view | Version-pinned, attributed package pending |
 
-<br />
 
 ## 📄 Verification plan
+
 
 - Agent delegation: inspect actual delegated-task invocation and outcome.
 - Skills: check the tool invoked, not just folder names or plugin enablement.
@@ -51,6 +52,5 @@ A checkbox must reflect **what actually ran**, not simply whether a name is inst
 - Memory: approve a note, save it, then verify reload in a fresh session.
 - Ship: provide genuine lint, test, build, Git, documentation and rollback evidence.
 
-<br />
 
 [Component catalog](./components/README.md) · [Release gates](./release-checklist.md) · [Back to README](../README.md)

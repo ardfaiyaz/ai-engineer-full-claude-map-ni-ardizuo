@@ -1,73 +1,27 @@
-# 📥 Installation guides
-
-These are short, **Windows-first** guides. Every tool gets its own page, official download, recommended method, verification command, and common fixes.
-
-<br />
-
-## 📄 Required for most users
-
-| Guide | Verification |
-| :--- | :--- |
-| [Windows and PowerShell](./windows-powershell.md) | `$PSVersionTable.PSVersion` |
-| [Git](./git.md) | `git --version` |
-| [Claude Code CLI](./claude-code.md) | `claude --version` |
-| [Node.js + npm](./nodejs-npm.md) | `node -v; npm -v` |
-
-<br />
-
-## 📄 Select only what you need
-
-| Guide | Use case |
-| :--- | :--- |
-| [Python](./python.md) | Python scripts and development |
-| [uv / uvx](./uv.md) | Python MCP launchers |
-| [GitHub CLI](./github-cli.md) | GitHub authentication |
-| [Docker Desktop](./docker.md) | Container-based MCPs |
-| [WSL](./wsl.md) | Linux tools on Windows |
-| [Obsidian](./obsidian.md) | Optional local knowledge vault |
-| [Claude Map](./claude-map.md) | Optional localhost dashboard |
-
-<br />
-
-**Before connecting providers:** read [API keys and PowerShell](../security/api-keys-and-powershell.md). Installing the executable is not the same as connecting a service.
-
-[Back to prerequisites](../prerequisites.md) · [Documentation hub](../README.md)
-
-<br />
-
-## 📄 Original Ardizuo development pack
-
-[Install 28 reviewed global Claude Code assets](./ardizuo-development-pack.md). This is optional and separate from external plugin/MCP installation.
-
-<br />
-
-## 📥 Complete guided setup
-
-[Full installation — one orchestrator and optional integrations](./full-setup.md).
-
-<br />
-
-## 🤖 Agent framework
-
-[SuperClaude (20 agents and sc commands)](./superclaude.md).
-
-<br />
-
-## ☑️ Verify everything
-
-[30-step install and end-to-end checklist](./verification-checklist.md).
+# 📥 Installation guide index
 
 
-## ☑️ What the public installer really reproduces
-
-The reference machine has **21 agent files, 62 direct skill definitions, 31 executable command files plus one `README.md`, 12 enabled plugins and nine target user MCP servers**. The public installer does **not yet** exactly reproduce all of those on a fresh account. See the [release coverage matrix](reproducibility-matrix.md) for default, optional, provider-authenticated, and blocked items. Never publish personal provider configuration or private vault content.
+Start with **[the five-step quick start](../../START-HERE.md)**. It contains the recommended copy-and-paste commands. Read individual pages only if a prerequisite or provider needs extra attention.
 
 
-## ☑️ Inspect a real install without touching it
-
-Use the [read-only installed-layer verification](./installed-layer-audit.md) to check which expected files, hook registrations, and vault templates actually landed in your chosen Claude configuration. It does not claim that provider authentication or skill execution succeeded.
+## ✅ Start here
 
 
-## 🔎 Trace exact local skills without republishing them
+| Need | Guide |
+| --- | --- |
+| All prerequisite install commands | [Windows command index](../prerequisites.md) |
+| Complete setup and existing-configuration conflicts | [Full setup](./full-setup.md) |
+| Plugin installation and verification | [12-plugin catalog](../../integrations/plugins/README.md) |
+| MCP registration and credentials | [Nine-MCP catalog](../../integrations/mcp/README.md) |
+| Optional Claude Map | [Claude Map commands](./claude-map.md) |
+| Optional Obsidian | [Obsidian](./obsidian.md) |
 
-Use the [read-only direct skill origin and dependency checker](./exact-local-origin-review.md) to investigate the 17 unverified direct skills, six publisher source leads and supporting files on the reference machine. This neither enables additional skills nor authorizes third-party redistribution.
+
+## 🛠️ Advanced reference (only if needed)
+
+
+[Pinned skills](./pinned-skills.md) · [Pinned SuperClaude](./pinned-superclaude.md) · [Existing-setup conflicts](./scenario-playbook.md) · [Reference coverage](./reproducibility-matrix.md) · [Exact local-source review](./exact-local-origin-review.md) · [Rollback limits](./installed-layer-audit.md)
+
+The fresh installer does not automatically recreate private credentials, all 62 source-machine skill files or the Development Hub overlay.
+
+[Documentation home](../README.md)

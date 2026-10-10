@@ -1,18 +1,19 @@
 # 📥 Install with any capable AI assistant
 
+
 **Copy the prompt below into Claude Code, Codex or an AI with computer/terminal access.** If your AI cannot access your PC, it must provide manual steps rather than claiming it installed anything.
 
-<br />
 
 ## 📄 Before you paste the prompt
+
 
 1. Install [Claude Code](./docs/installation/claude-code.md), [Git](./docs/installation/git.md), [Python](./docs/installation/python.md) and [Node/npm](./docs/installation/nodejs-npm.md).
 2. Clone this GitHub repository and open the **local clone** in your AI assistant.
 3. Review [security](./SECURITY.md) and [the Full installer guide](./docs/installation/full-setup.md).
 
-<br />
 
 ## 📄 Copy this prompt
+
 
 > Help me install **AI Engineer Full Claude Map ni Ardizuo** globally on my Windows machine from this cloned repository.
 >
@@ -28,9 +29,9 @@
 > 10. Never commit/push/deploy, edit projects, or write Obsidian notes without separate approval. No social-media integrations.
 > 11. Summarize installed, configured, connected, blocked and manual steps. Provide safe rollback guidance.
 
-<br />
 
 ## ⌨️ If the AI cannot run commands
+
 
 It should walk you through the exact [PowerShell steps](./docs/installation/full-setup.md) and wait for pasted command results. It must never claim remote access to your computer.
 
@@ -39,11 +40,13 @@ It should walk you through the exact [PowerShell steps](./docs/installation/full
 
 ## ☑️ Audit reference completeness before release
 
+
 Ask the assistant to execute `python scripts/coverage-doctor.py --json` and compare the **literal names and statuses** for all 21 agents, 62 global skills, 32 commands, 12 plugins and nine MCP servers. Treat `cached-unconfirmed` and `missing` as uninstalled. Do not guess that SuperClaude, plugins or native commands include a specific file without verifying it.
 
 When a file exists only on your personal machine, follow [private source review](./docs/installation/private-source-migration.md) first. Never use `settings.json`, `.claude.json`, provider caches, session transcripts or Obsidian notes as migration input. The external provider must prompt for its own account credentials.
 
 
 ## ☑️ Inspect a real install without touching it
+
 
 Use the [read-only installed-layer verification](./docs/installation/installed-layer-audit.md) to check which expected files, hook registrations, and vault templates actually landed in your chosen Claude configuration. It does not claim that provider authentication or skill execution succeeded.

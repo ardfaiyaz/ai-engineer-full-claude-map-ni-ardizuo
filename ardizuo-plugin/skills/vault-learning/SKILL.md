@@ -4,7 +4,9 @@ description: Prepare verified software development lessons, architectural decisi
 disable-model-invocation: true
 ---
 
+
 # 📝 Vault Learning
+
 
 Vault location:
 `${CLAUDE_DEV_VAULT}` when set; otherwise `$HOME/Documents/Claude-Dev-Vault`. Resolve the path at runtime.

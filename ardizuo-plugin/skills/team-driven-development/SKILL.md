@@ -4,7 +4,9 @@ description: Coordinate small independent software development tasks using exist
 disable-model-invocation: true
 ---
 
+
 # 📄 Team Driven Development
+
 
 This is an original local development-focused adapter, not an official third-party skill.
 

@@ -1,5 +1,6 @@
 # 🔄 Ardizuo development workflow baseline
 
+
 Apply this as a portable user-level development rule; project-specific instructions may be stricter.
 
 1. **Triage:** clarify goal; inspect repository and existing solutions before changing files.

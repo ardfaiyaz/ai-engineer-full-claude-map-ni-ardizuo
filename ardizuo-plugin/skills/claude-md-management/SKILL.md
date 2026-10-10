@@ -4,7 +4,9 @@ description: Audit global and project CLAUDE.md instructions for conflicts, dupl
 disable-model-invocation: true
 ---
 
+
 # 📄 Claude Md Management
+
 
 This is an original local development-focused adapter, not an official third-party skill.
 

@@ -1,8 +1,8 @@
 # 🤖 Agent layer
 
+
 The reference installation lists **21 global agent names**: 20 provided by the upstream [SuperClaude Framework](../../installation/superclaude.md) and one original `diagram-architect` agent.
 
-<br />
 
 [All agent names and origins](../coverage.md) · [Diagram architect](./diagram-architect.md)
 

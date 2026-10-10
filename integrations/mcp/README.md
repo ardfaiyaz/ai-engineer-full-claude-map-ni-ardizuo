@@ -1,50 +1,88 @@
-# 🔌 MCP integration catalog
-
-**These are the nine user-scoped server names from the author's reference environment.** The current Core bootstrap does not install or authenticate any of them.
-
-<br />
-
-## 📄 Pick a provider
-
-| Individual guide | Reference transport | Core install status |
-| :--- | :--- | :--- |
-| [Serena](./serena.md) | `stdio` | Reference only |
-| [Sequential Thinking](./sequential-thinking.md) | `stdio` | Reference only |
-| [Chrome DevTools MCP](./chrome-devtools.md) | `stdio` | Reference only |
-| [Tavily](./tavily.md) | `stdio` | Reference only |
-| [Morph MCP](./morph-mcp.md) | `stdio` | Reference only |
-| [Supabase](./supabase.md) | `http` | Reference only |
-| [Figma](./figma.md) | `http` | Reference only |
-| [Vercel](./vercel.md) | `http` | Reference only |
-| [GitHub MCP](./github.md) | `stdio` | Reference only |
-
-<br />
-
-## 📥 Recommended setup flow
-
-1. Read [Claude Code's official MCP guide](https://code.claude.com/docs/en/mcp).
-2. Choose a provider and follow its dedicated page.
-3. Register at **user scope** only if you want it across all projects.
-4. Prefer provider OAuth/browser sign-in over static keys; follow [API key safety](../../docs/security/api-keys-and-powershell.md).
-5. Check `claude mcp list` and Claude Code `/mcp`. A configured item is **not proof of connectivity**.
-
-**Do not copy anyone else's `.claude.json`, MCP bearer tokens, environment blocks, personal Docker wrappers or credentials.**
-
-<br />
-
-[Plugin catalog](../plugins/README.md) · [Requirements](../../docs/prerequisites.md) · [Docs hub](../../docs/README.md)
+# 🔌 Existing Claude Code MCP servers
 
 
-## ⌨️ Seven supported registration commands, two account-specific steps
+This project targets **nine user-scoped MCP registrations**. **Registered**, **connected** and **authenticated** are different states. Never copy another person's `.claude.json` or credentials.
 
-The All Layers installer can now **attempt** public registrations for Serena, Sequential Thinking, Chrome DevTools, Supabase (read-only), Figma, Vercel, and the [official GitHub MCP Docker OAuth flow](./github.md). Tavily and Morph remain manual credential-dependent setups.
 
-No MCP connector is considered authenticated by merely returning exit code zero. GitHub Docker OAuth will prompt for browser login on first use. Supabase, Figma and Vercel may also need account consent in Claude Code.
+## 🚀 Recommended: register supported MCPs
+
+
+From **Windows PowerShell** in the cloned repository:
 
 ```powershell
-.\scripts\install-all.ps1 -External -Mcps          # dry run
-.\scripts\install-all.ps1 -Apply -External -Mcps   # user-approved registration
+# Preview; no MCP settings are changed.
+.\scripts\install-all.ps1 -External -Mcps
+
+# Register missing servers with supported public commands.
+.\scripts\install-all.ps1 -Apply -External -Mcps
+
+# Inspect registrations and live connection indications.
 claude mcp list
 ```
 
-Use [exact reference coverage](../../docs/components/exact-coverage.md) to audit the configured names and then verify live status in `/mcp`.
+Tavily and Morph are deliberately **manual** because they need private credentials. The installer does not guess or embed API keys. GitHub's Docker option requires a running Docker Desktop instance and an unused port 8085.
+
+
+## 📋 Included MCP names
+
+
+| MCP | Transport | Installation | What it provides |
+| --- | --- | --- | --- |
+| `serena` | `stdio` | Supported registration | Code navigation and semantic editing (uvx) |
+| `sequential-thinking` | `stdio` | Supported registration | Structured sequential reasoning (npx) |
+| `chrome-devtools` | `stdio` | Supported registration | Browser inspection and debugging (npx) |
+| `tavily` | `stdio` | Guided/manual | Search MCP; requires a provider API key |
+| `morph-mcp` | `stdio` | Guided/manual | Morph MCP; requires provider credentials |
+| `supabase` | `http` | Supported registration | Read-only Supabase project access (OAuth) |
+| `figma` | `http` | Supported registration | Figma integration (OAuth) |
+| `vercel` | `http` | Supported registration | Vercel account and project tools (OAuth) |
+| `github` | `stdio` | Supported registration | GitHub tools through Docker OAuth and free loopback port 8085 |
+
+
+## ⌨️ Individual registration commands
+
+
+These are the exact supported public commands from `setup/full-stack.json`. Run **only for servers that aren't already registered**. Confirm installed package publishers before launching them.
+
+```powershell
+# serena — register only when missing
+claude mcp add --scope user serena -- uvx --from git+https://github.com/oraios/serena serena start-mcp-server --context ide-assistant
+
+# sequential-thinking — register only when missing
+claude mcp add --scope user sequential-thinking -- npx -y @modelcontextprotocol/server-sequential-thinking
+
+# chrome-devtools — register only when missing
+claude mcp add --scope user chrome-devtools -- npx -y chrome-devtools-mcp@latest
+
+# supabase — register only when missing
+claude mcp add --transport http --scope user supabase "https://mcp.supabase.com/mcp?read_only=true"
+
+# figma — register only when missing
+claude mcp add --transport http --scope user figma https://mcp.figma.com/mcp
+
+# vercel — register only when missing
+claude mcp add --transport http --scope user vercel https://mcp.vercel.com
+
+# github — register only when missing
+claude mcp add --scope user github -e GITHUB_OAUTH_CALLBACK_PORT=8085 -- docker run -i --rm -p 127.0.0.1:8085:8085 -e GITHUB_OAUTH_CALLBACK_PORT ghcr.io/github/github-mcp-server
+```
+
+For **Tavily** or **Morph**, use your own account's official MCP configuration flow, then check:
+
+```powershell
+claude mcp list
+claude mcp get tavily
+claude mcp get morph-mcp
+```
+
+**Do not paste API keys into shell commands, issue reports or GitHub commits.** Use your provider's supported authentication and secure environment configuration. Provider instructions: [Tavily](https://docs.tavily.com/documentation/mcp) · [Morph](https://docs.morphllm.com).
+
+
+## ✅ After registration
+
+
+Open Claude Code and use `/mcp` to complete sign-in and inspect server status. Test a permitted read-only call before claiming an integration works. A dashboard badge is not connection proof.
+
+To remove an unwanted server, first inspect `claude mcp get <name>` and then use `claude mcp remove <name>` only for that server.
+
+[Plugin catalog](../plugins/README.md) · [Full setup](../../docs/installation/full-setup.md) · [Credential safety](../../docs/security/api-keys-and-powershell.md)

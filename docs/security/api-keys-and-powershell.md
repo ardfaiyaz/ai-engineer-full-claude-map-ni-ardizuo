@@ -1,10 +1,11 @@
 # 🛡️ API keys, OAuth, and PowerShell privacy
 
+
 **Read this before connecting MCP servers or provider plugins.** You usually do not need an API key to use the Claude Code subscription sign-in flow. Other providers may require OAuth, API keys or organization permissions.
 
-<br />
 
 ## 🛡️ 1. Choose the safer authentication method
+
 
 | Preferred approach | Best for | Why |
 | :--- | :--- | :--- |
@@ -15,9 +16,9 @@
 
 **Never** commit credentials, paste live keys into an AI prompt, or add them to command-line flags where command history can record them.
 
-<br />
 
 ## 📄 2. Getting a provider key (only if needed)
+
 
 Open the provider's **official console** and use its API or developer section. Choose minimal scopes, development/test environment, and an expiry if available. Some tools may offer OAuth instead and should use that first.
 
@@ -36,9 +37,9 @@ Open the provider's **official console** and use its API or developer section. C
 
 MCPs that support browser sign-in often **do not need any manual API token**.
 
-<br />
 
 ## 💻 3. Mask a key while typing (PowerShell 5.1 compatible)
+
 
 `Read-Host -AsSecureString` hides the *input*. But environment variables are **ordinary strings**, not a secure vault. The value can exist in process memory and be read by sufficiently privileged software.
 
@@ -64,9 +65,9 @@ Remove-Item Env:MY_SERVICE_API_KEY -ErrorAction SilentlyContinue
 
 **Limitations:** The string exists unencrypted in the current PowerShell process and is inherited by child processes while set. It is **not invisible** to the operating system, debuggers, administrators or processes with appropriate access. For stronger protection use provider OAuth or an application credential store, not environment variables.
 
-<br />
 
 ## 📄 4. What NOT to do
+
 
 ```powershell
 # DO NOT put a real key in these examples:
@@ -79,9 +80,9 @@ Do not put long-lived secrets in `$PROFILE`, `settings.json`, public `.mcp.json`
 
 For persistent credentials, follow the provider's OAuth/credential-store instructions. If a service only supports static keys, document exactly where it stores them and assess whether you trust that storage before continuing.
 
-<br />
 
 ## 🛡️ 5. Verify safely without revealing the value
+
 
 ```powershell
 # Only checks if the variable is populated. It does not print its content.
@@ -93,18 +94,18 @@ claude mcp list
 
 Inside Claude Code, open `/mcp` to inspect sign-in requirements. A configured entry is **not** the same as an authenticated, working server.
 
-<br />
 
 ## 📄 6. If a key was exposed
+
 
 1. **Revoke or rotate it immediately** in the provider console.
 2. Check Git history, CI logs, shell history, screenshots, pasted prompts and exposed files.
 3. Replace the credential in trusted storage and reduce its permissions.
 4. If it was committed, follow your organization's incident process; deleting a file in a later commit does **not** remove the original secret from Git history.
 
-<br />
 
 ### 📖 Official references
+
 
 - [PowerShell: environment variable scopes](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_environment_variables)
 - [Microsoft: Read-Host and secure input](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/read-host)

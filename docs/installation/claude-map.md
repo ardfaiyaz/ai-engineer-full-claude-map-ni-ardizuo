@@ -1,35 +1,63 @@
-# 🖥️ Claude Map dashboard (optional)
+# 🖥️ Claude Map (optional)
 
-**Why you might need it:** Local-only visualization of Claude Code configuration and the workflow architecture.
 
-<br />
+Claude Map is an **upstream npm application** for browsing local Claude Code configuration. Ardizuo's five-stage Development Hub is a **separate, version-sensitive overlay**.
 
-## 📁 1. Get it from the official source
 
-[Claude Map dashboard (optional) — official installation page](https://github.com/shamim0902/claude-map)
+## 📥 Install upstream Claude Map — Windows PowerShell
 
-This repository **does not yet distribute** the creator's tested dashboard patch. Do not copy the author's globally installed `node_modules` or modified vendor files into your own device.
 
-Read the upstream Claude Map repository and its supported installation instructions. After a versioned, attributed patch is packaged, its guide will give exact install, localhost binding, rollback and compatibility steps.
-
-<br />
-
-## ☑️ 2. Verify
+First install [Node.js](./nodejs-npm.md). The existing overlay was rehearsed against upstream `claude-map@1.2.3`:
 
 ```powershell
-node --version
-npm --version
+npm.cmd install --global claude-map@1.2.3
+claude-map --version
+claude-map -p 8888
 ```
 
-<br />
-
-## 📄 3. If something goes wrong
-
-If an existing local dashboard shows missing tools, remember it may only scan certain folders; use `claude plugin list`, `/skills`, and `claude mcp list` as the live sources. Never expose the dashboard to the public network or return raw MCP credentials.
+Then open <http://localhost:8888>. Use `Ctrl+C` to stop the server.
 
 
-[Dashboard packaging status](../../dashboard/claude-map/README.md)
+## ⌨️ Bash (macOS/Linux with Node.js and npm)
 
-<br />
 
-[All installation guides](./README.md) · [Prerequisites](../prerequisites.md) · [Troubleshooting](../troubleshooting.md)
+```bash
+npm install --global claude-map@1.2.3
+claude-map -p 8888
+```
+
+Bash can launch **upstream** Claude Map, but Ardizuo's current package patch/testing workflow is **Windows-first**. Do not assume the dashboard overlay has been verified on Linux or macOS.
+
+
+## 🧪 Add the existing five-stage Development Hub
+
+
+In a separate PowerShell window, from the cloned Ardizuo repository:
+
+```powershell
+# Confirm the local Claude Map files and check the first scaffold.
+python .\scripts\install-dashboard.py
+
+# Rehearse all five overlays against disposable copies first.
+python .\scripts\install-dashboard.py --rehearse
+```
+
+If rehearsal passes, stop Claude Map, back up your **complete** globally installed `claude-map` directory, and only then consider:
+
+```powershell
+# Review and approve the live modification separately.
+python .\scripts\install-dashboard.py --apply
+claude-map -p 8888
+```
+
+Open <http://localhost:8888/?tab=devhub>. **`-Apply -All` does not patch the live dashboard automatically.** A successful rehearsal checks patch compatibility and JavaScript syntax, not runtime browser rendering.
+
+
+## 🛠️ Common issues
+
+
+- If `node-pty` cannot build or the terminal is broken, check [upstream installation guidance](https://github.com/shamim0902/claude-map) for your installed Node.js version.
+- If an overlay conflicts with upstream files, **stop**; do not repeatedly apply the patch. Use the full [dashboard backup and rehearsal procedure](../../dashboard/claude-map/README.md).
+- Keep the dashboard bound to localhost and never expose MCP secrets or vault notes.
+
+[Quick start](../../START-HERE.md) · [Full dashboard setup](../../dashboard/claude-map/README.md)

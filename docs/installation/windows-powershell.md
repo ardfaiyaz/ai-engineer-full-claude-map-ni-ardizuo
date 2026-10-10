@@ -1,40 +1,35 @@
-# 💻 Windows & PowerShell
+# 💻 Windows PowerShell
 
-**Why you might need it:** Windows PowerShell 5.1 is sufficient for the bootstrap scripts. Windows 10/11 is the supported v1 target.
 
-<br />
+Windows 10/11 with Windows PowerShell 5.1 is the supported installation target. You **do not need an administrator terminal** for Ardizuo's user-scoped files.
 
-## 📁 1. Get it from the official source
 
-[Windows & PowerShell — official installation page](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows)
+## ✅ Check your shell
 
-Use the built-in **Windows PowerShell** or Windows Terminal. No administrator terminal is needed for a user-scoped installation.
 
 ```powershell
 $PSVersionTable.PSVersion
-$HOME
-Get-Command winget -ErrorAction SilentlyContinue
+winget --version
 ```
 
-If you want current PowerShell 7, follow Microsoft's official installer, but **do not replace** Windows PowerShell 5.1 or change execution policy system-wide for this repo.
-
-<br />
-
-## ☑️ 2. Verify
+PowerShell 7 is optional. To install it with Windows Package Manager:
 
 ```powershell
-$PSVersionTable.PSVersion
-[Environment]::OSVersion.VersionString
+winget install --id Microsoft.PowerShell --exact --source winget
 ```
 
-<br />
-
-## 📄 3. If something goes wrong
-
-Scripts blocked? Review the script first and run it with a **process-only** policy if your environment permits it. Do not set permanent unrestricted policy. [Microsoft execution policy reference](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_execution_policies).
+Do not change the system-wide execution policy to `Unrestricted`. If scripts are blocked, review them first and follow your organization's policy.
 
 
+## 🛠️ If script execution is restricted
 
-<br />
 
-[All installation guides](./README.md) · [Prerequisites](../prerequisites.md) · [Troubleshooting](../troubleshooting.md)
+For a single *reviewed* script, a new **process-scoped** PowerShell can be used if your organization permits it:
+
+```powershell
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scripts\install-all.ps1 -All
+```
+
+This is a **preview** only because `-Apply` is omitted. Avoid permanent policy changes.
+
+[Quick start](../../START-HERE.md)

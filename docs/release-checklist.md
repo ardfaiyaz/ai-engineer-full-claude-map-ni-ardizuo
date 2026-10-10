@@ -1,8 +1,11 @@
 # ☑️ Release and installation checklist
 
+
 **Two different questions:** Does the **public package** install its supported components? Does it **exactly clone** the maintainer's private device? The first has passed an isolated Windows installation. The second has unresolved sources and cannot honestly be called complete.
 
+
 ## 📦 Public package — verified scope
+
 
 - [x] **21 agent definitions:** one Ardizuo-owned and 20 pinned upstream.
 - [x] **36 default direct skill definitions:** 16 Ardizuo-owned and 20 pinned publisher prompts; five different upstream versions require opt-in.
@@ -13,7 +16,9 @@
 - [x] Installer previews first, avoids overwriting different files, and leaves credentials out of the package.
 - [x] Markdown uses emoji headings and obsolete sprint handoff notes were removed.
 
+
 ## 🖥️ New Windows device — short acceptance check
+
 
 - [ ] Git, Python, Node/npm and Claude Code resolve in a fresh PowerShell session.
 - [ ] `scripts/install-all.ps1 -All` previews expected changes and identifies any conflicts.
@@ -23,7 +28,9 @@
 - [ ] In Claude Code, inspect `/skills`, `/hooks`, and `/mcp`; run **one** low-risk agent or skill action if desired.
 - [ ] If using Claude Map, run the *separate* dashboard rehearsal and verify the five stages in the local browser.
 
+
 ## ⚠️ Known limits — not hidden blockers
+
 
 - **Not a byte-for-byte clone:** 17 separately sourced direct skills and four unknown-origin skill files lack approved full-source reproduction.
 - **Different upstream content:** five skill and 11 SuperClaude command variants differ from the source machine, so opt-in versions are not called exact copies.
@@ -32,7 +39,9 @@
 - **Runtime:** source presence, CLI exit code and configured status do not demonstrate executed agent delegation, hook side effects or completed tasks.
 - **Removal:** there is no universally safe automatic uninstall for all third-party packages. Keep personal backups and use the provider's instructions.
 
+
 ## 🛡️ Maintainer's final publication gate
+
 
 - [ ] Keep `main` clean: `git status` and `git diff --check`.
 - [ ] Run **one concise check** before a release: `python -m unittest discover -s tests -q`.

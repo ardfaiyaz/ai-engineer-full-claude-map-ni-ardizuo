@@ -1,35 +1,42 @@
-# 📄 Node.js and npm
+# 🟩 Node.js and npm
 
-**Why you might need it:** Runs JavaScript-based MCPs, Claude Map and many development tools.
 
-<br />
+Node.js is needed for JavaScript MCP servers and Claude Map. npm is included with Node.js.
 
-## 📁 1. Get it from the official source
 
-[Node.js and npm — official installation page](https://nodejs.org/en/download)
+## 📥 Windows PowerShell — install the LTS release
 
-**Recommended for beginners:** install the current **LTS** release from Node.js. npm ships with Node.js. If you need multiple versions, use a Windows Node version manager instead; see [npm guidance](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm/).
 
-Avoid copying random `npm install -g` commands from untrusted sources. Review the package and version first.
+```powershell
+winget install --id OpenJS.NodeJS.LTS --exact --source winget
+```
 
-<br />
-
-## ☑️ 2. Verify
+Reopen PowerShell, then verify:
 
 ```powershell
 node --version
-npm --version
-npm config get prefix
+npm.cmd --version
+npx.cmd --version
 ```
 
-<br />
 
-## 📄 3. If something goes wrong
-
-If `npm` is not recognized after installing Node.js, reopen PowerShell. If PowerShell reports that `npm.ps1` is blocked, try `npm.cmd --version` first; do not weaken system security policy as a default.
+## ⌨️ Bash alternative
 
 
+On macOS **with Homebrew already installed**:
 
-<br />
+```bash
+brew install node
+node --version
+npm --version
+```
 
-[All installation guides](./README.md) · [Prerequisites](../prerequisites.md) · [Troubleshooting](../troubleshooting.md)
+On Linux, install a supported Node.js LTS version using your distribution's official package instructions or an existing Node version manager. A Windows `.ps1` installer cannot be run from Bash.
+
+
+## 🛠️ If npm does not start
+
+
+If Windows PowerShell blocks `npm.ps1`, call `npm.cmd` / `npx.cmd` rather than changing the system-wide execution policy. If `node` cannot be found, reopen the shell. See [Node.js releases](https://nodejs.org/en/download).
+
+[Installation index](./README.md) · [Claude Map](./claude-map.md)

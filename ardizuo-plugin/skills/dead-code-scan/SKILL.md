@@ -4,7 +4,9 @@ description: Investigate potentially unused code, imports, dependencies and unre
 disable-model-invocation: true
 ---
 
+
 # 📄 Dead Code Scan
+
 
 Use the existing dead-code-check hook as an advisory signal.
 

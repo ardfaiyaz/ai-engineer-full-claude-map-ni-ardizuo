@@ -1,26 +1,55 @@
-# 🧩 Original Ardizuo skills
+# 🧩 Built-in Ardizuo skill catalog
 
-**16 original global skill files.** Installed with the development pack, not third-party plugin caches.
 
-<br />
+This repository includes **16 Ardizuo-authored skills**. Their real Claude Code instructions live in `ardizuo-plugin/skills/<name>/SKILL.md`; this catalog replaces 16 repetitive installation pages.
 
-- [reuse-audit](./reuse-audit.md) — Find reusable implementations before duplicating code.
-- [dead-code-scan](./dead-code-scan.md) — Identify candidates for safe dead-code removal.
-- [vault-learning](./vault-learning.md) — Summarize reusable learnings with explicit note approval.
-- [claude-md-management](./claude-md-management.md) — Review repository and global Claude instruction files.
-- [clean-code-typescript](./clean-code-typescript.md) — Maintain clean typed JavaScript/TypeScript boundaries.
-- [code-splitting](./code-splitting.md) — Review lazy loading and bundle decomposition.
-- [fix-build](./fix-build.md) — Diagnose actual build failures and verify fixes.
-- [gauge-improvements](./gauge-improvements.md) — Measure baseline and after-state improvements.
-- [humanizer](./humanizer.md) — Improve readability while preserving technical meaning.
-- [pragmatic-code-guidelines](./pragmatic-code-guidelines.md) — Favor scoped changes and measurable simplicity.
-- [react-native-best-practices](./react-native-best-practices.md) — Review mobile navigation, rendering, and data flow.
-- [root-cause-analysis](./root-cause-analysis.md) — Investigate causes before treating symptoms.
-- [ship-learn-next](./ship-learn-next.md) — Summarize verified delivery evidence and follow-up work.
-- [team-driven-development](./team-driven-development.md) — Define task ownership for coordinated agents.
-- [technical-style-guide](./technical-style-guide.md) — Improve technical writing and documentation organization.
-- [test-fixing](./test-fixing.md) — Find and resolve broken test expectations and tooling.
 
-<br />
+## 📋 What each skill is for
 
-[Back to component catalog](../README.md)
+
+| Skill | Purpose |
+| --- | --- |
+| `claude-md-management` | Review project and global instruction files safely. |
+| `clean-code-typescript` | Keep TypeScript code readable and well typed. |
+| `code-splitting` | Identify sensible lazy-loading and bundle boundaries. |
+| `dead-code-scan` | Review likely unused code and request approval before removal. |
+| `fix-build` | Diagnose a failing build and verify the smallest fix. |
+| `gauge-improvements` | Compare improvements against measured baselines. |
+| `humanizer` | Improve writing clarity while retaining technical meaning. |
+| `pragmatic-code-guidelines` | Prefer a small, maintainable implementation. |
+| `react-native-best-practices` | Review React Native structure, performance and state. |
+| `reuse-audit` | Check for existing reusable code before implementing another version. |
+| `root-cause-analysis` | Find the cause of a problem before changing code. |
+| `ship-learn-next` | Summarize verified delivery and follow-up tasks. |
+| `team-driven-development` | Define explicit owners and boundaries for parallel work. |
+| `technical-style-guide` | Keep technical documentation consistent and concise. |
+| `test-fixing` | Investigate tests and repair genuine failures. |
+| `vault-learning` | Capture approved, reusable lessons in the local vault. |
+
+
+## 📥 Install the complete set
+
+
+From the cloned repository in **Windows PowerShell**:
+
+```powershell
+# Preview the local pack without installing any plugins or MCPs.
+.\scripts\install-all.ps1
+
+# Apply only when the preview shows no conflicts.
+.\scripts\install-all.ps1 -Apply
+```
+
+These skills are also included when you choose the guided `-Apply -All` install. Existing different files are **never overwritten**.
+
+
+## ✅ Verify and use
+
+
+```powershell
+python .\scripts\verify-installed-layers.py --strict-local
+```
+
+In Claude Code, use `/skills`. This verifies file installation, **not** whether an individual skill executed. To see all third-party source-matched skills, read [pinned skills](../../installation/pinned-skills.md).
+
+[Component catalog](../README.md) · [Quick start](../../../START-HERE.md)

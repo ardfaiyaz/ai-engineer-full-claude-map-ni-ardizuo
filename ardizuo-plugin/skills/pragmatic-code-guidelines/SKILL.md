@@ -4,7 +4,9 @@ description: Apply concise evidence-based code quality principles to software ch
 disable-model-invocation: true
 ---
 
+
 # 📖 Pragmatic Code Guidelines
+
 
 This is an original local development-focused adapter, not an official third-party skill.
 

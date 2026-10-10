@@ -1,35 +1,38 @@
-# 📝 Obsidian
+# 📝 Obsidian (optional)
 
-**Why you might need it:** Optional local Markdown knowledge vault for sessions, ADRs, PRDs and reusable learning notes.
 
-<br />
+Use Obsidian to view the **empty local vault templates** created by this repository. Personal vault notes are never included.
 
-## 📁 1. Get it from the official source
 
-[Obsidian — official installation page](https://obsidian.md/download)
+## 📥 Windows PowerShell
 
-Install Obsidian from the official download page, launch it and choose **Open folder as vault**. Select a new dedicated directory you control, such as `Documents\Claude-Dev-Vault`.
-
-The public repository provides empty templates only. **Do not automatically point it at your private vault or copy existing notes into a public repo.**
-
-<br />
-
-## ☑️ 2. Verify
 
 ```powershell
-Get-Command obsidian -ErrorAction SilentlyContinue
+winget install --id Obsidian.Obsidian --exact --source winget
+```
+
+Then launch Obsidian and choose **Open folder as vault**, selecting `Documents\Claude-Dev-Vault` (or the separate vault path you approved).
+
+
+## ⌨️ Bash alternative
+
+
+On macOS with Homebrew:
+
+```bash
+brew install --cask obsidian
+```
+
+
+## ✅ Verify the template directory
+
+
+From your cloned Ardizuo repository:
+
+```powershell
 Test-Path (Join-Path $HOME 'Documents\Claude-Dev-Vault')
 ```
 
-<br />
+Obsidian may not expose a CLI command on `PATH`; check the graphical application. Do not point a public demo at a private vault.
 
-## 📄 3. If something goes wrong
-
-Obsidian does not necessarily add a CLI command; if `Get-Command` finds nothing, that is not proof the desktop app is absent. Confirm in the app. Vault persistence still needs a separate approved write-and-reload test.
-
-
-[Obsidian installation help](https://obsidian.md/help/install) · [vault templates](../../vault/templates/)
-
-<br />
-
-[All installation guides](./README.md) · [Prerequisites](../prerequisites.md) · [Troubleshooting](../troubleshooting.md)
+[Vault guide](../../vault/README.md) · [Full installer](./full-setup.md)

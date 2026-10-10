@@ -1,8 +1,11 @@
 # 🔎 Identify your exact installed skills without publishing private files
 
+
 **Purpose:** close the gap between the 62 direct `SKILL.md` definitions on the reference machine and the smaller set a new user can obtain from the GitHub installer. This is **source verification**, not a new skill or plugin. Nothing gets installed or modified in Claude Code.
 
+
 ## 🗂️ What is already reproduced versus unresolved
+
 
 | Category | Names | How it is handled |
 | :-- | --: | :-- |
@@ -15,7 +18,9 @@
 
 The **17 external/unverified** names and **four unknown-origin** names are already part of your reference machine. This script does not invent or install replacements. Plugin-cached skills are not counted as direct-scope definitions.
 
+
 ## 💻 Windows: preview before using the network
+
 
 From the repository root:
 
@@ -40,7 +45,9 @@ code $report
 
 The command makes **GET requests only for pinned public** `SKILL.md` files at `raw.githubusercontent.com`; it does **not send local file bytes**. Every downloaded public file must match its pinned Git blob checksum. A public mismatch or network problem is recorded as `DOWNLOAD_OR_CHECKSUM_FAILURE`, **not** as a match. The JSON file is created once in Documents and will not overwrite an existing file. Do not save the report inside the public repository.
 
+
 ## 📖 Six current publisher leads
+
 
 These already exist as direct skill names in your Claude configuration, but their origin remains **unconfirmed until your local comparison is run**.
 
@@ -57,7 +64,9 @@ All six are pinned to immutable upstream revisions in [`setup/direct-skill-origi
 
 The other **11 external** skills remain unmapped to a reliable original source; the four unknown-source skills still remain unknown. Neither a matching name in a random GitHub repository nor a copied cached plugin definition constitutes proof of origin.
 
+
 ## 📄 Understand the report
+
 
 | Status | Meaning | Next action |
 | :-- | :-- | :-- |
@@ -70,7 +79,9 @@ The other **11 external** skills remain unmapped to a reliable original source; 
 
 `supportingFileCount` counts non-entrypoint files inside that skill folder, skipping symlinks/junctions and large irrelevant cache folders. `relativeReferenceHints`, `referenceHintsWithFiles` and `unresolvedReferenceHints` are **heuristic** indicators from textual references such as `scripts/...` or `references/...`; these aren't guaranteed runtime dependencies. Counts above 2,000 are capped and marked accordingly. No supporting file content or filenames appear in the report.
 
+
 ## 🛡️ Publishing and exact reproduction
+
 
 When the local results are available, promotion should happen in this order: confirm the true publisher/revision; inspect license and any special per-skill terms; compare your local bytes; audit required scripts/assets and prerequisites; add **only an allowed upstream installation method**; test in an empty Claude config; finally test one real task. Locally customized or original files need separate review and explicit approval, not forced overwrites.
 

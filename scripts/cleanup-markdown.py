@@ -43,6 +43,7 @@ EMOJI = {
     'wrench': '🛠️', 'broom': '🧹',
     # Original README-only Lucide set, also presentation-only.
     'book': '📖', 'network': '🌐', 'shield': '🛡️',
+    'compass':'🧭', 'node':'🟩', 'snake':'🐍', 'whale':'🐳', 'penguin':'🐧', 'hook':'🪝', 'flask':'🧪',
 }
 TAG = re.compile(r'<img\s+[^>]*?\bsrc=["\'](?P<src>[^"\']+)["\'][^>]*>', re.I)
 MD_IMAGE = re.compile(r'!\[[^\]\n]*\]\((?P<src>[^)]+\.svg)\)')
@@ -108,40 +109,12 @@ def transform(text: str):
         lines[i] = new
     return ''.join(lines)
 
-README_MAINTENANCE = r"""
-## 🧹 Documentation cleanup and maintenance
-
-The documentation uses **emoji headings**. Skills, commands, rules, and Obsidian templates
-need no additional presentation SVGs after installation. Keep the permanent install guides,
-source definitions, and license/security notices; retire dated sprint and hotfix handoff notes.
-
-From the repository root, use:
-
-```powershell
-python .\scripts\cleanup-markdown.py          # preview only
-python .\scripts\cleanup-markdown.py --apply  # update docs; remove only known obsolete files
-python .\scripts\cleanup-markdown.py --check  # verify complete
-python -m unittest discover -s tests -v
-```
-
-The cleanup **never modifies your live Claude installation**, third-party plugin caches,
-API credentials, or existing Obsidian notes. It preserves Markdown frontmatter, fenced code
-examples, source definitions and the project banner. Check `git diff --stat` and
-`git diff --check` before committing the result.
-
-"""
-
 def transform_document(path: Path, text: str):
     text = transform(text)
     if path.as_posix() == 'THIRD_PARTY_NOTICES.md':
         # The ISC attribution block is removed only because the project stops
         # distributing these presentation SVGs. Do not change other notices.
         text = re.sub(r'(?ms)^\n*## 📄 Lucide icon attribution\s*\n.*?(?=^## |\Z)', '\n', text)
-    if path.as_posix() == 'README.md' and 'Documentation cleanup and maintenance' not in text:
-        where = text.find('## 🛡️ Security and licensing')
-        if where == -1:
-            raise ValueError('README security section not found; refuse automatic insertion')
-        text = text[:where] + README_MAINTENANCE.lstrip('\n') + text[where:]
     return text
 
 def plan(root: Path):

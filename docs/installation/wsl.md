@@ -1,38 +1,32 @@
-# 🗂️ Windows Subsystem for Linux (WSL)
+# 🐧 WSL (optional)
 
-**Why you might need it:** Optional Linux environment for tools that do not support Windows directly.
 
-<br />
+WSL provides a Linux shell on Windows. **The Ardizuo `.ps1` installer itself remains Windows PowerShell-first.** You do not need WSL for the main setup.
 
-## 📁 1. Get it from the official source
 
-[Windows Subsystem for Linux (WSL) — official installation page](https://learn.microsoft.com/en-us/windows/wsl/install)
+## 📥 Windows PowerShell (administrator only if required)
 
-Only install WSL when a particular integration requires it. Microsoft's installer (may require elevated PowerShell and a reboot):
 
 ```powershell
 wsl --install
 ```
 
-Follow Microsoft's instructions for selecting a distribution and creating a Linux user. For this repository's **Windows-first bootstrap**, WSL is not required.
-
-<br />
-
-## ☑️ 2. Verify
+You may need a reboot and to create a Linux user. Then verify:
 
 ```powershell
 wsl --status
 wsl --list --verbose
 ```
 
-<br />
 
-## 📄 3. If something goes wrong
-
-If WSL doesn't start, check virtualization, Windows feature requirements and the official [WSL troubleshooting guide](https://learn.microsoft.com/en-us/windows/wsl/troubleshooting).
+## ⌨️ After opening Ubuntu Bash in WSL
 
 
+```bash
+sudo apt update
+sudo apt install -y git python3 python3-venv
+```
 
-<br />
+Do not run the Windows-only `.\scripts\install-all.ps1` as a Bash command. See [Microsoft WSL guidance](https://learn.microsoft.com/en-us/windows/wsl/install).
 
-[All installation guides](./README.md) · [Prerequisites](../prerequisites.md) · [Troubleshooting](../troubleshooting.md)
+[Installation index](./README.md)

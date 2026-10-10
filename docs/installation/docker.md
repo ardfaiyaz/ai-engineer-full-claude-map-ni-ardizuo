@@ -1,35 +1,41 @@
-# 📄 Docker Desktop
+# 🐳 Docker Desktop (optional)
 
-**Why you might need it:** Needed only for container-based MCP servers or optional gateway integrations.
 
-<br />
+Only required if you choose the existing Docker-backed GitHub MCP flow. It is **not** needed for most Ardizuo files.
 
-## 📁 1. Get it from the official source
 
-[Docker Desktop — official installation page](https://docs.docker.com/desktop/setup/install/windows-install/)
+## 📥 Windows PowerShell
 
-Download Docker Desktop from Docker's official site. Check CPU virtualization, Windows requirements and supported backend first. Choose per-user installation where appropriate.
 
-Docker may use WSL 2. Install WSL only if the selected backend requires it. Be aware of [Docker Desktop licensing](https://www.docker.com/pricing/) for some business environments.
+```powershell
+winget install --id Docker.DockerDesktop --exact --source winget
+```
 
-<br />
-
-## ☑️ 2. Verify
+Launch Docker Desktop and complete its first-run setup. WSL 2 may be required for your selected backend.
 
 ```powershell
 docker --version
 docker info
 ```
 
-<br />
-
-## 📄 3. If something goes wrong
-
-`docker --version` shows only that the CLI is installed. `docker info` also checks that the daemon is available. If it fails, start Docker Desktop, confirm WSL 2, and check virtualization.
+`docker info` checks that the Docker engine is running; `docker --version` does not.
 
 
-Do not mount the entire home directory or secrets into a container unless the MCP actually requires them.
+## ⌨️ Bash alternative
 
-<br />
 
-[All installation guides](./README.md) · [Prerequisites](../prerequisites.md) · [Troubleshooting](../troubleshooting.md)
+On macOS with Homebrew:
+
+```bash
+brew install --cask docker
+```
+
+Launch Docker Desktop manually and verify with `docker info`. On Linux, follow the distro-specific [Docker Engine guide](https://docs.docker.com/engine/install/); macOS Docker Desktop and Linux Docker Engine are different products.
+
+
+## 🛡️ Security
+
+
+Docker has its own licensing and system requirements. Don't publish private home-directory mounts or tokens in MCP configuration examples.
+
+[Installation index](./README.md) · [MCP catalog](../../integrations/mcp/README.md)

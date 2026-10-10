@@ -1,56 +1,83 @@
-# 📥 Prerequisites — Windows-first
+# 🛠️ Prerequisites — command index
 
-**You do not need to install everything.** Check what you already have, then follow only the relevant guides. WSL and Docker are optional.
 
-<br />
+**Use Windows PowerShell 5.1 or newer for the supported installer.** Install only the tools your machine is missing. Links are optional help; you can copy commands here without opening another page.
 
-## 📄 Check your computer first
 
-From the repository root, open **PowerShell**:
+## 🚀 Required — Windows PowerShell
 
-```powershell
-.\scripts\doctor.ps1
-```
-
-If a command is not recognized, follow its installation guide and reopen PowerShell before retrying.
-
-<br />
-
-## 💻 Essential and optional tools
-
-| Tool | When it's needed | Open the guide |
-| :--- | :--- | :--- |
-| **Windows 10/11 + PowerShell** | Supported v1 installer platform | [Windows setup](./installation/windows-powershell.md) |
-| **Claude Code** | Required for the Claude development environment | [Claude Code CLI](./installation/claude-code.md) |
-| **Git** | Clone this repository and manage changes | [Git](./installation/git.md) |
-| **Node.js + npm** | Dashboard and many JavaScript MCP tools | [Node and npm](./installation/nodejs-npm.md) |
-| Python | Selected scripts, plugins and Python projects | [Python](./installation/python.md) |
-| uv / uvx | Selected Python MCPs such as Serena | [uv and uvx](./installation/uv.md) |
-| GitHub CLI (`gh`) | GitHub authentication and repository actions | [GitHub CLI](./installation/github-cli.md) |
-| Docker Desktop | Docker-backed MCP and optional gateway | [Docker](./installation/docker.md) |
-| Obsidian | Browse optional knowledge vault | [Obsidian](./installation/obsidian.md) |
-| WSL | Specific Linux-based development tools | [WSL](./installation/wsl.md) |
-| Local Claude Map | Optional runtime inventory/dashboard | [Claude Map](./installation/claude-map.md) |
-
-<br />
-
-## 📥 Global setup location
-
-The scripts should use `$env:CLAUDE_CONFIG_DIR` if set; otherwise, the current user's `$HOME\.claude` folder. They must not hardcode the creator's username.
 
 ```powershell
-$claudeDir = if ($env:CLAUDE_CONFIG_DIR) { $env:CLAUDE_CONFIG_DIR } else { Join-Path $HOME '.claude' }
-Write-Host "Claude configuration directory: $claudeDir"
+winget install --id Git.Git --exact --source winget
+winget install --id OpenJS.NodeJS.LTS --exact --source winget
+winget install --id Python.Python.3.13 --exact --source winget
+winget install --id Anthropic.ClaudeCode --exact --source winget
 ```
 
-**Authentication is separate from installation.** A configured MCP server can still require sign-in. See [API keys and PowerShell](./security/api-keys-and-powershell.md) and the [MCP catalog](../integrations/mcp/README.md).
+Reopen PowerShell:
 
-<br />
+```powershell
+git --version
+node --version
+npm.cmd --version
+python --version
+claude --version
+```
 
-[Next: installation guide index](./installation/README.md) · [Back to documentation](./README.md)
 
-<br />
+## 🧩 Optional tools — install only when needed
 
-## 📥 One-package installer
 
-[Read the complete setup guide](./installation/full-setup.md) to prepare your Windows prerequisites before installation. It explains when a plugin or MCP is optional, what requires authentication, and how to preview changes.
+```powershell
+# For Serena (uvx):
+winget install --id astral-sh.uv --exact --source winget
+
+# GitHub CLI / browser-based login:
+winget install --id GitHub.cli --exact --source winget
+
+# Docker-backed GitHub MCP:
+winget install --id Docker.DockerDesktop --exact --source winget
+
+# View the local Obsidian vault:
+winget install --id Obsidian.Obsidian --exact --source winget
+
+# Optional newer PowerShell:
+winget install --id Microsoft.PowerShell --exact --source winget
+```
+
+For WSL (only if you need Linux tools), `wsl --install` may require an administrator terminal and reboot.
+
+
+## 🖥️ Optional upstream Claude Map
+
+
+```powershell
+npm.cmd install --global claude-map@1.2.3
+claude-map -p 8888
+```
+
+The Ardizuo overlay is a separate compatibility-sensitive step; use [Claude Map instructions](./installation/claude-map.md).
+
+
+## ⌨️ Bash examples (macOS or Linux)
+
+
+```bash
+# If you're on macOS and already have Homebrew:
+brew install git node python uv gh
+
+# After git and npm are installed:
+git clone https://github.com/ardfaiyaz/ai-engineer-full-claude-map-ni-ardizuo.git
+cd ai-engineer-full-claude-map-ni-ardizuo
+npm install --global claude-map@1.2.3
+```
+
+The Ardizuo global installer is Windows PowerShell-first; the Bash examples only install their named upstream tools.
+
+
+## ✅ Find help for one tool
+
+
+[Git](./installation/git.md) · [Node/npm](./installation/nodejs-npm.md) · [Python](./installation/python.md) · [Claude Code](./installation/claude-code.md) · [uv](./installation/uv.md) · [GitHub CLI](./installation/github-cli.md) · [Docker](./installation/docker.md) · [WSL](./installation/wsl.md) · [Obsidian](./installation/obsidian.md)
+
+[Start the installer](../START-HERE.md)

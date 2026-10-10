@@ -1,74 +1,27 @@
-# 📖 Documentation hub
+# 📖 Documentation
 
-**Welcome.** This directory is organized so you only read what you need. Start with the tools you don't have; skip ones already installed.
 
-<br />
+Welcome! You do **not** need to read every file. Most people can install the supported setup using [the quick start](../START-HERE.md).
 
-## 📥 Install the basics
 
-[Windows requirements](./prerequisites.md) · [All installation guides](./installation/README.md)
+## 🚀 Common tasks
 
-| Start here | Why |
-| :--- | :--- |
-| [Claude Code CLI](./installation/claude-code.md) | Install the AI coding runtime and sign in |
-| [Git](./installation/git.md) | Clone projects and use worktrees |
-| [Node.js and npm](./installation/nodejs-npm.md) | Run JavaScript-based tools and MCP servers |
-| [Python](./installation/python.md) | Run Python-based tools and validations |
-| [uv and uvx](./installation/uv.md) | Launch isolated Python MCP tooling |
-| [GitHub CLI](./installation/github-cli.md) | Authenticate and work with GitHub |
 
-<br />
+| Task | Guide |
+| --- | --- |
+| Install the public Claude setup | [Start here](../START-HERE.md) |
+| Copy commands for Git, Node, Python and Claude | [Prerequisites](./prerequisites.md) |
+| Install or troubleshoot 12 plugins | [Plugin catalog](../integrations/plugins/README.md) |
+| Set up nine MCP servers | [MCP catalog](../integrations/mcp/README.md) |
+| Add Claude Map on localhost | [Dashboard](./installation/claude-map.md) |
+| Fix common errors | [Troubleshooting](./troubleshooting.md) |
 
-## 📄 Optional infrastructure
 
-[Docker](./installation/docker.md) · [WSL](./installation/wsl.md) · [Obsidian](./installation/obsidian.md) · [Claude Map](./installation/claude-map.md)
+## 📋 Reference and maintainer material
 
-<br />
 
-## 🛡️ Skills, integrations and privacy
+[Architecture](./architecture.md) · [Skill catalog](./components/skills/README.md) · [Hook catalog](./components/hooks/README.md) · [Actual coverage](./installation/reproducibility-matrix.md) · [Security](../SECURITY.md) · [Source provenance](../THIRD_PARTY_NOTICES.md)
 
-| Guide | What it covers |
-| :--- | :--- |
-| [Claude Code plugins](../integrations/plugins/README.md) | Individual guides for 12 reference plugins |
-| [MCP integrations](../integrations/mcp/README.md) | Nine server references; authentication and verification |
-| [API keys & PowerShell](./security/api-keys-and-powershell.md) | Protect and rotate credentials; temporary environment values |
-| [Windows permissions](./security/windows-permissions.md) | User-scoped installs and least-privilege operation |
-| [Troubleshooting](./troubleshooting.md) | Known install and auth problems |
-
-<br />
-
-## 📄 How the pieces fit
-
-[Architecture](./architecture.md) · [Component catalog](./components/README.md) · [Release plan](./release-checklist.md) · [Maintainer plan](./maintainer-next-steps.md)
-
-> **Assisted Full preview:** The Core rule and 28 reviewed Ardizuo files can be installed locally. The Full orchestrator attempts supported upstream packages, MCPs, hooks, Obsidian and dashboard setup after explicit approval. OAuth, three credential-dependent MCPs, and version-specific overlay testing still require manual follow-up.
+The reference machine has 21 agent files, 62 direct skill entries, 31 executable commands, 12 enabled plugins and nine registered target MCPs. Not all are reproducible by the **public** installer yet; do not claim otherwise.
 
 [Back to project README](../README.md)
-
-<br />
-
-## 📥 One-package assisted setup
-
-[Full installation and limitations](./installation/full-setup.md) · [Component coverage](./components/README.md).
-
-
----
-
-## ☑️ Completeness audit and source migration
-
-- [Exact Development Hub capability coverage](./components/exact-coverage.md) — offline audit of all named reference agents, skills, commands, plugins and MCP registrations, without claiming connections
-- [Private review of missing definitions](./installation/private-source-migration.md) — safely collect candidate direct-scope sources *outside* the repository, review licenses and redact private data before redistribution
-- [Full installer](./installation/full-setup.md) — marketplace preflight, official GitHub OAuth registration and vault template provisioning
-
-
-## ☑️ What the public installer really reproduces
-
-The reference machine has **21 agent files, 62 direct skill definitions, 31 executable command files plus one `README.md`, 12 enabled plugins and nine target user MCP servers**. The public installer does **not yet** exactly reproduce all of those on a fresh account. See the [release coverage matrix](installation/reproducibility-matrix.md) for default, optional, provider-authenticated, and blocked items. Never publish personal provider configuration or private vault content.
-
-
-## ☑️ Inspect a real install without touching it
-
-Use the [read-only installed-layer verification](./installation/installed-layer-audit.md) to check which expected files, hook registrations, and vault templates actually landed in your chosen Claude configuration. It does not claim that provider authentication or skill execution succeeded.
-
-
-[Development Hub surface (the actual displayed workflow, groups, agents and integrations)](./components/development-hub-surface.md) explains which badges correspond to existing local definitions, Claude built-ins, plugins, or MCP equivalents.

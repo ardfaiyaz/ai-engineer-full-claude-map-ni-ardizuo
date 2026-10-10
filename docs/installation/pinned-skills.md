@@ -1,8 +1,11 @@
 # 🧩 Publisher-pinned skill prompts — Sprint 4
 
+
 This is the **skill source** counterpart to the [pinned SuperClaude agent/command installer](./pinned-superclaude.md). Files are downloaded from **immutable upstream GitHub commits** and checked against upstream Git blob SHA-1. They are **not bundled** in this public repository. Publisher license and attribution remain with their owners.
 
+
 ## ☑️ Verified source coverage
+
 
 The author compared all 29 third-party skill definitions against pinned publisher sources in two rounds. Together the reviews establish:
 
@@ -17,7 +20,9 @@ By default, `install-pinned-skills.py` installs **20** source-matched `SKILL.md`
 
 > **Skill functionality:** This installer currently downloads **SKILL.md only**, not sibling scripts, images, reference files, templates or CLIs. Some skill prompts reference these dependencies and may be unusable without following the publisher's full setup. A successful install verifies source text and file presence, **not operational completeness**. Check each skill's official README and do a real Claude Code invocation.
 
+
 ## 📄 Windows — isolated config first
+
 
 ```powershell
 cd "$HOME\Documents\ai-engineer-full-claude-map-ni-ardizuo"
@@ -40,7 +45,9 @@ python .\scripts\install-pinned-skills.py --apply --config-dir "$testConfig" --u
 
 The five optional upstream versions **differ** from the author's original skill content. This difference is intentional. The program refuses to replace any existing conflicting files.
 
+
 ## 🔌 Unified installer integration
+
 
 Both the pinned SuperClaude and pinned skills installers can be called in a **single isolated** setup, along with Ardizuo-owned local assets:
 
@@ -54,7 +61,9 @@ if (Test-Path $allTest) { throw "Choose a fresh test folder" }
 
 `-SkillUpstreamVariants` is optional and requires `-PinnedSkills`; `-UpstreamVariants` applies **only** to the 11 differing SuperClaude commands and requires `-PinnedSuperClaude`. In the public `-All` flow, the pinned definitions are selected by default instead of silently running a new, unpinned SuperClaude CLI installer. Other third-party installers, plugins and MCPs still require their own permissions and may need account sign-in; the same user cannot safely isolate all of them using `-ConfigDir -All -Apply`.
 
+
 ## 🧩 Compare 19 previously unverified private skills without uploading contents
+
 
 A historical public-source lead list is stored at `setup/skill-source-candidates.json`: **All 15** public source paths have now been compared locally with the author’s private definitions: **12 matched content, 3 differed**. The 12 content matches are included in the default pinned installer, and the 3 differing publisher variants are explicitly opt-in. The **four unidentified skills remain excluded**. The lead manifest remains a historical review list; the source-provenance lock is the authoritative install policy.
 
@@ -71,7 +80,9 @@ python .\scripts\verify-remaining-skill-sources.py --compare `
 
 **Only upload the reviewed status CSV**, not the private skills folder. `EXACT_BYTE_MATCH` and `TEXT_MATCH_LINE_ENDINGS_ONLY` establish that the proposed public source matches the user's local text, but do not in themselves establish copyright ownership, redistribute rights or complete skill dependency installation. Any source promotion needs manual review, license attribution, manifest update, and tests.
 
+
 ## 🛡️ Security and compatibility
+
 
 - All default planning commands are offline and read-only.
 - `--apply` requests public downloads, verifies every downloaded Git blob checksum **before any files are written**, and aborts on conflicts. It never overwrites existing files.
