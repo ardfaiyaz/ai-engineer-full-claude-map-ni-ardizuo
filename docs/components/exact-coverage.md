@@ -136,6 +136,16 @@ Eight of the 29 additional skill files are now reproducible as publisher-pinned,
 <br />
 
 
+## 🧩 Extended stack is counted separately
+
+
+The 21/62/32/12/9 targets on this page describe the reference machine. The extended stack (74 catalog rows, 40 packages) and the new `version-log` skill are **outside** those counts: `release-audit.py` lists `version-log` as an additional Ardizuo skill, and `python .\scripts\install-extensions.py --status` reports the extended stack. See the [master extension catalog](./extension-catalog.md).
+
+
+<br />
+<br />
+
+
 ## 🚀 Current release-audit status (after Sprint 4)
 
 

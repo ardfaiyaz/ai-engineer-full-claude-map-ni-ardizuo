@@ -42,15 +42,15 @@ Existing `settings.json` hooks are preserved. On a conflict, the installer stops
 <br />
 
 
-## 🧩 External guardrail systems (optional, not Ardizuo hooks)
+## 🧩 External guardrail systems (installed by -All, not Ardizuo hooks)
 
 
 | System | Route | Note |
 | --- | --- | --- |
-| [Probity](https://github.com/nizos/probity) | Guided `npm install -D @nizos/probity` in one test project | TDD and rule enforcement before selected actions |
-| [TDD Guard](https://github.com/nizos/tdd-guard) | `tdd-guard@tdd-guard` (alternative) | Predecessor of Probity; choose only one |
+| [Probity](https://github.com/nizos/probity) | Plugin `probity@probity`; per project `npm install -D @nizos/probity` + `probity.config.ts` | TDD and rule enforcement; rules activate only where a config exists |
+| [TDD Guard](https://github.com/nizos/tdd-guard) | Plugin `tdd-guard@tdd-guard` | Predecessor of Probity; type `tdd-guard off` in a prompt if it blocks work |
 
-Ponytail (`ponytail@ponytail`) also ships its own hooks. There are still **five** Ardizuo hook handlers, not seven. Before enabling an external system, reconcile its events with your `settings.json` hooks. See the [master extension catalog](../extension-catalog.md).
+Ponytail, Everything Claude Code (`hooks_enabled` defaults to true) and Claude-Mem also add their own hooks. There are still **five** Ardizuo hook handlers; the others belong to their plugins. After installing, open `/hooks`, and disable a plugin with `claude plugin disable <id>` if two hooks fight over the same event. See the [master extension catalog](../extension-catalog.md).
 
 
 <br />

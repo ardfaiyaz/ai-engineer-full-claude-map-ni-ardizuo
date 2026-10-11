@@ -47,7 +47,7 @@ You can also invoke this mode through the main installer:
 # Optional: -UpstreamVariants
 ```
 
-Don't combine `-PinnedSuperClaude` and `-SuperClaude` in one call. `-All` now prefers pinned SuperClaude **file definitions** and eight publisher-pinned skill prompts; the upstream SuperClaude CLI is an explicit alternative via `-SuperClaude`. The pin is for static files, not full SuperClaude CLI functionality.
+Don't combine `-PinnedSuperClaude` and `-SuperClaude` in one call. `-All` now prefers pinned SuperClaude **file definitions** and twenty publisher-pinned skill prompts; the upstream SuperClaude CLI is an explicit alternative via `-SuperClaude`. The pin is for static files, not full SuperClaude CLI functionality.
 
 
 <br />
@@ -59,7 +59,7 @@ Don't combine `-PinnedSuperClaude` and `-SuperClaude` in one call. `-All` now pr
 
 - `EXACT_BYTE_MATCH`: 20 agent files and 19 actual command definitions in the default pinned installer. The upstream command directory's `README.md` is documentation, not a command.
 - `DIFFERENT_CONTENT`: 11 additional SuperClaude command files. They are installed only with `--upstream-variants`, and the public upstream versions may not behave identically to the author's local changes.
-- 29 skill candidates are tracked in the source lock. The separate [pinned skills installer](./pinned-skills.md) now installs 8 matched publisher SKILL.md files; 2 modified source variants are opt-in and 19 remain excluded pending private source comparison. Sidecar scripts/data require separate verification.
+- 29 skill candidates are tracked in the source lock. The separate [pinned skills installer](./pinned-skills.md) now installs 20 matched publisher SKILL.md files by default; 5 differing publisher variants are opt-in and 4 unknown-origin skills remain excluded. Sidecar scripts/data require separate verification.
 - An installed definition is **not** an executed agent, and this installer does not attest to Claude Code recognizing every slash command. Verify `claude --version`, `/agents`, `/skills`, and actual delegated tasks in Claude Code.
 - Downloads use HTTPS from the upstream publisher at a full commit ID and are checked against recorded Git blob object SHA-1 values. This relies on Git's SHA-1 object scheme, and is not a complete supply-chain audit. **No third-party source is copied into Ardizuo's public repository.**
 

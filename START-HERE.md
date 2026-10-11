@@ -29,7 +29,14 @@ python --version
 claude --version
 ```
 
-If you use Serena or GitHub's Docker MCP, you may also need [uv](./docs/installation/uv.md) or [Docker](./docs/installation/docker.md).
+The extended stack also uses [uv](./docs/installation/uv.md) (Serena, Snyk Agent Scan, Spec Kit) and Bun (gstack). Install them now to avoid `missing-dependency` lines later:
+
+```powershell
+winget install --id astral-sh.uv --exact --source winget
+winget install --id Oven-sh.Bun --exact --source winget
+```
+
+GitHub's Docker MCP and ToolHive also need [Docker](./docs/installation/docker.md).
 
 
 <br />
@@ -59,7 +66,7 @@ Preview reports intended changes. If the installer reports a conflicting file in
 .\scripts\install-all.ps1 -Apply -All
 ```
 
-This attempts the existing agents, skills, commands, plugins, supported MCP registrations, hooks and empty vault setup. It does **not** copy private credentials, reproduce all 62 original skills, or automatically patch your dashboard.
+This installs the agents, skills (including the new `version-log` skill), commands, the 12 baseline plugins, supported MCP registrations, hooks, the empty vault **and the whole extended stack**: Codex, Claude HUD, Trail of Bits, Matt Pocock skills, Ponytail, Firecrawl, Exa, ECC, wshobson Agents, CLI tools and more. It does **not** copy private credentials, reproduce all 62 original skills, or automatically patch your dashboard. Expect it to take a while: it installs well over a hundred plugins.
 
 
 <br />
@@ -87,6 +94,7 @@ Inside Claude Code, inspect `/plugin`, `/skills`, `/mcp` and `/hooks`. Sign in t
 
 ```powershell
 python .\scripts\verify-installed-layers.py --strict-local --require-hooks
+python .\scripts\install-extensions.py --status
 ```
 
 A missing file is reported by name. If `rules/ardizuo-development.md` is missing on an existing setup:
@@ -118,17 +126,19 @@ The original Claude Map is available at <http://localhost:8888>. To apply the **
 <br />
 
 
-## 🧩 Optional: researched extensions
+## 🧩 Finish the extended stack
 
 
-Codex review, Claude HUD, Trail of Bits security skills, Ponytail, Firecrawl and others are **opt-in**. `-All` does not install them.
+The extended stack is already installed by step 3. A few tools need one action from you:
 
 ```powershell
-.\scripts\install-all.ps1 -External -Extensions priority          # Preview
-.\scripts\install-all.ps1 -Apply -External -Extensions priority   # Install
+codex login                                         # Codex plugin: ChatGPT or API key sign-in
+python .\scripts\install-extensions.py --status     # what is enabled, registered or on PATH
 ```
 
-[Optional extensions guide](./docs/installation/extensions.md) · [Master catalog](./docs/components/extension-catalog.md)
+Inside Claude Code run `/codex:setup`, `/claude-hud:setup` and, in each repository, `/setup-matt-pocock-skills`. Firecrawl, Exa and 21st Magic ask for their own sign-in. The installer prints the few steps it can't do for you (a Browserbase key and per-project setups).
+
+[Extended stack guide](./docs/installation/extensions.md) · [Master catalog](./docs/components/extension-catalog.md)
 
 
 <br />

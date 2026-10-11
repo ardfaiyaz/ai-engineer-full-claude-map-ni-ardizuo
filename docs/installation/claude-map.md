@@ -75,5 +75,6 @@ Open <http://localhost:8888/?tab=devhub>. **`-Apply -All` does not patch the liv
 - If `node-pty` cannot build or the terminal is broken, check [upstream installation guidance](https://github.com/shamim0902/claude-map) for your installed Node.js version.
 - If an overlay conflicts with upstream files, **stop**; do not repeatedly apply the patch. Use the full [dashboard backup and rehearsal procedure](../../dashboard/claude-map/README.md).
 - Keep the dashboard bound to localhost and never expose MCP secrets or vault notes.
+- After `-All` installs the extended stack, plugin, skill and agent counts in the dashboard rise sharply (115 more plugin IDs). That is expected; Claude HUD and ccusage show similar usage data in the terminal.
 
 [Quick start](../../START-HERE.md) · [Full dashboard setup](../../dashboard/claude-map/README.md)

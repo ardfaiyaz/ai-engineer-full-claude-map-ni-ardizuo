@@ -74,10 +74,10 @@ The public `setup/source-provenance-lock.json` now references content-matched **
 <br />
 
 
-## 🧩 Optional extension catalog sources
+## 🧩 Extended stack sources
 
 
-`setup/extension-catalog.json` and `scripts/install-extensions.py` point to publisher repositories and marketplaces. **No content from them is bundled.** Installing runs each publisher's own Claude CLI plugin or MCP command under their license. Licenses as reported by the GitHub API on 2026-10-11:
+`setup/extension-catalog.json` and `scripts/install-extensions.py` point to publisher repositories and marketplaces. **No content from them is bundled in this repository.** Installing runs each publisher's own Claude plugin, MCP, npm, uv or winget install under their license. The four Karpathy skills are downloaded from a pinned commit with their upstream MIT `LICENSE` placed in each skill folder. Licenses as reported by the GitHub API on 2026-10-11:
 
 - MIT: Matt Pocock Skills, Ponytail, Daymade Skills, Claude HUD, Compound Engineering, Probity, TDD Guard, wshobson Agents, Everything Claude Code (ECC), gstack, Beads, mcp-use, AutoHarness, i-have-adhd, GitHub Spec Kit, Browserbase Stagehand, Firecrawl MCP, Exa MCP, n8n MCP, Awesome MCP Servers, Karpathy-inspired Skills (from its LICENSE file)
 - Apache-2.0: OpenAI Codex Plugin, Claude-Mem, Microsoft Playwright MCP, Snyk Agent Scan, ToolHive

@@ -29,6 +29,8 @@ Install [Obsidian](../docs/installation/obsidian.md), then select **Open folder 
 
 `/log-to-vault` is an original Claude command, but it must ask before writing a note. Never authorize automatic export of private conversations, credentials, or raw source files. Test note save and reload on a disposable project before enabling hooks globally.
 
+The extended stack also installs Claude-Mem (automatic session memory) and Beads (task tracking). They store their own data outside this vault; keep the vault for approved, curated notes. Version history for code changes goes in each repository's `VERSIONLOG.md` (the `version-log` skill), not in the vault.
+
 [Full installer](../docs/installation/full-setup.md) · [Credential safety](../docs/security/api-keys-and-powershell.md)
 
 

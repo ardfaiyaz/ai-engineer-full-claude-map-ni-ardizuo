@@ -1,7 +1,7 @@
 # 🧩 Built-in Ardizuo skill catalog
 
 
-This repository includes **16 Ardizuo-authored skills**. Their real Claude Code instructions live in `ardizuo-plugin/skills/<name>/SKILL.md`; this catalog replaces 16 repetitive installation pages.
+This repository includes **17 Ardizuo-authored skills**. Their real Claude Code instructions live in `ardizuo-plugin/skills/<name>/SKILL.md`; this catalog replaces 16 repetitive installation pages.
 
 
 <br />
@@ -29,6 +29,7 @@ This repository includes **16 Ardizuo-authored skills**. Their real Claude Code 
 | `technical-style-guide` | Keep technical documentation consistent and concise. |
 | `test-fixing` | Investigate tests and repair genuine failures. |
 | `vault-learning` | Capture approved, reusable lessons in the local vault. |
+| `version-log` | Keep a `VERSIONLOG.md` at the root of every repository you change: one dated entry per change set, newest first. |
 
 
 <br />
@@ -55,12 +56,24 @@ These skills are also included when you choose the guided `-Apply -All` install.
 <br />
 
 
-## 🔎 Researched extension skills (optional)
+## 🔎 Researched extension skills (installed by -All)
 
 
-Twenty more skills (catalog rows 63–82) come from publisher plugins rather than this repository. They include Ponytail, Matt Pocock's `domain-modeling`, `to-tickets`, `tdd` and `grill-me`, Trail of Bits' `differential-review` and `mutation-testing`, and Daymade's `frontend-visual-qa`. Every name was verified upstream on 2026-10-11. They are **not** counted in the 62 reference skills, and are installed only with `-Extensions`.
+Twenty more skills (catalog rows 63–82) come from publisher plugins rather than this repository. They include Ponytail, Matt Pocock's `domain-modeling`, `to-tickets`, `tdd` and `grill-me`, Trail of Bits' `differential-review` and `mutation-testing`, and Daymade's `frontend-visual-qa`. Every name was verified upstream on 2026-10-11. They are **not** counted in the 62 reference skills; `-All` installs them through the extended stack, together with four hash-pinned Karpathy skills.
 
-[Master extension catalog](../extension-catalog.md) · [Optional extensions guide](../../installation/extensions.md)
+[Master extension catalog](../extension-catalog.md) · [Extended stack guide](../../installation/extensions.md)
+
+
+<br />
+<br />
+
+
+## 📄 The version-log skill
+
+
+`version-log` gives every installation the habit of keeping a version history. At the end of a change (the Ship stage), Claude finds the repository root, reads the real diff, and adds a dated entry at the top of `VERSIONLOG.md` (or the project's existing `CHANGELOG.md`) under Added, Changed, Fixed, Removed, Security or Docs, with the checks that actually ran. It never rewrites old entries, invents version numbers or records secrets, and it never bumps a version file without asking. You can also ask for it directly: "update the version log".
+
+It is a **skill** rather than a hook or agent on purpose. A hook only runs a script on an event and can't judge what changed. An agent only runs when something delegates to it. A skill is instructions Claude follows at the right moment. This repository keeps its own [VERSIONLOG.md](../../../VERSIONLOG.md) the same way.
 
 
 <br />

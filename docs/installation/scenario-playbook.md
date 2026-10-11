@@ -92,6 +92,24 @@ Supply your vault path explicitly on a new machine. Four templates and the emoji
 <br />
 
 
+## 🧩 Existing setup that only needs the new extended stack
+
+
+If your Ardizuo setup is already installed and you only want the new tools, run the extended stack on its own. Everything already enabled, registered or on `PATH` is skipped:
+
+```powershell
+.\scripts\install-all.ps1 -External -Extensions all            # preview
+.\scripts\install-all.ps1 -Apply -External -Extensions all     # install
+python .\scripts\install-extensions.py --status
+```
+
+The new `version-log` skill is a new file, so `.\scripts\install-all.ps1 -Apply` adds it without touching your existing files. If the installer reports a CONFLICT on an older file you customized, resolve that first; nothing is overwritten.
+
+
+<br />
+<br />
+
+
 ## ☑️ Reporting your result accurately
 
 

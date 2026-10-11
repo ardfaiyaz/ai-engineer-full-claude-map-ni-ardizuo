@@ -3,7 +3,7 @@
 
 🛡️ **Owner review required before redistribution.**
 
-The main installer includes 28 reviewed development assets and obtains other items from their upstream publishers. The author's reference machine has additional agent, skill and command files, but a **filename is not evidence of authorship or an open-source license**. This is a controlled process for inspecting direct-scope definitions without exporting private session data or copying plugin caches.
+The main installer includes 29 reviewed development assets and obtains other items from their upstream publishers. The author's reference machine has additional agent, skill and command files, but a **filename is not evidence of authorship or an open-source license**. This is a controlled process for inspecting direct-scope definitions without exporting private session data or copying plugin caches.
 
 
 <br />
@@ -20,7 +20,7 @@ cd "$HOME\Documents\ai-engineer-full-claude-map-ni-ardizuo"
 python .\scripts\prepare-private-review.py
 ```
 
-The script looks at the names-only inventory of **21 agents, 62 skills and 32 commands**. It finds matching direct-scope source Markdown but skips all files already included in Ardizuo's 28 reviewed assets. It will **not** scan caches, personal chats, `.claude.json`, `settings.json`, tokens, or Obsidian notes.
+The script looks at the names-only inventory of **21 agents, 62 skills and 32 commands**. It finds matching direct-scope source Markdown but skips all files already included in Ardizuo's 29 reviewed assets. It will **not** scan caches, personal chats, `.claude.json`, `settings.json`, tokens, or Obsidian notes.
 
 
 <br />

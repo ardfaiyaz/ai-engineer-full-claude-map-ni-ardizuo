@@ -1,7 +1,7 @@
 # 🔌 Existing Claude Code MCP servers
 
 
-This project targets **nine user-scoped MCP registrations**. **Registered**, **connected** and **authenticated** are different states. Never copy another person's `.claude.json` or credentials.
+The reference setup targets **nine user-scoped MCP registrations**; the full installation adds the extended-stack MCPs described further down. **Registered**, **connected** and **authenticated** are different states. Never copy another person's `.claude.json` or credentials.
 
 
 <br />
@@ -94,32 +94,30 @@ claude mcp get morph-mcp
 <br />
 
 
-## 🧩 Optional extension MCPs (not part of the nine)
+## 🧩 Extended-stack MCPs (installed by -All, beyond the nine)
 
 
-Six researched MCP integrations are available as an opt-in layer. Prefer project scope, and don't stack overlapping browser or search servers.
+Six more MCP integrations come with the full installation. Three are plugins, three are user-scope registrations, and one Browserbase server waits for your key.
 
-| Integration | Route | Credentials | Note |
+| Integration | Delivered by | Credentials | Note |
 | --- | --- | --- | --- |
 | Firecrawl | `firecrawl@claude-plugins-official` plugin | Firecrawl API key | Extraction and crawling |
 | Exa | `exa@claude-plugins-official` plugin | Exa account | Overlaps Tavily |
-| n8n MCP | `n8n-mcp` user stdio registration | None for docs tools | Only if you use n8n |
 | 21st Magic | `21st@21st-dev` plugin | `API_KEY_21ST` | React/Tailwind components |
-| Playwright MCP | `playwright-mcp` user stdio registration | None | **Alternative** to the Playwright plugin |
-| Agentation | Guided, inside one React/Next.js project | None | PolyForm Shield license |
+| n8n MCP | `n8n-mcp` user registration | None for docs tools | Management tools need an n8n API key |
+| Playwright MCP | `playwright-mcp` user registration | None | Next to the Playwright plugin; don't drive one browser from both |
+| Agentation | `agentation` user registration | None | Also `npm install -D agentation` in each React/Next.js project |
+| Browserbase (Stagehand) | Printed command | Browserbase API key | Add with your own key through a secure flow |
 
-```powershell
-.\scripts\install-all.ps1 -External -Extensions research,automation          # Preview
-.\scripts\install-all.ps1 -Apply -External -Extensions research,automation   # Install
-```
-
-The n8n registration the installer uses (documentation tools only):
+The exact registrations the installer runs:
 
 ```powershell
 claude mcp add --scope user n8n-mcp -e MCP_MODE=stdio -e LOG_LEVEL=error -e DISABLE_CONSOLE_OUTPUT=true -- npx -y n8n-mcp
+claude mcp add --scope user playwright-mcp -- npx -y @playwright/mcp@latest
+claude mcp add --scope user agentation -- npx -y agentation-mcp server
 ```
 
-[Optional extensions guide](../../docs/installation/extensions.md) · [Master extension catalog](../../docs/components/extension-catalog.md)
+[Extended stack guide](../../docs/installation/extensions.md) · [Master extension catalog](../../docs/components/extension-catalog.md)
 
 
 <br />

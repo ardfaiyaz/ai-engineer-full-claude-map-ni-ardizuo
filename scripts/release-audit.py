@@ -12,7 +12,7 @@ def audit():
     local=json.loads((ROOT/'setup/development-assets.json').read_text(encoding='utf-8'))
     ref=json.loads((ROOT/'setup/reference-inventory.json').read_text(encoding='utf-8'))
     entries=p['entries']; owned=set(local['filePaths'])
-    if len(owned)!=28: raise ValueError('Changed owned manifest: inspect before release')
+    if len(owned)!=29: raise ValueError('Changed owned manifest: inspect before release')
     auto={e['target'] for e in entries if e['installPolicy']=='automatic-reviewed-upstream'}
     opt={e['target'] for e in entries if e['installPolicy']=='opt-in-upstream-variant'}
     def name(target):
@@ -22,7 +22,11 @@ def audit():
     skill_auto={x.split('/')[1] for x in auto if x.startswith('skills/')}
     command_auto={name(x) for x in auto if x.startswith('commands/sc/')}
     local_agents={name(x) for x in owned if x.startswith('agents/')}
-    local_skills={x.split('/')[1] for x in owned if x.startswith('skills/')}
+    owned_skills={x.split('/')[1] for x in owned if x.startswith('skills/')}
+    # Original Ardizuo skills added after the reference snapshot are reported separately,
+    # so they never inflate the 62-name reference coverage.
+    local_skills=owned_skills & set(ref['globalSkills'])
+    additional_skills=sorted(owned_skills-local_skills)
     local_commands={name(x) for x in owned if x.startswith('commands/')}
     manual=m['notAutomaticallyReproduced']['directSkillsRequiringVerifiedOriginOrExternalSource']
     unknown=m['notAutomaticallyReproduced']['directSkillsWithUnknownSafeSource']
@@ -38,6 +42,7 @@ def audit():
     if any(not f.is_file() for f in required):raise ValueError('Missing portable context or release documentation')
     return {'agentNames':{'default':len(local_agents|agent_auto),'target':len(ref['agents'])},
             'directSkillNames':{'default':len(local_skills|skill_auto),'withUpstreamVariants':len(local_skills|skill_auto|set(skill_opt)),'target':len(ref['globalSkills']),'externalUnverified':len(manual),'unknownSource':len(unknown)},
+            'additionalArdizuoSkills':additional_skills,
             'executableCommandNames':{'default':len(local_commands|command_auto),'withUpstreamVariants':len(local_commands|command_auto|set(cmd_opt)),'target':len(ref['commands'])-1},
             'plugins':{'documented':12,'freshInstallationVerified':False},
             'targetMCPs':{'documented':9,'freshConnectionVerified':False},
@@ -57,7 +62,9 @@ def main():
         for label,key in [('Agents','agentNames'),('Skills','directSkillNames'),('Executable commands','executableCommandNames')]:
             g=r[key]
             print(f"  {label:20} default {g['default']}/{g['target']}" + (f"; optional upstream {g['withUpstreamVariants']}/{g['target']}" if 'withUpstreamVariants' in g else ''))
+        if r['additionalArdizuoSkills']:print('  Additional Ardizuo skills (outside the 62 reference names):',', '.join(r['additionalArdizuoSkills']))
         print('  Plugins: 12 documented / CLI install option; fresh connection not proven')
+        print('  Extended stack: setup/extension-catalog.json, installed by -All; see install-extensions.py --status')
         print('  MCPs: 9 documented / supported registration & manual auth; fresh connection not proven')
         print('  Hooks: 5 included, opt-in settings registration; execution not proven')
         print('  Dashboard: five-stage sandbox rehearsal + reference browser check, not clean-device proof')

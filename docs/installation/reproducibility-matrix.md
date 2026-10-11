@@ -1,7 +1,7 @@
 # ☑️ Reproducibility matrix — GitHub package vs. live Claude Code
 
 
-**Last checked:** 2026-10-10 · **Scope:** Public repository, Windows PowerShell install guide and portable output. This page does **not** contain your existing Claude credentials, private notes or plugin caches.
+**Last checked:** 2026-10-11 · **Scope:** Public repository, Windows PowerShell install guide and portable output. This page does **not** contain your existing Claude credentials, private notes or plugin caches.
 
 > **Release decision: not yet a complete clone.** Your live machine's coverage can be 100% while a new user's **package reproducibility** is still partial. A successfully installed `.md` file does not prove its tools ran. One optional Atlassian plugin MCP login is intentionally nonblocking.
 
@@ -26,6 +26,8 @@
 | **Workflow layers** | Dashboard shows five phases | Triage → Contract → Dispatch → Review → Ship documents/rules + custom dashboard overlay | Verify actual guided use and results in a non-sensitive task |
 | **Obsidian** | Eight folders; four templates absent in prior live audit | Eight folders + four Markdown templates + emojis via opt-in `-Vault` | Chosen vault folder, approvals, note write/read test |
 | **Claude Map** | Live customized 1.2.3 reported working | Installer, five-stage patch rehearsal, version-sensitive overlay | Clean machine browser check; do not overwrite working custom package blindly |
+| **Extended stack** | Researched in the master catalog (74 rows) | 40 packages installed by `-All`: 115 plugin IDs, 3 MCPs, 7 CLI tools, pinned Karpathy skills, gstack; credential and per-project steps printed | Provider sign-in, Bun/uv where missing, one real use per tool |
+| **Version log** | Habit of a `VERSIONLOG.md` per repository | New Ardizuo `version-log` skill (29th packaged file) | Confirm Claude adds an entry at Ship |
 | **Recovery and security** | Existing personal configuration must be protected | Preview, conflict refusal, limited backups and tests | Full per-provider rollback / fresh-machine signoff still incomplete |
 
 

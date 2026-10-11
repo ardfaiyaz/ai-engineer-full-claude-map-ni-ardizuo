@@ -16,6 +16,7 @@
 | `python .\scripts\release-audit.py` | Public source manifests | The **package** covers the declared names; reports blockers even when the original machine has all components |
 | `python .\scripts\verify-installed-layers.py --config-dir $test` | The selected target configuration, names only | File locations, hooked handler registrations and optional vault templates exist; **not runtime execution** |
 | `python .\scripts\coverage-doctor.py --strict` | Live Claude user-scope inventory | Reference names exist and plugin/MCP identifiers are configured locally; **not provider authentication** |
+| `python .\scripts\install-extensions.py --status` | Plugin IDs in `settings.json`, MCP names in `~/.claude.json`, `PATH`, skill folders | Each extended-stack package is enabled, registered, on `PATH` or present; **not sign-in or use** |
 
 All three scripts are read-only. None downloads skills, edits your configuration, runs a hook or connects an MCP. For active connections, inspect `claude mcp list` and then test only services you have authorized.
 
@@ -43,7 +44,7 @@ if (Test-Path $test) { throw "Choose a new, empty folder" }
 python .\scripts\verify-installed-layers.py --config-dir $test --require-hooks --strict-local
 ```
 
-The verifier intentionally expects **36 direct skill files and 20 executable command files** in the default target, alongside all **21 agents**, the reviewed hooks/rules/workflows, portable `CLAUDE.md`, and emoji headings. It does not claim to find the remaining personal skill files which the public package cannot yet reproduce.
+The verifier intentionally expects **37 direct skill files (the 36 reproducible reference names plus `version-log`) and 20 executable command files** in the default target, alongside all **21 agents**, the reviewed hooks/rules/workflows, portable `CLAUDE.md`, and emoji headings. It does not claim to find the remaining personal skill files which the public package cannot yet reproduce.
 
 
 <br />
@@ -62,7 +63,7 @@ if (Test-Path $variantTest) { throw "Choose another empty folder" }
 python .\scripts\verify-installed-layers.py --config-dir $variantTest --upstream-variants --require-hooks --strict-local
 ```
 
-The resulting 41 skills and 31 executable commands are **not identical to every customized file on the author's computer**. The unverified 17 other direct skills and four unknown-source skills remain excluded. Never claim full 62-skill package coverage from these counts.
+The resulting 42 skills (41 + `version-log`) and 31 executable commands are **not identical to every customized file on the author's computer**. The unverified 17 other direct skills and four unknown-source skills remain excluded. Never claim full 62-skill package coverage from these counts.
 
 
 <br />

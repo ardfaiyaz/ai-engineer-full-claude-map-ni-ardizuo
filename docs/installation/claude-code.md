@@ -55,4 +55,25 @@ claude mcp list
 
 Inside Claude Code, use `/skills`, `/hooks` and `/mcp`. If a command is missing, reopen your terminal and check the [official troubleshooting guide](https://code.claude.com/docs/en/troubleshooting).
 
+
+<br />
+<br />
+
+
+## 🧩 Plugin and marketplace commands used by this project
+
+
+The installer calls these for you, but they are useful for checking or fixing a single plugin by hand:
+
+```powershell
+claude plugin marketplace list                       # registered marketplaces
+claude plugin marketplace add openai/codex-plugin-cc # add one marketplace (owner/repo)
+claude plugin install codex@openai-codex             # install plugin@marketplace
+claude plugin list                                   # installed and enabled plugins
+claude plugin disable codex@openai-codex             # turn off without removing
+claude plugin uninstall codex@openai-codex           # remove
+```
+
+Inside Claude Code, `/plugin` opens the plugin manager, and `/reload-plugins` (on versions that have it) picks up newly installed plugins without a restart. The 12 baseline plugins are in the [plugin catalog](../../integrations/plugins/README.md); the extended stack that `-All` installs is in the [extended stack guide](./extensions.md).
+
 [Full Ardizuo installation](./full-setup.md)

@@ -16,7 +16,7 @@ class FullSetupTests(unittest.TestCase):
         self.assertEqual(len(data['mcp']),9)
         self.assertEqual(len(set(x['name'] for x in data['mcp'])),9)
         self.assertEqual(len(set(x['id'] for x in data['plugins'])),12)
-        self.assertEqual(len(json.loads((ROOT/'setup/development-assets.json').read_text())['filePaths']),28)
+        self.assertEqual(len(json.loads((ROOT/'setup/development-assets.json').read_text())['filePaths']),29)
     def test_manifest_never_embeds_auth(self):
         text=(ROOT/'setup/full-stack.json').read_text().lower()
         self.assertNotIn('ghp_',text)

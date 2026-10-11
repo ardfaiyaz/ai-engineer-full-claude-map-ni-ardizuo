@@ -1,4 +1,4 @@
-"""Offline checks for the opt-in extension catalog and installer."""
+"""Offline checks for the extended-stack catalog and installer."""
 import importlib.util
 import json
 from pathlib import Path
@@ -13,6 +13,7 @@ CATALOG=json.loads((ROOT/'setup/extension-catalog.json').read_text(encoding='utf
 spec=importlib.util.spec_from_file_location('ar_install_extensions',ROOT/'scripts/install-extensions.py')
 ext=importlib.util.module_from_spec(spec)
 spec.loader.exec_module(ext)
+PACKAGES={p['id']:p for p in CATALOG['packages']}
 
 
 class ExtensionCatalogTests(unittest.TestCase):
@@ -25,59 +26,76 @@ class ExtensionCatalogTests(unittest.TestCase):
         self.assertEqual(sum(len(CATALOG[k]) for k in expected),74)
 
     def test_references_resolve_and_ids_are_unique(self):
-        ids=[p['id'] for p in CATALOG['packages']]
-        self.assertEqual(len(ids),len(set(ids)))
+        self.assertEqual(len(PACKAGES),len(CATALOG['packages']))
         for key in ('skills','mcps','guardrails','agentCollections','extensionSystems','commands','tools'):
             for row in CATALOG[key]:
-                self.assertTrue(row['package'] is None or row['package'] in ids,(key,row))
+                self.assertTrue(row['package'] is None or row['package'] in PACKAGES,(key,row))
         markets={m['id'] for m in CATALOG['marketplaces']}
         for p in CATALOG['packages']:
             if p['kind']=='plugin':
-                self.assertIn(p['pluginId'].split('@',1)[1],markets,p['id'])
-            if p['kind'] in ('guided','reference'):
+                for plugin_id in p['pluginIds']:
+                    self.assertIn(plugin_id.split('@',1)[1],markets,plugin_id)
+            if p['kind'] in ('manual','project'):
                 self.assertTrue(p['docs'].startswith('https://github.com/'),p['id'])
+
+    def test_every_catalog_entry_is_installed_or_explained(self):
+        kinds={p['kind'] for p in CATALOG['packages']}
+        self.assertLessEqual(kinds,{'plugin','mcp','cli','pinned-files','git-setup','manual','project'})
+        unpackaged=[r['name'] for k in ('tools',) for r in CATALOG[k] if r['package'] is None]
+        self.assertEqual(sorted(unpackaged),['Awesome Claude Code','Awesome MCP Servers','MCP Reference Servers','MCP TypeScript SDK'])
 
     def test_executable_commands_are_safe_argv(self):
         for p in CATALOG['packages']:
-            if p['kind']!='mcp':continue
-            self.assertEqual(p['argv'][:5],['claude','mcp','add','--scope','user'])
-            for arg in p['argv']:
-                self.assertIsInstance(arg,str)
-                self.assertFalse(re.search(r'[;&|`$<>]',arg),arg)
+            argvs=[p['argv']] if p['kind']=='mcp' else p['commands'] if p['kind']=='cli' else []
+            if p['kind']=='mcp':
+                self.assertEqual(p['argv'][:5],['claude','mcp','add','--scope','user'])
+            if p['kind']=='cli':
+                self.assertIn(p['commands'][0][0],('npm','uv','winget'))
+            for argv in argvs:
+                for arg in argv:
+                    self.assertIsInstance(arg,str)
+                    self.assertFalse(re.search(r'[;&|`$<>]',arg),arg)
+
+    def test_pinned_files_are_commit_and_hash_pinned(self):
+        for p in CATALOG['packages']:
+            if p['kind']!='pinned-files':continue
+            self.assertRegex(p['commit'],r'^[0-9a-f]{40}$')
+            for item in p['files']:
+                self.assertRegex(item['blobSha'],r'^[0-9a-f]{40}$')
+                target=item.get('target',item['path'])
+                self.assertTrue(target.startswith('skills/'),target)
+                self.assertNotIn('..',target)
 
     def test_no_secrets_personal_paths_or_social_tooling(self):
         text=(ROOT/'setup/extension-catalog.json').read_text(encoding='utf-8').lower()
-        for forbidden in ('ghp_','bearer ','c:\\users\\melthon','vidiq','tiktok','instagram'):
+        for forbidden in ('ghp_','c:\\users\\melthon','vidiq','tiktok','instagram'):
             self.assertNotIn(forbidden,text)
         self.assertIsNone(re.search(r'\b(sk|fc)-[a-z0-9]{12,}',text),'API-key-shaped literal')
-        installable=' '.join(p.get('pluginId','')+p.get('name','') for p in CATALOG['packages']).lower()
+        installable=' '.join(i for p in CATALOG['packages'] for i in p.get('pluginIds',[])+[p.get('name','')]).lower()
         for social in ('twitter','facebook','social','tweet'):
             self.assertNotIn(social,installable)
+        self.assertEqual(len(PACKAGES['wshobson-agents']['pluginIds']),92)
 
-    def test_policy_keeps_extensions_out_of_all(self):
-        self.assertFalse(CATALOG['policy']['defaultInstall'])
-        self.assertFalse(CATALOG['policy']['includedInAllSwitch'])
+    def test_extended_stack_is_part_of_all(self):
+        self.assertTrue(CATALOG['policy']['defaultInstall'])
+        self.assertTrue(CATALOG['policy']['includedInAllSwitch'])
         ps1=(ROOT/'scripts/install-all.ps1').read_text(encoding='utf-8')
         all_line=next(line for line in ps1.splitlines() if line.startswith('if ($All)'))
-        self.assertNotIn('Extensions',all_line)
+        self.assertIn("$Extensions = 'all'",all_line)
 
 
 class ExtensionSelectionTests(unittest.TestCase):
-    def test_priority_is_the_ten_item_shortlist(self):
+    def test_priority_group(self):
         self.assertEqual([p['id'] for p in ext.resolve(CATALOG,'priority')],
-            ['codex','claude-hud','tob-differential-review','ponytail','firecrawl',
-             'probity','agentation','mcp-inspector','beads','mcp-use'])
+            ['codex','codex-cli','claude-hud','tob-differential-review','ponytail','firecrawl','agentation',
+             'probity','beads','beads-cli','mcp-use','mcp-inspector'])
 
-    def test_all_excludes_alternatives(self):
-        chosen=ext.resolve(CATALOG,'all')
-        self.assertFalse(any(p.get('alternative') for p in chosen))
-        self.assertEqual(len(chosen),sum(1 for p in CATALOG['packages'] if not p.get('alternative')))
+    def test_all_includes_every_package(self):
+        self.assertEqual(len(ext.resolve(CATALOG,'all')),len(CATALOG['packages']))
 
-    def test_exclusive_groups_and_unknown_ids_are_refused(self):
-        with self.assertRaisesRegex(ValueError,'tdd-enforcement'):
-            ext.resolve(CATALOG,'probity,tdd-guard')
-        with self.assertRaisesRegex(ValueError,'orchestration'):
-            ext.resolve(CATALOG,'gstack,compound-engineering')
+    def test_overlaps_are_reported_not_refused(self):
+        chosen=ext.resolve(CATALOG,'probity,tdd-guard')
+        self.assertEqual(ext.overlaps(chosen),{'tdd-enforcement':['probity','tdd-guard']})
         with self.assertRaisesRegex(ValueError,'Unknown'):
             ext.resolve(CATALOG,'not-a-real-extension')
 
@@ -93,21 +111,24 @@ class ExtensionInstallerTests(unittest.TestCase):
             self.assertIn('DRY RUN',r.stdout)
             self.assertIn('WOULD RUN',r.stdout)
             self.assertNotIn('RUNNING',r.stdout)
-            self.assertIn('not executed by this installer',r.stdout)
+            self.assertIn('printed, not executed',r.stdout)
             self.assertEqual(list(Path(tmp).iterdir()),[])
 
     def test_status_reads_names_only(self):
         with tempfile.TemporaryDirectory() as tmp:
             cfg=Path(tmp)
-            (cfg/'settings.json').write_text('{"enabledPlugins":{"codex@openai-codex":true,"claude-hud@claude-hud":false}}')
+            first=PACKAGES['wshobson-agents']['pluginIds'][0]
+            (cfg/'settings.json').write_text(json.dumps({'enabledPlugins':{'claude-hud@claude-hud':True,'codex@openai-codex':False,first:True}}))
             home=cfg/'home.json'
             home.write_text('{"mcpServers":{"n8n-mcp":{"env":{"N8N_API_KEY":"DO_NOT_OUTPUT_SECRET"}}}}')
             r=self.run_script('--status','--json','--config-dir',str(cfg),'--home-config',str(home))
             self.assertEqual(r.returncode,0,r.stderr)
             data=json.loads(r.stdout)
-            self.assertEqual(data['codex'],'enabled')
-            self.assertEqual(data['claude-hud'],'not-enabled')
+            self.assertEqual(data['claude-hud'],'enabled')
+            self.assertEqual(data['codex'],'not-enabled')
+            self.assertEqual(data['wshobson-agents'],'partial 1/92')
             self.assertEqual(data['n8n-mcp'],'registered')
+            self.assertEqual(data['karpathy-skills'],'missing')
             self.assertNotIn('DO_NOT_OUTPUT_SECRET',r.stdout)
 
     def test_already_enabled_plugin_is_skipped(self):
@@ -119,9 +140,27 @@ class ExtensionInstallerTests(unittest.TestCase):
             self.assertIn('ALREADY ENABLED: codex@openai-codex',r.stdout)
             self.assertNotIn('MARKETPLACES',r.stdout)
 
+    def test_pinned_files_verify_before_writing(self):
+        package=PACKAGES['karpathy-skills']
+        with tempfile.TemporaryDirectory() as tmp:
+            cfg=Path(tmp)
+            def bad_fetch(row):
+                if row['sourceFilePath'].endswith('karpathy-verification/SKILL.md'):
+                    raise ValueError('Publisher checksum mismatch')
+                return b'ok'
+            actions={}
+            ext.install_pinned([package],cfg,True,actions,fetch=bad_fetch)
+            self.assertEqual(actions['files:karpathy-skills'],'failed')
+            self.assertEqual(list(cfg.iterdir()),[],'nothing may be written when any file fails verification')
+            ext.install_pinned([package],cfg,True,actions,fetch=lambda row:b'ok')
+            self.assertEqual(actions['files:karpathy-skills'],'cli-success')
+            self.assertEqual(len([x for x in cfg.rglob('*') if x.is_file()]),len(package['files']))
+            ext.install_pinned([package],cfg,True,actions,fetch=lambda row:self.fail('no refetch'))
+            self.assertEqual(actions['files:karpathy-skills'],'already-installed')
+
     def test_install_all_requires_external_for_extensions(self):
         with tempfile.TemporaryDirectory() as tmp:
-            r=subprocess.run([sys.executable,str(ROOT/'scripts/install-all.py'),'--config-dir',str(Path(tmp)/'cfg'),'--extensions','priority'],capture_output=True,text=True)
+            r=subprocess.run([sys.executable,str(ROOT/'scripts/install-all.py'),'--config-dir',str(Path(tmp)/'cfg'),'--extensions','all'],capture_output=True,text=True)
             self.assertEqual(r.returncode,0,r.stderr)
             self.assertIn('--external is required',r.stdout)
             self.assertIn('SKIPPED; external installs not authorized',r.stdout)

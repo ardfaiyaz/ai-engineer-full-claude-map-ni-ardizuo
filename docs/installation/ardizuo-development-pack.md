@@ -1,7 +1,7 @@
 # 📄 Ardizuo development pack · Phase 1
 
 
-**Portable source assets for global Claude Code** — no separate website or account required. This phase installs **28 locally authored files**, not the third-party plugins, MCP servers, dashboard, or complete Full profile.
+**Portable source assets for global Claude Code** — no separate website or account required. This phase installs **29 locally authored files**, not the third-party plugins, MCP servers, dashboard, or complete Full profile.
 
 
 <br />
@@ -50,7 +50,7 @@ The **dry run** lists which files would be created, which already match, and whi
 .\scripts\doctor-development.ps1
 ```
 
-The installer checks file hashes. It includes 16 original local skills, the diagram agent, a manual vault command, five hook scripts plus shared helper, three workflows, and a developer rule.
+The installer checks file hashes. It includes 17 original local skills (including `version-log`), the diagram agent, a manual vault command, five hook scripts plus shared helper, three workflows, and a developer rule.
 
 **Installing files does not enable hooks, authenticate third-party services, run agents, or write to Obsidian.**
 

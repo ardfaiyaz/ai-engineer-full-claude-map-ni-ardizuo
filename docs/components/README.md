@@ -14,13 +14,13 @@ This setup has five workflow stages: **Triage → Contract → Dispatch → Revi
 | Layer | Explanation |
 | --- | --- |
 | Agents | [21 agent definitions](./agents/README.md) |
-| Ardizuo skills | [16 original skills](./skills/README.md) |
+| Ardizuo skills | [17 original skills](./skills/README.md), including `version-log` |
 | Hooks | [Five lifecycle hooks](./hooks/README.md) |
 | Commands | [Original command](./commands/README.md) and pinned SuperClaude commands |
 | Plugins | [12-plugin catalog](../../integrations/plugins/README.md) |
 | MCP servers | [Nine-MCP catalog](../../integrations/mcp/README.md) |
 | Dashboard | [Development Hub display](./development-hub-surface.md) |
-| Optional extensions | [Master extension catalog](./extension-catalog.md) (74 researched rows) |
+| Extended stack | [Master extension catalog](./extension-catalog.md): 74 researched rows, installed by `-All` |
 
 
 <br />
@@ -33,6 +33,7 @@ This setup has five workflow stages: **Triage → Contract → Dispatch → Revi
 ```powershell
 python .\scripts\coverage-doctor.py
 python .\scripts\release-audit.py
+python .\scripts\install-extensions.py --status
 ```
 
 Run from the repo root. These check **different things**: the source computer's available names versus what the public package can reproduce. A discovered label is not proof of execution.

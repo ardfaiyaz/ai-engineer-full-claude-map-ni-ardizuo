@@ -14,8 +14,8 @@ class DevelopmentPackTests(unittest.TestCase):
         cls.files = cls.manifest['filePaths']
 
     def test_exact_packaged_files(self):
-        self.assertEqual(len(self.files), 28)
-        self.assertEqual(len(set(self.files)), 28)
+        self.assertEqual(len(self.files), 29)
+        self.assertEqual(len(set(self.files)), 29)
         expected = {p.relative_to(PACK).as_posix() for p in PACK.rglob('*') if p.is_file() and p.name != 'README.md' and '.claude-plugin' not in p.parts and 'assets' not in p.parts}
         self.assertEqual(expected, set(self.files))
 

@@ -26,7 +26,7 @@ pipx install superclaude
 superclaude install
 ```
 
-The `superclaude install` command modifies global Claude Code assets. Preview changes and back up existing configuration before accepting upstream prompts. The Ardizuo Full installer invokes this only when you explicitly select `-SuperClaude` (or `-All`).
+The `superclaude install` command modifies global Claude Code assets. Preview changes and back up existing configuration before accepting upstream prompts. The Ardizuo installer runs this upstream CLI only when you pass `-SuperClaude`. `-All` instead installs the pinned, checksum-verified SuperClaude files; see [pinned SuperClaude](./pinned-superclaude.md).
 
 
 <br />

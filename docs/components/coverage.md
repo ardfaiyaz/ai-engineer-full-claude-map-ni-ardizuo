@@ -145,6 +145,16 @@ In Claude Code, verify `/skills`, `/mcp` and `/hooks`. The presence of a file do
 <br />
 
 
+## 🧩 Beyond the reference inventory
+
+
+Two things are installed that are not in the 21/62/32 names above: the new Ardizuo `version-log` skill, and the researched extended stack (74 rows, 40 packages: plugins, MCPs, CLI tools, pinned skills and gstack). Both come with `-All`. See the [master extension catalog](./extension-catalog.md) and check them with `python .\scripts\install-extensions.py --status`.
+
+
+<br />
+<br />
+
+
 ## 🚀 Exact-name release verification
 
 

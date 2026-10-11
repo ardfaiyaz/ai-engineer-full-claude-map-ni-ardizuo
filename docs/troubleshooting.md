@@ -93,6 +93,27 @@ The installer refuses to overwrite different versions in `Templates`. Make a pri
 <br />
 
 
+## 🧩 Extended stack problems
+
+
+| Symptom | Cause | Fix |
+| --- | --- | --- |
+| `missing dependencies: bun` (gstack) | Bun not installed | `winget install --id Oven-sh.Bun --exact --source winget`, reopen PowerShell, re-run `-Extensions gstack` |
+| `missing dependencies: uv` | uv not installed | `winget install --id astral-sh.uv --exact --source winget`, then re-run |
+| `SKIPPED … marketplace setup was not confirmed` | `claude plugin marketplace add` failed | Run `claude plugin marketplace list`, add the marketplace by hand from the [extended stack guide](./installation/extensions.md), re-run |
+| `karpathy-skills — FAILED: Publisher checksum mismatch` | Upstream file changed or network proxy altered it | Nothing was written; report it so the pinned hash can be reviewed |
+| Edits blocked by "no failing test" | Probity or TDD Guard enforcing test-first | Type `tdd-guard off`, or `claude plugin disable tdd-guard@tdd-guard` |
+| Sessions slow, skill list very long | ECC and wshobson Agents are large | `claude plugin disable ecc@ecc` or disable unused `@claude-code-workflows` plugins |
+| `/codex:review` says Codex isn't ready | Codex CLI not signed in | `codex login`, then `/codex:setup` |
+| Replies suddenly very short | `i-have-adhd` style plugin | `claude plugin disable i-have-adhd@i-have-adhd` |
+
+Run `python .\scripts\install-extensions.py --status` to see each package's state. Re-running the installer is safe: finished items are skipped.
+
+
+<br />
+<br />
+
+
 ## 🔌 GitHub MCP does not start
 
 

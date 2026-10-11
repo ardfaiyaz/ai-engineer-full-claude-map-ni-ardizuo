@@ -21,7 +21,7 @@ $ErrorActionPreference = 'Stop'
 $script = Join-Path $PSScriptRoot 'install-all.py'
 if (-not (Get-Command python -ErrorAction SilentlyContinue)) { throw 'Python 3 required. See docs/installation/python.md.' }
 $arguments = @($script)
-if ($All) { $External = $true; if (-not $SuperClaude) { $PinnedSuperClaude = $true }; $PinnedSkills = $true; $Plugins = $true; $Mcps = $true; $Hooks = $true; $Vault = $true; $Dashboard = $true }
+if ($All) { $External = $true; if (-not $SuperClaude) { $PinnedSuperClaude = $true }; $PinnedSkills = $true; $Plugins = $true; $Mcps = $true; $Hooks = $true; $Vault = $true; $Dashboard = $true; if (-not $Extensions) { $Extensions = 'all' } }
 if ($Apply) { $arguments += '--apply' }
 if ($External) { $arguments += '--external' }
 if ($Plugins) { $arguments += '--plugins' }
@@ -34,7 +34,7 @@ if ($UpstreamVariants) { $arguments += '--upstream-variants' }
 if ($Hooks) { $arguments += '--hooks' }
 if ($Vault) { $arguments += '--vault' }
 if ($Dashboard) { $arguments += '--dashboard' }
-# Catalog extensions are never implied by -All; they need an explicit selection.
+# -All installs the whole extended stack; -Extensions <ids|groups> narrows it.
 if ($Extensions) { $arguments += @('--extensions', $Extensions) }
 if ($VaultPath) { $arguments += @('--vault-path', $VaultPath) }
 if ($ConfigDir) { $arguments += @('--config-dir', $ConfigDir) }

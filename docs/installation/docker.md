@@ -1,7 +1,7 @@
 # 🐳 Docker Desktop (optional)
 
 
-Only required if you choose the existing Docker-backed GitHub MCP flow. It is **not** needed for most Ardizuo files.
+Only required if you choose the existing Docker-backed GitHub MCP flow, or to run servers with [ToolHive](./extensions.md) (`thv`, installed by the extended stack; Podman also works). Installing `thv` itself doesn't need Docker. Docker is **not** needed for most Ardizuo files or any other extended-stack tool.
 
 
 <br />

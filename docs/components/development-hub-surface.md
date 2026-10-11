@@ -89,7 +89,17 @@ The global config layer detects `CLAUDE.md`, `skill-gates.json`, personas, comma
 ## 📝 Obsidian memory and dashboard
 
 
-The original vault surface includes Sessions, Learnings, ADRs, Dispatch-Logs, PRDs, Diagrams, Projects and Templates. Optional setup creates these eight folders, four template files, and icon assets. It does not export personal notes. The dashboard's five-stage overlay passed a sandbox rehearsal against Claude Map 1.2.3, and the owner confirmed that the live browser view loads; a clean-device browser walkthrough is still a release gate.
+The original vault surface includes Sessions, Learnings, ADRs, Dispatch-Logs, PRDs, Diagrams, Projects and Templates. Optional setup creates these eight folders and four template files; headings use emoji, so no icon assets are installed. It does not export personal notes. The dashboard's five-stage overlay passed a sandbox rehearsal against Claude Map 1.2.3, and the owner confirmed that the live browser view loads; a clean-device browser walkthrough is still a release gate.
+
+
+<br />
+<br />
+
+
+## 🧩 Extended stack on the dashboard
+
+
+The counts above describe the **observed reference dashboard**. After `-All` installs the extended stack, the plugin, skill and agent views grow considerably (115 more plugin IDs, ECC's 71 agents and 311 skills, the wshobson collection, Matt Pocock and Trail of Bits skills). Those entries come from their plugins, not from new Ardizuo files. Claude HUD and ccusage show some of the same usage data as Claude Map. See the [master extension catalog](./extension-catalog.md).
 
 
 <br />

@@ -34,7 +34,7 @@
 > 7. Follow official provider links for plugin marketplaces and credential-dependent Tavily, Morph and GitHub MCP setups. Guide the user to enter keys locally; never ask them to paste keys into the chat.
 > 8. For an isolated test, use `-ConfigDir` WITHOUT external installation flags. Verify collisions, hash checks and hook registration before touching a live configuration.
 > 9. Verify Claude's `/skills`, `/mcp`, `/hooks` and the local dashboard. Do not assert any agent delegation, vault write, testing or deployment unless it actually happened.
-> 10. Treat `setup/extension-catalog.json` as opt-in only. Ask which extensions I want, preview with `-External -Extensions <selection>`, never add them to `-All`, and never pick two alternatives from the same exclusive group.
+> 10. `-All` also installs the extended stack from `setup/extension-catalog.json` (115 plugin IDs, 3 MCPs, 7 CLI tools, pinned skills, gstack). Before applying, explain the overlap warnings and the size of ECC and wshobson Agents, and report credential-gated and per-project steps as manual. Check the result with `python scripts/install-extensions.py --status`.
 > 11. Never commit/push/deploy, edit projects, or write Obsidian notes without separate approval. No social-media integrations.
 > 12. Summarize installed, configured, connected, blocked and manual steps. Provide safe rollback guidance.
 

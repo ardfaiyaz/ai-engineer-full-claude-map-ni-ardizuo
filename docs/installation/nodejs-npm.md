@@ -1,7 +1,9 @@
 # 🟩 Node.js and npm
 
 
-Node.js is needed for JavaScript MCP servers and Claude Map. npm is included with Node.js.
+Node.js is needed for the hook scripts, JavaScript MCP servers (Sequential Thinking, Chrome DevTools) and Claude Map. npm and `npx` are included with Node.js.
+
+The [extended stack](./extensions.md) installed by `-All` also uses npm and `npx`: n8n MCP, Playwright MCP, MCP Inspector, ccusage, mcp-use, Agentation, Probity, the Codex CLI (`@openai/codex`) and the Beads CLI (`@beads/bd`). Use the LTS release; the installer never upgrades Node for you.
 
 
 <br />

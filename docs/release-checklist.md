@@ -12,13 +12,15 @@
 
 
 - [x] **21 agent definitions:** one Ardizuo-owned and 20 pinned upstream.
-- [x] **36 default direct skill definitions:** 16 Ardizuo-owned and 20 pinned publisher prompts; five different upstream versions require opt-in.
+- [x] **36 default reference skill definitions:** 16 Ardizuo-owned and 20 pinned publisher prompts; five different upstream versions require opt-in. The new `version-log` skill is a 37th, outside the reference count.
 - [x] **20 default executable commands:** one Ardizuo command and 19 pinned SuperClaude commands; 11 different upstream variants require opt-in.
 - [x] **12 plugin IDs and nine target MCPs** have installation guides or supported registration attempts.
 - [x] **Five hooks, rules, workflow definitions, portable `CLAUDE.md`** and safe hook registration are packaged.
 - [x] **Optional memory templates** and a five-stage Claude Map rehearsal are available, without bundling personal notes.
 - [x] Installer previews first, avoids overwriting different files, and leaves credentials out of the package.
 - [x] Markdown uses emoji headings and obsolete sprint handoff notes were removed.
+- [x] **Extended stack:** 74 researched catalog rows mapped to 40 packages with verified repositories, licenses, plugin IDs and package names; `-All` installs them, dry run covered by tests.
+- [x] **`version-log` skill** packaged as the 29th reviewed file; this repository keeps its own `VERSIONLOG.md`.
 
 
 <br />
@@ -35,6 +37,7 @@
 - [ ] `claude plugin list` shows the plugins actually enabled; `claude mcp list` shows connected/unauthenticated servers accurately.
 - [ ] In Claude Code, inspect `/skills`, `/hooks`, and `/mcp`; run **one** low-risk agent or skill action if desired.
 - [ ] If using Claude Map, run the *separate* dashboard rehearsal and verify the five stages in the local browser.
+- [ ] `python scripts/install-extensions.py --status` shows the extended stack enabled/registered/on PATH, and each `missing-dependency` is explained.
 
 
 <br />
@@ -49,6 +52,7 @@
 - **Support files:** some skills reference scripts, data or other sidecars; an installed `SKILL.md` alone does not prove full functionality.
 - **Accounts:** user logins, provider OAuth, API keys, account-scoped MCP connections and private vault contents are not redistributable.
 - **Runtime:** source presence, CLI exit code and configured status do not demonstrate executed agent delegation, hook side effects or completed tasks.
+- **Extended stack size and overlaps:** ECC and wshobson Agents add hundreds of skills and agents; Probity and TDD Guard both enforce test-first. These are installed as requested and need a real-session check.
 - **Removal:** there is no universally safe automatic uninstall for all third-party packages. Keep personal backups and use the provider's instructions.
 
 

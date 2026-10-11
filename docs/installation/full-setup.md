@@ -1,7 +1,7 @@
 # 📥 Complete Windows installation
 
 
-This is the canonical install sequence for the **existing Ardizuo development setup**. It uses the repository's current installer; it does not add extra components or invent private assets.
+This is the canonical install sequence for the **Ardizuo development setup**: the reference layers plus the researched extended stack, in one run. It never invents private assets.
 
 
 <br />
@@ -49,6 +49,41 @@ If a conflicting file already exists, the non-overwriting installer stops rather
 <br />
 
 
+## ⚙️ Installer switch reference
+
+
+`scripts/install-all.ps1` is a thin wrapper around `scripts/install-all.py`. Every switch below has a matching `--lower-case` Python flag. Without `-Apply`, every switch only previews.
+
+| Switch | What it does | In `-All`? |
+| --- | --- | --- |
+| `-Apply` | Actually writes files and runs the selected external commands | — |
+| `-External` | Allows any third-party download or CLI install; required by the switches marked † | Yes |
+| `-PinnedSuperClaude` | 20 SuperClaude agents + 19 commands from a pinned commit, checksum-verified | Yes (unless `-SuperClaude`) |
+| `-UpstreamVariants` | Adds 11 publisher-original SuperClaude commands; needs `-PinnedSuperClaude` | No |
+| `-SuperClaude` † | Runs the upstream `pipx install superclaude` + `superclaude install` instead of pinned files | No |
+| `-PinnedSkills` | 20 publisher-pinned `SKILL.md` files, checksum-verified | Yes |
+| `-SkillUpstreamVariants` | Adds 5 publisher-original skill variants; needs `-PinnedSkills` | No |
+| `-Plugins` † | Registers the four marketplaces and installs the 12 baseline plugins | Yes |
+| `-Mcps` † | Registers the supported baseline MCPs (Tavily and Morph stay manual) | Yes |
+| `-Hooks` | Registers the five Ardizuo hooks in `settings.json`, with a backup | Yes |
+| `-Vault` / `-VaultPath` | Creates the eight Obsidian folders and four templates | Yes (default path) |
+| `-Dashboard` | Prints the Claude Map rehearsal steps; never patches automatically | Yes (guidance only) |
+| `-Extensions <selection>` † | Extended stack from `setup/extension-catalog.json`: `all`, groups or IDs | Yes (`all`) |
+| `-ConfigDir <path>` | Uses an isolated Claude config for local files; cannot be combined with external installs plus `-Apply` | — |
+
+The 29 reviewed local files, the portable `CLAUDE.md` and the base rule are always part of the plan, with or without switches.
+
+```powershell
+# Everything, but only the priority group of the extended stack:
+.\scripts\install-all.ps1 -All -Extensions priority            # preview
+.\scripts\install-all.ps1 -Apply -All -Extensions priority     # install
+```
+
+
+<br />
+<br />
+
+
 ## 🔑 Finish accounts and connection checks
 
 
@@ -77,7 +112,7 @@ $trial = Join-Path $HOME 'Documents/Ardizuo-Trial-Config'
 python .\scripts\verify-installed-layers.py --config-dir $trial --strict-local --require-hooks
 ```
 
-For original upstream versions **different from** the maintainer's files, the explicit switches are `-SkillUpstreamVariants` (five more skill prompts) and `-UpstreamVariants` (11 more SuperClaude commands). Those are not exact personal copies, so leave them off unless needed. Researched third-party extensions use a separate opt-in switch, `-Extensions <selection>`, which `-All` never turns on; see [optional extensions](./extensions.md). Some pinned skills require publisher-side support files that are not part of the current installer.
+For original upstream versions **different from** the maintainer's files, the explicit switches are `-SkillUpstreamVariants` (five more skill prompts) and `-UpstreamVariants` (11 more SuperClaude commands). Those are not exact personal copies, so leave them off unless needed. The researched extended stack is part of `-All` (`-Extensions all`); see [extended stack](./extensions.md). Some pinned skills require publisher-side support files that are not part of the current installer.
 
 
 <br />
@@ -105,6 +140,7 @@ The five-stage Development Hub overlay **is not silently patched by `-All`**. Se
 | Plugin IDs | 12 documented/CLI-supported | Provider sign-in separately |
 | Target MCP servers | 9 documented/supported | Provider sign-in separately |
 | Hooks | Five handlers (when selected) | Runtime actions require an actual Claude session |
+| Extended stack | 115 plugin IDs, 3 MCPs, 7 CLI tools, 4 pinned skills, gstack | Provider sign-in separately; credential and per-project steps printed ([guide](./extensions.md)) |
 
 The maintainer's machine also has other direct-skill folders and associated files whose origin or redistribution status isn't resolved. **The installer will not fabricate them.** Provider caches, native commands and plugin skills are not independently counted as bundled global `SKILL.md` files. See the [by-name matrix](./reproducibility-matrix.md), [origin review](./exact-local-origin-review.md), and [security policy](../../SECURITY.md).
 

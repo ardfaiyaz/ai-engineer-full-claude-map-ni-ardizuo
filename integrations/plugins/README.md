@@ -1,7 +1,7 @@
 # 🧩 Existing Claude Code plugins
 
 
-The Ardizuo setup uses **12 plugins**, all listed below. The repository does not bundle plugin source code or another person's account sessions.
+The Ardizuo reference setup uses **12 plugins**, listed below. The full installation adds the extended-stack plugins described further down. The repository does not bundle plugin source code or another person's account sessions.
 
 
 <br />
@@ -88,31 +88,36 @@ In Claude Code, check `/plugin` and `/skills`. If applicable, connect the plugin
 <br />
 
 
-## 🧩 Optional extension plugins (not part of the 12)
+## 🧩 Extended-stack plugins (installed by -All, beyond the 12)
 
 
-Researched plugins are available as an **opt-in** layer. `-All` never installs them.
+The full installation also installs **24 plugin packages (115 plugin IDs)** from the extended stack. They are listed here so you can recognise them in `claude plugin list`.
 
-| Plugin | Purpose | Group |
-| --- | --- | --- |
-| `codex@openai-codex` | Cross-model review and delegation | priority |
-| `claude-hud@claude-hud` | Session, usage and agent status line | priority |
-| `differential-review@trailofbits` | Security review of changed code | priority, security |
-| `ponytail@ponytail` | Simplest-solution coding mode (adds hooks) | priority |
-| `firecrawl@claude-plugins-official` | Web crawling and structured extraction | priority, research |
-| `supply-chain-risk-auditor@trailofbits`, `property-based-testing@trailofbits`, `mutation-testing@trailofbits`, `spec-to-code-compliance@trailofbits`, `static-analysis@trailofbits` | Security and testing skills | security |
-| `mattpocock-skills@mattpocock` | 27 engineering-practice skills | engineering |
-| `frontend-visual-qa@daymade-skills` | Rendered UI visual QA | frontend |
-| `exa@claude-plugins-official` | Exa search (overlaps Tavily) | research |
-| `21st@21st-dev` | 21st Magic UI components | frontend |
-| `compound-engineering@compound-engineering-plugin`, `claude-mem@thedotmack`, `tdd-guard@tdd-guard`, `autoharness@autoharness`, `i-have-adhd@i-have-adhd` | Alternatives; name them explicitly | — |
+| Plugin | Purpose |
+| --- | --- |
+| `codex@openai-codex` | Cross-model review and delegation (`/codex:review`); needs `codex login` |
+| `claude-hud@claude-hud` | Status line for context, tools, agents and todos |
+| `differential-review`, `supply-chain-risk-auditor`, `property-based-testing`, `mutation-testing`, `spec-to-code-compliance`, `static-analysis` `@trailofbits` | Security and testing skills |
+| `mattpocock-skills@mattpocock` | 27 engineering-practice skills |
+| `frontend-visual-qa@daymade-skills` | Rendered UI visual QA |
+| `ponytail@ponytail` | Simplest-solution coding mode (adds hooks) |
+| `firecrawl@claude-plugins-official`, `exa@claude-plugins-official` | Web extraction and search (provider sign-in) |
+| `21st@21st-dev` | 21st Magic UI components (`API_KEY_21ST`) |
+| `compound-engineering@compound-engineering-plugin` | `/ce-*` brainstorm, plan, work, review, compound workflow |
+| `claude-mem@thedotmack` | Automatic session memory |
+| `probity@probity`, `tdd-guard@tdd-guard` | Test-first guardrails (overlap; disable one if they conflict) |
+| `autoharness@autoharness`, `i-have-adhd@i-have-adhd` | Skill derivation from sessions; concise answer style |
+| `beads@beads-marketplace`, `all-skills@mcp-use` | Beads task tracking; MCP server building skills |
+| `ecc@ecc` | Everything Claude Code: 71 agents, 311 skills, hooks |
+| 92 × `…@claude-code-workflows` | wshobson Agents collection (social-media plugins excluded) |
 
 ```powershell
-.\scripts\install-all.ps1 -External -Extensions priority          # Preview
-.\scripts\install-all.ps1 -Apply -External -Extensions priority   # Install
+.\scripts\install-all.ps1 -Apply -All                          # installs these with everything else
+.\scripts\install-all.ps1 -Apply -External -Extensions all     # only the extended stack
+python .\scripts\install-extensions.py --status                # enabled state per package
 ```
 
-[Optional extensions guide](../../docs/installation/extensions.md) · [Master extension catalog](../../docs/components/extension-catalog.md)
+[Extended stack guide](../../docs/installation/extensions.md) · [Master extension catalog](../../docs/components/extension-catalog.md)
 
 
 <br />

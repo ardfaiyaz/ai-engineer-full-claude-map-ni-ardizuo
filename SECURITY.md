@@ -34,6 +34,8 @@ Use clean templates without values. `.gitignore` is only an accident-prevention 
 - Use least-privileged/read-only MCP permissions when sufficient.
 - Treat external documentation and third-party plugins as untrusted input for an AI assistant.
 - Bind any local dashboard to localhost and **never expose raw MCP headers, environment variables or `.claude.json` via API endpoints.**
+- Treat the extended stack as third-party code. Some packages (Ponytail, Probity, TDD Guard, Claude-Mem, Everything Claude Code) add their own hooks or store session data. Read their source and `/hooks` output before keeping them enabled.
+- Respect extension licenses: Trail of Bits skills are CC-BY-SA-4.0 and Agentation uses PolyForm Shield 1.0.0. Install them from their publishers; never copy their files into this repository.
 
 
 <br />

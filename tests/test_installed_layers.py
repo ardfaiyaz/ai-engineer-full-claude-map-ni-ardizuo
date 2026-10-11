@@ -20,9 +20,9 @@ class InstalledLayersTests(unittest.TestCase):
         m=load(); f=m.expected()
         self.assertEqual(len(f),len(set(f)))
         self.assertEqual(len([p for p in f if p.startswith('agents/')]),21)
-        self.assertEqual(len([p for p in f if p.startswith('skills/')]),36)
+        self.assertEqual(len([p for p in f if p.startswith('skills/')]),37)  # 36 reference names + version-log
         self.assertEqual(len([p for p in f if p.startswith('commands/')]),20)
-        self.assertEqual(len([p for p in m.expected(True) if p.startswith('skills/')]),41)
+        self.assertEqual(len([p for p in m.expected(True) if p.startswith('skills/')]),42)
         self.assertEqual(len([p for p in m.expected(True) if p.startswith('commands/')]),31)
         self.assertFalse(any('social' in p.casefold() for p in f))
     def test_fresh_config_reports_missing_not_fake_success(self):
@@ -39,7 +39,7 @@ class InstalledLayersTests(unittest.TestCase):
             self.assertEqual(c.returncode,0,c.stderr)
             m=load();a=m.audit(conf, vault=vault)
             self.assertEqual(a['byLayer']['agents']['present'],1)
-            self.assertEqual(a['byLayer']['skills']['present'],16)
+            self.assertEqual(a['byLayer']['skills']['present'],17)
             self.assertEqual(a['byLayer']['global-context']['present'],1)
             self.assertEqual(a['vault']['templatesFound'],4)
             self.assertEqual(a['vault']['foldersFound'],8)

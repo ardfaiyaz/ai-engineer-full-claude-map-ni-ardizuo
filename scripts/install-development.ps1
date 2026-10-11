@@ -12,7 +12,7 @@ if (-not (Test-Path -LiteralPath $manifestFile -PathType Leaf)) { throw 'Missing
 $data = Get-Content -LiteralPath $manifestFile -Raw -Encoding UTF8 | ConvertFrom-Json
 if ($data.schemaVersion -ne 1) { throw 'Unsupported development asset manifest.' }
 $files = @($data.filePaths)
-if ($files.Count -ne 28) { throw 'Expected 28 reviewed source files; manifest must be reviewed before use.' }
+if ($files.Count -ne 29) { throw 'Expected 29 reviewed source files; manifest must be reviewed before use.' }
 
 $plan = @()
 $conflicts = @()

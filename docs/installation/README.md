@@ -19,7 +19,7 @@ Start with **[the five-step quick start](../../START-HERE.md)**. It contains the
 | MCP registration and credentials | [Nine-MCP catalog](../../integrations/mcp/README.md) |
 | Optional Claude Map | [Claude Map commands](./claude-map.md) |
 | Optional Obsidian | [Obsidian](./obsidian.md) |
-| Optional researched extensions | [Extensions](./extensions.md) |
+| Extended stack installed by `-All` | [Extended stack](./extensions.md) |
 
 
 <br />

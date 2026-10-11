@@ -34,7 +34,7 @@ def relpath(s):
 
 def local_plan(config, include_rule=True):
     srcs=json.loads(LOCAL.read_text(encoding='utf-8'))['filePaths']
-    assert len(srcs)==28, 'Development asset inventory count changed: review manifest'
+    assert len(srcs)==29, 'Development asset inventory count changed: review manifest'
     plans=[]
     for entry in srcs:
         rel=relpath(entry)
@@ -177,7 +177,7 @@ def main():
     ap.add_argument('--upstream-variants',action='store_true',help='Opt in to 11 upstream commands different from author references')
     ap.add_argument('--plugins',action='store_true',help='Allow third-party plugin install commands')
     ap.add_argument('--mcps',action='store_true',help='Allow supported third-party MCP registration commands')
-    ap.add_argument('--extensions',metavar='SELECTION',help='Opt in to catalog extensions (ids or groups, e.g. priority); never part of -All')
+    ap.add_argument('--extensions',metavar='SELECTION',help='Extended stack from setup/extension-catalog.json (all, or ids/groups); -All passes all')
     ap.add_argument('--config-dir',type=Path,help='Use isolated Claude config for local files (test first)')
     args=ap.parse_args()
     mf=json.loads(MANIFEST.read_text(encoding='utf8'))
@@ -196,7 +196,7 @@ def main():
     print('\nAI ENGINEER FULL CLAUDE MAP NI ARDIZUO — ASSISTED SETUP\n')
     print('Claude global config:',config)
     print('Mode:', 'APPLY' if args.apply else 'DRY RUN')
-    print('Local definitions: 28 reviewed files + base rule + portable CLAUDE.md; Markdown headings use native emoji')
+    print('Local definitions: 29 reviewed files + base rule + portable CLAUDE.md; Markdown headings use native emoji')
     print('Third-party clients need internet and may require provider sign-in.')
     # Fail on a conflicting personal vault template BEFORE modifying local Claude files.
     # Dry-run previews the same conflict checks, but never creates folders or notes.
@@ -269,7 +269,7 @@ def main():
                     print('  '+name+' — missing dependencies: '+', '.join(missing));actions[k]='missing-dependency';continue
                 actions[k]=run_external(entry['argv'],'register MCP '+name,not args.apply)
     if args.extensions:
-        print('\nOPTIONAL CATALOG EXTENSIONS (setup/extension-catalog.json)')
+        print('\nEXTENDED STACK (setup/extension-catalog.json)')
         if not external_enabled:print('  SKIPPED; external installs not authorized')
         else:
             command=[sys.executable,str(ROOT/'scripts/install-extensions.py'),'--select',args.extensions,'--config-dir',str(config)]

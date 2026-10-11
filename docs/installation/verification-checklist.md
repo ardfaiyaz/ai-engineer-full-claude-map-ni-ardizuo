@@ -25,7 +25,7 @@
 
 
 - [ ] Run `scripts/install-all.ps1 -All` as a dry run.
-- [ ] Copy 28 custom files into a disposable `-ConfigDir` and verify identical checksums.
+- [ ] Copy 29 custom files into a disposable `-ConfigDir` and verify identical checksums.
 - [ ] Re-run the installer: identical files should be skipped.
 - [ ] Introduce a different existing file: installer should refuse overwriting.
 
@@ -93,7 +93,24 @@
 <br />
 
 
-## 🧩 7. Exact-name and marketplace release gates
+## 🧩 7. Extended stack
+
+
+- [ ] `.\scripts\install-all.ps1 -All` previews 40 extended-stack packages and prints overlap notes.
+- [ ] After `-Apply -All`, `python .\scripts\install-extensions.py --status` shows plugins `enabled`, MCPs `registered`, CLIs `on-path` and the Karpathy skills `present`.
+- [ ] `missing-dependency` lines (uv, Bun, winget) are resolved and the installer re-run.
+- [ ] `codex login` and `/codex:setup` succeed; one `/codex:review` runs on a small diff.
+- [ ] `/claude-hud:setup` shows the status line after a restart.
+- [ ] `/hooks` reviewed: Ponytail, Probity, TDD Guard, ECC and Claude-Mem hooks are understood or disabled.
+- [ ] Firecrawl, Exa and 21st Magic signed in only if you use them; Browserbase registered only with your own key.
+- [ ] Session start time and skill list size are acceptable with ECC and wshobson Agents enabled.
+
+
+<br />
+<br />
+
+
+## 🧩 8. Exact-name and marketplace release gates
 
 
 - [ ] All four declared plugin marketplace sources are reviewed and registered (Anthropic official, Anthropic skills, Ralph and Morph).

@@ -13,7 +13,7 @@ for f in files:
     src=ROOT/'ardizuo-plugin'/f;dst=config/f
     state='missing' if not dst.is_file() else ('identical' if hashlib.sha256(src.read_bytes()).digest()==hashlib.sha256(dst.read_bytes()).digest() else 'different')
     counts[state]+=1
-print('Original files: ',counts,'(28 reviewed files; not plugin caches)')
+print('Original files: ',counts,'(29 reviewed files; not plugin caches)')
 agentroot=config/'agents'
 installed_agents={p.stem for p in agentroot.glob('*.md')} if agentroot.is_dir() else set()
 reference=set(json.loads((ROOT/'setup/reference-inventory.json').read_text(encoding='utf8'))['agents'])

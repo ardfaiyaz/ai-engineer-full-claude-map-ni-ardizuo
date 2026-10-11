@@ -42,6 +42,12 @@ Open the provider's **official console** and use its API or developer section. C
 | Sentry | [Developer docs](https://docs.sentry.io/api/auth/) | Use only the scopes needed by your workflows |
 | Atlassian | [API tokens](https://support.atlassian.com/atlassian-account/docs/manage-api-tokens-for-your-atlassian-account/) | Use provider authentication supported by its plugin |
 | Notion | [Integrations](https://developers.notion.com/docs/create-a-notion-integration) | Limit pages and permissions explicitly |
+| OpenAI (Codex plugin) | [Codex CLI sign-in](https://developers.openai.com/codex/cli/reference/#codex-login) | `codex login` supports ChatGPT sign-in or an API key; prefer ChatGPT sign-in |
+| Firecrawl (optional) | [Firecrawl dashboard](https://www.firecrawl.dev/app) | Use a key limited to the extension; watch credit usage |
+| Exa (optional) | [Exa dashboard](https://dashboard.exa.ai/) | Use the plugin's own sign-in or key flow |
+| 21st Magic (optional) | [21st.dev MCP](https://21st.dev/mcp) | Older Magic keys were reset upstream; create a fresh one |
+| n8n (optional) | Your own n8n instance settings | Only needed for workflow management tools; documentation tools need no key |
+| Browserbase (optional) | [Browserbase dashboard](https://www.browserbase.com/) | Only for hosted Stagehand browsers |
 
 MCPs that support browser sign-in often **do not need any manual API token**.
 

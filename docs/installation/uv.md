@@ -1,7 +1,7 @@
 # 📦 uv and uvx
 
 
-`uvx` is needed for the existing Serena MCP registration. Skip this installation if you are not using Serena.
+`uvx` is needed for the existing Serena MCP registration. The [extended stack](./extensions.md) installed by `-All` also uses it to install Snyk Agent Scan (`uv tool install snyk-agent-scan`) and GitHub Spec Kit (`uv tool install specify-cli`), and it can install Semgrep for Trail of Bits `static-analysis` (`uv tool install semgrep`). Without uv, those tools are reported as missing and the rest of the installation continues.
 
 
 <br />
