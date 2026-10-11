@@ -65,6 +65,7 @@ winget install --id Anthropic.ClaudeCode --exact --source winget
 | Workflow | Five stages, rules, gates and portable context |
 | Memory | Optional empty Obsidian folder structure and four templates |
 | Dashboard | Optional Claude Map; live Development Hub overlay requires separate rehearsal |
+| Optional extensions | 74 researched catalog rows; opt-in `-Extensions` installer, never part of `-All` |
 
 The public package intentionally **does not** bundle unsourced third-party skill files, private notes, credentials or provider sessions. File presence is not runtime execution proof.
 
@@ -82,6 +83,7 @@ The public package intentionally **does not** bundle unsourced third-party skill
 | Get individual **copyable installation commands** | [Prerequisites](./docs/prerequisites.md) |
 | Install or troubleshoot the 12 plugins | [Plugin catalog](./integrations/plugins/README.md) |
 | Register the nine MCPs | [MCP catalog](./integrations/mcp/README.md) |
+| Add Codex review, Claude HUD, Trail of Bits and other researched extensions | [Optional extensions](./docs/installation/extensions.md) · [Master catalog](./docs/components/extension-catalog.md) |
 | Set up Claude Map and the existing overlay | [Claude Map](./docs/installation/claude-map.md) |
 | Compare against the original Claude setup | [Coverage matrix](./docs/installation/reproducibility-matrix.md) |
 | Understand file conflicts and restore options | [Full setup](./docs/installation/full-setup.md) |

@@ -94,6 +94,38 @@ claude mcp get morph-mcp
 <br />
 
 
+## 🧩 Optional extension MCPs (not part of the nine)
+
+
+Six researched MCP integrations are available as an opt-in layer. Prefer project scope, and don't stack overlapping browser or search servers.
+
+| Integration | Route | Credentials | Note |
+| --- | --- | --- | --- |
+| Firecrawl | `firecrawl@claude-plugins-official` plugin | Firecrawl API key | Extraction and crawling |
+| Exa | `exa@claude-plugins-official` plugin | Exa account | Overlaps Tavily |
+| n8n MCP | `n8n-mcp` user stdio registration | None for docs tools | Only if you use n8n |
+| 21st Magic | `21st@21st-dev` plugin | `API_KEY_21ST` | React/Tailwind components |
+| Playwright MCP | `playwright-mcp` user stdio registration | None | **Alternative** to the Playwright plugin |
+| Agentation | Guided, inside one React/Next.js project | None | PolyForm Shield license |
+
+```powershell
+.\scripts\install-all.ps1 -External -Extensions research,automation          # Preview
+.\scripts\install-all.ps1 -Apply -External -Extensions research,automation   # Install
+```
+
+The n8n registration the installer uses (documentation tools only):
+
+```powershell
+claude mcp add --scope user n8n-mcp -e MCP_MODE=stdio -e LOG_LEVEL=error -e DISABLE_CONSOLE_OUTPUT=true -- npx -y n8n-mcp
+```
+
+[Optional extensions guide](../../docs/installation/extensions.md) · [Master extension catalog](../../docs/components/extension-catalog.md)
+
+
+<br />
+<br />
+
+
 ## ✅ After registration
 
 

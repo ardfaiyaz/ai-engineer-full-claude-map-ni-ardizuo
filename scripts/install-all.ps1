@@ -13,6 +13,7 @@ param(
     [switch]$Hooks,
     [switch]$Vault,
     [switch]$Dashboard,
+    [string]$Extensions,
     [string]$VaultPath,
     [string]$ConfigDir
 )
@@ -33,6 +34,8 @@ if ($UpstreamVariants) { $arguments += '--upstream-variants' }
 if ($Hooks) { $arguments += '--hooks' }
 if ($Vault) { $arguments += '--vault' }
 if ($Dashboard) { $arguments += '--dashboard' }
+# Catalog extensions are never implied by -All; they need an explicit selection.
+if ($Extensions) { $arguments += @('--extensions', $Extensions) }
 if ($VaultPath) { $arguments += @('--vault-path', $VaultPath) }
 if ($ConfigDir) { $arguments += @('--config-dir', $ConfigDir) }
 & python @arguments

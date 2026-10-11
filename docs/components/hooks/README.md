@@ -42,6 +42,21 @@ Existing `settings.json` hooks are preserved. On a conflict, the installer stops
 <br />
 
 
+## 🧩 External guardrail systems (optional, not Ardizuo hooks)
+
+
+| System | Route | Note |
+| --- | --- | --- |
+| [Probity](https://github.com/nizos/probity) | Guided `npm install -D @nizos/probity` in one test project | TDD and rule enforcement before selected actions |
+| [TDD Guard](https://github.com/nizos/tdd-guard) | `tdd-guard@tdd-guard` (alternative) | Predecessor of Probity; choose only one |
+
+Ponytail (`ponytail@ponytail`) also ships its own hooks. There are still **five** Ardizuo hook handlers, not seven. Before enabling an external system, reconcile its events with your `settings.json` hooks. See the [master extension catalog](../extension-catalog.md).
+
+
+<br />
+<br />
+
+
 ## 🛡️ Privacy and troubleshooting
 
 

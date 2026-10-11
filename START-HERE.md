@@ -118,6 +118,23 @@ The original Claude Map is available at <http://localhost:8888>. To apply the **
 <br />
 
 
+## 🧩 Optional: researched extensions
+
+
+Codex review, Claude HUD, Trail of Bits security skills, Ponytail, Firecrawl and others are **opt-in**. `-All` does not install them.
+
+```powershell
+.\scripts\install-all.ps1 -External -Extensions priority          # Preview
+.\scripts\install-all.ps1 -Apply -External -Extensions priority   # Install
+```
+
+[Optional extensions guide](./docs/installation/extensions.md) · [Master catalog](./docs/components/extension-catalog.md)
+
+
+<br />
+<br />
+
+
 ## ⌨️ Bash commands (only on systems with Bash and the prerequisites installed)
 
 

@@ -80,7 +80,8 @@ def execute_plan(plan, apply):
 
 
 def run_external(argv, label, dry_run=False):
-    print('  '+label+' — '+ ('WOULD RUN' if dry_run else 'RUNNING'))
+    # Flush so a child installer's output appears after this label when piped.
+    print('  '+label+' — '+ ('WOULD RUN' if dry_run else 'RUNNING'),flush=True)
     if dry_run: return 'planned'
     if not shutil.which(argv[0]):
         print('    SKIPPED: prerequisite CLI not found: '+argv[0]);return 'missing-dependency'
@@ -92,6 +93,15 @@ def run_external(argv, label, dry_run=False):
         print('    CLI returned exit=0. Authentication/availability NOT verified.');return 'cli-success'
     except Exception as e:
         print('    FAILED: '+type(e).__name__);return 'failed'
+
+
+def registered_mcp_names(home_config=None):
+    """Return user-scoped MCP server names only; never values, env or tokens."""
+    try:
+        cfg=json.loads((home_config or Path.home()/'.claude.json').read_text(encoding='utf-8-sig'))
+        return set(cfg.get('mcpServers',{}))
+    except (OSError,ValueError,TypeError,AttributeError):
+        return set()
 
 
 def known_marketplaces(manifest, apply):
@@ -167,6 +177,7 @@ def main():
     ap.add_argument('--upstream-variants',action='store_true',help='Opt in to 11 upstream commands different from author references')
     ap.add_argument('--plugins',action='store_true',help='Allow third-party plugin install commands')
     ap.add_argument('--mcps',action='store_true',help='Allow supported third-party MCP registration commands')
+    ap.add_argument('--extensions',metavar='SELECTION',help='Opt in to catalog extensions (ids or groups, e.g. priority); never part of -All')
     ap.add_argument('--config-dir',type=Path,help='Use isolated Claude config for local files (test first)')
     args=ap.parse_args()
     mf=json.loads(MANIFEST.read_text(encoding='utf8'))
@@ -197,7 +208,7 @@ def main():
     execute_plan(plan,args.apply)
     actions={}
     external_enabled=args.external
-    if any([args.plugins,args.mcps,args.dashboard,args.superclaude]) and not external_enabled:
+    if any([args.plugins,args.mcps,args.dashboard,args.superclaude,args.extensions]) and not external_enabled:
         print('\nNote: --external is required before any provider installation.')
     if args.pinned_superclaude:
         print('\nPINNED SUPERCLAUDE SOURCE DEFINITIONS (SAFE, NON-OVERWRITING)')
@@ -245,11 +256,7 @@ def main():
         if not external_enabled:print('  SKIPPED; external installs not authorized')
         else:
             # Avoid printing or exporting any sensitive content from existing ~/.claude.json.
-            existing=set()
-            try:
-                cfg=json.loads((Path.home()/'.claude.json').read_text(encoding='utf-8-sig'))
-                existing=set(cfg.get('mcpServers',{}))
-            except (OSError,ValueError,TypeError): pass
+            existing=registered_mcp_names()
             for entry in mf['mcp']:
                 name=entry['name']; k='mcp:'+name
                 if name in existing:
@@ -261,6 +268,13 @@ def main():
                 if missing:
                     print('  '+name+' — missing dependencies: '+', '.join(missing));actions[k]='missing-dependency';continue
                 actions[k]=run_external(entry['argv'],'register MCP '+name,not args.apply)
+    if args.extensions:
+        print('\nOPTIONAL CATALOG EXTENSIONS (setup/extension-catalog.json)')
+        if not external_enabled:print('  SKIPPED; external installs not authorized')
+        else:
+            command=[sys.executable,str(ROOT/'scripts/install-extensions.py'),'--select',args.extensions,'--config-dir',str(config)]
+            if args.apply:command.append('--apply')
+            actions['extensions']=run_external(command,'extensions: '+args.extensions,False)
     if args.hooks:
         print('\nHOOK REGISTRATION (five lifecycle hooks)')
         if not args.apply: print('  DRY RUN: node scripts/register-hooks.mjs --config-dir ...')

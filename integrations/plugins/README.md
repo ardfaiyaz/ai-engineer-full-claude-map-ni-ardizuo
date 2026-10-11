@@ -88,6 +88,37 @@ In Claude Code, check `/plugin` and `/skills`. If applicable, connect the plugin
 <br />
 
 
+## 🧩 Optional extension plugins (not part of the 12)
+
+
+Researched plugins are available as an **opt-in** layer. `-All` never installs them.
+
+| Plugin | Purpose | Group |
+| --- | --- | --- |
+| `codex@openai-codex` | Cross-model review and delegation | priority |
+| `claude-hud@claude-hud` | Session, usage and agent status line | priority |
+| `differential-review@trailofbits` | Security review of changed code | priority, security |
+| `ponytail@ponytail` | Simplest-solution coding mode (adds hooks) | priority |
+| `firecrawl@claude-plugins-official` | Web crawling and structured extraction | priority, research |
+| `supply-chain-risk-auditor@trailofbits`, `property-based-testing@trailofbits`, `mutation-testing@trailofbits`, `spec-to-code-compliance@trailofbits`, `static-analysis@trailofbits` | Security and testing skills | security |
+| `mattpocock-skills@mattpocock` | 27 engineering-practice skills | engineering |
+| `frontend-visual-qa@daymade-skills` | Rendered UI visual QA | frontend |
+| `exa@claude-plugins-official` | Exa search (overlaps Tavily) | research |
+| `21st@21st-dev` | 21st Magic UI components | frontend |
+| `compound-engineering@compound-engineering-plugin`, `claude-mem@thedotmack`, `tdd-guard@tdd-guard`, `autoharness@autoharness`, `i-have-adhd@i-have-adhd` | Alternatives; name them explicitly | — |
+
+```powershell
+.\scripts\install-all.ps1 -External -Extensions priority          # Preview
+.\scripts\install-all.ps1 -Apply -External -Extensions priority   # Install
+```
+
+[Optional extensions guide](../../docs/installation/extensions.md) · [Master extension catalog](../../docs/components/extension-catalog.md)
+
+
+<br />
+<br />
+
+
 ## 🛡️ Troubleshoot or remove
 
 

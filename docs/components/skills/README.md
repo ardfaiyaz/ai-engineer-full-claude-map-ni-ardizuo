@@ -55,6 +55,18 @@ These skills are also included when you choose the guided `-Apply -All` install.
 <br />
 
 
+## 🔎 Researched extension skills (optional)
+
+
+Twenty more skills (catalog rows 63–82) come from publisher plugins rather than this repository. They include Ponytail, Matt Pocock's `domain-modeling`, `to-tickets`, `tdd` and `grill-me`, Trail of Bits' `differential-review` and `mutation-testing`, and Daymade's `frontend-visual-qa`. Every name was verified upstream on 2026-10-11. They are **not** counted in the 62 reference skills, and are installed only with `-Extensions`.
+
+[Master extension catalog](../extension-catalog.md) · [Optional extensions guide](../../installation/extensions.md)
+
+
+<br />
+<br />
+
+
 ## ✅ Verify and use
 
 

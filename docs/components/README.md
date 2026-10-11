@@ -20,6 +20,7 @@ This setup has five workflow stages: **Triage → Contract → Dispatch → Revi
 | Plugins | [12-plugin catalog](../../integrations/plugins/README.md) |
 | MCP servers | [Nine-MCP catalog](../../integrations/mcp/README.md) |
 | Dashboard | [Development Hub display](./development-hub-surface.md) |
+| Optional extensions | [Master extension catalog](./extension-catalog.md) (74 researched rows) |
 
 
 <br />

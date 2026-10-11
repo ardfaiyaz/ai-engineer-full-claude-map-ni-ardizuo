@@ -68,3 +68,22 @@ Additional **unapproved source candidates** are tracked in `setup/skill-source-c
 
 
 The public `setup/source-provenance-lock.json` now references content-matched **SKILL.md** files at immutable commits from original publishers: [Emil Kowalski Skills](https://github.com/emilkowalski/skills) (MIT), [Addy Osmani Agent Skills](https://github.com/addyosmani/agent-skills) (MIT), and [Vercel Labs Agent Skills](https://github.com/vercel-labs/agent-skills) (repository license not confirmed). Optional publisher variants also refer to [Better Frontend Skills](https://github.com/dominika-zajac/better-frontend-skills) (MIT) and [Playwright Labs](https://github.com/vitalics/playwright-labs) (MIT). These third-party materials are **not bundled**; installing downloads original publisher files with fixed commit and blob hashes. No Ardizuo ownership is claimed. Respect license and supporting-file requirements.
+
+
+<br />
+<br />
+
+
+## 🧩 Optional extension catalog sources
+
+
+`setup/extension-catalog.json` and `scripts/install-extensions.py` point to publisher repositories and marketplaces. **No content from them is bundled.** Installing runs each publisher's own Claude CLI plugin or MCP command under their license. Licenses as reported by the GitHub API on 2026-10-11:
+
+- MIT: Matt Pocock Skills, Ponytail, Daymade Skills, Claude HUD, Compound Engineering, Probity, TDD Guard, wshobson Agents, Everything Claude Code (ECC), gstack, Beads, mcp-use, AutoHarness, i-have-adhd, GitHub Spec Kit, Browserbase Stagehand, Firecrawl MCP, Exa MCP, n8n MCP, Awesome MCP Servers, Karpathy-inspired Skills (from its LICENSE file)
+- Apache-2.0: OpenAI Codex Plugin, Claude-Mem, Microsoft Playwright MCP, Snyk Agent Scan, ToolHive
+- ISC: 21st Magic MCP
+- **CC-BY-SA-4.0**: Trail of Bits Skills (share-alike: don't copy it into this MIT repository)
+- **PolyForm Shield 1.0.0**: Agentation (not an OSI open-source license; read its terms before use)
+- Not determined by the API: MCP Inspector, MCP Reference Servers, MCP TypeScript SDK, ccusage, Awesome Claude Code. Check each repository's license file.
+
+Exact repositories and the commits checked are recorded in the catalog JSON. A later upstream release can change license or content, so re-check before you rely on it.

@@ -77,7 +77,7 @@ $trial = Join-Path $HOME 'Documents/Ardizuo-Trial-Config'
 python .\scripts\verify-installed-layers.py --config-dir $trial --strict-local --require-hooks
 ```
 
-For original upstream versions **different from** the maintainer's files, the explicit switches are `-SkillUpstreamVariants` (five more skill prompts) and `-UpstreamVariants` (11 more SuperClaude commands). Those are not exact personal copies, so leave them off unless needed. Some pinned skills require publisher-side support files that are not part of the current installer.
+For original upstream versions **different from** the maintainer's files, the explicit switches are `-SkillUpstreamVariants` (five more skill prompts) and `-UpstreamVariants` (11 more SuperClaude commands). Those are not exact personal copies, so leave them off unless needed. Researched third-party extensions use a separate opt-in switch, `-Extensions <selection>`, which `-All` never turns on; see [optional extensions](./extensions.md). Some pinned skills require publisher-side support files that are not part of the current installer.
 
 
 <br />

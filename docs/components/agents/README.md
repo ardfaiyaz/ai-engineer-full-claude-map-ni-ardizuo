@@ -7,3 +7,5 @@ The reference installation lists **21 global agent names**: 20 provided by the u
 [All agent names and origins](../coverage.md) · [Diagram architect](./diagram-architect.md)
 
 Global agent definitions belong in `<ClaudeConfig>/agents/`. An installed agent is not necessarily spawned during a task. Verify an actual delegation in the Claude transcript before claiming one ran.
+
+Four researched **agent collections** (wshobson Agents, Everything Claude Code, gstack and Compound Engineering) are listed in the [master extension catalog](../extension-catalog.md). They are collections or alternative orchestration suites, not extra agent definitions, so the agent count stays at 21.
